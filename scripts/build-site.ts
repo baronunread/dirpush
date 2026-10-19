@@ -135,7 +135,7 @@ ${body}
     </div>
     <div><h3>Directories</h3><a href="/directories/">All ${dirCount}</a><a href="/directories/free-dofollow/">Free and dofollow</a><a href="/directories/launch-sites/">Launch sites</a><a href="/directories/ai-tools/">AI tools</a><a href="/directories/no-account/">No account needed</a></div>
     <div><h3>Data</h3><a href="/registry.json">registry.json</a><a href="/sitemap.xml">Sitemap</a><a href="${REPO}/issues/new?labels=new-directory&amp;title=New%20directory%3A%20">Submit a directory</a></div>
-    <div><h3>Project</h3><a href="${REPO}">Source on GitHub</a><a href="/#how">How it works</a><a href="https://www.npmjs.com/package/dirpush">npm</a></div>
+    <div><h3>Project</h3><a href="${REPO}">Source on GitHub</a><a href="/#how">How it works</a><a href="${REPO}/blob/main/LICENSE">License</a></div>
   </div>
   <div class="shell foot-meta"><span>Registry updated ${registryDate}</span><span>Link types measured on real listing pages. DR by Ahrefs.</span></div>
   <div class="foot-word" aria-hidden="true">dirpush</div>
@@ -222,7 +222,7 @@ cpSync(join(ROOT, "site"), OUT, { recursive: true });
 // ---- landing ----------------------------------------------------------------
 // The map: every directory is one tile, grouped by what its link is worth.
 const tiles = ORDER.flatMap((r) => byRel[r]).map((d, i) => `<a class="tile t-${relOf(d)}" href="/directories/${d.id}/" style="--i:${i}" aria-label="${esc(`${d.name}: ${REL[relOf(d)].label}, ${cost(d).label}`)}" data-name="${esc(d.name)}" data-meta="${esc(`${REL[relOf(d)].short}, ${cost(d).label.toLowerCase()}`)}"></a>`).join("");
-const legend = ORDER.filter((r) => r !== "ugc" && r !== "sponsored").map((r) => {
+const legend = ORDER.filter((r) => r !== "ugc" && r !== "sponsored" && !(r === "unknown" && !byRel.unknown.length)).map((r) => {
   const n = r === "nofollow" ? byRel.nofollow.length + byRel.ugc.length + byRel.sponsored.length : byRel[r].length;
   return `<li><span class="sw t-${r}" aria-hidden="true"></span>${esc(r === "nofollow" ? "Nofollow" : REL[r].short)}<b>${n}</b></li>`;
 }).join("");
@@ -371,7 +371,7 @@ await Bun.write(join(OUT, "index.html"), page(
         operatingSystem: "macOS, Linux, Windows",
         description: `A free, open-source CLI and local dashboard. Your coding agent submits your product to ${dirs.length} verified directories from your own browser.`,
         url: `${SITE}/`,
-        downloadUrl: "https://www.npmjs.com/package/dirpush",
+        downloadUrl: REPO,
         offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       },
     ],
@@ -430,7 +430,7 @@ await Bun.write(join(OUT, "directories/index.html"), page(
   <div class="toolbar">
     <div class="search"><label class="sr" for="q">Search directories</label><input id="q" type="search" placeholder="Search ${dirs.length} directories" autocomplete="off"><kbd aria-hidden="true">/</kbd></div>
     <div class="menus">
-      ${menu("Link", [opt("rel", "dofollow", "Dofollow", byRel.dofollow.length), opt("rel", "mixed", "Mixed", byRel.mixed.length), opt("rel", "nofollow", "Nofollow", byRel.nofollow.length + byRel.ugc.length + byRel.sponsored.length), opt("rel", "unknown", "Not measured", byRel.unknown.length)])}
+      ${menu("Link", [opt("rel", "dofollow", "Dofollow", byRel.dofollow.length), opt("rel", "mixed", "Mixed", byRel.mixed.length), opt("rel", "nofollow", "Nofollow", byRel.nofollow.length + byRel.ugc.length + byRel.sponsored.length), opt("rel", "unknown", "Not measured", byRel.unknown.length)].filter((o) => !o.endsWith("<b>0</b></label>")))}
       ${menu("Cost", Object.entries(COST).map(([k, c]) => opt("cost", k, c.label, dirs.filter((d) => d.cost.classification === k).length)))}
       ${menu("Access", [opt("noacct", "1", "No account needed", dirs.filter((d) => !d.authentication.required).length), opt("bot", "none", "No bot check", dirs.filter((d) => d.link?.bot_check === "none").length)])}
       ${menu("Type", Object.entries(DIRECTORY_KINDS).map(([k, l]) => opt("kind", k, l, dirs.filter((d) => (d.kind ?? "listing") === k).length)).filter((o) => !o.endsWith("<b>0</b></label>")))}
@@ -455,6 +455,7 @@ await Bun.write(join(OUT, "directories/index.html"), page(
         description: `${dirs.length} startup, SaaS and developer-tool directories with cost, sign-in, bot checks, submit-form fields and whether listing links are dofollow, measured on real listing pages.`,
         url: `${SITE}/directories/`,
         isAccessibleForFree: true,
+        license: "https://creativecommons.org/licenses/by/4.0/",
         dateModified: dirs.map(lastmod).sort().at(-1),
         keywords: ["startup directories", "SaaS directories", "dofollow backlinks", "product launch sites"],
         creator: { "@type": "Organization", name: "dirpush", url: SITE },

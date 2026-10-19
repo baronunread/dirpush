@@ -33,5 +33,11 @@
     "repo:check": "bun scripts/check-repo.ts",
     "verify": "bun run repo:check && bun run typecheck && bun test src"
   },
-  "description": "Local-first directory launch tool: verified directory registry, job queue and dashboard for your coding agent"
+  "description": "Local-first directory launch tool: verified directory registry, job queue and dashboard for your coding agent",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/baronunread/dirpush.git"
+  },
+  "homepage": "https://dirpush.com"
 }
