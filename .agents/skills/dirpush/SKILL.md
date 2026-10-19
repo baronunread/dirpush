@@ -61,7 +61,7 @@ Workers read `dirpush capabilities` at the start of a session: email verificatio
 - **"Set up dirpush"** / **"set up this product"** / **"add a product"**: `dirpush init <product-id>`, run the Setup check above if `dirpush capabilities` says it hasn't been done, then help the user fill `workspace/products/<id>/product.yaml` (and the shared `workspace/identity.yaml`, `permissions.yaml` the first time). Validate with `dirpush product show --product <id>`.
 - **"Find N free directories I haven't submitted to and submit"**: `dirpush directories recommend --free --unsubmitted --limit N --product <id>`, show the list, `dirpush submissions enqueue <dir-id…> --product <id>`, then run the loop.
 - **"Continue my launch"**: the whole routine, no other instructions needed (nothing from a previous conversation is either):
-  1. `dirpush actions` — tell the human what's waiting on them. CAPTCHAs and bot checks: tell them to run `dirpush checks` in their terminal (it opens each one in the agents' Chrome and hands the job back); never solve them yourself.
+  1. `dirpush actions` — tell the human what's waiting on them. Google sign-in, CAPTCHAs and bot checks: tell them to run `dirpush checks` in their terminal (it walks them through each one and hands the jobs back); never solve them yourself.
   2. `dirpush submissions check` — marks pending listings live (skip if run in the last day).
   3. Run the loop until `work next` is empty. Jobs still showing another worker with an expired lease are abandoned: `work next` hands them to you; continue from their last step.
   4. Queue empty → `dirpush directories recommend --free --unsubmitted --limit 10 --product <id>`, show the list, enqueue only what the human approves.

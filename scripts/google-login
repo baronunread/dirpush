@@ -7,7 +7,11 @@ PKG="$(cd "$(dirname "$0")/.." && pwd)"
 if [ -n "$LAUNCH_HOME" ]; then H="$LAUNCH_HOME"; elif [ -d "$PKG/.git" ]; then H="$PKG"; else H="$HOME/.dirpush"; fi
 mkdir -p "$H/data" && cd "$H"
 agent-browser close >/dev/null 2>&1
-# The agents' Chrome (`launch browser start`) holds the same profile; close it so this window owns it.
+# The agents' Chrome (`dirpush browser start`) holds the same profile; close it so this window owns it.
 bun "$PKG/src/cli.ts" browser stop >/dev/null 2>&1
-open -na "Google Chrome" --args --user-data-dir="$PWD/data/browser-profile" --use-mock-keychain --password-store=basic \
-  --no-first-run "https://accounts.google.com/ServiceLogin?continue=https%3A%2F%2Fwww.google.com%2F"
+# Wait for the profile lock to go, then run Chrome in the foreground: this returns when the human quits it (⌘Q),
+# so `dirpush checks` can carry on. A separate --user-data-dir is its own Chrome process; the human's Chrome is untouched.
+for i in 1 2 3 4 5 6 7 8 9 10; do [ -L data/browser-profile/SingletonLock ] || break; sleep 0.5; done
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --user-data-dir="$PWD/data/browser-profile" \
+  --use-mock-keychain --password-store=basic --no-first-run --no-default-browser-check \
+  "https://accounts.google.com/ServiceLogin?continue=https%3A%2F%2Fwww.google.com%2F" >/dev/null 2>&1
