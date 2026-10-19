@@ -523,6 +523,44 @@ const commands: Record<string, (() => Promise<unknown> | unknown) | undefined> =
       .orderBy(desc(productApprovals.id)).get() ?? null;
   },
   "assets capture-complete": () => consumeProductApproval(db, Number(arg(0, "approval-id"))),
+  /**
+   * The human's side of bot checks, one job at a time in the terminal: opens the page in the agents' Chrome, waits,
+   * then hands the job back to the agents (or records that the human submitted it). Agents never solve these.
+   */
+  async "checks"() {
+    const types = (flags.type ?? "captcha,bot_protection").split(",").map((t) => t.trim());
+    const queue = db.select().from(jobs)
+      .where(and(eq(jobs.kind, "submission"), eq(jobs.status, "blocked"), inArray(jobs.blockType, types))).all()
+      .filter((j) => !flags.product || j.productId === flags.product);
+    if (!queue.length) return { done: 0, note: `nothing blocked on ${types.join(" or ")}` };
+    if (!process.stdin.isTTY) throw new Error("checks is interactive: run it yourself in a terminal (it's the human's part)");
+    const ab = (...a: string[]) => Bun.spawnSync([join(PKG, "scripts/ab"), ...a], { env: { ...process.env, LAUNCH_HOME: HOME }, stdin: "ignore", stdout: "ignore", stderr: "ignore" }).exitCode;
+    const lines = console[Symbol.asyncIterator]();
+    const ask = async (q: string) => { process.stdout.write(q); return ((await lines.next()).value ?? "q").trim().toLowerCase(); };
+    const tally = { handedBack: [] as string[], submittedByYou: [] as string[], skipped: [] as string[] };
+    for (const [i, job] of queue.entries()) {
+      const dir = await loadDirectory(job.subject).then((d) => d.directory).catch(() => null);
+      const url = job.blockMessage?.match(/https?:\/\/[^\s)'"]+/)?.[0]?.replace(/[.,;]$/, "") ?? dir?.submission_url ?? dir?.website;
+      console.log(`\n[${i + 1}/${queue.length}] ${dir?.name ?? job.subject} (${job.blockType})\n${job.blockMessage ?? ""}\n`);
+      if (url && ab("open", url) === 0) Bun.spawnSync([join(PKG, "scripts/show-browser")], { env: { ...process.env, LAUNCH_HOME: HOME }, stdin: "ignore", stdout: "ignore", stderr: "ignore" });
+      else if (url) console.log(`couldn't open the agents' Chrome; open it yourself: ${url}`);
+      console.log("Clear the check in that window (and anything the message asks for).");
+      let a = "";
+      while (!["d", "s", "n", "q"].includes(a)) a = await ask("[d] cleared, agents take it from here  [s] I submitted it myself  [n] skip  [q] quit: ");
+      if (a === "q") break;
+      if (a === "n") { tally.skipped.push(job.subject); continue; }
+      if (a === "d") {
+        J.unblock(db, job.id, "human cleared the bot check in the agents' Chrome; continue in the same browser session");
+        tally.handedBack.push(job.subject);
+      } else {
+        const link = await ask("listing URL, if there is one (Enter to skip): ");
+        J.recordManual(db, job.id, "pending", link && link !== "q" ? link : undefined);
+        tally.submittedByYou.push(job.subject);
+      }
+    }
+    return { ...tally, next: tally.handedBack.length ? `ask your agent to "continue my launch": ${tally.handedBack.length} job(s) are queued again` : undefined };
+  },
+
   /** Everything waiting on the human, grouped. --product narrows it. */
   "actions": () => {
     const mine = <T extends { productId: string }>(xs: T[]) => xs.filter((x) => !flags.product || !x.productId || x.productId === flags.product);
@@ -661,6 +699,7 @@ const HELP: [string, [string, string][]][] = [
     ["products list", "all products in this workspace"],
     ["permission <group.action>", "automatic | confirm | never for an action, e.g. accounts.oauth_google"],
     ["actions [--product id]", "everything waiting on the human, grouped"],
+    ["checks [--type captcha,bot_protection] [--product id]", "for the human: clear CAPTCHAs and bot checks one by one in the agents' Chrome, then hand each job back"],
   ]],
   ["Work loop", [
     ["work next [--claim]", "next submission job (unknown ones first); --claim leases it to you"],

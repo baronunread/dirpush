@@ -24,7 +24,8 @@ dirpush init acme                # sets up ~/.dirpush and installs the agent ski
 | `dirpush directories recommend --free --unsubmitted --product <id>` | Directories that fit and haven't been tried |
 | `dirpush submissions list --product <id>` | Every submission and its outcome |
 | `dirpush submissions check` | Re-check pending listings and mark live ones |
-| `dirpush todo list` | What needs you: CAPTCHAs, verification emails, questions |
+| `dirpush actions` | What needs you: CAPTCHAs, verification emails, questions |
+| `dirpush checks` | Clear CAPTCHAs and bot checks one by one in the agents' Chrome; agents pick each job back up |
 | `dirpush registry updates [--apply]` | Update your registry from the published one on dirpush.com |
 | `dirpush registry audit` | Measure link type, noindex and bot checks on real listing pages |
 | `dirpush submissions add <id or URL>` | Record a listing you made yourself |
