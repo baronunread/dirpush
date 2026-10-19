@@ -1,0 +1,66 @@
+id: website-rating
+name: Website Rating
+website: https://www.websiterating.com
+submission_url: https://www.websiterating.com/submit/
+cost:
+  classification: FREEMIUM
+  notes: "Free tier: no cost, no badge/backlink required on submitter's site, listing gets a rel=\"ugc\" link from Website Rating; reviewed 4-8 weeks, approval not guaranteed. $49 Fast Track = 1-2 day priority review + dofollow link. $99 +Featured adds homepage/category featured placement. $149 +Interview adds a published founder interview with a dofollow link."
+audience:
+  - startups
+  - saas
+  - ai-tools
+  - developer-tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: Website URL
+      required: true
+    - name: Startup name
+      required: true
+    - name: Tagline
+      required: true
+    - name: Short description
+      required: true
+    - name: Primary category
+      required: true
+    - name: Email
+      required: true
+  conditions:
+    - English only
+    - one submission per domain
+    - "4-8 week manual review for free tier, approval not guaranteed"
+autofetch:
+  supported: true
+  expected:
+    - name
+    - tagline
+    - description
+    - preview image
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: 4-8 weeks for free tier (1-2 business days for paid Fast Track)
+listing_url_pattern: "https://www.websiterating.com/startups/{slug}/"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.websiterating.com/startups/abridge/
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: turnstile
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bB
+  sources:
+    - https://www.websiterating.com/submit/
+    - https://www.websiterating.com/startups/mapgrid/

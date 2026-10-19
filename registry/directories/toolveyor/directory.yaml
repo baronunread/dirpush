@@ -1,0 +1,44 @@
+id: toolveyor
+name: Toolveyor
+website: https://toolveyor.com/
+submission_url: https://toolveyor.com/submit
+cost:
+  classification: VERIFIED_FREE
+  notes: Public CTA says submit for free. Paid custom advertising/partnerships are separate; no paid listing tier is shown.
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email magic link
+    - google
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Human/editorial review before publication; timing not stated
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://toolveyor.com/diffusionbee
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://toolveyor.com/
+    - https://toolveyor.com/submit

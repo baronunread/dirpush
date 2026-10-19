@@ -1,0 +1,65 @@
+id: saastr-community-agents
+name: SaaStr Community AI Agent Directory
+website: https://saastr.ai/community-agents
+submission_url: https://saastr.ai/community-agents
+cost:
+  classification: VERIFIED_FREE
+  notes: "Free submission, manually reviewed weekly, no paid tier or badge/backlink requirement found anywhere on the page or nav."
+audience:
+  - ai-tools
+  - ai-agents
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: agent_name
+      required: true
+    - name: website_url
+      required: true
+    - name: description
+      required: true
+      limit: 200
+    - name: category
+      required: true
+    - name: full_description
+      required: false
+      limit: 1000
+    - name: youtube_video_url
+      required: false
+    - name: logo
+      required: false
+    - name: your_email
+      required: true
+    - name: your_name
+      required: false
+  conditions:
+    - "manual review before going live, reviewed weekly"
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+kind: listing
+human_only: null
+review_time: weekly
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://saastr.ai/community-agents
+  samples: 1
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bC
+  sources:
+    - https://saastr.ai/community-agents

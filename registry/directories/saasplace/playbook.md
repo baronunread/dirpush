@@ -1,0 +1,1 @@
+Use Submit and fill product name, website, one-line tagline (max 60 characters), 2–3 sentence description, pricing model, and your role. Optionally choose up to two categories and add extra context. The form explicitly says free with no strings; submissions are hand-reviewed within 3 business days. No account is required.

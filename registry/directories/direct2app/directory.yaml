@@ -1,0 +1,47 @@
+id: direct2app
+name: Direct2App
+website: https://www.direct2app.com
+submission_url: https://www.direct2app.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free tier requires a dofollow backlink to direct2app.com and up to 30-day review; $7.99 Pro removes backlink requirement, $29.99 Premium adds featured placement."
+audience:
+  - saas
+  - ai-tools
+  - software
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+    - github
+submission:
+  url_first: true
+  fields: []
+  conditions:
+    - backlink required for free tier
+    - up to 30-day manual review
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.direct2app.com/item/power-bi
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-f1
+  sources:
+    - https://www.direct2app.com/pricing
+    - https://www.direct2app.com/submit

@@ -1,0 +1,65 @@
+id: technologyadvice
+name: TechnologyAdvice
+website: https://technologyadvice.com
+submission_url: https://solutions.technologyadvice.com/list-your-product/
+cost:
+  classification: FREEMIUM
+  notes: "Basic tier free forever, no badge/backlink required; Enhanced tier $100/month adds PPC, intent data, audience analytics, custom branding as visibility upsells."
+audience:
+  - saas
+  - business-software
+  - enterprise
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: false
+  fields:
+    - name: email
+      required: true
+    - name: first_name
+      required: true
+      limit: 50
+    - name: last_name
+      required: true
+      limit: 50
+    - name: company
+      required: true
+      limit: 255
+    - name: job_title
+      required: true
+      limit: 100
+    - name: website
+      required: true
+    - name: phone
+      required: true
+    - name: profile_type
+      required: true
+  conditions: []
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 10
+kind: listing
+human_only: null
+link:
+  rel: sponsored
+  method: sample_listing
+  evidence: https://technologyadvice.com/crm/
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bC
+  sources:
+    - https://solutions.technologyadvice.com/list-your-product/

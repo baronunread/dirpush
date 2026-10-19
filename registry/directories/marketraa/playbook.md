@@ -1,0 +1,1 @@
+Open the homepage and choose Submit your tool. The form accepts tool name, website, category, one-line/full descriptions, pricing and differentiator; email is required and company is optional. It offers manual entry or an AI-assisted details prompt. The form says submissions are reviewed and that listing is free with no paid placements.

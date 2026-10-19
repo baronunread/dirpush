@@ -1,0 +1,46 @@
+id: awesome-remote-mcp-servers
+name: Awesome Remote MCP Servers (punkpeye)
+website: https://github.com/punkpeye/awesome-remote-mcp-servers
+submission_url: https://github.com/punkpeye/awesome-remote-mcp-servers/blob/main/CONTRIBUTING.md
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Contribution rules require the submitting account to star the repository and the server to have a Glama connector listing and README badge. No monetary fee. The badge is in the list entry, not on the product website."
+audience:
+  - mcp-servers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Required star by submitting GitHub account
+    - Public shared remote URL must answer MCP initialize
+    - "Public signup allowed; invite-only, per-user endpoints, and handshake behind paywall are rejected"
+    - Glama connector score badge required in GitHub README entry
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: github_list
+human_only: null
+link:
+  rel: nofollow
+  method: platform_rule
+  evidence: https://github.com/punkpeye/awesome-remote-mcp-servers
+  samples: 0
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-08
+  by: codex
+  sources:
+    - https://github.com/punkpeye/awesome-remote-mcp-servers/blob/main/CONTRIBUTING.md

@@ -1,0 +1,5 @@
+- This is a daily launch board (like Product Hunt), not a plain directory: limited launches per day at 8:00 AM UTC, with homepage sections for 'Top Projects Launching Today', 'Yesterday's Launches', 'This Month's Best'.
+- Free path requires adding a verified dofollow backlink to launchvault.dev from your own site before you can pick a launch date ('Start Backlink Launch'). Without the backlink the only path is Premium ($9.99-$19.99) which gives you their guaranteed dofollow backlink instead and skips the queue.
+- Submission is gated behind an account: opening /projects/submit redirects to /sign-in?redirect=/projects/submit. Signup supports email/password, Google, and GitHub; login page has a Cloudflare Turnstile widget.
+- Listings are permanent, Google-indexed pages at /projects/{slug}.
+- Not auto-submitted since free tier is conditional (backlink requirement).

@@ -1,0 +1,51 @@
+id: awesomeindie
+name: Awesome Indie
+website: https://awesomeindie.com
+submission_url: https://awesomeindie.com/submit
+cost:
+  classification: FREEMIUM
+  notes: "Free launch in the next available queue slot; page and maker profile included. A do-follow link is shown at 20 upvotes. Optional one-off upgrades: Skip the Line $9.99, Boost Launch $29.99, Premium Launch $49.99."
+audience:
+  - indie-makers
+  - startups
+  - software
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - github
+    - x
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Free launches use the next available queue slot; paid upgrades are optional.
+    - Sign-in required; submission fields are behind authentication.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: launch_board
+human_only: null
+listing_url_pattern: "https://awesomeindie.com/product/{slug}"
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://awesomeindie.com/product/forma-cv
+  samples: 3
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://awesomeindie.com/submit
+    - https://awesomeindie.com/pricing
+    - https://awesomeindie.com/product/roomika

@@ -1,0 +1,45 @@
+id: findly-tools
+name: Findly.tools
+website: https://findly.tools
+submission_url: https://findly.tools/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free with badge requirement; paid $59+ for submission service
+audience:
+  - saas
+  - ai-tools
+  - developer-tools
+  - productivity
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - free listing badge/link required on your site
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: listing
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://findly.tools/testneo
+  samples: 3
+  noindex: false
+  claimed: null
+  bot_check: turnstile
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: haiku-8
+  sources:
+    - https://findly.tools

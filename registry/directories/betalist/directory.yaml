@@ -1,0 +1,52 @@
+id: betalist
+name: BetaList
+website: https://betalist.com
+submission_url: https://betalist.com/submit
+cost:
+  classification: PAID
+  notes: All submissions require payment; plans shown at checkout. Full refund if not selected.
+audience:
+  - startups
+  - saas
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+    - x
+submission:
+  url_first: true
+  fields: []
+  conditions:
+    - editorial review
+    - payment required
+    - own domain required (no free hosting subdomains)
+autofetch:
+  supported: true
+  expected:
+    - name
+    - description
+    - logo
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://betalist.com/startups/wilo
+  samples: 2
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: haiku-6
+  sources:
+    - https://betalist.com/support
+    - https://betalist.com/advertise

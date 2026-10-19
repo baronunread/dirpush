@@ -1,0 +1,78 @@
+id: indieneed
+name: IndieNeed
+website: https://www.indieneed.com
+submission_url: https://www.indieneed.com/submit
+cost:
+  classification: FREEMIUM
+  notes: "Free $0 listing with staff review and nofollow website link, no card or reciprocal badge required. Optional $3 one-time dofollow upgrade; featured launch packages $15–$120 are separate paid options."
+audience:
+  - saas
+  - software
+  - startups
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email
+submission:
+  url_first: true
+  fields:
+    - name: website_url
+      required: true
+    - name: product_name
+      required: true
+      limit: 40
+    - name: tagline
+      required: true
+      limit: 60
+    - name: logo
+      required: true
+    - name: screenshots
+      required: true
+    - name: categories
+      required: true
+    - name: launch_date
+      required: true
+    - name: description
+      required: true
+      limit: 600
+    - name: first_comment
+      required: false
+      limit: 200
+    - name: x_handle
+      required: false
+      limit: 200
+  conditions:
+    - Free listing requires staff review; no card or reciprocal badge required
+    - Choose a launch date today or later (UTC)
+    - Up to 3 categories
+    - "Logo: square PNG/JPG/WebP, at least 512×512, up to 1 MB"
+    - "At least 1 screenshot, maximum 5; PNG/JPG/WebP, at least 1270×760, up to 8 MB each"
+autofetch:
+  supported: true
+  expected:
+    - product details
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 5
+kind: launch_board
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://www.indieneed.com/products/torvecta
+  samples: 3
+  noindex: false
+  claimed: nofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-09
+  by: codex
+  sources:
+    - https://www.indieneed.com/submit
+    - https://www.indieneed.com/pricing

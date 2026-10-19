@@ -1,0 +1,51 @@
+id: acid-tools
+name: Acid Tools
+website: https://acidtools.com
+submission_url: https://acidtools.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "No submission fee; Google login required. Before listing details, the submit flow requires generating and adding an Acid Tools badge to the product homepage or footer. The badge is required to proceed with the free listing; it is not merely an optional dofollow upgrade."
+audience:
+  - ai-tools
+  - saas
+  - automation
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - manual review
+    - login required
+    - Generate and install Acid Tools badge on product homepage/footer before proceeding to listing details
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+kind: listing
+human_only: null
+listing_url_pattern: "https://acidtools.com/ai/{slug}"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://acidtools.com/ai/vynzo
+  samples: 2
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-06
+  by: codex
+  sources:
+    - https://acidtools.com/submit
+    - https://acidtools.com/explore
+    - https://acidtools.com/ai/orbitype

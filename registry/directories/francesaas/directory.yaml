@@ -1,0 +1,49 @@
+id: francesaas
+name: FranceSaaS
+website: https://francesaas.fr/
+submission_url: https://francesaas.fr/soumettre?fs_origin=reference&fs_cta=listing_start
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free listing requires the FranceSaaS badge to stay in the product website footer while active. €39 HT Express publishes within 24 hours and still requires the badge; €99 HT Premium publishes immediately without badge.
+audience:
+  - saas
+  - software
+  - marketing
+authentication:
+  required: true
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Free and Express listings require the FranceSaaS badge to remain in the website footer while the listing is active.
+    - Product must be available and relevant to the French market.
+    - Public listing form fields are behind account/form steps and were not inspected.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: true
+kind: listing
+human_only: null
+review_time: Several weeks free; 24 hours Express (€39 HT); immediate Premium (€99 HT).
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://francesaas.fr/saas/quardy
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://francesaas.fr/referencer-son-saas
+    - https://francesaas.fr/tarifs
+    - https://francesaas.fr/soumettre?fs_origin=reference&fs_cta=listing_start

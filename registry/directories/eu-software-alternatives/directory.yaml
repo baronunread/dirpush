@@ -1,0 +1,87 @@
+id: eu-software-alternatives
+name: EU Software Alternatives
+website: https://eusoftwarealternatives.eu/
+submission_url: https://eusoftwarealternatives.eu/submit-software/
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free editorial listing; no paid placement and affiliate participation is not required. Eligibility requires EU/EEA/UK/Swiss HQ, majority ownership in those jurisdictions, and European data hosting as a default or standard option."
+audience:
+  - saas
+  - software
+  - marketing
+  - developer-tools
+  - productivity
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: company_name
+      required: true
+    - name: contact_person
+      required: true
+    - name: email
+      required: true
+    - name: headquarters_country
+      required: true
+    - name: official_website
+      required: true
+    - name: affiliate_program_status
+      required: true
+    - name: affiliate_program_url
+      required: true
+    - name: software_name
+      required: true
+    - name: software_type
+      required: true
+    - name: us_software_alternative
+      required: true
+    - name: short_description
+      required: true
+      limit: 200
+    - name: typical_use
+      required: true
+    - name: intended_audience
+      required: true
+    - name: eu_focus
+      required: true
+    - name: key_differentiator
+      required: true
+    - name: features
+      required: true
+    - name: hosting_location
+      required: false
+    - name: documentation_url
+      required: false
+  conditions:
+    - Editorial review; submission does not guarantee listing.
+    - "Vendor HQ in EU/EEA/UK/Switzerland, majority ownership in those jurisdictions, and EU/EEA/UK/Swiss data hosting as a default or standard option are required."
+    - Affiliate participation is not required for inclusion.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://eusoftwarealternatives.eu/eu_software/acumbamail/
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://eusoftwarealternatives.eu/submit-software/
+    - https://eusoftwarealternatives.eu/about/
+    - https://eusoftwarealternatives.eu/eu-software-directory/

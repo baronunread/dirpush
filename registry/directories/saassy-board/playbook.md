@@ -1,0 +1,1 @@
+Choose Start Earning Now or Start Now to create an account with first name, last name, and email. Competition entry is $10 once. The FAQ says participation requires connecting a verified Stripe, Dodo Payments, Lemon Squeezy, Polar, or Paystack account and publicly sharing earnings metrics for revenue-based scoring. Product submission fields are only shown after signup.

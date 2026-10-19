@@ -1,0 +1,58 @@
+id: launchfree
+name: LaunchFree.io
+website: https://launchfree.io/
+submission_url: https://launchfree.io/submit.html
+cost:
+  classification: VERIFIED_FREE
+  notes: Listing is free forever; permanent dofollow backlink included. Sponsor placements are separate labeled advertising.
+audience:
+  - saas
+  - ai-tools
+  - developer-tools
+  - startups
+  - products
+  - mobile-apps
+  - open-source
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: launch_name
+      required: true
+    - name: launch_url
+      required: true
+    - name: tagline
+      required: true
+      limit: 80
+  conditions:
+    - Human review
+    - email confirmation
+    - later wizard fields not inspected
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: launch_board
+review_time: 24 hours
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://launchfree.io/listings/unir-imagenes.html
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: turnstile
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://launchfree.io/
+    - https://launchfree.io/submit.html

@@ -1,0 +1,47 @@
+id: llms-txt-hub
+name: llms.txt Hub
+website: https://llmstxthub.com
+submission_url: https://llmstxthub.com/submit
+cost:
+  classification: VERIFIED_FREE
+  notes: Public submit redirects to login; official repository documents a manual no-fee pull-request route for adding a website MDX entry with valid public llms.txt. Web-form fields and final gates were not inspected behind login.
+audience:
+  - llms-txt
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - "Public working llms.txt, functional site, accurate description and category"
+    - Web submission requires login; manual repository PR is also documented
+    - Validation and maintainer review
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: llms_directory
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://llmstxthub.com/websites/plym-llms-txt
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-08
+  by: codex
+  sources:
+    - https://llmstxthub.com/submit
+    - https://llmstxthub.com/faq
+    - https://raw.githubusercontent.com/thedaviddias/llms-txt-hub/main/README.md

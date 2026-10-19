@@ -1,0 +1,46 @@
+id: tool-commons
+name: Tool Commons
+website: https://toolcommons.org/
+submission_url: https://github.com/ToolCommons/toolcommons.github.io/issues/new?template=submit-tool.md
+cost:
+  classification: VERIFIED_FREE
+  notes: "No fee; submit a GitHub issue. Tool must meet the directory’s strict open-source, no-login, local-first, no-ads/tracking, static-hostable, single-purpose criteria."
+audience:
+  - open-source
+  - developer-tools
+  - productivity
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - "Eligibility criteria: OSI-licensed source, no login for core use, local-first, no ads/tracking, static-hostable, single-purpose"
+    - Human review via GitHub issue
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://toolcommons.org/
+  samples: 1
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://toolcommons.org/
+    - https://github.com/ToolCommons/toolcommons.github.io/issues/new?template=submit-tool.md

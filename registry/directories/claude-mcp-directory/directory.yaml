@@ -1,0 +1,45 @@
+id: claude-mcp-directory
+name: Claude MCP Connector Directory
+website: https://claude.com/marketplace/connectors
+submission_url: https://claude.ai/directory/manage
+cost:
+  classification: PAID
+  notes: Official directory docs distinguish remote MCP connector listings from plugin bundles. Submission requires a paid Claude plan and eligible role; free accounts cannot submit. No additional per-listing fee is described.
+audience:
+  - mcp-servers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - claude-account
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Paid Claude plan and eligible role required
+    - Submit remote MCP server URL as MCP connector; no GitHub repository required for connector type
+    - Policy compliance and server verification
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: mcp_registry
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://claude.com/de/product/claude-code
+  samples: 1
+  noindex: false
+  claimed: null
+  bot_check: hcaptcha
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-08
+  by: codex
+  sources:
+    - https://claude.com/docs/directory/publish

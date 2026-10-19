@@ -1,0 +1,53 @@
+id: seewhatnewai
+name: SeeWhatNewAI
+website: https://www.seewhatnewai.com
+submission_url: https://www.seewhatnewai.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free tier requires a backlink tag on the submitter's homepage and has an approximately three-month review. $10 one-time expedited review takes about one week and has no backlink requirement; rejected paid submissions are refunded."
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email
+    - password
+submission:
+  url_first: false
+  fields:
+    - name: website name
+      required: true
+    - name: website URL
+      required: true
+  conditions:
+    - "Free submission requires adding the site's backlink tag to the product homepage"
+    - Editorial review
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: about 3 months for free submission; about 1 week for $10 expedited submission
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.seewhatnewai.com/devintern
+  samples: 3
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.seewhatnewai.com/submit
+    - https://www.seewhatnewai.com/pricing
+    - https://www.seewhatnewai.com/sign-in

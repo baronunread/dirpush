@@ -1,0 +1,48 @@
+id: indie-deals
+name: Indie.Deals
+website: https://indie.deals
+submission_url: https://indie.deals/submit
+cost:
+  classification: PAID
+  notes: "$19 Standard (manual review) or $49 Pro (instant publish, featured 15 days). No free option."
+audience:
+  - indie-products
+  - saas
+  - tools
+  - marketing
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - payment_required
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 5
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://indie.deals/item/byedispute
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: haiku-21
+  sources:
+    - https://indie.deals/
+    - https://indie.deals/pricing

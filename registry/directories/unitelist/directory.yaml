@@ -1,0 +1,49 @@
+id: unitelist
+name: Unite List
+website: https://unitelist.com
+submission_url: https://unitelist.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "No payment required, but the free listing gates on a badge: submit flow is Website > Badge > Details, and the Details step (where the actual listing content is entered) only unlocks once a do-follow badge linking back to the listing is verified present on the product's own homepage/footer. Confirmed by a real, human-accepted submission. No paid tier exists on the site."
+audience:
+  - saas
+  - productivity
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+submission:
+  url_first: true
+  fields: []
+  conditions:
+    - manual review
+    - Google account required
+    - badge required to go live (Details step unlocks only after badge is verified on the product site)
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+kind: listing
+human_only: null
+listing_url_pattern: "https://unitelist.com/product/{slug}"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://unitelist.com/product/ipconfig
+  samples: 1
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bC
+  sources:
+    - https://unitelist.com/submit
+    - https://unitelist.com/product/labrynth-ai

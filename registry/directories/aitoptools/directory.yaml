@@ -1,0 +1,74 @@
+id: aitoptools
+name: AITopTools
+website: https://aitoptools.com
+submission_url: https://aitoptools.com/claim-your-tool/
+cost:
+  classification: FREEMIUM
+  notes: "Free standard listing reviewed in 2-5 business days, no badge/backlink required; paid featured/fast-track listing reviewed within 24 hours."
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: true
+  fields:
+    - name: tool_url
+      required: true
+    - name: email
+      required: true
+    - name: name
+      required: true
+    - name: category
+      required: true
+    - name: short_description
+      required: true
+      limit: 300
+    - name: description
+      required: true
+      limit: 10000
+    - name: use_case_1
+      required: false
+    - name: use_case_2
+      required: false
+    - name: use_case_3
+      required: false
+    - name: pricing_model
+      required: false
+  conditions:
+    - "manual review, 2-5 business days for free tier"
+autofetch:
+  supported: true
+  expected:
+    - name
+    - description
+    - category
+    - logo
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 1
+kind: listing
+human_only: null
+review_time: 2-5 business days (free); 24 hours (paid)
+listing_url_pattern: "https://aitoptools.com/tool/{slug}/"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://aitoptools.com/tool/help/
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bC
+  sources:
+    - https://aitoptools.com/claim-your-tool/
+    - https://aitoptools.com/help/
+    - https://aitoptools.com/tool/atoms/

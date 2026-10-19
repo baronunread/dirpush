@@ -1,0 +1,46 @@
+id: toolkitly
+name: Toolkitly
+website: https://www.toolkitly.com/
+submission_url: https://www.toolkitly.com/pricing
+cost:
+  classification: PAID
+  notes: No free tier. Starter $29 one-time; Growth $49; Elite $99 one-time.
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Paid plan required; fields behind login
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: listing
+human_only: null
+review_time: usually within 48 hours
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://www.toolkitly.com/staffing-leads
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.toolkitly.com/pricing
+    - https://www.toolkitly.com/login

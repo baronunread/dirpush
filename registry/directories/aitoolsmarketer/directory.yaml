@@ -1,0 +1,56 @@
+id: aitoolsmarketer
+name: AI Tools for Marketers Directory
+website: https://aitoolsmarketer.com
+submission_url: https://aitoolsmarketer.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free tier requires displaying a badge or text link on your own site, kept live. Paid Featured ($75 one-time) and Featured video ($145 one-time) tiers skip the badge requirement and add a written review/interview or YouTube review."
+audience:
+  - ai-tools
+  - marketing
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: tool_url
+      required: true
+    - name: tool_name
+      required: true
+    - name: what_it_does
+      required: true
+      limit: 60
+    - name: marketing_job_category
+      required: true
+    - name: email
+      required: true
+  conditions:
+    - free tier requires a badge or text link on your site
+    - manual review by a person
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: listing
+human_only: null
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://aitoolsmarketer.com/gwi-spark/
+  samples: 3
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-28
+  by: sonnet-r6
+  sources:
+    - https://aitoolsmarketer.com
+    - https://aitoolsmarketer.com/submit

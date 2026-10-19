@@ -1,0 +1,56 @@
+id: makerhunt
+name: MakerHunt
+website: https://makerhunt.io/
+submission_url: https://makerhunt.io/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free launch requires a MakerHunt badge on the product website. Paid premium launch plan also available; public pricing page title states $19.
+audience:
+  - startups
+  - saas
+  - software
+  - products
+  - developer-tools
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Free launch requires the MakerHunt badge on the product website.
+    - Free launches run in the standard queue and appear on the homepage for 7 days.
+    - Projects launch at 8:00 AM UTC each Monday.
+    - Form fields are hidden until sign-in.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: launch_board
+human_only: null
+review_time: Projects launch on Mondays at 8:00 AM UTC; standard queue.
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://makerhunt.io/tools/launch-readiness-checker
+  samples: 1
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://makerhunt.io/
+    - https://makerhunt.io/submit
+    - https://makerhunt.io/pricing

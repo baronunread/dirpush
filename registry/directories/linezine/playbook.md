@@ -1,0 +1,1 @@
+Use /list-your-tool. The page advertises paid options starting at $5 one-time; it also lists $29 one-time, Featured at $129/year, and article placement from $49. Form fields are not shown until selecting a paid CTA.

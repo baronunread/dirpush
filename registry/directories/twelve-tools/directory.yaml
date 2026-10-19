@@ -1,0 +1,47 @@
+id: twelve-tools
+name: Twelve Tools
+website: https://twelve.tools
+submission_url: https://twelve.tools
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free with backlink requirement. Pro $36 one-time ($25.20 with FROGDR code) removes backlink requirement.
+audience:
+  - saas
+  - tools
+  - ai-tools
+  - developer-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: true
+  fields: []
+  conditions:
+    - backlink to twelve.tools required for free plan
+    - 72-hour review for free
+    - 24-hour review for pro
+autofetch:
+  supported: true
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+kind: listing
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://twelve.tools/onetworesume
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: haiku-6
+  sources:
+    - https://twelve.tools/pricing

@@ -1,0 +1,45 @@
+id: awesome-mcp-list
+name: Awesome MCP List (MobinX)
+website: https://github.com/MobinX/awesome-mcp-list
+submission_url: https://github.com/MobinX/awesome-mcp-list/blob/main/CONTRIBUTING.md
+cost:
+  classification: VERIFIED_FREE
+  notes: "Primary contribution guide accepts real MCP servers with a public GitHub repository, through a single README bullet and pull request. Website-only hosted endpoints without public source are rejected. No submission fee or product-site backlink requirement."
+audience:
+  - mcp-servers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Public non-archived GitHub repository required
+    - One new README bullet; no unrelated formatting changes
+    - "GitHub stars badge required in README entry, not on product site"
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: github_list
+human_only: null
+link:
+  rel: nofollow
+  method: platform_rule
+  evidence: https://github.com/MobinX/awesome-mcp-list
+  samples: 0
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-08
+  by: codex
+  sources:
+    - https://raw.githubusercontent.com/MobinX/awesome-mcp-list/main/CONTRIBUTING.md

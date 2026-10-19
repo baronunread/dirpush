@@ -1,0 +1,43 @@
+id: trustmrr
+name: TrustMRR
+website: https://trustmrr.com
+submission_url: https://trustmrr.com
+cost:
+  classification: PAID
+  notes: $10 base listing fee mentioned for affiliates
+audience:
+  - startups
+  - digital-businesses
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - payment required
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://trustmrr.com/startup/0mcp
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: math
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: haiku-18
+  sources:
+    - https://trustmrr.com

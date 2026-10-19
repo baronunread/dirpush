@@ -1,0 +1,66 @@
+id: navs
+name: Navs Site
+website: https://navs.site
+submission_url: https://navs.site/submit
+cost:
+  classification: FREEMIUM
+  notes: "Free basic submission (auto-published, no review, nofollow, no featured placement, no badge required); paid Standard/Pro tiers add dofollow links, featured placement, and API access with usage credits."
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: website_url
+      required: true
+      limit: 4096
+    - name: tool_name
+      required: true
+      limit: 160
+    - name: one_line_description
+      required: true
+      limit: 160
+    - name: categories
+      required: false
+    - name: ai_type
+      required: true
+    - name: platforms
+      required: true
+    - name: product_languages
+      required: false
+    - name: public_support_email
+      required: false
+      limit: 254
+  conditions:
+    - "7-step wizard: Basics, Media, Features & FAQs, Pricing, Details, Alternatives, Review"
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: listing
+human_only: null
+review_time: "instant (automatic publication, no review, on the free tier)"
+listing_url_pattern: "https://navs.site/website/{slug}"
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://navs.site/website/deepseek
+  samples: 4
+  noindex: false
+  claimed: nofollow
+  bot_check: math
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bC
+  sources:
+    - https://navs.site/pricing
+    - https://navs.site/submit
+    - https://navs.site/website/chatgpt

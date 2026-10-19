@@ -1,0 +1,47 @@
+id: indie-page
+name: Indie Page
+website: https://indiepa.ge/
+submission_url: "https://indiepa.ge/#signup"
+cost:
+  classification: FREEMIUM
+  notes: "Build an Indie Page for free. Optional one-time plans: $25 1-Year Pass (discounted from $55), $45 Lifetime Deal (discounted from $75)."
+audience:
+  - startups
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: founder_page_slug
+      required: true
+  conditions:
+    - "Products are showcased through a founder's Indie Page; product management details are behind account creation."
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://indiepa.ge/h
+  samples: 3
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://indiepa.ge/
+    - https://indiepa.ge/discover
+    - "https://indiepa.ge/#pricing"

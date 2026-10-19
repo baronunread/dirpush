@@ -1,0 +1,72 @@
+id: crozdesk
+name: Crozdesk
+website: https://crozdesk.com
+submission_url: https://vendor.revleads.com/user/signup
+cost:
+  classification: FREEMIUM
+  notes: "Free listing via Revleads vendor application, no credit card required. Paid upsells: Premium Listings (sponsored content/deep links), display ads, front-page/brand placement."
+audience:
+  - saas
+  - business-software
+  - enterprise-software
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: true
+  fields:
+    - name: first_name
+      required: true
+    - name: last_name
+      required: true
+    - name: email
+      required: true
+    - name: phone_number
+      required: true
+    - name: company_name
+      required: true
+    - name: hq_location
+      required: true
+    - name: product_name
+      required: true
+    - name: software_url
+      required: true
+    - name: primary_category
+      required: true
+    - name: description
+      required: true
+      limit: 175
+    - name: monthly_marketing_budget
+      required: true
+  conditions:
+    - "automated eligibility review (\"machine learning bots\" per the form)"
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+kind: lead_gen
+human_only: null
+listing_url_pattern: "https://crozdesk.com/software/{slug}"
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://crozdesk.com/operations-management/project-management-software
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-28
+  by: sonnet-rc
+  sources:
+    - https://crozdesk.com
+    - https://vendor.revleads.com/user/signup
+    - https://vendor.revleads.com/vendor-policy

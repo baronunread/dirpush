@@ -1,0 +1,44 @@
+id: tekpon
+name: Tekpon
+website: https://tekpon.com
+submission_url: https://tekpon.com/get-listed
+cost:
+  classification: PAID
+  notes: $249 one-time fee
+audience:
+  - saas
+  - business-software
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - linkedin
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - payment required
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://tekpon.com/software/close/reviews/
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: haiku-18
+  sources:
+    - https://tekpon.com/get-listed

@@ -1,0 +1,67 @@
+id: trustradius
+name: TrustRadius
+website: https://trustradius.com
+submission_url: https://solutions.trustradius.com/claim-your-profile/
+cost:
+  classification: FREEMIUM
+  notes: "Free Profile has no strings attached - no badge/backlink required to go live. 'Qualify for awards and badges' is listed as a free-tier SEO/brand perk (badges TrustRadius gives you), not a submission requirement. Premium Profile is a paid upsell (review-generation campaigns, intent data, benchmark analytics via Vendor Portal)."
+audience:
+  - saas
+  - b2b-software
+  - enterprise
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - linkedin
+submission:
+  url_first: false
+  fields:
+    - name: company_name
+      required: true
+    - name: product_name
+      required: true
+    - name: product_description
+      required: true
+    - name: logo
+      required: false
+    - name: website
+      required: true
+    - name: features
+      required: false
+    - name: integrations
+      required: false
+    - name: pricing_info
+      required: false
+    - name: security_info
+      required: false
+  conditions:
+    - account signup required (email or LinkedIn)
+    - manual review by TrustRadius team
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 5
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.trustradius.com/products/notion/pricing
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bC
+  sources:
+    - https://solutions.trustradius.com/claim-your-profile/
+    - https://auth.trustradius.com/login

@@ -1,0 +1,45 @@
+id: mcp-so
+name: MCP.so
+website: https://mcp.so
+submission_url: https://mcp.so/submit?type=server
+cost:
+  classification: PAID
+  notes: Current MCP Server submission page shows a $39 one-time publishing fee and Pay and submit automatically; no free submission option is visible on this route.
+audience:
+  - mcp-servers
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: repository_url
+      required: true
+  conditions:
+    - Payment required on the inspected MCP Server route
+    - Repository URL required
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: mcp_registry
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://mcp.so/servers/kin
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-08
+  by: codex
+  sources:
+    - https://mcp.so/submit?type=server

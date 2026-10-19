@@ -1,0 +1,48 @@
+id: listbulb
+name: ListBulb
+website: https://listbulb.com/
+submission_url: https://listbulb.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free requires badge backlink and 3 weekly upvotes. QuickPass is $10.50 displayed ($15 crossed out), Featured $21 ($30 crossed out), one-time."
+audience:
+  - saas
+  - ai-tools
+  - products
+  - startups
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Badge backlink required for free listing
+    - Upvote 3 products during the same week
+    - editorial review 24–48 hours
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: launch_board
+review_time: 24–48 hours
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://listbulb.com/tools/fastlaunch
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://listbulb.com/pricing

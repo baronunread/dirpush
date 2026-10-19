@@ -1,0 +1,73 @@
+id: launch-community
+name: Launch.community
+website: https://launch.community/
+submission_url: https://launch.community/submit
+cost:
+  classification: FREEMIUM
+  notes: Standard startup submission is labeled $0. Paid promoted slots and advertising are separate; publicly shown ad pricing begins at $159/week.
+audience:
+  - startups
+  - saas
+  - products
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+submission:
+  url_first: false
+  fields:
+    - name: startup_name
+      required: true
+    - name: tagline
+      required: true
+    - name: description
+      required: true
+    - name: logo_file
+      required: false
+    - name: logo_url
+      required: false
+    - name: website_url
+      required: false
+    - name: youtube_url
+      required: false
+    - name: social_links
+      required: false
+    - name: category
+      required: true
+    - name: tags
+      required: false
+    - name: screenshots
+      required: false
+    - name: pricing
+      required: false
+  conditions:
+    - Community upvotes and moderation; no timing stated
+    - Maximum 5 screenshots selections/uploads
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 5
+kind: launch_board
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://launch.community/startup/listaitools
+  samples: 3
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://launch.community/
+    - https://launch.community/submit
+    - https://launch.community/advertise

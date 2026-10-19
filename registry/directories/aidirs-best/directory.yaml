@@ -1,0 +1,46 @@
+id: aidirs-best
+name: Aidirs.best
+website: https://aidirs.best/
+submission_url: https://aidirs.best/submit
+cost:
+  classification: PAID
+  notes: "One-time Starter plan $9.90; permanent product profile, reviewed within 48 hours. No free listing plan shown."
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Paid submission plan required; form fields are behind login
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: 48 hours for Starter plan
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://aidirs.best/item/h-proxy-mcp
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://aidirs.best/pricing
+    - https://aidirs.best/submit

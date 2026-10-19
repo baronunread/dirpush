@@ -1,0 +1,1 @@
+The public submit page requires a launch code bought through Gumroad before scheduling. Fields include product name (40 chars), tagline (60), emoji, URL, launch date, and email. Launch appears by date and can be upvoted.

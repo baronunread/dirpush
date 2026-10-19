@@ -1,0 +1,1 @@
+Public /submit page explains the listing process and links to pricing. Pricing lists one-time plans; avoid entering plan selection unless payment has been authorized. Page says human review takes 24–48 hours. Account method and the actual form remain behind plan selection.

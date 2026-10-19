@@ -1,0 +1,44 @@
+id: aitop10-tools
+name: AITOP10
+website: https://aitop10.tools
+submission_url: https://aitop10.tools/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free tier requires a backlink to AITOP10 on submitter's site; $6.9 Pro tier removes that requirement and speeds up listing."
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: true
+  fields: []
+  conditions:
+    - backlink to AITOP10 required for free tier
+    - manual review after backlink verification
+    - listing within 48 hours to 2 weeks (free tier)
+    - no illegal/adult/gambling content
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://aitop10.tools/detail/skaleagents
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-a
+  sources:
+    - https://aitop10.tools/submit

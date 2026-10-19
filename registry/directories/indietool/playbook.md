@@ -1,0 +1,1 @@
+The homepage prompts for a Standard listing plan at $29.99 one-time. No free submission tier appears. The plan advertises permanent listing, badge-free submission, indexing, and newsletter exposure. Checkout is Stripe.

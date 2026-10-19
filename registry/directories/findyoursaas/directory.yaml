@@ -1,0 +1,47 @@
+id: findyoursaas
+name: Find Your SaaS
+website: https://findyoursaas.com
+submission_url: https://findyoursaas.com/pricing
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free standard listing ($0 limited-time promo, normally $15, capped at 100 free listings per FAQ but currently active), no badge required; Featured $9/month (normally $30) adds priority placement and a lifetime backlink."
+audience:
+  - saas
+  - tools
+authentication:
+  required: true
+  signup_allowed: false
+  methods:
+    - google
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - manual review (72h)
+    - free tier capped at first 100 listings per FAQ wording
+    - after Google sign-in /onboard requires 3 comments and 3 likes on other tools before listing
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: listing
+human_only: null
+review_time: 72 hours
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://findyoursaas.com/tool/1-web-hosting-1-hosting-1-dollar-hosting-with-wordpress
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bC
+  sources:
+    - https://findyoursaas.com/pricing

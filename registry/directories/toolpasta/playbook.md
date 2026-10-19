@@ -1,0 +1,1 @@
+ToolPasta is part of Robopost. Submit at /en/toolpasta/submit. Basic Listing costs $29 one-time and Featured costs $149 one-time. The FAQ says enter the AI tool's website URL, then pay on the payment page; review usually takes about two business days. No payment or submission was started.

@@ -1,0 +1,1 @@
+From Spotlight, choose Feature; /create/project redirects to login. Login offers username/password and Google, and the page has a Join Us signup link. The live Spotlight FAQ says submissions are free during beta, manually screened, and approved launches go public on Monday. Form fields are behind login; do not create an account during research.

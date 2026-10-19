@@ -1,0 +1,1 @@
+Sign in with GitHub, Google or email link. The pricing page confirms free publication on HiCyou without a badge. Free slots are capped daily; badge verification is optional to unlock extra slots/skip the queue. Paid network publishing is separate, starting at $3.99 one-time. Submission fields are hidden behind login.

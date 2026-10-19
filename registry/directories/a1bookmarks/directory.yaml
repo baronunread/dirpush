@@ -1,0 +1,42 @@
+id: a1bookmarks
+name: A1Bookmarks
+website: https://a1bookmarks.com
+submission_url: https://a1bookmarks.com/submit-article
+cost:
+  classification: PAID
+  notes: ₹29.99 INR (~$0.36 USD) per post per month
+audience:
+  - business-services
+  - local-business
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - ₹29.99 monthly per post
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+link:
+  rel: sponsored
+  method: sample_listing
+  evidence: https://a1bookmarks.com/ai-learning-assistant-for-cambridge-students-curioused/
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: unknown
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: haiku-20
+  sources:
+    - https://a1bookmarks.com/pricing-plans

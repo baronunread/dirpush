@@ -1,0 +1,73 @@
+id: saas-fyi
+name: SaaS.fyi
+website: https://saas.fyi/
+submission_url: https://saas.fyi/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free $0 listing requires installing and keeping a badge on the product site; Premium is $99 one-time without the badge.
+audience:
+  - saas
+  - software
+  - startups
+  - developer-tools
+  - analytics
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: product name
+      required: true
+    - name: website URL
+      required: true
+    - name: category
+      required: true
+    - name: pricing model
+      required: true
+    - name: one-line tagline
+      required: true
+      limit: 100
+    - name: description
+      required: true
+    - name: tags
+      required: false
+    - name: your name
+      required: true
+    - name: your email
+      required: true
+    - name: anything else
+      required: false
+    - name: badge acknowledgment
+      required: true
+  conditions:
+    - Free tier requires a Featured on SaaS.fyi badge on the product site within 7 days of being featured; listing may be archived if badge is removed.
+    - Premium is $99 one-time and does not require a badge.
+    - Human review; most submissions take 5–7 days.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: Most submissions 5–7 days
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.saas.fyi/tools/tinystartups
+  samples: 1
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-07
+  by: codex
+  sources:
+    - https://saas.fyi/submit
+    - https://saas.fyi/tools/orb

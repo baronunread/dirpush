@@ -1,0 +1,1 @@
+Enter Website Name and Website URL at /submit. The free route requires adding the supplied anchor link to the product homepage first. The optional $9.90 plan promises review within 24 hours, featured placement, dofollow link, update after 7 days, and a permanent listing.

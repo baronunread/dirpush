@@ -1,0 +1,44 @@
+id: bestsky-tools
+name: BestskyTools
+website: https://bestsky.tools
+submission_url: https://bestsky.tools/pricing
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free Listing requires adding the BestskyTools 'Featured' badge to submitter's site; review takes up to 2 weeks. $14.9 one-time Premium removes the badge requirement and reviews within 24h."
+audience:
+  - saas
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - "unknown - Sign in link present, form not inspected"
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - "'Featured' badge required on submitter's site for free tier"
+    - review within 2 weeks for free tier
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://bestsky.tools/ai-jewelry-model
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-a
+  sources:
+    - https://bestsky.tools/pricing

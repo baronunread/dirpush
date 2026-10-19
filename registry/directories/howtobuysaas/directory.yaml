@@ -1,0 +1,59 @@
+id: howtobuysaas
+name: HowToBuySaaS
+website: https://www.howtobuysaas.com/
+submission_url: https://www.howtobuysaas.com/list-your-saas/
+cost:
+  classification: PAID
+  notes: Growth Listing $29 lifetime; Enterprise $199 lifetime. Public listing flow requires a one-time Stripe payment. No free option shown.
+audience:
+  - saas
+  - software
+  - business
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: website
+      required: true
+    - name: product description
+      required: true
+    - name: audience
+      required: true
+    - name: features
+      required: true
+    - name: screenshots
+      required: false
+    - name: documentation
+      required: false
+    - name: logo
+      required: false
+  conditions:
+    - One-time Stripe payment before product information submission
+    - Human review before publication
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: listing
+human_only: null
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://www.howtobuysaas.com/product/pimeyes/
+  samples: 1
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.howtobuysaas.com/list-your-saas/

@@ -1,0 +1,46 @@
+id: webspot
+name: Webspot
+website: https://webspot.app
+submission_url: https://webspot.app/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free tier requires a backlink to Webspot (maintained permanently) and takes up to 30 days to review; $12.99 Growth plan is listed immediately with no backlink requirement; $44.99 Premium adds a verified badge and featured placement.
+audience:
+  - startups
+  - saas
+  - products
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - "backlink to webspot.app, maintained permanently (free tier)"
+    - review within 30 days (free tier)
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://webspot.app/item/arcade-hub
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-b
+  sources:
+    - https://webspot.app/pricing
+    - https://webspot.app/submit

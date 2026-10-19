@@ -1,0 +1,45 @@
+id: eliteai-tools
+name: EliteAI.tools
+website: https://eliteai.tools
+submission_url: https://eliteai.tools/tool/submit-new-tool
+cost:
+  classification: PAID
+  notes: No free listing tier. Basic $10 one-time; FastTrack $19 one-time (7-day featured); Boosted $49 one-time (30-day featured).
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+    - github
+submission:
+  url_first: true
+  fields: []
+  conditions:
+    - payment required at submission ($10 minimum)
+    - "prohibited content: gambling, betting, malicious software"
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://eliteai.tools/tool/lynote
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: turnstile
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-review
+  sources:
+    - https://eliteai.tools/tool/submit-new-tool

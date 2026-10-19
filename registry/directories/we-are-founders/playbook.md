@@ -1,0 +1,1 @@
+Use the linked Tally form, not email. Select Standard for free or Fast-track for $49. Free queue is 4–6 weeks. The form requires one-line tagline up to 120 characters, 1–3 categories, founder stage, pricing, 3–5 specific differentiators, honest poor-fit use cases, email, and a social profile; submission adds the address to their Friday Brief newsletter.

@@ -1,0 +1,47 @@
+id: sumodir
+name: SumoDir
+website: https://sumodir.com
+submission_url: https://sumodir.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free tier requires a backlink to SumoDir; ~2-week review, 1,500-char description limit. $15 one-time Premium removes the backlink requirement, skips the queue, and gets an AI-written 2,500-char description. $49 Review Article adds a full AI review blog post."
+audience:
+  - startups
+  - saas
+  - software
+  - products
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - backlink to sumodir.com (free tier)
+    - review within 2 weeks (free tier)
+    - no crypto/adult/gambling/illegal content
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://sumodir.com/item/pinder-plotkin-legal-team
+  samples: 1
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-b
+  sources:
+    - https://sumodir.com/pricing
+    - https://sumodir.com/submit

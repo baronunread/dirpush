@@ -1,0 +1,1 @@
+The public /submit wizard has three steps: Product Information, Brand & Media, and Tech Stack. The site states free, no account, manual curation, and 48-hour review; an email confirmation link is required. First-step limits: tagline 10–80 characters and description 50–1000. Published products can earn cheers and appear in the 7-day trending list; spotlight score refreshes hourly.

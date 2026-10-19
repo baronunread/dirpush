@@ -1,0 +1,44 @@
+id: aihubs
+name: AiHubs
+website: https://aihubs.ai
+submission_url: https://aihubs.ai/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free tier requires a dofollow backlink to aihubs.ai and 72-hour review; $4.9 Pro / $9.9 Pro Plus remove the backlink requirement and add featured placement.
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+submission:
+  url_first: true
+  fields: []
+  conditions:
+    - backlink required for free tier
+    - 72-hour manual review
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://aihubs.ai/item/cardjar
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-f1
+  sources:
+    - https://aihubs.ai/pricing
+    - https://aihubs.ai/submit

@@ -1,0 +1,51 @@
+id: newtool
+name: NewTool
+website: https://newtool.site/
+submission_url: https://newtool.site/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free listing requires permanent badge backlink. Pro $9.90 one-time removes backlink and lists immediately; Sponsor $19.90/month.
+audience:
+  - saas
+  - ai-tools
+  - developer-tools
+  - products
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - password
+    - google
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Badge backlink required and must remain in place
+    - review within 90 days
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: listing
+review_time: within 90 days
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://newtool.site/item/sugarbug
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://newtool.site/pricing
+    - https://newtool.site/submit

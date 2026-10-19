@@ -1,0 +1,1 @@
+Use Submit and enter the tool name and URL. FAQ says the free route requires copying code supplied on the submission page and placing it on the product homepage; this is a backlink condition. Only AI-related tools with valid websites are accepted. The pricing page shows Premium as Free with $49.9 crossed out, so verify the current offer before choosing that tier.

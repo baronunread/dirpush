@@ -1,0 +1,46 @@
+id: dayslaunch
+name: Days Launch
+website: https://dayslaunch.com
+submission_url: https://dayslaunch.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free plan explicitly requires a backlink to dayslaunch.com to keep the listing/3 dofollow links; also 72h review queue and no support. Pro plan removes the backlink requirement entirely.
+audience:
+  - startups
+  - saas
+  - products
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - unknown - could not reach submit form due to client-side rendering error in browser automation
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - backlink to dayslaunch.com required for free plan
+    - reviewed and listed within 72 hours on free plan
+    - no customer support on free plan
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://dayslaunch.com/item/cashbookly
+  samples: 2
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-c
+  sources:
+    - https://dayslaunch.com/pricing

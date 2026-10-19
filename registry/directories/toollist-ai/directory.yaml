@@ -1,0 +1,60 @@
+id: toollist-ai
+name: ToolList.ai
+website: https://toollist.ai
+submission_url: https://toollist.ai/submit
+cost:
+  classification: PAID
+  notes: Starter $29 one-time promo (regular $47); Boost $99; Premium $249. No free listing option shown.
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: product name
+      required: true
+    - name: tagline
+      required: true
+    - name: website
+      required: true
+    - name: description
+      required: true
+    - name: logo
+      required: true
+    - name: screenshots
+      required: true
+    - name: categories
+      required: true
+    - name: launch date
+      required: true
+  conditions:
+    - Select and pay for a plan; human review before publication
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: launch_board
+human_only: null
+review_time: 24–48 hours
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://toollist.ai/v4/products/leaping-ai
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: unknown
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://toollist.ai/submit
+    - https://toollist.ai/pricing

@@ -1,0 +1,75 @@
+id: dofollowtools
+name: Dofollow.Tools
+website: https://dofollow.tools
+submission_url: https://dofollow.tools/submit
+cost:
+  classification: FREEMIUM
+  notes: "Free listing waits 7 days in queue (5 slots/day) and keeps a dofollow backlink only while the submitter's site displays the Dofollow.Tools badge; badge removal drops the link to nofollow but the basic listing itself stays live. Paid one-time tiers ($19-$99) skip the queue and give a permanent dofollow link with no badge requirement."
+audience:
+  - ai-tools
+  - saas
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: true
+  fields:
+    - name: tool URL
+      required: true
+    - name: tool name
+      required: true
+    - name: tagline
+      required: true
+      limit: 160
+    - name: description
+      required: true
+      limit: 5000
+    - name: logo
+      required: true
+    - name: screenshots
+      required: false
+    - name: categories
+      required: true
+      limit: 3
+    - name: pricing model
+      required: true
+    - name: platforms
+      required: true
+    - name: discount code
+      required: false
+  conditions:
+    - free listing waits 7 days and competes for 5 daily slots
+    - "badge must stay on submitter's site to keep the free listing's link dofollow (not required for the listing itself to go live)"
+autofetch:
+  supported: true
+  expected:
+    - name
+    - tagline
+    - description
+    - logo
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 4
+kind: listing
+human_only: null
+review_time: 7 days (free tier queue)
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://dofollow.tools/product/molyin-ai-video-image-and-music-generator
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bB
+  sources:
+    - https://dofollow.tools/submit
+    - https://dofollow.tools/pricing

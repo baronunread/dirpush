@@ -1,0 +1,1 @@
+Fill out form with app details (name, platform, URL, description). Optional: tags, image URL, Twitter handle, website. No account needed to submit. Manual review before listing in archive. After approval, can pay $5 per bid to boost ranking in leaderboard.

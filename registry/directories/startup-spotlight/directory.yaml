@@ -1,0 +1,50 @@
+id: startup-spotlight
+name: Startup Spotlight
+website: https://startupspotlight.co/
+submission_url: https://startupspotlight.co/submit
+cost:
+  classification: PAID
+  notes: $29 one time for an immediate listing with a permanent do-follow backlink; no free path is shown. The form unlocks after viewing five directory startups.
+audience:
+  - startups
+  - products
+authentication:
+  required: false
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: website
+      required: true
+  conditions:
+    - Open any five directory listings before the submission form unlocks
+    - $29 one-time payment
+autofetch:
+  supported: true
+  expected:
+    - name
+    - description
+    - favicon
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: immediate
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://startupspotlight.co/startup/kakebo-ai
+  samples: 2
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-07
+  by: codex
+  sources:
+    - https://startupspotlight.co/submit

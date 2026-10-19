@@ -1,0 +1,1 @@
+Choose a public marketplace Growth Listing ($29 lifetime) or Enterprise ($199 lifetime), then pay via Stripe. Product information is provided after payment and reviewed before publication. This is distinct from the separate private SaaS deal marketplace.

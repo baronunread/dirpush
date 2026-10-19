@@ -1,0 +1,69 @@
+id: oursoftware-eu
+name: OurSoftware.eu
+website: https://oursoftware.eu/
+submission_url: https://oursoftware.eu/suggest
+cost:
+  classification: VERIFIED_FREE
+  notes: No fee or paid tier is stated on the public suggestion form; no payment step shown. Cost is inferred from the direct public suggestion flow.
+audience:
+  - saas
+  - software
+  - privacy
+  - open-source
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: website_url
+      required: true
+    - name: company_name
+      required: true
+    - name: country
+      required: true
+    - name: city
+      required: false
+    - name: description
+      required: true
+    - name: email
+      required: true
+    - name: open_source
+      required: false
+    - name: self_hosted
+      required: false
+    - name: eu_sovereignty_assessment
+      required: false
+    - name: represents_company
+      required: false
+    - name: newsletter
+      required: false
+  conditions:
+    - Public suggestion/review flow
+    - No price stated
+    - Catalog counters inconsistent during check
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://oursoftware.eu/secumailer
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://oursoftware.eu/
+    - https://oursoftware.eu/suggest

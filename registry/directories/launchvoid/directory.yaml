@@ -1,0 +1,45 @@
+id: launchvoid
+name: LaunchVoid
+website: https://www.launchvoid.com
+submission_url: https://www.launchvoid.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free tier requires a backlink to LaunchVoid within 7 days. $15/week Featured or $49/month Premium plans skip the backlink requirement and add visibility.
+audience:
+  - startups
+  - saas
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - backlink required within 7 days for free tier
+    - account signup required
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://www.launchvoid.com/startup/7items-c0vs
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-a
+  sources:
+    - https://www.launchvoid.com/get-featured

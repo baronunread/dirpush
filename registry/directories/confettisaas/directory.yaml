@@ -1,0 +1,51 @@
+id: confettisaas
+name: ConfettiSaaS
+website: https://confettisaas.com
+submission_url: https://confettisaas.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "No payment required to draft a listing, but the free path requires a ConfettiSaaS badge on the product's own homepage (re-checked every 48h) plus editorial review taking roughly 59 weeks per a real accepted submission; skipping the queue costs $15 (Fast Track). No free, unbadged, fast-publish path. Confirmed live: /submit's agent-submission flow explicitly says the agent 'installs the badge' as part of submitting. Separately, optional $50/$70 one-time sponsoring buys premium homepage placement (2-4 weeks) plus newsletter feature - a visibility upsell, distinct from the badge requirement."
+audience:
+  - saas
+  - startups
+authentication:
+  required: false
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: true
+  fields: []
+  conditions:
+    - "badge required to go live (installed on the product homepage, re-checked every 48h)"
+    - "editorial review, ~59 weeks free / $15 Fast Track"
+autofetch:
+  supported: true
+  expected:
+    - name
+    - description
+    - logo
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: ~59 weeks on the free/badged path; faster with $15 Fast Track
+listing_url_pattern: "https://confettisaas.com/saas/{slug}"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://confettisaas.com/saas/searchspot-ai
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bC
+  sources:
+    - https://confettisaas.com/submit
+    - https://confettisaas.com/sponsoring

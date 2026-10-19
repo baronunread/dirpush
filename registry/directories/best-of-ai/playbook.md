@@ -1,0 +1,1 @@
+Start at submit.bestofai.io and enter the product URL. The site pulls details after sign-in; no account is required to start. Free listing is permanent and includes directory/category placement and a dofollow backlink. Optional paid advertising adds featured placement for an already-listed app.

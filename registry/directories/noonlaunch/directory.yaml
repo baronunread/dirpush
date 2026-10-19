@@ -1,0 +1,51 @@
+id: noonlaunch
+name: NoonLaunch
+website: https://noonlaunch.com
+submission_url: https://noonlaunch.com/submit
+cost:
+  classification: FREEMIUM
+  notes: "Free Standard launch joins the weekly queue; free-tier backlink is tied to the badge being live. Premium is $11 one-time to skip the queue, pin the launch, remove the badge requirement, and include 200+ directory backlinks. Spotlight is $49 one-time."
+audience:
+  - startups
+  - saas
+  - software
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Free Standard tier enters the weekly launch queue.
+    - Free-tier high-authority backlink is available while the site badge remains live.
+    - Product form is hidden until Google sign-in.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: launch_board
+human_only: null
+review_time: Weekly launch queue; exact wait not stated.
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://noonlaunch.com/product/indietool
+  samples: 3
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://noonlaunch.com/submit
+    - https://noonlaunch.com/pricing
+    - https://noonlaunch.com/login

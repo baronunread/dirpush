@@ -1,0 +1,48 @@
+id: alternativeto
+name: AlternativeTo
+website: https://alternativeto.net
+submission_url: https://alternativeto.net/software/add
+cost:
+  classification: FREEMIUM
+  notes: Free submission; optional paid priority review for faster queue position
+audience:
+  - saas
+  - productivity
+  - developer-tools
+  - ai-tools
+  - design
+  - marketing
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - manual review
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 10
+kind: listing
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://alternativeto.net/software/anatomy/about/
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: haiku-3
+  sources:
+    - https://alternativeto.net/about/terms

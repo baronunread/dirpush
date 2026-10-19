@@ -1,0 +1,52 @@
+id: toolify
+name: Toolify
+website: https://toolify.ai
+submission_url: https://toolify.ai/submit
+cost:
+  classification: PAID
+  notes: $99 one-time payment for listing
+audience:
+  - ai-tools
+  - saas
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: name
+      required: true
+    - name: website_url
+      required: true
+    - name: information_generation_method
+      required: true
+  conditions:
+    - $99 payment required
+    - listed within 48 hours
+autofetch:
+  supported: true
+  expected:
+    - name
+    - description
+    - website
+media:
+  logo: false
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://www.toolify.ai/tool/reimagine-home
+  samples: 3
+  noindex: false
+  claimed: dofollow
+  bot_check: unknown
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: haiku-11
+  sources:
+    - https://toolify.ai/submit

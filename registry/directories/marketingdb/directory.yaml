@@ -1,0 +1,50 @@
+id: marketingdb
+name: MarketingDB
+website: https://marketingdb.live
+submission_url: https://marketingdb.live/pricing
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Pricing page copy suggests the free listing goes live after admin review with only the dofollow backlink conditional on the badge, but the actual submit flow (Plan step) states the free launch itself needs a live 'Listed on MarketingDB' badge on the submitter's site, verified via a Verify button ('Free if you add the badge'). Only the paid tiers ($19 Premium / $39 Premium+) skip the badge entirely and go live without it."
+audience:
+  - saas
+  - marketing
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email-magic-link
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - "badge required to go live on the free tier (must add a 'Listed on MarketingDB' badge to your own site and pass a Verify check)"
+    - 2-3 day admin review for free tier
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+kind: listing
+human_only: null
+review_time: usually 2-3 days (free tier); instant on Premium
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://marketingdb.live/project/bytesweep
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bB
+  sources:
+    - https://marketingdb.live/pricing
+    - https://marketingdb.live/submit/plan

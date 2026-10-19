@@ -1,0 +1,51 @@
+id: featuredtool
+name: FeaturedTool
+website: https://featuredtool.com/
+submission_url: https://featuredtool.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: $0 plan has limited slots and a 180+ day queue; permanent link requires backlink maintenance. Listing is $9.90 with no backlink or queue; Featured is $19.90 for top placement for seven days.
+audience:
+  - software
+  - products
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Free plan requires backlink maintenance
+    - Limited free slots; submissions may be rejected
+    - Free queue stated as 180+ days
+    - Form fields hidden behind login
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: 180+ days at current pace for free tier
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://featuredtool.com/item/featured-tool
+  samples: 1
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://featuredtool.com/pricing
+    - https://featuredtool.com/submit
+    - https://featuredtool.com/auth/login?callbackUrl=%2Fsubmit

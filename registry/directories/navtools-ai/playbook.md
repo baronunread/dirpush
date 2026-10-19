@@ -1,0 +1,1 @@
+At /submit, select Basic Review ($0); the page initially has the paid Fast Track selected. Quick Submit asks for tool name, website URL, and contact email, then says it generates detail-page content. A Cloudflare verification iframe is present; do not submit until completing normal account/workflow approval if required.

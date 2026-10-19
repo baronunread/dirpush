@@ -1,0 +1,53 @@
+id: huntstartup
+name: Hunt.Startup
+website: https://huntstartup.com
+submission_url: https://huntstartup.com/submit
+cost:
+  classification: FREEMIUM
+  notes: "Free Starter Listing includes a basic listing unconditionally (nofollow link, ~24h processing); it only gets a dofollow backlink if the submitter embeds the site's badge, which does not gate the listing itself. $7 one-time Premium Listing gives a permanent dofollow link with no badge needed; $10/week Featured Listing adds homepage placement (8 spots limit)."
+audience:
+  - startups
+  - saas
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - "badge embed required only for dofollow link, not for the listing itself (free tier)"
+    - processed within 24 hours (free tier)
+    - website URL field rejects query strings (no UTM); logo max 200KB
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+kind: listing
+human_only: null
+review_time: within 24 hours (free tier)
+listing_url_pattern: "https://huntstartup.com/startups/{slug}"
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://huntstartup.com/startups/launchvoid
+  samples: 4
+  noindex: false
+  claimed: nofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bC
+  sources:
+    - https://huntstartup.com/submit
+    - https://huntstartup.com/get-featured
+    - https://huntstartup.com/startups/searchless-ai

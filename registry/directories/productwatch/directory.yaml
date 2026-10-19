@@ -1,0 +1,51 @@
+id: productwatch
+name: Product Watch
+website: https://productwatch.io
+submission_url: https://productwatch.io
+cost:
+  classification: FREEMIUM
+  notes: "Free forever tier gets a permanent 72 DR do-follow backlink unconditionally; only queue position (30 days vs instant) depends on optionally embedding their badge. Priority Pass $20.00 one-time payment skips the queue and adds upvote boosts/newsletter feature. Custom-priced 'Promoted' sponsorship also available."
+audience:
+  - startups
+  - saas
+  - ai-tools
+  - developer-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - 30-day launch queue on free tier unless badge is embedded to skip it
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+    max: 0
+kind: launch_board
+human_only: null
+review_time: "30 days (free, unless badge embedded for instant); instant (Priority Pass, $20)"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://productwatch.io/products/arkwarden
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-28
+  by: sonnet-r5
+  sources:
+    - https://productwatch.io/pricing
+    - https://productwatch.io/

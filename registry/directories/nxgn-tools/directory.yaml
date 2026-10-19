@@ -1,0 +1,49 @@
+id: nxgn-tools
+name: NxGn Tools
+website: https://nxgntools.com
+submission_url: https://nxgntools.com/pricing
+cost:
+  classification: FREEMIUM
+  notes: "$0 Basic Launch (free forever, no card); $19 Premium Launch; $199 TikTok & Blog feature"
+audience:
+  - saas
+  - startups
+  - ai-tools
+  - developer-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - signup required (Google or email one-time code)
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 5
+kind: launch_board
+human_only: null
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://www.nxgntools.com/tools/plain-markdown
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-28
+  by: sonnet-rc
+  sources:
+    - https://nxgntools.com/pricing
+    - https://nxgntools.com/

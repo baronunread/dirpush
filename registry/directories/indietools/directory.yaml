@@ -1,0 +1,69 @@
+id: indietools
+name: IndieTools
+website: https://www.indietools.app/
+submission_url: https://www.indietools.app/submit
+cost:
+  classification: FREEMIUM
+  notes: "One permanent free listing per owner lifetime after manual review; badge is optional and only enables dofollow. Standard $10 once; Authority $39 once with SEO/GEO controls, reviewed article and labelled 30-day Featured period."
+audience:
+  - saas
+  - software
+  - developer-tools
+  - startups
+  - productivity
+  - marketing
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email
+    - password
+submission:
+  url_first: false
+  fields:
+    - name: product URL
+      required: true
+    - name: description
+      required: true
+    - name: category
+      required: true
+    - name: founder details
+      required: true
+    - name: technology stack
+      required: true
+    - name: product logo
+      required: true
+    - name: product images or screenshots
+      required: true
+  conditions:
+    - One free listing per owner for the lifetime of the account.
+    - Free submission reserves the entitlement; publication permanently consumes it.
+    - Manual review for Free; paid paths use automated validation after payment.
+    - Website badge is optional; free website link is nofollow by default and becomes dofollow while the badge is verified.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: listing
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.indietools.app/products/for-sale
+  samples: 1
+  noindex: false
+  claimed: nofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.indietools.app/submit
+    - https://www.indietools.app/signin
+    - https://www.indietools.app/pricing

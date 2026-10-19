@@ -1,0 +1,74 @@
+id: list-maro
+name: List Maro
+website: https://listmaro.com/
+submission_url: https://listmaro.com/submit
+cost:
+  classification: FREEMIUM
+  notes: Free maintained product listing; optional labeled sponsored placement is $19.99 for one month.
+audience:
+  - saas
+  - software
+  - startups
+  - products
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email magic link
+submission:
+  url_first: true
+  fields:
+    - name: website
+      required: true
+    - name: name
+      required: true
+    - name: tagline
+      required: true
+      limit: 60
+    - name: category
+      required: true
+    - name: pricing_model
+      required: true
+    - name: launch_week
+      required: false
+    - name: twitter_x_username
+      required: true
+    - name: description
+      required: false
+    - name: logo
+      required: false
+    - name: screenshots
+      required: false
+  conditions:
+    - Human editorial approval before publication
+    - Optional weekly issue has 15 listings per issue
+autofetch:
+  supported: true
+  expected:
+    - name
+    - tagline
+    - logo
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 5
+kind: launch_board
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://listmaro.com/tools/stackoverflo
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://listmaro.com/submit
+    - https://listmaro.com/pricing

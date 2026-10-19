@@ -1,0 +1,54 @@
+id: toolfolio
+name: Toolfolio
+website: https://toolfolio.com/
+submission_url: https://toolfolio.com/boosted-listing
+cost:
+  classification: PAID
+  notes: "Startup $99 one-time; Growth $250/month or $2,500/year. Free claims are only available for products already listed."
+audience:
+  - design
+  - ai-tools
+  - no-code
+  - productivity
+  - saas
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+    - github
+submission:
+  url_first: true
+  fields: []
+  conditions:
+    - New listings require a paid tier
+    - Curated review; typically 24–48 hours
+    - Startup tier includes one media upload; Growth includes up to four images
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 4
+kind: listing
+human_only: null
+review_time: 24–48 hours
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://toolfolio.com/tools/magnific
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://toolfolio.com/
+    - https://toolfolio.com/boosted-listing

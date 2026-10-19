@@ -1,0 +1,49 @@
+id: stackboo
+name: Stackboo
+website: https://stackboo.com
+submission_url: https://stackboo.com/submit
+cost:
+  classification: FREEMIUM
+  notes: "Listing free. Optional paid Featured spots: top of board $19/7d or $49/30d, under hero $15/$39, sidebar $9/$24. Free founding featured spot (first 10, 30 days) needs the Stackboo badge on site and one X share."
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - account with verified email required
+    - "moderated: team reviews and may decline or remove listings"
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+listing_url_pattern: "https://stackboo.com/tools/{slug}"
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://stackboo.com/tools/buzzy
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-10
+  by: claude-code
+  sources:
+    - https://stackboo.com/pricing
+    - https://stackboo.com/terms
+    - https://stackboo.com/submit

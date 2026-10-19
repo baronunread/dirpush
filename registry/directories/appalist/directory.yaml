@@ -1,0 +1,46 @@
+id: appalist
+name: Appa List
+website: https://appalist.com
+submission_url: https://appalist.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Badge required: submit wizard after Google login is Website -> Badge -> Details; badge on homepage before listing."
+audience:
+  - ai-tools
+  - productivity
+  - saas
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+submission:
+  url_first: false
+  fields: []
+  conditions: []
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+listing_url_pattern: "https://appalist.com/ai/{slug}"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://appalist.com/ai/emoscan
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bA
+  sources:
+    - https://appalist.com/submit
+    - https://appalist.com/ai/zinn-hub-freelance-marketplace

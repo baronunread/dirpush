@@ -1,0 +1,59 @@
+id: visalytica
+name: Visalytica
+website: https://www.visalytica.com/
+submission_url: https://www.visalytica.com/submit
+cost:
+  classification: FREEMIUM
+  notes: "Free permanent listing; paid launch packages offer faster review and featured placement. Price page link returned 404, so package prices are unknown."
+audience:
+  - saas
+  - software
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: false
+  fields:
+    - name: tool_name
+      required: true
+    - name: website_url
+      required: true
+    - name: tagline
+      required: true
+    - name: description
+      required: false
+    - name: email
+      required: true
+    - name: x_twitter_handle
+      required: false
+  conditions:
+    - Editorial review; free review stated as 1–2 weeks
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: 1–2 weeks for free review
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.visalytica.com/tool/winq
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.visalytica.com/submit
+    - https://www.visalytica.com/promote

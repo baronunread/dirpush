@@ -1,0 +1,1 @@
+Sign in with Google to submit. Free path requires both an embeddable badge backlink and 3 upvotes on other products during the week. Paid QuickPass is $10.50 currently displayed; prices exclude tax. The actual submission fields are hidden behind sign-in.

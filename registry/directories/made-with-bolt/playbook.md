@@ -1,0 +1,1 @@
+The public /submit-project form accepts title, email, short description, full description, and website URL, with optional Twitter/X and Reddit profiles. The site states that only projects built with Bolt are accepted. Submission is currently free per the FAQ.

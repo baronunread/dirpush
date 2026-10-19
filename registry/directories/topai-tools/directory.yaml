@@ -1,0 +1,43 @@
+id: topai-tools
+name: TopAI.tools
+website: https://topai.tools
+submission_url: https://topai.tools/submit
+cost:
+  classification: PAID
+  notes: "$47 one-time Fast Track (48hr, permanent) or $229 one-time Featured (7-day boost); no free tier"
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - editorial review
+    - payment required to submit
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 5
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://topai.tools/t/lyricedits-ai
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-h3
+  sources:
+    - https://topai.tools/submit

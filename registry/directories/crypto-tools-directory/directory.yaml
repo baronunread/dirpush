@@ -1,0 +1,60 @@
+id: crypto-tools-directory
+name: Crypto Tools Directory
+website: https://cryptotoolsdirectory.com
+submission_url: https://cryptotoolsdirectory.com/submit-new-tool
+cost:
+  classification: FREEMIUM
+  notes: "Free standard listing (~4 week review), no badge/backlink required to go live; Missile $49/Rocket $99/Starship $199 speed review and add featured/verified/GitHub/social placement"
+audience:
+  - crypto
+authentication:
+  required: false
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: product_name
+      required: true
+      limit: 40
+    - name: description
+      required: true
+    - name: tagline
+      required: true
+      limit: 60
+    - name: thumbnail
+      required: true
+    - name: gallery_images
+      required: true
+    - name: launch_tags
+      required: true
+    - name: contact_email
+      required: true
+  conditions:
+    - "manual review, ~4 weeks on free tier"
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 0
+kind: listing
+human_only: null
+review_time: about 4 weeks (free tier)
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://cryptotoolsdirectory.com/tools/outcometick
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bA
+  sources:
+    - https://cryptotoolsdirectory.com/submit-new-tool

@@ -1,0 +1,53 @@
+id: launchllama
+name: Launch Llama
+website: https://tools.launchllama.co
+submission_url: https://tools.launchllama.co/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free listing gated at step 3: upvote 5 tools + star rating and 20+ char feedback on another product before submit. Paid Instant Launch $39 upsell."
+audience:
+  - startups
+  - saas
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+submission:
+  url_first: true
+  fields: []
+  conditions:
+    - free tier takes ~4 weeks to review and publish
+autofetch:
+  supported: true
+  expected:
+    - name
+    - description
+    - logo
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+kind: listing
+human_only: null
+review_time: ~4 weeks (free tier); instant with $39 Instant Launch add-on
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://tools.launchllama.co/products/munen
+  samples: 3
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bC
+  sources:
+    - https://tools.launchllama.co/submit
+    - https://tools.launchllama.co/pricing
+    - https://tools.launchllama.co/badge

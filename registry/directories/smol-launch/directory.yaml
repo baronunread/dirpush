@@ -1,0 +1,44 @@
+id: smol-launch
+name: Smol Launch
+website: https://smollaunch.com
+submission_url: https://smollaunch.com/pricing
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free tier requires installing the Smol Launch badge on your site to verify; capped at 50 slots/week shared across all makers (observed ~300-deep queue for the next open free week). $19/launch Premium removes the badge requirement and queue.
+audience:
+  - startups
+  - saas
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - "unknown - Sign in link present, form not inspected"
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - "Smol Launch badge required on submitter's site for free tier"
+    - "only 50 free verified slots/week, heavily queued (~300 deep observed)"
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://smollaunch.com/tools/domain-age-checker
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-a
+  sources:
+    - https://smollaunch.com/pricing

@@ -1,0 +1,72 @@
+id: favors
+name: Favors.dev
+website: https://favors.dev
+submission_url: https://favors.dev/projects/new
+cost:
+  classification: VERIFIED_FREE
+  notes: Free to publish; no payment required. Free listing enters a two-week review. One completed favor or a Favors.dev badge on your site enables instant publication.
+audience:
+  - startups
+  - indie-makers
+  - saas
+  - software
+authentication:
+  required: true
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: website_url
+      required: true
+    - name: name
+      required: true
+      limit: 60
+    - name: tagline
+      required: true
+      limit: 100
+    - name: screenshot
+      required: false
+    - name: category
+      required: true
+    - name: launch_date
+      required: false
+    - name: about
+      required: true
+    - name: faq
+      required: false
+  conditions:
+    - Free review takes two weeks; instant publication is available after completing one favor or installing the Favors.dev badge.
+    - About text must be at least 40 characters.
+    - Account creation is required at the final publish step.
+autofetch:
+  supported: true
+  expected:
+    - name
+    - tagline
+    - description
+    - screenshot
+media:
+  logo: false
+  screenshots:
+    supported: true
+    max: 1
+kind: launch_board
+human_only: null
+review_time: Two weeks; instant if the maker completes one favor or installs the site badge.
+link:
+  rel: nofollow
+  method: own_listing
+  evidence: null
+  samples: 1
+  noindex: true
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://favors.dev/projects/new
+    - https://favors.dev/

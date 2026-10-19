@@ -1,0 +1,64 @@
+id: startupsfm
+name: Startups.fm
+website: https://startups.fm
+submission_url: https://startups.fm/submit
+cost:
+  classification: PAID
+  notes: $49 USD one-time fee per listing
+audience:
+  - startups
+  - saas
+authentication:
+  required: false
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: true
+  fields:
+    - name: website
+      required: true
+    - name: startup_name
+      required: true
+    - name: tagline
+      required: true
+    - name: description
+      required: true
+    - name: category
+      required: true
+    - name: funding_stage
+      required: false
+    - name: country
+      required: false
+    - name: logo
+      required: false
+    - name: featured_image
+      required: false
+  conditions:
+    - manual human review
+    - no free alternative
+autofetch:
+  supported: true
+  expected:
+    - startup_name
+    - description
+    - logo
+media:
+  logo: true
+  screenshots:
+    supported: true
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://startups.fm/startups/clicks-page
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-07
+  by: codex
+  sources:
+    - https://www.startups.fm/submit

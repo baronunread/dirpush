@@ -1,0 +1,52 @@
+id: startup-fast
+name: Startup Fast
+website: https://startupfa.st
+submission_url: https://www.startupfa.st/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free launch ($0) requires displaying a mandatory dofollow 'Powered by Open-Launch' badge on ALL pages of your site (stated as a MANDATORY license requirement, not optional SEO perk); 5 slots/day, standard slower queue, launch within 90 days; dofollow backlink to your listing only if you also rank Top 3 on launch day. Premium ($19/launch) removes the badge requirement, guarantees the backlink unconditionally, and launches within 30 days with 12 slots/day."
+audience:
+  - startups
+  - saas
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - must display Open-Launch attribution badge on all pages to use the free tier
+    - launch queue up to 90 days
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+kind: launch_board
+human_only: null
+review_time: up to 90 days (free queue); premium launches within 30 days
+listing_url_pattern: "https://www.startupfa.st/startup/{slug}"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.startupfa.st/directory
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-28
+  by: sonnet-rb
+  sources:
+    - https://www.startupfa.st/submit
+    - https://www.startupfa.st/legal/badges
+    - https://www.startupfa.st/startup/echoly

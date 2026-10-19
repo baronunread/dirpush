@@ -1,0 +1,62 @@
+id: dir-hub
+name: Dir Hub
+website: https://dirhub.io/
+submission_url: https://dirhub.io/submit
+cost:
+  classification: PAID
+  notes: No free tier. Standard $9 one-time; Featured $19 one-time.
+audience:
+  - indie-makers
+  - ai-tools
+  - developer-tools
+  - productivity
+  - software
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+submission:
+  url_first: false
+  fields:
+    - name: product_name
+      required: true
+    - name: logo
+      required: true
+    - name: description
+      required: true
+    - name: website_url
+      required: true
+    - name: category
+      required: true
+  conditions:
+    - "live, publicly accessible product required"
+    - manual review
+    - payment refunded if rejected
+    - description must be 50–300 words
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://dirhub.io/sites/site-hunter
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://dirhub.io/
+    - https://dirhub.io/pricing
+    - https://dirhub.io/submit

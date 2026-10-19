@@ -1,0 +1,60 @@
+id: squidir
+name: Squidir
+website: https://squidir.com/
+submission_url: https://squidir.com/account/register
+cost:
+  classification: FREEMIUM
+  notes: Free listing for every European SaaS. Optional Verified plan is €49/month; Analytics plan is €149/month. Paid plans do not change ranking.
+audience:
+  - saas
+  - software
+  - startups
+  - developer-tools
+  - marketing
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email
+    - password
+submission:
+  url_first: false
+  fields:
+    - name: account_name
+      required: true
+    - name: email
+      required: true
+    - name: password
+      required: true
+    - name: confirm_password
+      required: true
+  conditions:
+    - Product must be a European SaaS.
+    - Product listing and claim fields appear to require account registration; those fields were not visible logged out.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://squidir.com/products/astiga
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://squidir.com/
+    - https://squidir.com/pricing
+    - https://squidir.com/account/register

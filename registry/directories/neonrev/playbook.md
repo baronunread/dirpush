@@ -1,0 +1,1 @@
+Use Advertise > Advertise Your AI Tool. The listed packages are Forever Listing ($30), 7 Day Spotlight ($80), and 1 Month Premium ($300). The page states paid submissions go live within 24 hours after payment and review. No free tier or pre-purchase fields are shown.

@@ -1,0 +1,42 @@
+id: opentools
+name: OpenTools
+website: https://opentools.ai
+submission_url: https://opentools.ai/friends/launch-tool
+cost:
+  classification: PAID
+  notes: "Page states \"Tool submissions require a paid listing subscription\"; no free tier offered"
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - paid subscription required before any tool details can be entered
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://opentools.ai/tools/fastmcp
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-f2
+  sources:
+    - https://opentools.ai/friends/launch-tool

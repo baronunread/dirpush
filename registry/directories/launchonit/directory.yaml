@@ -1,0 +1,74 @@
+id: launchonit
+name: LaunchOnIt
+website: https://launchon.it
+submission_url: https://launchon.it/submit?week=40
+cost:
+  classification: FREEMIUM
+  notes: Free standard queue with permanent product profile and seven-day launch week. Launch is $19 one-time for guaranteed placement and priority; Growth is $39 one-time for a review article and additional backlinks.
+audience:
+  - startups
+  - saas
+  - software
+  - developer-tools
+  - indie-makers
+authentication:
+  required: false
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: website_url
+      required: true
+    - name: product_name
+      required: true
+    - name: tagline
+      required: true
+      limit: 50
+    - name: description
+      required: false
+      limit: 2000
+    - name: use_cases
+      required: true
+    - name: product_logo
+      required: true
+    - name: product_screenshot
+      required: false
+    - name: video_url
+      required: false
+    - name: launch_date
+      required: false
+  conditions:
+    - Free tier uses the standard weekly queue; capacity is 20 startups per week.
+    - Signing in is optional and attaches the launch to a maker profile.
+autofetch:
+  supported: true
+  expected:
+    - name
+    - tagline
+    - description
+    - other product details
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 1
+kind: launch_board
+human_only: null
+review_time: Seven-day launch week; standard queue timing depends on selected available week.
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://launchon.it/products/indiadigital
+  samples: 4
+  noindex: true
+  claimed: dofollow
+  bot_check: turnstile
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://launchon.it/submit?week=40
+    - https://launchon.it/pricing

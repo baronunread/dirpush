@@ -1,0 +1,58 @@
+id: shipyard-hq
+name: Shipyard HQ
+website: https://shipyardhq.dev
+submission_url: https://shipyardhq.dev
+cost:
+  classification: FREEMIUM
+  notes: "Free listing included (public page, homepage feed card, directory listing, analytics, sitemap); no badge/backlink required to go live. Featured $9.99 one-time (14 days) and Pro $24.99 one-time (30 days) for paid placements."
+audience:
+  - startup-directory
+  - indie-makers
+  - product-launches
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+    - github
+    - x
+submission:
+  url_first: true
+  fields:
+    - name: product_name
+      required: true
+    - name: website_url
+      required: true
+    - name: tagline
+      required: true
+  conditions: []
+autofetch:
+  supported: true
+  expected:
+    - description
+    - logo
+    - screenshots
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: listing
+human_only: null
+listing_url_pattern: "https://shipyardhq.dev/products/{slug}"
+link:
+  rel: sponsored
+  method: sample_listing
+  evidence: https://shipyardhq.dev/products/motion-transfer
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bA
+  sources:
+    - https://shipyardhq.dev/pricing
+    - https://shipyardhq.dev/products/snapkin

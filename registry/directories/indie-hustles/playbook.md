@@ -1,0 +1,1 @@
+The public /submit form has a plan choice. Priority ($9) is selected by default; select Free Standard ($0, 8–10 week queue) before any submission. Fields include contact name/email and product details.

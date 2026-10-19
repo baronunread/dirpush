@@ -1,0 +1,45 @@
+id: nocodefinder
+name: NoCodeFinder
+website: https://www.nocodefinder.com
+submission_url: https://www.nocodefinder.com/submit-no-code-tool
+cost:
+  classification: FREEMIUM
+  notes: "Free path: 'Submit to waitlist (6+ months)', no badge required. Paid path: $29 for 48h review + dofollow backlink."
+audience:
+  - no-code
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - 6+ month wait for free tier
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+    max: 0
+kind: listing
+human_only: null
+review_time: 6+ months (free); 48h (paid $29)
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://www.nocodefinder.com/app/tools/activecampaign
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bC
+  sources:
+    - https://www.nocodefinder.com/
+    - https://www.nocodefinder.com/submit-no-code-tool

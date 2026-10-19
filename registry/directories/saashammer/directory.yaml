@@ -1,0 +1,53 @@
+id: saashammer
+name: SaaSHammer
+website: https://saashammer.net/
+submission_url: https://saashammer.net/submit
+cost:
+  classification: FREEMIUM
+  notes: "Free tier includes a permanent public profile, launch-day listing, categories, and community features. Premium is $6.99 one-time; Spotlight is $9.99 one-time. Free link is nofollow by default and becomes dofollow with a verified badge; the badge is not required to list."
+audience:
+  - saas
+  - software
+  - startups
+  - developer-tools
+  - productivity
+  - marketing
+  - design
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email
+    - password
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Submission form fields are hidden behind sign-in; public pricing confirms a free launch tier.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: launch_board
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://saashammer.net/project/cuttly
+  samples: 4
+  noindex: false
+  claimed: nofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://saashammer.net/
+    - https://saashammer.net/pricing
+    - https://saashammer.net/register

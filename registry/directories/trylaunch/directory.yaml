@@ -1,0 +1,51 @@
+id: trylaunch
+name: Launch (trylaunch.ai)
+website: https://trylaunch.ai
+submission_url: https://trylaunch.ai/submit
+cost:
+  classification: FREEMIUM
+  notes: "Free tier: full listing (homepage, social promo, newsletter feature, verified badge), only difference is a standard (unstated length) queue vs paid queue-skip. Pro $39 skips queue + guaranteed backlink. Grow $199 adds manual submission to 120+ other directories. Pass $99/yr unlimited launches."
+audience:
+  - startups
+  - saas
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - github
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - max 1 launch per week across all plans
+    - standard queue for free tier
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 0
+kind: launch_board
+human_only: null
+listing_url_pattern: "https://trylaunch.ai/launch/{slug}"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://trylaunch.ai/launch/rocket
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-28
+  by: sonnet-r3
+  sources:
+    - https://trylaunch.ai/pricing
+    - https://trylaunch.ai/launch/rocket

@@ -1,0 +1,44 @@
+id: indietool
+name: IndieTool
+website: https://www.indietool.io/
+submission_url: https://www.indietool.io/
+cost:
+  classification: PAID
+  notes: Standard one-time submission $29.99 promo (regular $54); no free route shown.
+audience:
+  - indie-makers
+  - startups
+  - products
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - One-time Stripe payment required
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.indietool.io/tools/twitter-card-validator
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.indietool.io/

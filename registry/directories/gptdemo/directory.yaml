@@ -1,0 +1,56 @@
+id: gptdemo
+name: GPTDemo
+website: https://www.gptdemo.net/
+submission_url: https://www.gptdemo.net/submit
+cost:
+  classification: PAID
+  notes: "$19.90 one-time premium submission for permanent listings on GPTDemo and aitoolhub.net, 24 dofollow backlinks, and manual review; no free option is shown."
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: website URL
+      required: true
+    - name: email address
+      required: true
+    - name: tool title
+      required: true
+    - name: tool description
+      required: true
+    - name: category
+      required: true
+  conditions:
+    - Paid package required
+    - AI tools only
+    - Manual review
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: 24–48 hours
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://www.gptdemo.net/en/tools/ai-music-generator/
+  samples: 2
+  noindex: false
+  claimed: dofollow
+  bot_check: unknown
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.gptdemo.net/
+    - https://www.gptdemo.net/submit

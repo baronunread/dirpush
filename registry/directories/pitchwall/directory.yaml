@@ -1,0 +1,47 @@
+id: pitchwall
+name: PitchWall
+website: https://pitchwall.co
+submission_url: https://pitchwall.co/submit
+cost:
+  classification: FREEMIUM
+  notes: Free ($0) tier available; $49 (Pro) and $99 (Premium) paid tiers
+audience:
+  - startups
+  - ai-tools
+  - saas
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: true
+  fields: []
+  conditions:
+    - minimum 30-day wait on free tier
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 0
+kind: launch_board
+human_only: null
+review_time: minimum 30 days (free); as early as tomorrow (Premium $99)
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://pitchwall.co/product/onlyfinder
+  samples: 2
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-28
+  by: sonnet-r1
+  sources:
+    - https://pitchwall.co/submit

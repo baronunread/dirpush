@@ -1,0 +1,46 @@
+id: xai-plugin-marketplace
+name: xAI Plugin Marketplace
+website: https://github.com/xai-org/plugin-marketplace
+submission_url: https://github.com/xai-org/plugin-marketplace/pulls
+cost:
+  classification: VERIFIED_FREE
+  notes: "Official xAI announcement calls this an open catalog and explicitly invites plugin pull requests. Plugins bundle skills, commands, agents, hooks, MCP servers, or LSPs; this is not a generic SaaS listing. No submission fee stated."
+audience:
+  - agent-plugins
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - An installable Grok Build plugin required; bare product URL is insufficient
+    - Submit pull request to official repository
+    - Catalog remote plugins are pinned to a specific commit SHA
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: plugin_marketplace
+human_only: null
+link:
+  rel: nofollow
+  method: platform_rule
+  evidence: https://github.com/xai-org/plugin-marketplace
+  samples: 0
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-08
+  by: codex
+  sources:
+    - https://x.ai/news/grok-plugin-marketplace
+    - https://github.com/xai-org/plugin-marketplace

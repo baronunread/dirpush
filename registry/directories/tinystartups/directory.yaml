@@ -1,0 +1,61 @@
+id: tinystartups
+name: Tiny Startups
+website: https://www.tinystartups.com
+submission_url: https://www.tinystartups.com/submit
+cost:
+  classification: FREEMIUM
+  notes: Free startup submissions enter a human review queue; approval and timing are not guaranteed. The site advertises a DR 71+ do-follow backlink. Optional paid upgrades are offered at the end of the submission wizard; no badge is required.
+audience:
+  - startups
+  - saas
+  - indie-makers
+  - products
+authentication:
+  required: false
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: true
+  fields:
+    - name: startup_url
+      required: true
+    - name: startup_details
+      required: true
+    - name: revenue
+      required: false
+    - name: traffic
+      required: false
+    - name: about_you
+      required: true
+  conditions:
+    - hand-approved / manual review
+    - "optional paid 'Upgrades' step at end of wizard"
+autofetch:
+  supported: true
+  expected:
+    - name
+    - description
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: listing
+human_only: null
+listing_url_pattern: "https://www.tinystartups.com/startup/{slug}"
+link:
+  rel: nofollow
+  method: own_listing
+  evidence: null
+  samples: 1
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-07
+  by: codex
+  sources:
+    - https://www.tinystartups.com/submit
+    - https://www.tinystartups.com/terms

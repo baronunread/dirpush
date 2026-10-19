@@ -1,0 +1,58 @@
+id: saas-italia
+name: SaaSItalia
+website: https://saas-italia.it/
+submission_url: https://saas-italia.it/submit
+cost:
+  classification: PAID
+  notes: Homepage vendor CTA advertises tool listings at €99/month; no free path was stated.
+audience:
+  - saas
+  - software
+  - marketing
+  - productivity
+  - startups
+authentication:
+  required: false
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: tool name
+      required: true
+    - name: website
+      required: true
+    - name: category
+      required: true
+    - name: short description in Italian
+      required: true
+    - name: pricing model
+      required: false
+    - name: contact email
+      required: true
+  conditions:
+    - Submission form is reviewed by the team; homepage advertises vendor listing at €99/month.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://saas-italia.it/categoria/crm
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://saas-italia.it/
+    - https://saas-italia.it/submit

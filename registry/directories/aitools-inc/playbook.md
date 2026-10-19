@@ -1,0 +1,1 @@
+Sign up for free at aitools.inc (Free Sign Up button, email-based). Navigate to Submit Tool. Choose between free listing (30-90 days) or Fast Lane ($129). Submit tool details. Free option requires patience; Fast Lane guarantees placement or refund. No badge or backlink required to go live. Form fields are behind account signup, not visible pre-login.

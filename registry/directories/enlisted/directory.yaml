@@ -1,0 +1,48 @@
+id: enlisted
+name: Enlisted
+website: https://enlisted.directory
+submission_url: https://app.enlisted.directory/submit
+cost:
+  classification: VERIFIED_FREE
+  notes: Makers can submit a tool for free; every submission is reviewed by a person.
+audience:
+  - software
+  - saas
+  - open-source
+  - developer-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: true
+  fields: []
+  conditions:
+    - Free maker submission requires sign-in and is reviewed by a person.
+    - The 200+ GitHub-star bar applies to automatic open-source imports; makers can submit SaaS products directly.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: Human review; timing not stated.
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://enlisted.directory/tools/saashunter
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://enlisted.directory/about
+    - https://app.enlisted.directory/submit

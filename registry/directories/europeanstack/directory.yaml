@@ -1,0 +1,66 @@
+id: europeanstack
+name: EuropeanStack
+website: https://www.europeanstack.io/
+submission_url: https://www.europeanstack.io/en/submit-product
+cost:
+  classification: VERIFIED_FREE
+  notes: The public product form has no fee or payment step. Manual editorial review is required before publication.
+audience:
+  - software
+  - saas
+  - marketing
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: product name
+      required: true
+    - name: short description
+      required: true
+    - name: country of origin
+      required: true
+    - name: category
+      required: true
+    - name: website
+      required: false
+    - name: tags
+      required: false
+    - name: additional information (markdown)
+      required: false
+    - name: submitter name
+      required: false
+    - name: submitter email
+      required: false
+    - name: notes for reviewers
+      required: false
+  conditions:
+    - Manual review before publication
+    - Product must be European technology
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.europeanstack.io/it/products/airvpn
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.europeanstack.io/en/submit-product
+    - https://www.europeanstack.io/en/how-we-work

@@ -1,0 +1,51 @@
+id: startuptile
+name: StartupTile
+website: https://startuptile.com
+submission_url: https://startuptile.com/payg/pay
+cost:
+  classification: PAID
+  notes: Cheapest option is $1.99 one-time for a Standard Listing; no free tier. $19/$35 one-time buy featured placement + backlink.
+audience:
+  - startups
+  - saas
+  - products
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: full_name
+      required: true
+    - name: email
+      required: true
+    - name: startup_url
+      required: true
+    - name: custom_note
+      required: false
+  conditions:
+    - payment required before listing (Dodo Payments checkout)
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://startuptile.com/
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-h5
+  sources:
+    - https://startuptile.com/payg/pay

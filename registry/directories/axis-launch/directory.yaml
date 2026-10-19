@@ -1,0 +1,64 @@
+id: axis-launch
+name: AXIS Launch
+website: https://launch.jonathanarvay.com/
+submission_url: https://launch.jonathanarvay.com/launch/
+cost:
+  classification: CONDITIONAL_FREE
+  notes: All listings are free; a badge embedded on the maker’s own site is required before the listing goes live. No paid tier or queue-skip fee.
+audience:
+  - software
+  - developer-tools
+  - startups
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: listing type
+      required: true
+    - name: name
+      required: true
+    - name: tagline
+      required: true
+      limit: 60
+    - name: short description
+      required: true
+      limit: 260
+    - name: category
+      required: true
+    - name: primary URL
+      required: true
+    - name: maker story
+      required: true
+  conditions:
+    - Focused on AI-generated apps/microapps; form asks how AI-generated the product is.
+    - AXIS Launch badge must be installed on the maker’s site before publication.
+    - "Human review within 48 hours, then wait for the next weekly batch slot."
+    - At least one screenshot of real product output is required; screenshot and pricing data are collected after approval.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: true
+kind: launch_board
+review_time: review within 48 hours; approved listing waits for next weekly batch
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://launch.jonathanarvay.com/apps/adcreative-ai/
+  samples: 3
+  noindex: false
+  claimed: null
+  bot_check: turnstile
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://launch.jonathanarvay.com/launch/

@@ -1,0 +1,1 @@
+Open the public four-step form at /submit.html. Step 1 asks launch name, URL, and tagline capped at 80 characters. Site advertises free forever, permanent page and dofollow backlink, a stated 24-hour human review, and newsletter feature. Later form fields were not inspected. No account required is visible.

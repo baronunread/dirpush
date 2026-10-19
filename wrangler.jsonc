@@ -1,0 +1,16 @@
+// dirpush.com: the prerendered site from `bun run site:build`, served as static assets. No Worker code, no D1.
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "dirpush",
+  "compatibility_date": "2026-10-19",
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [{ "pattern": "dirpush.com", "custom_domain": true }],
+  // Clears the old app's nightly crons; a static site has nothing to schedule.
+  "triggers": { "crons": [] },
+  "assets": {
+    "directory": "./dist/site",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}

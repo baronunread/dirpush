@@ -1,0 +1,42 @@
+id: businesssoftware
+name: Business-Software.com
+website: https://www.business-software.com
+submission_url: https://www.business-software.com/add-your-product
+cost:
+  classification: VERIFIED_FREE
+  notes: Free product submission
+audience:
+  - software
+  - business-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions: []
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.business-software.com/product/junction-solutions-junctionfb/
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: haiku-disc1
+  sources:
+    - https://www.business-software.com

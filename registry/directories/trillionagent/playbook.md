@@ -1,0 +1,1 @@
+The public form at /register-agent/ says listing is free and does not show a login gate. Required fields: contact email, agent name, provider, category, role, description, cost, and address. No field limits or review timing are given.

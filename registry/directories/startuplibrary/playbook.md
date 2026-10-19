@@ -1,0 +1,1 @@
+Public submit page explains the free and Pro tiers, but the Launch my startup CTA did not expose a form to the reader. Treat as a launch board, not an auto-submission listing; free launch has a live listing, community votes, and leaderboard placement.

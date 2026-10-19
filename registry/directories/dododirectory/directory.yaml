@@ -1,0 +1,46 @@
+id: dododirectory
+name: DodoDirectory
+website: https://dododirectory.com
+submission_url: https://dododirectory.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free tier requires permanent dofollow backlink + permanent 'Featured on' badge on submitter's site; $9.99 Premium removes both requirements and skips 14-day review queue; $49.99 review-article tier also available."
+audience:
+  - startups
+  - saas
+  - software
+  - products
+authentication:
+  required: true
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - permanent dofollow backlink to dododirectory.com
+    - "permanent 'Featured on' badge on submitter's site (free tier only)"
+    - "manual review, ~2 weeks (free tier)"
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://dododirectory.com/item/freispace
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-b
+  sources:
+    - https://dododirectory.com/submit

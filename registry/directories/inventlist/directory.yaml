@@ -1,0 +1,71 @@
+id: inventlist
+name: InventList
+website: https://inventlist.com/
+submission_url: https://inventlist.com/submit/new
+cost:
+  classification: FREEMIUM
+  notes: Free product listing. Optional sponsorship is offered; public pricing was not visible on the submission page.
+audience:
+  - indie-makers
+  - startups
+  - software
+  - saas
+  - developer-tools
+  - products
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - github
+    - x
+    - email sign-in link
+submission:
+  url_first: true
+  fields:
+    - name: product URL
+      required: true
+    - name: title
+      required: true
+      limit: 20
+    - name: tagline
+      required: true
+      limit: 200
+    - name: categories
+      required: false
+    - name: primary category
+      required: false
+    - name: short description
+      required: false
+      limit: 300
+  conditions:
+    - Free submission; submitted page remains private until approved.
+    - "Optional InventList badge increases search, trending, and newsletter reach; it is not required for a free listing."
+    - Homepage and newsletter sponsorships are paid and optional.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+listing_url_pattern: "https://inventlist.com/sites/{slug}"
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://inventlist.com/sites/whop
+  samples: 3
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://inventlist.com/submit
+    - https://inventlist.com/submit/new
+    - https://inventlist.com/users/sign_in

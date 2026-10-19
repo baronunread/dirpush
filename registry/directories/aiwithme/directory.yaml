@@ -1,0 +1,54 @@
+id: aiwithme
+name: AI With Me
+website: https://aiwith.me
+submission_url: https://aiwith.me/submit
+cost:
+  classification: PAID
+  notes: "One-time $19.9, or unlimited monthly $29.9/mo. Free submissions may exist but with longer wait and no homepage visibility"
+audience:
+  - ai-tools
+  - saas
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: true
+  fields:
+    - name: Website name
+      required: true
+    - name: Website url
+      required: true
+    - name: Submit type
+      required: true
+  conditions:
+    - payment required
+    - 1-7 day listing time for paid
+autofetch:
+  supported: true
+  expected:
+    - name
+    - description
+    - logo
+    - screenshots
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 5
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://aiwith.me/tools/fluxproweb-com/
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: haiku-12
+  sources:
+    - https://aiwith.me/submit

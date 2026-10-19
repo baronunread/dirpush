@@ -1,0 +1,68 @@
+id: tipseason
+name: TipSeason
+website: https://www.tipseason.com/
+submission_url: https://www.tipseason.com/ai-tools/submit-free
+cost:
+  classification: FREEMIUM
+  notes: "Free directory listing, queue wait stated as 90+ days. Premium $49 and Ultimate $99 paid visibility packages; Gold is custom."
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: email
+      required: true
+    - name: tool name
+      required: true
+    - name: short description
+      required: true
+      limit: 30
+    - name: long description
+      required: true
+      limit: 500
+    - name: category
+      required: true
+    - name: pricing model
+      required: true
+    - name: primary use case
+      required: true
+    - name: website URL
+      required: true
+    - name: social URL
+      required: false
+    - name: advertising interest
+      required: false
+    - name: how heard
+      required: true
+  conditions:
+    - Free queue wait stated as 90+ days
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: 90+ days for free queue; paid listing stated as 24–48 hours
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.tipseason.com/aitool/deeplead
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.tipseason.com/ai-tools/submit
+    - https://www.tipseason.com/ai-tools/submit-free

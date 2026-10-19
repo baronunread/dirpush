@@ -1,0 +1,49 @@
+id: huzzler
+name: Huzzler
+website: https://huzzler.so
+submission_url: https://huzzler.so/submit-product
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free tier ($0) requires embedding a Huzzler badge on your site; goes live after ~72 day queue, not indexed by Google, not on homepage. Launch Boost ($39 one-time) removes the badge requirement, goes live immediately, gets indexed, shown in 'Recently Boosted'. Both tiers get a DR65+ dofollow backlink."
+audience:
+  - saas
+  - startups
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Huzzler badge required on your site for free tier
+    - manual review by a person
+    - ~72 day queue for free tier
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: about 72 days (free tier)
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://huzzler.so/reviews/web-scraping-apis/firecrawl
+  samples: 2
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-28
+  by: sonnet-rc
+  sources:
+    - https://huzzler.so/submit-product
+    - https://huzzler.so/login

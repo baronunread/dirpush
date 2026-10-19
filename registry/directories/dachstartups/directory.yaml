@@ -1,0 +1,49 @@
+id: dachstartups
+name: DACHstartups
+website: https://dachstartups.com/
+submission_url: https://dachstartups.com/
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free listing, limited to startups originating in the DACH region (Germany, Austria, Switzerland)."
+audience:
+  - startups
+  - saas
+  - software
+authentication:
+  required: false
+  signup_allowed: false
+  methods:
+    - email verification at product-domain address
+submission:
+  url_first: true
+  fields:
+    - name: startup_website_url
+      required: true
+  conditions:
+    - "Startup must originate in Germany, Austria, or Switzerland."
+    - AI drafts the entry; an email address on the product domain is needed to edit and publish it.
+autofetch:
+  supported: true
+  expected:
+    - startup profile details
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://dachstartups.com/startup/fepo.app
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://dachstartups.com/

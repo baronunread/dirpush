@@ -1,0 +1,50 @@
+id: newaiforyou
+name: NewAIForYou
+website: https://newaiforyou.com/
+submission_url: https://newaiforyou.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: FAQ says free submissions require adding code from the submission page to the submitter homepage. Pricing currently displays Premium as Free with $49.9 crossed out; promotion terms are unclear.
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: Tool Name
+      required: true
+    - name: Tool Website Url
+      required: true
+  conditions:
+    - Free submission requires placing the provided code on the product homepage
+    - Tools must be AI-related and have a valid website URL
+    - "Premium pricing/promotion is unclear: shown as Free with $49.9 crossed out"
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://newaiforyou.com/ai/novastart
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://newaiforyou.com/
+    - https://newaiforyou.com/submit
+    - https://newaiforyou.com/pricing

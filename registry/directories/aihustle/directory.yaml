@@ -1,0 +1,51 @@
+id: aihustle
+name: AI Hustle
+website: https://aihustle.tools
+submission_url: https://aihustle.tools/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free listing via Tally form, but mandatory: must add a backlink to aihustle.tools on the submitter's homepage or footer, or the tool will not be published. No paid tier found anywhere on the site."
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: AI tool name
+      required: true
+    - name: Email address
+      required: true
+    - name: Website
+      required: true
+    - name: Backlink URL
+      required: true
+    - name: Message
+      required: false
+  conditions:
+    - "mandatory backlink to https://aihustle.tools on submitter's homepage or footer"
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://aihustle.tools/elevenlabs/
+  samples: 3
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-b
+  sources:
+    - https://aihustle.tools/submit

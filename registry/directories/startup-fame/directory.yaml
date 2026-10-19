@@ -1,0 +1,51 @@
+id: startup-fame
+name: Startup Fame
+website: https://startupfa.me
+submission_url: https://startupfa.me/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Verified plan free with homepage badge required. Highlight ($19/mo) and Spotlight ($149/mo) for no-badge instant listing.
+audience:
+  - startups
+  - saas
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: true
+  fields:
+    - name: website
+      required: true
+  conditions:
+    - homepage badge required for free plan
+    - 7-day review for Verified
+    - instant for paid plans
+autofetch:
+  supported: true
+  expected:
+    - name
+    - description
+    - logo
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://startupfa.me/s/streetsst
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: haiku-6
+  sources:
+    - https://startupfa.me/pricing

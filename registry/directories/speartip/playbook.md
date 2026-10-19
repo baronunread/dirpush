@@ -1,0 +1,1 @@
+Eligibility is limited to EU/EEA-established companies. Free Launch is €0 forever and includes moderation, a 30-day launch, and lasting product/company pages. Pro is optional at €29 once. Vendor Workspace contains the actual submission portal; its fields and auth details were not inspected.

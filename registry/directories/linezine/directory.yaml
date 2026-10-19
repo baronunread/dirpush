@@ -1,0 +1,44 @@
+id: linezine
+name: LineZine
+website: https://linezine.com/
+submission_url: https://linezine.com/list-your-tool
+cost:
+  classification: PAID
+  notes: Public listing starts at $5 one-time; other listing tiers include $29 one-time and Featured at $129/year. Article placement starts at $49.
+audience:
+  - ai-tools
+  - marketing
+  - saas
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - No free listing advertised; paid listing options only.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://linezine.com/tools/ai-chatbot-by-elfsight
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://linezine.com/list-your-tool

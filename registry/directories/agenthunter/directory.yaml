@@ -1,0 +1,53 @@
+id: agenthunter
+name: AgentHunter
+website: https://agenthunter.io
+submission_url: https://agenthunter.io/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free with backlink requirement; Listing $79 one-time; Sponsor $249/week
+audience:
+  - ai-tools
+  - ai-agents
+  - developer-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+submission:
+  url_first: true
+  fields:
+    - name: agent_name
+      required: true
+    - name: description
+      required: true
+    - name: website_url
+      required: true
+    - name: category
+      required: true
+  conditions:
+    - backlink to AgentHunter required for free tier
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 5
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://www.agenthunter.io/agent/sorank
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: haiku-13
+  sources:
+    - https://agenthunter.io/pricing

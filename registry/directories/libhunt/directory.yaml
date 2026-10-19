@@ -1,0 +1,50 @@
+id: libhunt
+name: LibHunt
+website: https://libhunt.com
+submission_url: https://www.libhunt.com/repo/submit
+cost:
+  classification: VERIFIED_FREE
+  notes: "Free, no strings, no badge/backlink required; submit by GitHub repo URL only"
+audience:
+  - open-source
+authentication:
+  required: false
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: github_repo_url
+      required: true
+  conditions: []
+autofetch:
+  supported: true
+  expected:
+    - name
+    - description
+    - stars
+    - language
+media:
+  logo: false
+  screenshots:
+    supported: false
+    max: 0
+kind: listing
+human_only: null
+listing_url_pattern: "https://www.libhunt.com/r/{slug}"
+link:
+  rel: dofollow
+  method: own_listing
+  evidence: null
+  samples: 1
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bB
+  sources:
+    - https://www.libhunt.com/repo/submit
+    - https://www.libhunt.com/r/claude-code

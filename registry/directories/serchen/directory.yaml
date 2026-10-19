@@ -1,0 +1,48 @@
+id: serchen
+name: Serchen
+website: https://www.serchen.com
+submission_url: https://www.serchen.com/get-listed
+cost:
+  classification: PAID
+  notes: "Live form ends in Continue to payment: Basic Membership $49.95/year via Stripe. Earlier note: No cost mentioned; free listing available. Badge gate not visible past bot wall - the /get-listed/new form itself is blocked by Cloudflare Turnstile even headed, so the final submit step could not be inspected."
+audience:
+  - saas
+  - business-tools
+  - software
+authentication:
+  required: false
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: false
+  fields:
+    - name: company_name
+      required: true
+  conditions:
+    - manual review
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 5
+kind: listing
+human_only: "Cloudflare Turnstile at /get-listed/new blocked an automated browser even headed with an ~8s wait, on two separate research passes"
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://www.serchen.com/company/beehiiv
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bB
+  sources:
+    - https://www.serchen.com/get-listed

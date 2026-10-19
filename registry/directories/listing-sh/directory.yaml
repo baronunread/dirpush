@@ -1,0 +1,70 @@
+id: listing-sh
+name: Listing.sh
+website: https://listing.sh/
+submission_url: https://listing.sh/submit
+cost:
+  classification: FREEMIUM
+  notes: Free standard editorial review with permanent listing and stated decision within 48 hours. Priority is $49 (12-hour decision); Boosted is $149 with 30-day homepage placement.
+audience:
+  - software
+  - startups
+  - saas
+  - developer-tools
+  - marketing
+  - design
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+    - github
+submission:
+  url_first: false
+  fields:
+    - name: tool name
+      required: true
+    - name: website URL
+      required: true
+    - name: one-line description
+      required: true
+    - name: category
+      required: true
+    - name: pricing model
+      required: true
+    - name: full description
+      required: false
+    - name: key features
+      required: false
+    - name: pros and cons
+      required: false
+    - name: FAQs
+      required: false
+  conditions:
+    - Manual editorial review; free decision within 48 hours.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+review_time: within 48 hours
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://listing.sh/tools/pocket-id
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://listing.sh/submit
+    - https://listing.sh/

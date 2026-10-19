@@ -1,0 +1,48 @@
+id: toolrain
+name: ToolRain
+website: https://toolrain.com/
+submission_url: https://toolrain.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Limited-time free path requires badge verification kept permanently. Basic $9.90 and Pro $19.90 one-time remove badge requirement.
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - password
+    - google
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Badge verification required and must remain permanently
+    - review and listing within 72 hours
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: listing
+review_time: within 72 hours
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://toolrain.com/item/writesonic
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://toolrain.com/pricing
+    - https://toolrain.com/submit

@@ -1,0 +1,44 @@
+id: earlyhunt
+name: EarlyHunt
+website: https://earlyhunt.com
+submission_url: https://earlyhunt.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free Launch requires the EarlyHunt badge live on your site; link is nofollow unless top-3 weekly win. $19 one-time Premium removes badge requirement and guarantees dofollow + instant launch.
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - "unknown - submit page requires sign-in/client auth, form fields not visible pre-auth"
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - "EarlyHunt badge required on submitter's site for free tier"
+    - weekly Monday 8am UTC launch cohort
+    - standard launch queue
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://earlyhunt.com/project/prospectpuffin
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-c
+  sources:
+    - https://earlyhunt.com/pricing

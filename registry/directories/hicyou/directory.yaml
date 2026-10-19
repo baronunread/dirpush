@@ -1,0 +1,51 @@
+id: hicyou
+name: HiCyou
+website: https://hicyou.com/
+submission_url: https://hicyou.com/submit
+cost:
+  classification: FREEMIUM
+  notes: Listing on HiCyou is free with daily capped slots and queue. Optional badge verification allows skipping the queue and grants additional benefits; paid network publishing begins at $3.99 one-time.
+audience:
+  - saas
+  - startups
+  - products
+  - ai-tools
+  - open-source
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - github
+    - google
+    - email link
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - "Limited free slots each day; if full, wait for next opening"
+    - Badge is optional; only for extra slots/queue skip
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: listing
+review_time: daily queue; exact timing not stated
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://hicyou.com/unfenced
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://hicyou.com/pricing
+    - https://hicyou.com/submit

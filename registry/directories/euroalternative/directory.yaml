@@ -1,0 +1,48 @@
+id: euroalternative
+name: EuroAlternative
+website: https://euroalternative.eu/
+submission_url: https://euroalternative.eu/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free tier and listing cost are not visible before sign-in; advertising is offered separately. Eligibility is limited to European-made alternatives to big-tech services.
+audience:
+  - software
+  - startups
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Only European-made alternatives to big-tech services fit the directory
+    - Submission fields and listing terms are hidden behind login
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://euroalternative.eu/countries
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://euroalternative.eu/about
+    - https://euroalternative.eu/submit
+    - https://euroalternative.eu/auth/login?next=%2Fsubmit

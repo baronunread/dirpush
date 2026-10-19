@@ -1,0 +1,49 @@
+id: would-you-pay
+name: Would You Pay?
+website: https://iwouldpay.dev/
+submission_url: https://iwouldpay.dev/submit
+cost:
+  classification: FREEMIUM
+  notes: "Startup submission is advertised free; optional Boost feature exists, but public pricing was not visible."
+audience:
+  - startups
+  - indie-makers
+authentication:
+  required: false
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: website
+      required: true
+  conditions:
+    - validation results usually arrive within an hour
+autofetch:
+  supported: true
+  expected:
+    - remaining startup details from website
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: results usually within an hour
+link:
+  rel: dofollow
+  method: own_listing
+  evidence: null
+  samples: 1
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://iwouldpay.dev/
+    - https://iwouldpay.dev/submit
+    - https://iwouldpay.dev/faq

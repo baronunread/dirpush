@@ -1,0 +1,60 @@
+id: datalook
+name: DataLook.io
+website: https://datalook.io
+submission_url: https://datalook.io/submit
+cost:
+  classification: PAID
+  notes: $199 Basic or $399 Featured; no free tier; +$100 NSFW fee if applicable
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: tool_name
+      required: true
+    - name: tool_url
+      required: true
+    - name: detailed_description
+      required: true
+    - name: key_features
+      required: false
+    - name: logo_url
+      required: false
+    - name: screenshots_urls
+      required: false
+    - name: contact_name
+      required: true
+    - name: contact_email
+      required: true
+    - name: company_name
+      required: false
+  conditions:
+    - payment required
+    - manual review 2-3 business days
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 0
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://datalook.io/s/18-ai-chat
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-h4
+  sources:
+    - https://datalook.io/submit

@@ -1,0 +1,54 @@
+id: saassy-board
+name: Saassy Board
+website: https://saassy-board.com/
+submission_url: https://saassy-board.com/
+cost:
+  classification: PAID
+  notes: "Competition Entry is $10 one-time, described as pay once and compete forever."
+audience:
+  - saas
+  - startups
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: false
+  fields:
+    - name: First name
+      required: true
+    - name: Last name
+      required: true
+    - name: Email address
+      required: true
+  conditions:
+    - $10 one-time Competition Entry
+    - "Connect a verified Stripe, Dodo Payments, Lemon Squeezy, Polar, or Paystack account"
+    - Earnings metrics are displayed publicly and used for revenue-based scoring
+    - Project submission fields are behind account sign-up
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: launch_board
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://saassy-board.com/leaderboard
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://saassy-board.com/

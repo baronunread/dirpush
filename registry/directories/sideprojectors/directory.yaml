@@ -1,0 +1,55 @@
+id: sideprojectors
+name: SideProjectors
+website: https://sideprojectors.com
+submission_url: https://www.sideprojectors.com/auth/login
+cost:
+  classification: FREEMIUM
+  notes: "Free tier ($0/mo): ad-supported, basic project submission/showcase, limited daily contacts/DMs. Paid tiers ($3-6+/mo) remove ads and raise contact/DM limits and add alerts -- not required to list a project."
+audience:
+  - saas
+  - mobile-apps
+  - web-apps
+  - side-projects
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+    - github
+    - gitlab
+    - producthunt
+    - linkedin
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - manual review for quality
+    - detailed project information required
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: true
+    max: 0
+kind: marketplace
+human_only: null
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://www.sideprojectors.com/project/100736/wedding-seating-studio
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-28
+  by: sonnet-rc
+  sources:
+    - https://sideprojectors.com/submit
+    - https://sideprojectors.com/membership

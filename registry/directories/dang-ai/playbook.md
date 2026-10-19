@@ -1,0 +1,1 @@
+Free listing requires adding a crawlable backlink to dang.ai; free tier has up to 4 week review time. Paid options: $49 Basic (4-day review, featured badge, 2 categories) or $30+$19/mo Pro (2-day review, featured-first placement, 4 categories, newsletter feature). Supports Standard and NSFW tool categories.

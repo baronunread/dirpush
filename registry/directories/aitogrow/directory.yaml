@@ -1,0 +1,52 @@
+id: aitogrow
+name: AItoGrow
+website: https://aitogrow.com/
+submission_url: "https://aitogrow.com/#send-your-tool"
+cost:
+  classification: VERIFIED_FREE
+  notes: The public Send Your Tool form shows no fee or payment step.
+audience:
+  - ai-tools
+  - startups
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: name
+      required: true
+    - name: email
+      required: true
+    - name: your tool URL
+      required: true
+    - name: message
+      required: false
+  conditions:
+    - AI tools for startup growth
+    - Curated editorial review
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://aitogrow.com/ai-text-to-image-generators/
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://aitogrow.com/

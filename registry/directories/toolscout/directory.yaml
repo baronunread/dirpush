@@ -1,0 +1,45 @@
+id: toolscout
+name: ToolScout
+website: https://toolscout.ai/
+submission_url: https://toolscout.ai/submit
+cost:
+  classification: FREEMIUM
+  notes: Standard listing is free. Boost or Featured priority placement starts at $49; promoted tools are reviewed within 24–48 hours.
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Human review before standard listing goes live
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: sponsored
+  method: sample_listing
+  evidence: https://toolscout.ai/tool/mcp-tc
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://toolscout.ai/submit
+    - https://toolscout.ai/signin?returnTo=/submit

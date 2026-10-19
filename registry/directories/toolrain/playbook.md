@@ -1,0 +1,1 @@
+Create an account using email/password, Google or GitHub. The free tier is labeled limited-time and requires permanent badge verification; review is stated as within 72 hours. Basic $9.90 one-time removes backlink requirement. Form fields hidden behind login.

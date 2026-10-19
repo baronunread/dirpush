@@ -1,0 +1,51 @@
+id: tools-cafe
+name: tools.cafe
+website: https://tools.cafe/
+submission_url: https://tools.cafe/dashboard
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free listing requires tools.cafe badge according to FAQ; pricing page says badge required for free-tier dofollow backlink. Featured Brew $15 one-time skips queue and has no badge requirement; Growth Brew $29 one-time.
+audience:
+  - indie-makers
+  - saas
+  - developer-tools
+  - ai-tools
+  - software
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email one-time code
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - install tools.cafe badge on product website (FAQ says required to be listed)
+    - free launch is queued by date
+    - manual form fields hidden behind sign-in
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: launch_board
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://tools.cafe/p/runway
+  samples: 3
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://tools.cafe/
+    - https://tools.cafe/pricing
+    - https://tools.cafe/dashboard

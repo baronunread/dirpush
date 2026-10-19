@@ -1,0 +1,51 @@
+id: all-in-ai-tools
+name: All in AI Tools
+website: https://allinai.tools/
+submission_url: https://allinai.tools/pricing
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free only for domains at least six months old and with the directory link code placed on the submitter’s homepage. Review up to 90 days. $49 Fast Submit optional.
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: tool name
+      required: true
+    - name: website URL
+      required: true
+    - name: email
+      required: true
+  conditions:
+    - Domain must be at least six months old
+    - Add All in AI Tools link code to your homepage
+    - Free review can take up to 90 days
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: up to 90 days for free submissions
+link:
+  rel: sponsored
+  method: sample_listing
+  evidence: https://allinai.tools/ai-tool-submit
+  samples: 1
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://allinai.tools/pricing

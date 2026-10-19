@@ -1,0 +1,1 @@
+Only accepts GitHub repository URLs (owner/repo format) - the product must be open source on GitHub. Paste the repo URL, click Continue. No account needed, no badge/backlink required. Live listings sit at /r/{repo-slug}, e.g. /r/claude-code.

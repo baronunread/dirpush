@@ -1,0 +1,1 @@
+Choose Basic Launch for the free path, but note it requires adding a backlink before approval and the queue currently extends to Dec 5. Premium is $14.99 once and removes both constraints. The submit page advertises AI-assisted listing completion; account methods and form fields are behind the plan-selection step and were not inspected.

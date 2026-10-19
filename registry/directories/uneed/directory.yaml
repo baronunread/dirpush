@@ -1,0 +1,55 @@
+id: uneed
+name: Uneed
+website: https://www.uneed.best
+submission_url: https://www.uneed.best/pricing
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free 'Join the line' launch requires reaching an upvote score of 10 to stay published (vote threshold condition) - if it falls short the listing doesn't stay up. 20 upvotes additionally unlocks a dofollow backlink from a 75DR domain. Paid: $14.99 Fast-track (~14 day assignment, dofollow at 10 upvotes), $29.99 Skip the line (choose date, no vote requirement to stay published)."
+audience:
+  - startups
+  - products
+  - saas
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: true
+  fields:
+    - name: product_name
+      required: true
+    - name: product_info
+      required: true
+    - name: visuals
+      required: true
+  conditions:
+    - 10_upvotes_required_to_stay_published_on_free_tier
+    - 20_upvotes_for_dofollow_backlink
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 5
+kind: launch_board
+human_only: null
+review_time: "up to 5 months (free 'Join the line'); ~14 days (Fast-track paid)"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.uneed.best/tool/--free-ai-song-maker
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-28
+  by: sonnet-r1
+  sources:
+    - https://www.uneed.best/pricing

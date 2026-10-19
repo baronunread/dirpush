@@ -1,0 +1,50 @@
+id: tinylaunch
+name: TinyLaunch
+website: https://www.tinylaunch.com
+submission_url: https://www.tinylaunch.com/submit
+cost:
+  classification: FREEMIUM
+  notes: Free standard launch; $39 premium launch with guaranteed backlink; $279 submission service; $30/week featured spot add-on
+audience:
+  - startups
+  - products
+  - saas
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+    - github
+    - x
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - high-authority backlink only guaranteed for top-3 ranking on the free tier
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: launch_board
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.tinylaunch.com/launch/21484-dmly
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-28
+  by: sonnet-ra
+  sources:
+    - https://www.tinylaunch.com/submit
+    - https://www.tinylaunch.com/pricing
+    - https://www.tinylaunch.com/launch/20299-fetchmark

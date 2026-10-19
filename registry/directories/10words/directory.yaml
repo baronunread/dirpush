@@ -1,0 +1,53 @@
+id: 10words
+name: 10words
+website: https://10words.io
+submission_url: https://10words.io
+cost:
+  classification: FREEMIUM
+  notes: "Free submission, no badge/backlink required to submit or go live. Optional $150/week sponsorship at portal.10words.io/sponsor is a pure visibility upsell."
+audience:
+  - startups
+  - saas
+  - indie-makers
+  - developer-tools
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: false
+  fields:
+    - name: startup_description
+      required: true
+    - name: startup_url
+      required: true
+  conditions:
+    - description max 10 words
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: "free queue ~2,561 days (effectively never); paid skip-the-line"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://10words.io/
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bB
+  sources:
+    - https://portal.10words.io/auth/register
+    - https://portal.10words.io/sponsor

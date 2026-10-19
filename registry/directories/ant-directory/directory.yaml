@@ -1,0 +1,52 @@
+id: ant-directory
+name: Ant Directory
+website: https://antdirectory.com/
+submission_url: https://antdirectory.com/
+cost:
+  classification: CONDITIONAL_FREE
+  notes: $0 free plan; the pricing page says the listing includes a permanent link with backlink maintenance. Paid Listing is shown at $9.9 (with $14.9 also displayed as crossed-out price); Featured is $19.9 (crossed from $39.9).
+audience:
+  - ai-tools
+  - saas
+  - developer-tools
+  - productivity
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Free listing requires maintaining a backlink
+    - 180+ day wait at current submission pace
+    - Limited free slots; submissions may be rejected
+    - Google or GitHub login required before submit details are shown
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: 180+ days at current pace
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://antdirectory.com/item/getrender
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://antdirectory.com/
+    - https://antdirectory.com/pricing

@@ -1,0 +1,45 @@
+id: startuplist-africa
+name: StartupList Africa
+website: https://www.startuplist.africa
+submission_url: https://www.startuplist.africa/submit-startup
+cost:
+  classification: FREEMIUM
+audience:
+  - startups
+  - africa
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: true
+  fields: []
+  conditions:
+    - account required to save progress
+    - team verification before going live
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+    max: 0
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.startuplist.africa/startups/brimble
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bC
+  sources:
+    - https://www.startuplist.africa/submit-startup

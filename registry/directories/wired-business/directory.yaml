@@ -1,0 +1,44 @@
+id: wired-business
+name: Wired Business
+website: https://wired.business
+submission_url: https://wired.business/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free tier requires a backlink to Wired Business on submitter's homepage or footer; reviewed within 72 hours. $29 (often discounted to $20.30) Pro tier removes the backlink requirement and publishes instantly."
+audience:
+  - saas
+  - startups
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - "backlink to Wired Business required on submitter's homepage or footer for free tier"
+    - reviewed within 72 hours for free tier
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 1
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://wired.business/cleverbetlabs
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-a
+  sources:
+    - https://wired.business/submit

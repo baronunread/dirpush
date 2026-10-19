@@ -1,0 +1,57 @@
+id: thedevtoolsdir
+name: TheDevToolsDir
+website: https://thedevtoolsdir.com
+submission_url: https://thedevtoolsdir.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free listing requires the site's badge as a dofollow link on the submitter's homepage; checked regularly, unpublished if not restored within 7 days of removal. $19 one-time removes the badge requirement and is listed immediately with 3 dofollow links; $29 covers this directory plus sister site TheSaaSDir.com."
+audience:
+  - developer-tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: Product Name
+      required: true
+    - name: Tagline
+      required: true
+    - name: Description
+      required: true
+    - name: Screenshot
+      required: false
+    - name: Categories (up to 3)
+      required: true
+    - name: Tags
+      required: false
+  conditions:
+    - "badge as dofollow link on submitter's site (free tier), checked regularly"
+autofetch:
+  supported: true
+  expected:
+    - name
+    - tagline
+    - description
+media:
+  logo: false
+  screenshots:
+    supported: true
+    max: 1
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://thedevtoolsdir.com/product/agentaos/
+  samples: 2
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-b
+  sources:
+    - https://thedevtoolsdir.com/pricing
+    - https://thedevtoolsdir.com/submit

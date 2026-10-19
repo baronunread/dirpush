@@ -1,0 +1,62 @@
+id: openalternative
+name: OpenAlternative
+website: https://openalternative.co
+submission_url: https://openalternative.co/submit
+cost:
+  classification: PAID
+  notes: "After submitting the project details, the site requires a paid listing package to finalize. Standard is $97 (48h); Premium is $137 (24h); Ultimate starts at $197/month. No free listing option was shown."
+audience:
+  - open-source
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+    - github
+submission:
+  url_first: true
+  fields:
+    - name: project name
+      required: true
+    - name: website URL
+      required: true
+    - name: repository URL
+      required: true
+    - name: suggested alternative
+      required: false
+    - name: discount
+      required: false
+    - name: discount code
+      required: false
+  conditions:
+    - manual review (project must be genuinely open source)
+    - "paid package required to finalize submission; Standard $97, Premium $137, Ultimate from $197/month"
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+kind: listing
+human_only: null
+listing_url_pattern: "https://openalternative.co/{slug}"
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://openalternative.co/discounts
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bA
+  sources:
+    - https://openalternative.co/submit
+    - https://openalternative.co/advertise
+    - https://openalternative.co/n8n

@@ -1,0 +1,75 @@
+id: the-tool-directory
+name: The Tool Directory
+website: https://thetooldirectory.com/
+submission_url: https://thetooldirectory.com/submit-a-tool/
+cost:
+  classification: FREEMIUM
+  notes: Free standard listing with editorial review. Optional paid featured placement is offered after review; price is not stated on the form.
+audience:
+  - software
+  - saas
+  - ai-tools
+  - developer-tools
+  - marketing
+  - productivity
+authentication:
+  required: false
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: tool or product name
+      required: true
+    - name: product website URL
+      required: true
+    - name: one-line description
+      required: true
+    - name: pricing
+      required: false
+    - name: category
+      required: false
+    - name: email
+      required: true
+    - name: platforms
+      required: false
+    - name: who it is for
+      required: false
+    - name: use cases
+      required: false
+    - name: alternatives
+      required: false
+    - name: logo URL
+      required: false
+    - name: screenshots
+      required: false
+    - name: full product description
+      required: true
+  conditions:
+    - "Manual review for clarity, legitimacy, and usefulness; approval is not automatic."
+    - An optional field asks whether the maker is interested in paid featured placement after editorial review.
+autofetch:
+  supported: true
+  expected:
+    - website prefill; exact fields not stated
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: listing
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://thetooldirectory.com/tools/room-lighting-planner/
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://thetooldirectory.com/submit-a-tool/
+    - https://thetooldirectory.com/

@@ -1,0 +1,50 @@
+id: startupdirectory
+name: StartupDirectory
+website: https://startupdirectory.net
+submission_url: https://startupdirectory.net/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free listing is $0 forever but requires a badge on the submitter's site; instant publishing after badge verification. Premium is $9.99 one-time without a badge; featured advertising is $29/month."
+audience:
+  - startups
+  - saas
+  - software
+  - products
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - github
+    - google
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - badge required to publish free listing
+    - form fields hidden behind login
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://startupdirectory.net/free-ai-humanizer
+  samples: 3
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://startupdirectory.net/pricing
+    - https://startupdirectory.net/submit

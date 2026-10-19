@@ -1,0 +1,52 @@
+id: showmysites
+name: ShowMySites
+website: https://www.showmysites.com
+submission_url: https://www.showmysites.com
+cost:
+  classification: FREEMIUM
+  notes: "Free tier lists up to 25 sites unconditionally (no badge/link needed to be listed); only the outbound backlink's dofollow status depends on a reciprocal link or badge. $10 one-time Premium removes that requirement account-wide."
+audience:
+  - startups
+  - saas
+  - ai-tools
+  - products
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email
+submission:
+  url_first: false
+  fields:
+    - name: username
+      required: true
+  conditions:
+    - up to 25 listings per account on free tier
+    - "reciprocal link or badge needed only for dofollow backlink status, not for the listing itself"
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+    max: 0
+kind: listing
+human_only: null
+link:
+  rel: nofollow
+  method: own_listing
+  evidence: null
+  samples: 1
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bC
+  sources:
+    - https://www.showmysites.com/pricing
+    - https://www.showmysites.com/signup

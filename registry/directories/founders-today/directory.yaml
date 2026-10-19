@@ -1,0 +1,52 @@
+id: founders-today
+name: Founders Today
+website: https://founderstoday.org/
+submission_url: https://founderstoday.org/launches/submit
+cost:
+  classification: VERIFIED_FREE
+  notes: Free forever; no credit card or paid listing tier. Site advertises two launches per month.
+audience:
+  - startups
+  - saas
+  - indie-makers
+  - products
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email
+    - password
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - 24–48 hour review
+    - Launch form fields are behind signup and were not visible
+    - Do-follow access is limited by cohort but is not stated as a listing requirement
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: launch_board
+human_only: null
+review_time: 24–48 hours
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://founderstoday.org/product/ardor-3nz0e
+  samples: 2
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://founderstoday.org/launches/submit
+    - https://founderstoday.org/signup

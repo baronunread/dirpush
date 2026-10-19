@@ -1,0 +1,56 @@
+id: directree
+name: Directree
+website: https://www.directree.io
+submission_url: https://www.directree.io/submit
+cost:
+  classification: FREEMIUM
+  notes: Free submissions and claiming; new free claims enter review queue up to 35 days. Fast Lane costs $19 one-time per listing for instant approval; Directree Plus is $49 one-time and includes three skips. No pay-to-rank.
+audience:
+  - saas
+  - software
+  - developer-tools
+  - marketing
+  - productivity
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: true
+  fields:
+    - name: product_url
+      required: true
+  conditions:
+    - Free review queue may take up to 35 days; paid Fast Lane/Plus can skip it.
+    - A free account is required.
+autofetch:
+  supported: true
+  expected:
+    - product listing data from the website
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: Up to 35 days for new free claims; paid Fast Lane is instant.
+listing_url_pattern: "https://www.directree.io/tool/{slug}"
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://www.directree.io/tool/linear
+  samples: 3
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.directree.io/submit
+    - https://www.directree.io/pricing
+    - https://www.directree.io/signup
+    - https://www.directree.io/tool/monghoul

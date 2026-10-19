@@ -1,0 +1,59 @@
+id: basedtools
+name: BasedTools
+website: https://www.basedtools.ai/
+submission_url: https://www.basedtools.ai/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free Track requires homepage backlink and domain rating >15; listing is removed if backlink is removed. Premium is $9.99/month, currently shown discounted from $19.99/month."
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: true
+  methods:
+    - google
+    - discord
+submission:
+  url_first: false
+  fields:
+    - name: category
+      required: true
+    - name: product name
+      required: true
+    - name: website URL
+      required: true
+    - name: short description
+      required: false
+    - name: description
+      required: false
+    - name: screenshot
+      required: false
+  conditions:
+    - Domain rating must be above 15
+    - Keep BasedTools backlink on homepage or listing is removed
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 1
+kind: listing
+human_only: null
+review_time: within 24 hours on Free Track; Premium goes live within seconds
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://www.basedtools.ai/ai/restorephotos
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.basedtools.ai/submit

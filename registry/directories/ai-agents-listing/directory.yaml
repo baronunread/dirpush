@@ -1,0 +1,76 @@
+id: ai-agents-listing
+name: AI Agents Listing
+website: https://aiagentslisting.com/
+submission_url: https://aiagentslisting.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free AI-agent listing requires a verified badge with backlink. Free MCP-server/agent-skill route uses a public GitHub repository URL without the badge. Paid one-time tiers start at $19.
+audience:
+  - ai-tools
+  - developer-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: name
+      required: true
+      limit: 35
+    - name: website
+      required: true
+      limit: 100
+    - name: contact_email
+      required: true
+      limit: 50
+    - name: type
+      required: true
+    - name: access_model
+      required: true
+    - name: pricing_model
+      required: true
+    - name: industry
+      required: true
+    - name: categories
+      required: true
+    - name: tagline
+      required: true
+      limit: 100
+    - name: description
+      required: true
+      limit: 750
+    - name: logo
+      required: true
+  conditions:
+    - Free AI-agent listing requires an embedded badge with a working backlink
+    - Human review; free queue takes a few weeks
+    - MCP servers and agent skills can instead be submitted using a public GitHub repository URL
+    - "Category count depends on plan: Free/Fast Track 1, Starter 2, Growth 3, Ecosystem Partner 5"
+autofetch:
+  supported: true
+  expected:
+    - AI-assisted form drafting from the submitted website
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 1
+kind: listing
+review_time: a few weeks for free AI-agent listings
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://aiagentslisting.com/mcp/url-intelligence-agent
+  samples: 3
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://aiagentslisting.com/submit
+    - https://aiagentslisting.com/blog/how-to-submit-your-ai-agent

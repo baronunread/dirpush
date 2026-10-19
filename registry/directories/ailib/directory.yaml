@@ -1,0 +1,64 @@
+id: ailib
+name: Ailib.ru
+website: https://ailib.ru/
+submission_url: https://ailib.ru/add-ai/free/
+cost:
+  classification: VERIFIED_FREE
+  notes: Standard listing is explicitly free; optional support for the project is mentioned after sending and is not required.
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: E-mail
+      required: true
+    - name: AI tool name
+      required: true
+    - name: Website link
+      required: true
+    - name: AI tool description
+      required: true
+    - name: Application area
+      required: true
+    - name: Task
+      required: true
+    - name: Paid
+      required: false
+    - name: Free
+      required: false
+    - name: Trial access
+      required: false
+    - name: API available
+      required: false
+  conditions:
+    - Public form; no account required
+    - Optional support/donation after submission; no payment required
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://ailib.ru/ai/gpt4telegrambot-chatgpt-5-gemini-3-nano-banana/
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://ailib.ru/
+    - https://ailib.ru/add-ai/free/

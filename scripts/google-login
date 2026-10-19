@@ -1,0 +1,10 @@
+#!/bin/sh
+# One-time (or when the session expires): the human signs into Google in the agent's profile using
+# plain Chrome with no automation attached. Same keychain flags agent-browser uses, so it can read
+# the session afterwards. Quit this window (Cmd+Q) when done, before any agent uses the browser.
+cd "$(dirname "$0")/.."
+agent-browser close >/dev/null 2>&1
+# The agents' Chrome (`launch browser start`) holds the same profile; close it so this window owns it.
+bun src/cli.ts browser stop >/dev/null 2>&1
+open -na "Google Chrome" --args --user-data-dir="$PWD/data/browser-profile" --use-mock-keychain --password-store=basic \
+  --no-first-run "https://accounts.google.com/ServiceLogin?continue=https%3A%2F%2Fwww.google.com%2F"

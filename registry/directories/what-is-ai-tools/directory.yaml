@@ -1,0 +1,48 @@
+id: what-is-ai-tools
+name: What Is Ai Tools
+website: https://whatisaitools.com/
+submission_url: https://whatisaitools.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free submission requires adding the supplied directory backlink HTML to the submitter homepage. Optional $9.90 plan provides 24-hour review and featured treatment.
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: Website Name
+      required: true
+    - name: Website URL
+      required: true
+  conditions:
+    - Add the supplied directory backlink HTML to the product homepage before free submission
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: 24 hours for the $9.90 plan; free review time not stated
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://whatisaitools.com/abhyas-ai
+  samples: 3
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://whatisaitools.com/submit
+    - https://whatisaitools.com/pricing

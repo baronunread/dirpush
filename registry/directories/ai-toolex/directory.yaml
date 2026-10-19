@@ -1,0 +1,46 @@
+id: ai-toolex
+name: AIToolex
+website: https://aitoolex.com/
+submission_url: https://aitoolex.com/submit
+cost:
+  classification: FREEMIUM
+  notes: "Public site labels a submission path 'Submit Free' and exposes separate pricing plans; exact paid tiers are not visible logged out."
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Submission form and plan details are behind login.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://aitoolex.com/item/governingdocs
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://aitoolex.com/submit
+    - https://aitoolex.com/pricing

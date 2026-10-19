@@ -1,0 +1,55 @@
+id: builtbyme
+name: BuiltByMe
+website: https://builtbyme.io/
+submission_url: https://builtbyme.io/submit
+cost:
+  classification: FREEMIUM
+  notes: "Free plan: up to five launches per week, permanent listing, nofollow link. The $9 launch plan skips the queue and includes a dofollow link; the $19 one-time Sponsor plan gives 30-day placement and a dofollow link."
+audience:
+  - indie-makers
+  - saas
+  - developer-tools
+  - ai-tools
+  - products
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email
+    - password
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Free launch slots are limited to five per week; free links are nofollow.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: launch_board
+human_only: null
+review_time: Up to five free launches per week; queue timing not stated.
+listing_url_pattern: "https://builtbyme.io/products/{slug}"
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://builtbyme.io/products/cardaction
+  samples: 4
+  noindex: false
+  claimed: nofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://builtbyme.io/
+    - https://builtbyme.io/submit
+    - https://builtbyme.io/login
+    - https://builtbyme.io/pricing
+    - https://builtbyme.io/products/absencely

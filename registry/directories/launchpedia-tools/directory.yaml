@@ -1,0 +1,43 @@
+id: launchpedia-tools
+name: LaunchPedia Tools
+website: https://launchpedia.co/launchpedia-tools/
+submission_url: https://launchpedia.gumroad.com/l/tool-submission
+cost:
+  classification: PAID
+  notes: $9 one-time via Gumroad just to receive the submission form; no free tier.
+audience:
+  - startups
+  - saas
+  - makers
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - "payment required before receiving the submission form; manual review, listed within 3 business days"
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://launchpedia.co/launch_stack/freeway/
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-h5
+  sources:
+    - https://launchpedia.gumroad.com/l/tool-submission

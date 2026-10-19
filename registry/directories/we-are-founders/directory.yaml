@@ -1,0 +1,85 @@
+id: we-are-founders
+name: We Are Founders Tools Directory
+website: https://directory.wearefounders.uk/
+submission_url: https://tally.so/r/PdvzgQ
+cost:
+  classification: FREEMIUM
+  notes: Standard listing is free with a 4–6 week queue; $49 Fast-track provides review within 48 hours and 30 days featured. No backlink/badge required.
+audience:
+  - startups
+  - saas
+  - products
+  - developer-tools
+  - marketing
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: tool_name
+      required: true
+    - name: website_url
+      required: true
+    - name: handling_route
+      required: true
+    - name: tagline
+      required: true
+      limit: 120
+    - name: categories
+      required: true
+    - name: founder_stages
+      required: true
+    - name: starting_price
+      required: true
+    - name: currency
+      required: true
+    - name: free_tier_available
+      required: true
+    - name: free_trial_days
+      required: false
+    - name: affiliate_link
+      required: false
+    - name: affiliate_program
+      required: false
+    - name: differentiators
+      required: true
+    - name: poor_fit_users_or_use_cases
+      required: true
+    - name: additional_context
+      required: false
+    - name: contact_email
+      required: true
+    - name: social_profile
+      required: true
+  conditions:
+    - Manual editorial review
+    - submission adds sender to Friday Brief newsletter
+    - social profile is a required field
+    - Maximum 3 categories selections/uploads
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+review_time: 4–6 weeks free; 48 hours Fast-track
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://directory.wearefounders.uk/dext/
+  samples: 3
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://directory.wearefounders.uk/submit/
+    - https://tally.so/r/PdvzgQ

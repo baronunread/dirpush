@@ -1,0 +1,50 @@
+id: saasgenius
+name: SaasGenius
+website: https://www.saasgenius.com
+submission_url: https://www.saasgenius.com/get-listed
+cost:
+  classification: PAID
+  notes: "Paid listing service, fees described as 'very affordable' but no free option"
+audience:
+  - saas
+  - business-tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods:
+    - email
+submission:
+  url_first: false
+  fields:
+    - name: company_information
+      required: true
+    - name: social_media_pages
+      required: true
+    - name: category
+      required: true
+  conditions:
+    - email submission required
+    - manual review
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://www.saasgenius.com/it-security/
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: haiku-18
+  sources:
+    - https://www.saasgenius.com/get-listed

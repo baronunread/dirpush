@@ -1,0 +1,45 @@
+id: spotsaas
+name: Spotsaas
+website: https://spotsaas.com
+submission_url: https://partners.spotsaas.com/register
+cost:
+  classification: FREEMIUM
+  notes: Free listing; paid vendor tools and AI visibility upgrades available
+audience:
+  - saas
+  - software
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+    - microsoft
+submission:
+  url_first: true
+  fields: []
+  conditions:
+    - vendor signup requires a phone number and a company email (Gmail etc. rejected); lead-gen sales follow-up
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.spotsaas.com/product/trafficguard
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: haiku-disc1
+  sources:
+    - https://spotsaas.com

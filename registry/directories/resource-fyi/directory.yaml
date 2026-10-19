@@ -1,0 +1,47 @@
+id: resource-fyi
+name: Resource.fyi
+website: https://resource.fyi/
+submission_url: https://resource.fyi/
+cost:
+  classification: VERIFIED_FREE
+  notes: The homepage explicitly says products and tools can be submitted for free; no required paid tier or badge condition shown.
+audience:
+  - developer-tools
+  - design
+  - software
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Team review and approval before listing
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: ugc
+  method: own_listing
+  evidence: null
+  samples: 1
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://resource.fyi/

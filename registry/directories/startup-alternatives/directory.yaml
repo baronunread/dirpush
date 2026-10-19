@@ -1,0 +1,68 @@
+id: startup-alternatives
+name: Startup Alternatives
+website: https://www.startupalternatives.com/
+submission_url: https://www.startupalternatives.com/submit
+cost:
+  classification: VERIFIED_FREE
+  notes: "The public submission form is open and presents no listing fee, paid plan, badge, or backlink requirement."
+audience:
+  - saas
+  - software
+  - startups
+  - developer-tools
+  - productivity
+  - marketing
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: startup name
+      required: true
+    - name: URL
+      required: true
+    - name: tagline
+      required: true
+    - name: competing tool
+      required: false
+    - name: category
+      required: true
+    - name: logo
+      required: false
+      limit: 2097152
+    - name: featured image
+      required: false
+      limit: 8388608
+    - name: tell us more
+      required: false
+  conditions:
+    - The submission form is for small products that compete with a well-known tool.
+    - Manual review; no review time is stated.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: listing
+human_only: null
+listing_url_pattern: "https://www.startupalternatives.com/startups/{slug}"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.startupalternatives.com/startups/jotform
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-07
+  by: codex
+  sources:
+    - https://www.startupalternatives.com/submit
+    - https://www.startupalternatives.com/

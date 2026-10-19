@@ -1,0 +1,65 @@
+id: ai-superhub
+name: AI SuperHub
+website: https://www.aisuperhub.io/
+submission_url: https://www.aisuperhub.io/ai-tools/submit/free
+cost:
+  classification: FREEMIUM
+  notes: Free basic submission; optional Premium Listing for guaranteed placement in 48 hours. Premium listing price not displayed on the free form.
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: false
+  fields:
+    - name: email
+      required: false
+    - name: tool_name
+      required: false
+    - name: short_description
+      required: false
+    - name: long_description
+      required: false
+    - name: category
+      required: false
+    - name: primary_use_case
+      required: false
+    - name: website_url
+      required: false
+    - name: social_media_url
+      required: false
+    - name: advertising_interest
+      required: false
+    - name: referral_source
+      required: false
+  conditions:
+    - "Short description: 10–30 words; long description: 50–500 words"
+    - Free review may take 90+ days
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: 90+ days
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://www.aisuperhub.io/aitool/supabook
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.aisuperhub.io/ai-tools/submit/free

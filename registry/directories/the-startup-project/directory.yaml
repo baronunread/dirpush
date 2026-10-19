@@ -1,0 +1,67 @@
+id: the-startup-project
+name: The Startup Project
+website: https://startupproject.org/
+submission_url: https://startupproject.org/submit-startup/
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free listing requires a backlink from the startup website to the directory listing to maintain it. Optional Featured badge is described separately.
+audience:
+  - startups
+authentication:
+  required: false
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: founder name
+      required: true
+    - name: email address
+      required: true
+    - name: company name
+      required: true
+    - name: website
+      required: true
+    - name: tagline
+      required: true
+    - name: industry
+      required: true
+    - name: stage
+      required: true
+    - name: monthly revenue
+      required: true
+    - name: team size
+      required: true
+    - name: what does your startup do
+      required: true
+    - name: traction & milestones
+      required: false
+  conditions:
+    - "Backlink to the startup's listing from its website required to maintain listing"
+    - Submission reviewed within a few business days; publication not guaranteed
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: a few business days
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://startupproject.org/startups/
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://startupproject.org/submit-startup/
+    - https://startupproject.org/startups/

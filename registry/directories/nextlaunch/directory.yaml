@@ -1,0 +1,50 @@
+id: nextlaunch
+name: Next Launch
+website: https://nextlaunch.io
+submission_url: https://nextlaunch.io/pricing
+cost:
+  classification: FREEMIUM
+  notes: "Free Launch ($0) lists the product with no badge/backlink requirement, capped at 5 slots/day and up to 180-day scheduling window. Paid Premium Launch ($9, priority queue + guaranteed backlink) and SEO Growth Package ($149-199) are advertised but currently marked Coming Soon (disabled buttons)."
+audience:
+  - startups
+  - saas
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - only 5 free slots/day
+    - "dofollow backlink earned only if top-3 ranking or badge displayed (optional, not required to list)"
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+kind: launch_board
+human_only: null
+review_time: "next available daily slot (8:00 AM UTC), up to 180 days out on the free queue"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://nextlaunch.io/projects/submit
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-28
+  by: sonnet-r6
+  sources:
+    - https://nextlaunch.io/pricing
+    - https://nextlaunch.io/submit

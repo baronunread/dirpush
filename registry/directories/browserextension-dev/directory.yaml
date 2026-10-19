@@ -1,0 +1,55 @@
+id: browserextension-dev
+name: BrowserExtension.dev
+website: https://browserextension.dev
+submission_url: https://forms.gle/9XsqpoUSLeL6ZzW47
+cost:
+  classification: VERIFIED_FREE
+  notes: Submission is a free multi-page Google Form; no paid tiers or badge/backlink requirement found on the site.
+audience:
+  - browser-extensions
+authentication:
+  required: false
+  signup_allowed: true
+  methods:
+    - "google (optional, only to save form progress; not required to submit)"
+submission:
+  url_first: false
+  fields:
+    - name: subscribe_to_newsletter
+      required: true
+    - name: your_name
+      required: true
+    - name: twitter_link
+      required: false
+    - name: blog_website
+      required: false
+  conditions:
+    - manual curation (site runs maker interviews and picks what to feature)
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+    max: 0
+kind: listing
+human_only: null
+listing_url_pattern: "https://browserextension.dev/directory/{slug}/"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://browserextension.dev/directory/kaffae/
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bB
+  sources:
+    - https://browserextension.dev/
+    - https://browserextension.dev/directory/impulse-blocker/
+    - https://forms.gle/9XsqpoUSLeL6ZzW47

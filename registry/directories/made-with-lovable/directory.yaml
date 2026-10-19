@@ -1,0 +1,64 @@
+id: made-with-lovable
+name: Made with Lovable
+website: https://madewithlovable.com/
+submission_url: https://madewithlovable.com/submit
+cost:
+  classification: FREEMIUM
+  notes: "Free Launch with ~157-day review queue; optional Pro Launch $19 one-time, published within 3 days with 7 days featured placement and newsletter promotion."
+audience:
+  - no-code
+  - startups
+  - products
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: website URL
+      required: true
+    - name: project title
+      required: true
+    - name: email
+      required: true
+    - name: short description
+      required: true
+      limit: 160
+    - name: description
+      required: true
+    - name: newsletter
+      required: true
+    - name: plan
+      required: true
+    - name: Twitter/X profile
+      required: false
+    - name: Reddit profile
+      required: false
+  conditions:
+    - Only projects built with Lovable are accepted
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: true
+kind: listing
+human_only: null
+review_time: ~157 days
+link:
+  rel: sponsored
+  method: sample_listing
+  evidence: https://madewithlovable.com/tools/lovable-credit-estimator
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: unknown
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://madewithlovable.com/submit

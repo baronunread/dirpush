@@ -1,0 +1,52 @@
+id: that-ai-collection
+name: AI Collection
+website: https://thataicollection.com/
+submission_url: https://thataicollection.com/submit/
+cost:
+  classification: FREEMIUM
+  notes: "Free submissions reviewed in a rolling queue, typically within 28 days. Optional $19 one-time Publish Now fast-track; lifetime listing."
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: AI tool URL
+      required: true
+    - name: short description
+      required: true
+    - name: category
+      required: true
+  conditions:
+    - Manual review
+    - Free queue typically about 28 days; $19 optional fast-track
+autofetch:
+  supported: true
+  expected:
+    - draft listing from product URL
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: listing
+human_only: null
+review_time: typically within 28 days for free submissions
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://thataicollection.com/application/klap-app/
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://thataicollection.com/submit/
+    - https://thataicollection.com/en/about/

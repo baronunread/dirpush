@@ -1,0 +1,43 @@
+id: collectai
+name: CollectAI
+website: https://collectai.tools
+submission_url: https://collectai.tools/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free tier requires a backlink to CollectAI, maintained permanently; reviewed within 72 hours. $9.9 Pro removes the backlink requirement and lists instantly with featured placement."
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - backlink to collectai.tools maintained permanently (free tier)
+    - review within 72 hours (free tier)
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://collectai.tools/item/chatgpt
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-b
+  sources:
+    - https://collectai.tools/pricing
+    - https://collectai.tools/submit

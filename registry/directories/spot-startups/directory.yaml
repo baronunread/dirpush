@@ -1,0 +1,48 @@
+id: spot-startups
+name: Spot Startups
+website: https://spotstartups.com/
+submission_url: https://spotstartups.com/submit
+cost:
+  classification: VERIFIED_FREE
+  notes: Homepage offers free startup submission and weekly launch placement. A dofollow backlink appears to require a reciprocal link; submission itself is described as free.
+audience:
+  - startups
+  - saas
+  - software
+  - ai-tools
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Weekly launch batches are ranked by engagement; submission form fields are behind login.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: launch_board
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://spotstartups.com/egmatic
+  samples: 2
+  noindex: false
+  claimed: dofollow
+  bot_check: unknown
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://spotstartups.com/
+    - https://spotstartups.com/submit

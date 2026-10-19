@@ -1,0 +1,1 @@
+Use the public form on /pricing. Free submissions require an aged domain (6+ months) and the provided All in AI Tools link code on the product homepage. Form fields: tool name, website URL, email. Fast Submit is $49; do not select it unless the human approves payment.

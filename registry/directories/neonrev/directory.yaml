@@ -1,0 +1,43 @@
+id: neonrev
+name: NeonRev
+website: https://www.neonrev.com/
+submission_url: https://www.neonrev.com/advertise/
+cost:
+  classification: PAID
+  notes: Forever Listing $30; 7 Day Spotlight $80; 1 Month Premium $300. No free listing shown.
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Paid package required; manual review after payment.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: within 24 hours after payment confirmation
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.neonrev.com/ai-agents/agentgpt/
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.neonrev.com/advertise/

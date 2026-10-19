@@ -1,0 +1,45 @@
+id: appsumo
+name: AppSumo
+website: https://appsumo.com
+submission_url: https://sell.appsumo.com/
+cost:
+  classification: PAID
+  notes: "No upfront fee, but mandatory revenue share on every sale (rate negotiated); no free listing tier exists"
+audience:
+  - saas
+  - software
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - application review (~10% acceptance rate)
+    - must structure a deal (lifetime or annual/other special pricing)
+    - revenue share required
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 5
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://appsumo.com/products/adaptlypost/
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-h3
+  sources:
+    - https://sell.appsumo.com/

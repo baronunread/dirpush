@@ -1,0 +1,1 @@
+The Chinese public submit form is at /submit. It asks for an icon, website URL, category, tags, nickname, and contact, then submits for review. The page says it accepts quality AI websites, excludes ChatGPT mirror sites and AI courses, and offers paid top placement/advertising separately. No account or fee is visible for ordinary submission.

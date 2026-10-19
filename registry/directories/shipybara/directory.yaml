@@ -1,0 +1,48 @@
+id: shipybara
+name: Shipybara
+website: https://shipybara.com
+submission_url: https://shipybara.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free with 18 weekly slots; backlink conditional on top 3 ranking or badge. Premium $50/month with guaranteed backlink.
+audience:
+  - startups
+  - saas
+  - tech-products
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Top 3 ranking or badge required for backlink
+    - Weekly launch cycle (Monday)
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://shipybara.com/projects/submit
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: unknown
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: haiku-23
+  sources:
+    - https://shipybara.com/
+    - https://shipybara.com/pricing

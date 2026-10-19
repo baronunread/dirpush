@@ -1,0 +1,49 @@
+id: fosspace
+name: FOSSpace
+website: https://fosspace.io/
+submission_url: https://fosspace.io/auth/login
+cost:
+  classification: PAID
+  notes: Projects with paid features or tiers must pay a submission fee; price is not published yet (pricing page says coming soon). Free submission is limited to products with no paid features/tiers.
+audience:
+  - open-source
+  - software
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - github
+    - email
+    - password
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Paid features or tiers require a submission fee; price not published
+    - Submission form is behind account sign-in
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://fosspace.io/item/tabularis
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://fosspace.io/
+    - https://fosspace.io/auth/login

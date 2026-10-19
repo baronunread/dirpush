@@ -1,0 +1,53 @@
+id: saasgrave-launches
+name: SaaSGrave Launches
+website: https://ls.saasgrave.org
+submission_url: https://ls.saasgrave.org/launch
+cost:
+  classification: FREEMIUM
+  notes: "Free tier (20 slots/week) is a real listing with no badge or backlink required. $29/mo Premium adds unlimited launches, a permanent dofollow backlink, analytics, verified badge. Additional paid ad placements ($9-$29) exist separately."
+audience:
+  - saas
+  - startups
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+submission:
+  url_first: true
+  fields: []
+  conditions:
+    - only 20 free launch slots per week across the whole site
+    - community votes decide rank
+autofetch:
+  supported: true
+  expected:
+    - name
+    - description
+    - logo (AI autofill via Firecrawl)
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+kind: launch_board
+human_only: null
+review_time: "instant (published immediately, no admin approval)"
+listing_url_pattern: "https://ls.saasgrave.org/products/{slug}"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://ls.saasgrave.org/tools/seo-title-preview
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-28
+  by: sonnet-r3
+  sources:
+    - https://ls.saasgrave.org/pricing
+    - https://ls.saasgrave.org/products/pagegains

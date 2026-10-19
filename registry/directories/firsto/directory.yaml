@@ -1,0 +1,54 @@
+id: firsto
+name: Firsto
+website: https://firsto.co
+submission_url: https://firsto.co
+cost:
+  classification: FREEMIUM
+  notes: "Free: $0/launch with ~180 day queue; Premium: $19.9/launch for 24h; Pro: $59.9/launch for featured placement and review"
+audience:
+  - product-launches
+  - startups
+  - makers
+  - saas
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+    - github
+submission:
+  url_first: true
+  fields: []
+  conditions:
+    - manual review
+    - queue-based
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 5
+kind: launch_board
+human_only: null
+review_time: "free tier: ~180 day queue; paid: 24h (Premium) or instant (Pro)"
+listing_url_pattern: "https://firsto.co/projects/{slug}"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://firsto.co/tools/og-image-generator
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-28
+  by: sonnet-r3
+  sources:
+    - https://firsto.co/pricing
+    - https://firsto.co/projects/praywrite

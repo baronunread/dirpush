@@ -1,0 +1,46 @@
+id: spiff-store
+name: Spiff.store
+website: https://spiff.store
+submission_url: https://forms.gle/jBxEe4sGegNhrXuA6
+cost:
+  classification: FREEMIUM
+  notes: "Free tier ($0), no badge required, 2-month wait, dedicated listing page + 1 no-follow backlink; Fastlane ($15 one-time) for 2-day wait and do-follow backlinks/homepage feature"
+audience:
+  - ai-tools
+  - saas
+  - startups
+authentication:
+  required: false
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - "Google Form: email, name, URL, short+long desc, SEO title, meta description, category, hosted banner image URL; AdSense iframe can cover Submit"
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+kind: listing
+human_only: null
+review_time: 2 months (free); 2 days (paid)
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://spiff.store/tools/nectar-ai/
+  samples: 4
+  noindex: false
+  claimed: nofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bB
+  sources:
+    - https://spiff.store/submit-tool/

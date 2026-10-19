@@ -1,0 +1,77 @@
+id: startup-listing
+name: Startup Listing
+website: https://startuplist.ing/
+submission_url: https://startuplist.ing/products/new
+cost:
+  classification: FREEMIUM
+  notes: Free product listing; optional featured placement is $3/day. Pricing page shows a $0 listing fee alongside paid featured placement.
+audience:
+  - startups
+  - saas
+  - products
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - password
+submission:
+  url_first: false
+  fields:
+    - name: website_url
+      required: true
+    - name: product_name
+      required: true
+    - name: tagline
+      required: true
+      limit: 200
+    - name: description
+      required: true
+      limit: 1000
+    - name: x_twitter_url
+      required: false
+    - name: category
+      required: true
+    - name: tags
+      required: false
+    - name: features
+      required: false
+  conditions:
+    - Free product listing available after account creation; pricing page shows listing fee as FREE
+    - Featured promotion is optional at $3/day; no purchase required for the free listing
+    - "Product form supports one logo and up to 3 screenshots, each up to 5 MB"
+    - "New products enter the dashboard's pending/approval workflow"
+autofetch:
+  supported: true
+  expected:
+    - name
+    - tagline
+    - description
+    - tags
+    - features
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 3
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://startuplist.ing/p/v4mprx
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://startuplist.ing/
+    - https://startuplist.ing/pricing
+    - https://startuplist.ing/products/new
+    - https://startuplist.ing/signin

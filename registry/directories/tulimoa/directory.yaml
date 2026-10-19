@@ -1,0 +1,65 @@
+id: tulimoa
+name: Tulimoa
+website: https://tulimoa.com/
+submission_url: https://tulimoa.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free listing requires a Tulimoa badge on the submitter’s site. A $5 one-time launch package waives the badge, is reviewed first, and includes an X welcome post and Launch Radar mention."
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email magic link
+submission:
+  url_first: false
+  fields:
+    - name: name
+      required: true
+    - name: own website
+      required: true
+    - name: category
+      required: true
+    - name: logo
+      required: true
+    - name: short description of AI use or agent capabilities
+      required: true
+    - name: MCP server
+      required: false
+    - name: country
+      required: false
+    - name: pricing model
+      required: false
+  conditions:
+    - AI and MCP software only; hand-reviewed.
+    - Free listing requires the Tulimoa badge on the submitter’s website; alternatively pay $5 one-time for the launch package.
+    - Must be the owner’s product with its own website; maximum two listings per account.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: listing
+human_only: null
+review_time: within 7 days; launch packages reviewed first
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://tulimoa.com/discover/mycel
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://tulimoa.com/saas
+    - https://tulimoa.com/submit
+    - https://tulimoa.com/discover

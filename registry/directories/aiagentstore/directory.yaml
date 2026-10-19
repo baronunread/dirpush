@@ -1,0 +1,52 @@
+id: aiagentstore
+name: AI Agent Store
+website: https://aiagentstore.ai
+submission_url: https://aiagentstore.ai/new-agent
+cost:
+  classification: FREEMIUM
+  notes: "Free listing (account required, free signup), no badge/backlink required; paid bid-based 'premium placement' upsell for top ranking at /marketing-for-ai-agents"
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+submission:
+  url_first: true
+  fields:
+    - name: agent_url
+      required: true
+  conditions:
+    - account required (free signup); /new-agent redirects to /login if not signed in
+autofetch:
+  supported: true
+  expected:
+    - name
+    - description
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+kind: listing
+human_only: null
+listing_url_pattern: "https://aiagentstore.ai/ai-agent/{slug}"
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://aiagentstore.ai/ai-agent/observyze
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bB
+  sources:
+    - https://aiagentstore.ai/new-agent
+    - https://aiagentstore.ai/register
+    - https://aiagentstore.ai/marketing-for-ai-agents

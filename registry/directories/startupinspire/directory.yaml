@@ -1,0 +1,52 @@
+id: startupinspire
+name: StartupInspire
+website: https://startupinspire.com
+submission_url: https://www.startupinspire.com/pricing
+cost:
+  classification: FREEMIUM
+  notes: "Free (1 startup, instant approval, permanent listing, featured badge shown on their site, homepage visibility); Standard EUR19/lifetime (5 startups); Premium EUR49/lifetime (unlimited, promo banner, featured header, 30-day boost). No badge/backlink required from the submitter to submit or go live."
+audience:
+  - startups
+  - saas
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: false
+  fields:
+    - name: email
+      required: true
+    - name: business_name
+      required: true
+    - name: password
+      required: true
+  conditions: []
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 5
+kind: listing
+human_only: null
+review_time: "instant (stated 'Instant Approval')"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.startupinspire.com/startups/human-resources
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bB
+  sources:
+    - https://www.startupinspire.com/pricing
+    - https://www.startupinspire.com/signup

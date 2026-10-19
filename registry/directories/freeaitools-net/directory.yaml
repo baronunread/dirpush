@@ -1,0 +1,57 @@
+id: freeaitools-net
+name: freeaitools.net
+website: https://www.freeaitools.net/
+submission_url: https://www.freeaitools.net/submit/
+cost:
+  classification: FREEMIUM
+  notes: Free listing has no outbound link and an unbounded manual review queue; paid Listed is $29 and Featured is $79.
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: name
+      required: true
+    - name: website
+      required: true
+    - name: category
+      required: true
+    - name: pricing
+      required: true
+    - name: pitch
+      required: true
+      limit: 240
+    - name: email
+      required: false
+  conditions:
+    - Free entries are manually reviewed and tested; no date promised
+    - Automated checks require live HTTPS site and evidence the product uses AI
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+review_time: unbounded manual queue; no date promised
+listing_url_pattern: "https://www.freeaitools.net/tool/{slug}/"
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://freeaitools.net/tool/adobe-podcast/
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.freeaitools.net/submit/

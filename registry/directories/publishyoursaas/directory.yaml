@@ -1,0 +1,53 @@
+id: publishyoursaas
+name: PublishYourSaaS
+website: https://publishyoursaas.com
+submission_url: https://publishyoursaas.com/submit
+cost:
+  classification: FREEMIUM
+  notes: "Free launch lists the product regardless (nofollow link by default, confirmed live: 'Nofollow link without a verified badge'); the badge is optional and only upgrades the link to dofollow. Manual review 2-3 weeks. $9.99 Starter gives 3 permanent dofollow backlinks with no badge and instant publish; $49.99 Advanced adds newsletter feature and guest posts."
+audience:
+  - saas
+authentication:
+  required: false
+  signup_allowed: true
+  methods:
+    - google
+    - github
+submission:
+  url_first: false
+  fields:
+    - name: contact_email
+      required: true
+    - name: requested_listing_plan
+      required: true
+  conditions:
+    - "manual review, 2-3 weeks (free tier)"
+    - "badge optional, needed only for dofollow link (free tier)"
+    - one free launch per product
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+kind: listing
+human_only: null
+review_time: 2-3 weeks (free tier); 24 hours (paid manual submission)
+link:
+  rel: nofollow
+  method: own_listing
+  evidence: null
+  samples: 1
+  noindex: false
+  claimed: nofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bC
+  sources:
+    - https://publishyoursaas.com/submit
+    - https://publishyoursaas.com/pricing

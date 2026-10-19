@@ -1,0 +1,71 @@
+id: tooltrove
+name: ToolTrove
+website: https://tooltrove.net/
+submission_url: https://tooltrove.net/submit
+cost:
+  classification: VERIFIED_FREE
+  notes: "Free listing, no payment required"
+audience:
+  - ai-tools
+  - software
+  - saas
+authentication:
+  required: false
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: true
+  fields:
+    - name: tool_name
+      required: true
+    - name: website_url
+      required: true
+    - name: category
+      required: true
+    - name: email
+      required: true
+    - name: one-line description
+      required: true
+    - name: full description
+      required: true
+      limit: 100
+    - name: key features
+      required: true
+      limit: 8
+    - name: pricing
+      required: true
+    - name: logo
+      required: true
+    - name: screenshots
+      required: true
+  conditions:
+    - human review
+    - Maximum 4 screenshots selections/uploads
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 4
+kind: listing
+human_only: null
+review_time: about 2 days
+listing_url_pattern: "https://tooltrove.net/{slug}"
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://tooltrove.net/narrative-bi
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: turnstile
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-06
+  by: codex
+  sources:
+    - https://tooltrove.net/submit

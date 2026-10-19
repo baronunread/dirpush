@@ -1,0 +1,49 @@
+id: trendy-startups
+name: Trendy Startups
+website: https://trendystartups.com/
+submission_url: https://trendystartups.com/register
+cost:
+  classification: FREEMIUM
+  notes: "Free standard listing with an editorial queue of a few months; paid expedited review is available, but its price is not listed publicly. Advertising packages are separately priced."
+audience:
+  - startups
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - password
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - A decent-looking product landing page or website is required
+    - Submission form details are behind login
+    - Free editorial review queue takes a few months
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: a few months for free; paid expedited review takes days
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://trendystartups.com/startups/Limibot
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://trendystartups.com/faq
+    - https://trendystartups.com/register

@@ -1,0 +1,55 @@
+id: saaslist
+name: saaslist
+website: https://saaslist.com
+submission_url: https://saaslist.com/advertise/
+cost:
+  classification: PAID
+  notes: No self-serve free listing form found on the live site (/submit is a 404). Only vendor-facing page is a CPC/PPL paid-advertising inquiry form.
+audience:
+  - startups
+  - saas
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: full_name
+      required: true
+    - name: email
+      required: true
+    - name: company_name
+      required: true
+    - name: phone_number
+      required: false
+    - name: monthly_budget
+      required: false
+  conditions:
+    - "paid CPC/PPL advertising inquiry only, no free listing"
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+    max: 0
+kind: lead_gen
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://saaslist.com/reviews/pipedrive/
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-28
+  by: sonnet-ra
+  sources:
+    - https://saaslist.com/
+    - https://saaslist.com/advertise/

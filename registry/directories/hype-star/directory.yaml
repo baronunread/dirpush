@@ -1,0 +1,57 @@
+id: hype-star
+name: Hype Star
+website: https://hypestar.org/
+submission_url: https://hypestar.org/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free permanent basic inclusion requires adding the Hype Star badge to a public page; no account, email, or payment required."
+audience:
+  - startups
+  - software
+  - saas
+  - products
+  - indie-makers
+  - productivity
+  - marketing
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: public project URL
+      required: true
+  conditions:
+    - Submissions must be in English.
+    - "New free listings require installing the Hype Star badge, checked on the homepage first."
+    - Reviewed before publication.
+    - Optional homepage screenshot improves the listing.
+autofetch:
+  supported: true
+  expected:
+    - title
+    - description
+    - canonical project URL
+media:
+  logo: false
+  screenshots:
+    supported: true
+kind: listing
+human_only: null
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://hypestar.org/project/ai-image-describer
+  samples: 1
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://hypestar.org/submit
+    - https://hypestar.org/

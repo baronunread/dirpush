@@ -1,0 +1,1 @@
+Free AI tools directory (Spanish). Submission likely via contact form since /publicar form is not accessible. Manual review stated as fast (~2 minutes).

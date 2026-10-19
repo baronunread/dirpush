@@ -1,0 +1,53 @@
+id: letslaunch
+name: LetsLaunch
+website: https://letslaunch.today/
+submission_url: https://letslaunch.today/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free Launch requires badge installed before publication and is limited to 20 weekly spots. Premium $9 and Premium+ $29 per launch were displayed (original prices crossed out) and skip badge/queue.
+audience:
+  - saas
+  - ai-tools
+  - developer-tools
+  - startups
+  - products
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - password
+    - google
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Badge required to publish free launch
+    - 20 free spots per Monday 08:00 UTC cohort
+    - manual queue/cohort
+autofetch:
+  supported: true
+  expected:
+    - AI form prefill; site says only one field is needed
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: launch_board
+review_time: weekly cohort; 20 slots each Monday
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://letslaunch.today/product/job-watch
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://letslaunch.today/pricing
+    - https://letslaunch.today/submit

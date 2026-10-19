@@ -1,0 +1,61 @@
+id: startups-gallery
+name: Startups.gallery
+website: https://startups.gallery/
+submission_url: https://startups.gallery/submit
+cost:
+  classification: VERIFIED_FREE
+  notes: Public submission form has no payment step or listing fee shown; interpreted as free to submit. Editorial inclusion is selective.
+audience:
+  - startups
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: startup name
+      required: true
+    - name: startup website
+      required: true
+    - name: company description
+      required: true
+    - name: submitter relationship
+      required: true
+    - name: funding source
+      required: true
+    - name: submitter name
+      required: true
+    - name: email
+      required: true
+    - name: how did you hear about us
+      required: false
+  conditions:
+    - Company description must be 10 words.
+    - Curated human review; editors add startups they consider a fit.
+    - The site warns that automated submissions may not be reviewed.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://startups.gallery/investors/tlv
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://startups.gallery/
+    - https://startups.gallery/submit

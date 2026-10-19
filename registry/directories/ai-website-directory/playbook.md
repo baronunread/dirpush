@@ -1,0 +1,1 @@
+Open /submit, paste the product URL and use AI Auto-Fill. The public form has URL, name, tagline, full description, category, founder/company, tags, optional YouTube demo, logo, and up to 4 screenshots. Public page advertises free community submission, review, votes, and +50 XP. Account requirements and auth methods are not clear from the visible page.

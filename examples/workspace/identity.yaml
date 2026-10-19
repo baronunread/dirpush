@@ -1,0 +1,6 @@
+# Non-secret signup/profile data. Never put passwords here.
+display_name: Jane Founder
+username: janefounder
+email: jane@example.com
+company: Example
+role: Founder

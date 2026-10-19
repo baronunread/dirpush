@@ -1,0 +1,1 @@
+Create/sign in with email, Google, or GitHub, then use /submit. Free tier requires displaying a MakerHunt badge on the product website. Free launches enter the standard queue, appear on the homepage for 7 days, and go live at 8:00 AM UTC each Monday; premium is offered separately.

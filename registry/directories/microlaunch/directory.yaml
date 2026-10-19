@@ -1,0 +1,48 @@
+id: microlaunch
+name: Microlaunch
+website: https://microlaunch.net
+submission_url: https://microlaunch.net
+cost:
+  classification: FREEMIUM
+  notes: "Free launch exists (queued, unstated wait) inferred from many non-Pro listings; Pro Launch upsell skips the queue + adds 30-day exposure, DR64+ backlink, marketplace slot. Exact free-tier price/steps not visible without an account."
+audience:
+  - startups
+  - saas
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - x
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - queue for free tier
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+kind: launch_board
+human_only: null
+listing_url_pattern: "https://microlaunch.net/p/{slug}"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://microlaunch.net/tools/alternatives-finder
+  samples: 1
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-28
+  by: sonnet-r3
+  sources:
+    - https://microlaunch.net
+    - https://microlaunch.net/p/roomai

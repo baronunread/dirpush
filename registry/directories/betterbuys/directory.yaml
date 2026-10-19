@@ -1,0 +1,55 @@
+id: betterbuys
+name: BetterBuys
+website: https://betterbuys.com
+submission_url: https://betterbuys.com/for-ai-companies/
+cost:
+  classification: VERIFIED_FREE
+  notes: "Submission form is free, no badge/backlink required; site says paid 'listing packages' are still being finalized and will be offered later, not required now."
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: product_name
+      required: true
+    - name: product_website
+      required: true
+    - name: vendor_or_company_name
+      required: true
+    - name: contact_email
+      required: true
+    - name: one_line_description
+      required: true
+      limit: 160
+    - name: primary_category
+      required: true
+  conditions:
+    - manual editorial review/follow-up
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://betterbuys.com/products/zapier/
+  samples: 4
+  noindex: true
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bC
+  sources:
+    - https://betterbuys.com/for-ai-companies/

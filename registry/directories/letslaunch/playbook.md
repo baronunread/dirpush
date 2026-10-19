@@ -1,0 +1,1 @@
+Sign up with email/password or Google. Free path requires installing the site badge before publication and uses 20 slots each Monday at 08:00 UTC; the current cohort was full at review. Premium ($9 displayed) and Premium+ ($29 displayed) skip the badge and queue. AI-prefill is advertised; exact form fields are hidden until login.

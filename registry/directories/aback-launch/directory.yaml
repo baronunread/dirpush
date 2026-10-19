@@ -1,0 +1,54 @@
+id: aback-launch
+name: Aback Launch
+website: https://abacklaunch.com/
+submission_url: https://abacklaunch.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "A $0 one-time Backlink Exchange listing requires adding a backlink to Aback Launch on the submitter's website. Paid launch plans are also available; exact prices were not captured."
+audience:
+  - startups
+  - saas
+  - software
+  - products
+  - developer-tools
+  - productivity
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Free Backlink Exchange plan requires adding an Aback Launch backlink to your website.
+    - Every submission is human-reviewed.
+    - Form fields are hidden until sign-in.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: launch_board
+human_only: null
+review_time: Human-reviewed; timing not stated.
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://abacklaunch.com/launch/growati
+  samples: 3
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://abacklaunch.com/
+    - https://abacklaunch.com/pricing
+    - https://abacklaunch.com/sign-in?callbackUrl=%2Fsubmit

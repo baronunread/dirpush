@@ -1,0 +1,46 @@
+id: toolpasta
+name: ToolPasta
+website: https://robopost.app/en/toolpasta
+submission_url: https://robopost.app/en/toolpasta/submit
+cost:
+  classification: PAID
+  notes: Basic Listing $29 one-time; Featured $149 one-time. No free tier shown.
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: website_url
+      required: true
+  conditions:
+    - Payment is required before review.
+autofetch:
+  supported: true
+  expected:
+    - website_url
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: usually about two business days
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://robopost.app/en/toolpasta/tools/citetrue
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://robopost.app/en/toolpasta/submit

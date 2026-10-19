@@ -1,0 +1,64 @@
+id: eu-vetted
+name: EU Vetted
+website: https://euvetted.com/
+submission_url: mailto:listings@euvetted.com?subject=Listing%20request
+cost:
+  classification: VERIFIED_FREE
+  notes: Editorial listing request is free. Paid ad surfaces are separate and do not influence inclusion or rank.
+audience:
+  - saas
+  - software
+  - privacy
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: product_name
+      required: true
+    - name: homepage_url
+      required: true
+    - name: category
+      required: true
+    - name: public_dpa
+      required: true
+    - name: subprocessors_document
+      required: true
+    - name: hosting_region_declaration
+      required: true
+    - name: company_registration_or_imprint
+      required: true
+    - name: US_alternatives
+      required: true
+    - name: editorial_note
+      required: false
+  conditions:
+    - Must meet EU/privacy eligibility criteria
+    - Email request from a product-domain address
+    - Editorial review
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+review_time: acknowledgment within 3 business days; decision within 14 days
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://euvetted.com/p/addy-io
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: unknown
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://euvetted.com/request-listing

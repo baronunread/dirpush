@@ -1,0 +1,77 @@
+id: eubuilt
+name: eubuilt.eu
+website: https://eubuilt.eu/
+submission_url: https://eubuilt.eu/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "No fee. Listing is available only if the product meets all three strict legal, jurisdiction, and GDPR criteria; payment cannot buy inclusion."
+audience:
+  - saas
+  - software
+  - marketing
+  - developer-tools
+  - productivity
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: product_name
+      required: true
+    - name: website_url
+      required: true
+    - name: tagline
+      required: true
+      limit: 100
+    - name: description
+      required: true
+    - name: category
+      required: false
+    - name: non_eu_products_replaced
+      required: false
+    - name: headquarters_country
+      required: true
+    - name: headquarters_city
+      required: false
+    - name: privacy_policy_url
+      required: true
+    - name: submitter_name
+      required: true
+    - name: submitter_email
+      required: true
+    - name: relationship_to_product
+      required: true
+  conditions:
+    - Legal HQ must be in an EU member state.
+    - Must operate exclusively under EU law; US CLOUD Act exposure is disqualifying.
+    - Must be GDPR compliant with a published privacy policy and DPA available on request.
+    - US subprocessors in the core production data path are disqualifying; criteria explicitly give Cloudflare as an example.
+    - Manual review; approval is not guaranteed.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: Usually within a week.
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://eubuilt.eu/product/telavox
+  samples: 3
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://eubuilt.eu/submit
+    - https://eubuilt.eu/criteria

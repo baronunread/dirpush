@@ -1,0 +1,1 @@
+Choose Verified Partner Free only if the product can meet its link-exchange condition. The form asks for tool name, category, website URL, offer, and contact email. Paid options: Fast Track $25, More Impact $49, Featured $300, all one-time. Cloudflare verification appears on the page.

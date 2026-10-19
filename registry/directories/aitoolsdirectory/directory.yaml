@@ -1,0 +1,73 @@
+id: aitoolsdirectory
+name: AI Tools Directory
+website: https://aitoolsdirectory.com
+submission_url: https://aitoolsdirectory.com/submit-tool
+cost:
+  classification: VERIFIED_FREE
+  notes: "Free submission with manual review, no badge/backlink required; paid Fast Track (3-day turnaround) and paid Featured Tool homepage spot are optional upsells, not required to be listed"
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: product_name
+      required: true
+    - name: url
+      required: true
+    - name: pricing
+      required: true
+    - name: short_description
+      required: true
+      limit: 30
+    - name: long_description
+      required: true
+      limit: 500
+    - name: tags
+      required: false
+    - name: submitter_name
+      required: true
+    - name: submitter_email
+      required: true
+    - name: twitter_handle
+      required: false
+    - name: affiliate_url
+      required: false
+    - name: unique_difference
+      required: true
+    - name: ad_interest
+      required: true
+  conditions:
+    - manual_review
+    - no_crypto_products
+    - no_waiting_lists_or_hidden_pricing
+    - original_descriptions_required_ai_generated_content_rejected
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: queue takes time; Fast Track paid option gets same-day to 3-day turnaround
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://aitoolsdirectory.com/tool/meshy
+  samples: 3
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bB
+  sources:
+    - https://aitoolsdirectory.com
+    - https://aitoolsdirectory.com/submit-tool

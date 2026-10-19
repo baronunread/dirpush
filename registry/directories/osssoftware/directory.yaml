@@ -1,0 +1,66 @@
+id: osssoftware
+name: OSS Software
+website: https://osssoftware.org
+submission_url: "https://osssoftware.org/#submit"
+cost:
+  classification: PAID
+  notes: "The embedded submit widget (selldigitals.com) now shows only one price option: 'Instant Listing - $49' one-time (DoFollow backlink, newsletter mention, boosted position). No free/$0 tier is present anywhere on the form; the previously-documented free ~6-month nofollow listing no longer appears."
+audience:
+  - open-source
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: email
+      required: true
+    - name: twitter handle
+      required: false
+    - name: title
+      required: true
+    - name: short description
+      required: true
+    - name: full description
+      required: true
+    - name: website URL
+      required: true
+    - name: GitHub URL
+      required: true
+    - name: category
+      required: true
+    - name: alternative to
+      required: false
+    - name: pricing
+      required: true
+    - name: tool screenshot
+      required: false
+  conditions:
+    - only paid Instant Listing ($49) available; requires a GitHub URL (open-source project)
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: true
+    max: 1
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://osssoftware.org/tools/directory-launch/
+  samples: 3
+  noindex: false
+  claimed: nofollow
+  bot_check: recaptcha
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bC
+  sources:
+    - https://osssoftware.org/
+    - https://selldigitals.com/widgets/674f196a8658110e057cbcbe?seed=2878&showInPopup=false

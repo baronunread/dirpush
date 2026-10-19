@@ -1,0 +1,47 @@
+id: toolfame
+name: ToolFame
+website: https://toolfame.com
+submission_url: https://toolfame.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free tier requires a badge to be verified and kept permanently on the submitter's site (checked regularly, unpublished if removed); also up to 180-day review and possible rejection. $14.9 Basic and $49.9 Pro one-time tiers explicitly require no badge and list immediately."
+audience:
+  - saas
+  - ai-tools
+  - startups
+  - software
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - "unknown - Sign In button present, submission flow not explored past pricing/plan selection"
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - badge required and periodically re-checked for free tier; listing unpublished if badge removed
+    - up to 180-day review queue on free tier
+    - listing may be rejected on free tier
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://toolfame.com/item/semrush
+  samples: 1
+  noindex: false
+  claimed: dofollow
+  bot_check: turnstile
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-c
+  sources:
+    - https://toolfame.com/pricing

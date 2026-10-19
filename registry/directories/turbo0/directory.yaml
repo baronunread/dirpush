@@ -1,0 +1,49 @@
+id: turbo0
+name: Turbo0
+website: https://turbo0.com
+submission_url: https://turbo0.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free ($0) with backlink requirement. Basic $29.9, Pro $99.9, Review Blog $199 (one-time payments, backlink optional)."
+audience:
+  - content-creation
+  - video-tools
+  - design-tools
+  - saas
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - backlink to turbo0.com required for free plan
+    - 2-week review for free tier
+    - immediate for paid tiers
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+kind: listing
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://turbo0.com/item/capcut
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: haiku-6
+  sources:
+    - https://turbo0.com/pricing

@@ -1,0 +1,1 @@
+Directory covers general websites and tools. Public pricing confirms a free tier that requires a maintained backlink and may wait 180+ days; paid listing is $9.90 without backlink or queue. Submit requires Google or GitHub login; form fields could not be seen without signing in.

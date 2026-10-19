@@ -1,0 +1,52 @@
+id: openhunts
+name: OpenHunts
+website: https://openhunts.com
+submission_url: https://openhunts.com/submit
+cost:
+  classification: FREEMIUM
+  notes: "$0 Free Launch (real queue ~60 weeks, badge optional to skip); $9.90-$19 Premium (next Monday launch, guaranteed backlink); $20-59/week Highlight (instant launch)"
+audience:
+  - startups
+  - saas
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - github
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - signup required
+    - free tier queue currently ~60 weeks
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+kind: launch_board
+human_only: null
+review_time: "free tier: ~60 week queue (paid tiers launch next Monday or instantly)"
+listing_url_pattern: "https://openhunts.com/projects/{slug}"
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://openhunts.com/projects/lifetimo
+  samples: 2
+  noindex: false
+  claimed: dofollow
+  bot_check: turnstile
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-28
+  by: sonnet-r3
+  sources:
+    - https://openhunts.com/pricing
+    - https://openhunts.com/submit

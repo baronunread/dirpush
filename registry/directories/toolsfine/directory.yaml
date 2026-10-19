@@ -1,0 +1,58 @@
+id: toolsfine
+name: Toolsfine
+website: https://toolsfine.com
+submission_url: https://toolsfine.com/submit-ai-tools-or-product
+cost:
+  classification: PAID
+  notes: "Basic listing $16 one-time, featured $50 one-time"
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: true
+  fields:
+    - name: Tool name
+      required: true
+    - name: Website URL
+      required: true
+    - name: Founder or company
+      required: true
+    - name: Contact email
+      required: true
+    - name: Pricing model
+      required: true
+    - name: Short intro
+      required: true
+    - name: Logo URL
+      required: true
+  conditions:
+    - manual review
+    - editorial approval
+    - payment required
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://toolsfine.com/Tools/6251.html
+  samples: 1
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: haiku-12
+  sources:
+    - https://toolsfine.com/services-plan

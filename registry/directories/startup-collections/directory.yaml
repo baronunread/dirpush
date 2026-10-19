@@ -1,0 +1,56 @@
+id: startup-collections
+name: Startup Collections
+website: https://startupcollections.com/
+submission_url: https://startupcollections.com/
+cost:
+  classification: VERIFIED_FREE
+  notes: "The public submission form shows no fee, paid option, badge, or backlink requirement before submission."
+audience:
+  - startups
+  - developer-tools
+  - productivity
+authentication:
+  required: false
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: resource name
+      required: true
+    - name: collection
+      required: true
+    - name: website URL
+      required: true
+    - name: description
+      required: false
+    - name: your name
+      required: true
+    - name: your email
+      required: true
+  conditions:
+    - "Submission is reviewed before inclusion, if stated by directory owner"
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://startupcollections.com/resource/nowpayments/
+  samples: 3
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://startupcollections.com/

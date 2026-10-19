@@ -1,0 +1,90 @@
+id: the-startup-inc
+name: The Startup INC
+website: https://thestartupinc.com/
+submission_url: https://thestartupinc.com/submit-startup/
+cost:
+  classification: PAID
+  notes: "$20 one-time charge, payable after the startup is reviewed and published; no free submission option stated."
+audience:
+  - startups
+authentication:
+  required: false
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: startup name
+      required: true
+    - name: one-line startup description
+      required: true
+    - name: founding date
+      required: true
+    - name: industry
+      required: true
+    - name: number of employees
+      required: true
+    - name: headquarters
+      required: false
+    - name: LinkedIn profile
+      required: false
+    - name: Twitter profile
+      required: false
+    - name: Facebook profile
+      required: false
+    - name: email
+      required: true
+    - name: contact number
+      required: false
+    - name: promo video URL
+      required: false
+    - name: Android app URL
+      required: false
+    - name: iOS app URL
+      required: false
+    - name: website
+      required: true
+    - name: achievements or milestones
+      required: false
+    - name: about your startup
+      required: true
+      limit: 500
+    - name: problems solved
+      required: true
+    - name: target users
+      required: true
+    - name: what makes the startup stand out
+      required: true
+    - name: future plans
+      required: true
+    - name: about founders
+      required: true
+      limit: 250
+  conditions:
+    - Manual review before publication
+    - $20 charge after review and publication
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://thestartupinc.com/startup/rayedox-technologies/
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://thestartupinc.com/
+    - https://thestartupinc.com/submit-startup/

@@ -1,0 +1,52 @@
+id: aitools-fyi
+name: AITools.fyi
+website: https://aitools.fyi
+submission_url: https://tally.so/r/2EkV4g?ref=boostmytool.com
+cost:
+  classification: PAID
+  notes: $37 for multi-directory submission service
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: true
+  fields:
+    - name: email
+      required: true
+    - name: tool_link
+      required: true
+    - name: tool_name
+      required: true
+    - name: tool_description
+      required: true
+    - name: pricing
+      required: true
+  conditions:
+    - $37 fee
+    - Submission to other directories
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://aitools.fyi/rumiform
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: haiku-20
+  sources:
+    - https://aitools.fyi/submit

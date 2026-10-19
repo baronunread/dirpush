@@ -1,0 +1,64 @@
+id: buildvoyage
+name: BuildVoyage
+website: https://buildvoyage.com/
+submission_url: https://buildvoyage.com/submit
+cost:
+  classification: VERIFIED_FREE
+  notes: Submission page explicitly lists cost as Free. Paid sponsor advertisements are separate from the product listing.
+audience:
+  - saas
+  - indie-makers
+  - startups
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: product name
+      required: true
+    - name: tagline
+      required: true
+      limit: 80
+    - name: description
+      required: true
+      limit: 1000
+    - name: website
+      required: true
+    - name: email
+      required: true
+    - name: category
+      required: true
+    - name: pricing
+      required: false
+  conditions:
+    - Manual curation; 48-hour review stated
+    - Email confirmation link required
+    - Later form steps are Brand & Media and Tech Stack
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: launch_board
+human_only: null
+review_time: 48 hours
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://buildvoyage.com/tools/idea-generator
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: turnstile
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://buildvoyage.com/
+    - https://buildvoyage.com/submit

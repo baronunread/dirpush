@@ -1,0 +1,49 @@
+id: mcp-market
+name: MCP Market
+website: https://mcpmarket.com
+submission_url: https://mcpmarket.com/submit
+cost:
+  classification: FREEMIUM
+  notes: "GitHub repo submission offers a $0 Free Queue with stated 4–6 week wait, alongside a $29 paid option preselected on the public form. Free listing lacks the paid Try Now link to the product website. Remote submissions are a separate path; its pricing must be checked before use."
+audience:
+  - mcp-servers
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: github_repository_url
+      required: true
+    - name: contact_email
+      required: true
+  conditions:
+    - Free route requires a public GitHub repository
+    - Select Free Queue explicitly; paid placement is preselected
+    - Do not assume the Remote MCP tab offers the same free tier
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: mcp_registry
+human_only: null
+review_time: 4–6 weeks
+link:
+  rel: sponsored
+  method: sample_listing
+  evidence: https://mcpmarket.com/server/firecrawl
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-08
+  by: codex
+  sources:
+    - https://mcpmarket.com/submit

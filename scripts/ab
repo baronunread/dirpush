@@ -1,0 +1,37 @@
+#!/bin/sh
+# The only way agents should drive the browser: persistent profile + Google-services block.
+# The profile holds the human's Google session (for "Continue with Google"). Everything Google
+# other than the sign-in pages is unreachable, so a confused or prompt-injected agent can't open
+# Gmail, Drive, account settings, passwords or payments. Routes vanish when the browser restarts,
+# so they are (re)applied on every call (~10 ms each). accounts.google.com stays open: OAuth needs it.
+set -e
+cd "$(dirname "$0")/.."
+# Real Chrome, not Chrome for Testing: Google refuses sign-in in the testing build, and the human
+# signs in once in this same profile with `scripts/google-login`.
+CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+# Always headed: submissions regularly need the human to click something in this window.
+# AB_PROFILE / AB_SESSION let parallel workers use a throwaway profile and their own session (no-account
+# directories only; the real profile holds the Google login and can only be open once).
+AB="agent-browser --headed --session ${AB_SESSION:-default} --profile ${AB_PROFILE:-./data/browser-profile} --executable-path"
+# `launch browser start` already runs this profile (Google services blocked by its PAC script): attach to it
+# instead of launching a second Chrome on the same profile.
+PORT="${LAUNCH_BROWSER_PORT:-9222}"
+if [ -z "$AB_PROFILE" ] && curl -s -m 1 "http://127.0.0.1:$PORT/json/version" >/dev/null 2>&1; then
+  exec perl -e 'alarm shift; exec @ARGV' "${AB_TIMEOUT:-90}" agent-browser --session "${AB_SESSION:-default}" --cdp "$PORT" "$@"
+fi
+for host in mail.google.com gmail.com www.gmail.com inbox.google.com \
+  drive.google.com drive.usercontent.google.com docs.google.com sheets.google.com slides.google.com forms.google.com \
+  photos.google.com keep.google.com calendar.google.com contacts.google.com \
+  myaccount.google.com security.google.com myactivity.google.com passwords.google.com \
+  pay.google.com payments.google.com wallet.google.com takeout.google.com admin.google.com \
+  script.google.com console.cloud.google.com cloud.google.com console.developers.google.com \
+  chromewebstore.google.com chrome.google.com; do
+  $AB "$CHROME" network route "*://$host/*" --abort >/dev/null 2>&1 || true
+done
+# The Google Account settings live under accounts.google.com too; only sign-in/consent paths are needed.
+for path in "b/*/ManageAccount*" "ManageAccount*" "security*" "*/personal-info*" "*/data-and-privacy*"; do
+  $AB "$CHROME" network route "*://accounts.google.com/$path" --abort >/dev/null 2>&1 || true
+done
+# Per-call time limit (AB_TIMEOUT seconds, default 90): a hung call (seen on file uploads) must not freeze a worker.
+# Exit 142 = timed out; then run `scripts/ab close` and start over from the last checkpoint.
+exec perl -e 'alarm shift; exec @ARGV' "${AB_TIMEOUT:-90}" $AB "$CHROME" "$@"

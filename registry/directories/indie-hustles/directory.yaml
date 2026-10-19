@@ -1,0 +1,61 @@
+id: indie-hustles
+name: IndieHustles
+website: https://indiehustles.com/
+submission_url: https://indiehustles.com/submit
+cost:
+  classification: FREEMIUM
+  notes: Free Standard review in 8–10 weeks; $9 Priority review within 48 hours.
+audience:
+  - indie-makers
+  - software
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: name
+      required: true
+    - name: email
+      required: true
+    - name: Twitter/X handle
+      required: false
+    - name: product name
+      required: true
+    - name: website
+      required: true
+    - name: category
+      required: true
+    - name: tagline
+      required: true
+    - name: popular alternatives
+      required: false
+  conditions:
+    - Select Free Standard in the plan choices; Priority $9 is preselected
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: 8–10 weeks free; within 48 hours Priority
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://indiehustles.com/product/671f75d6-4ee0-4e70-839d-66d91f3d8097
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://indiehustles.com/
+    - https://indiehustles.com/submit

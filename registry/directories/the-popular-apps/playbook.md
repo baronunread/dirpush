@@ -1,0 +1,1 @@
+The public Submit App page lists three routes: free gallery submission with an approximately 10-day delay, $10 Standard, or $50 Sponsored. The paid options include expedited/featured promotion. The form itself was not opened.

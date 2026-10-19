@@ -1,0 +1,59 @@
+id: openresources
+name: OpenResources
+website: https://tools.us.org
+submission_url: https://tools.us.org/tools/submit/
+cost:
+  classification: VERIFIED_FREE
+  notes: Public submission form; no charge stated. Submissions are reviewed for inclusion.
+audience:
+  - open-source
+  - software
+authentication:
+  required: false
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: submitter_name
+      required: false
+    - name: submitter_email
+      required: true
+    - name: website
+      required: true
+    - name: tool_name
+      required: true
+    - name: repository
+      required: true
+    - name: proprietary_software_website
+      required: true
+    - name: proprietary_software_name
+      required: true
+  conditions:
+    - Manual review; only projects meeting the directory’s criteria are included.
+    - The form asks which proprietary product the open-source tool provides an alternative to.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: Manual review; timing not stated.
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://tools.us.org/tools/bestpercentagecalculator/
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://tools.us.org/tools/submit/

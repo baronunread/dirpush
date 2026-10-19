@@ -1,0 +1,1 @@
+Create/sign in with email, Google, or GitHub, then use /submit. Free launch requires adding the Sidehunt badge to the product website. Free projects enter the standard queue, appear on the homepage for 7 days, and launch at 8:00 AM UTC each Monday; premium launch is offered separately.

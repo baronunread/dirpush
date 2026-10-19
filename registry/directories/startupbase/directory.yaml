@@ -1,0 +1,44 @@
+id: startupbase
+name: StartupBase
+website: https://startupbase.io
+submission_url: https://startupbase.io/launch
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free with badge requirement; $39 one-time for Premium (no badge)
+audience:
+  - startups
+  - saas
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: true
+  fields: []
+  conditions:
+    - StartupBase badge required on user site for free tier
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 0
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://startupbase.io/products/cotravel
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: haiku-9
+  sources:
+    - https://startupbase.io/launch

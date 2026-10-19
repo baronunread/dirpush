@@ -1,0 +1,71 @@
+id: ainave
+name: AINave
+website: https://ainave.com
+submission_url: https://ainave.com/submit
+cost:
+  classification: FREEMIUM
+  notes: "Free tier ($0 forever) gives a public listing + community discovery, no badge/backlink required from the submitter to submit or go live; $5 one-time 'Verified' tier adds a verified badge and guaranteed do-follow backlink for the submitter's site, plus higher visibility. Note: the pricing page's Free-tier bullet list also mentions 'Verified badge'/'Do-follow backlink', which appears to be a copy inconsistency rather than a genuine free perk, since the paid tier separately lists the same two items as its own additions."
+audience:
+  - ai-tools
+  - developer-tools
+  - startups
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+submission:
+  url_first: true
+  fields:
+    - name: Product URL
+      required: true
+      limit: 500
+    - name: Product name
+      required: true
+      limit: 40
+    - name: Tagline
+      required: true
+      limit: 60
+    - name: Description
+      required: false
+    - name: Thumbnail
+      required: false
+    - name: Screenshots
+      required: false
+    - name: Pricing type
+      required: false
+    - name: Categories
+      required: false
+    - name: Social links
+      required: false
+  conditions:
+    - Maximum 5 screenshots selections/uploads
+    - Maximum 3 categories selections/uploads
+autofetch:
+  supported: true
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 5
+kind: listing
+human_only: null
+listing_url_pattern: "https://ainave.com/products/{slug}"
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://ainave.com/products/ai-affiliate-programs
+  samples: 3
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-06
+  by: codex
+  sources:
+    - https://ainave.com/submit
+    - https://ainave.com/pricing
+    - https://ainave.com/products/retypewords

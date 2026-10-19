@@ -1,0 +1,1 @@
+Free listings are submitted at /submit after login, then reviewed. Badge installation is optional for listing; it only changes the backlink to dofollow. Paid plans are optional queue-skips/partner directory placements, starting at $3.99 one-time.

@@ -1,0 +1,57 @@
+id: trillionagent
+name: TrillionAgent
+website: https://trillionagent.com/
+submission_url: https://trillionagent.com/register-agent/
+cost:
+  classification: VERIFIED_FREE
+  notes: Registration page explicitly states that listing is free.
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: contact_email
+      required: true
+    - name: agent_name
+      required: true
+    - name: provider
+      required: true
+    - name: category
+      required: true
+    - name: role
+      required: true
+    - name: description
+      required: true
+    - name: cost
+      required: true
+    - name: address
+      required: true
+  conditions: []
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://trillionagent.com/category/ai-agent-development-ai-agents/ai-agent-developer-platform
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://trillionagent.com/register-agent/

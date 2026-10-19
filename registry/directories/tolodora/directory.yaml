@@ -1,0 +1,59 @@
+id: tolodora
+name: Tolodora
+website: https://tolodora.com/
+submission_url: https://tolodora.com/launch
+cost:
+  classification: VERIFIED_FREE
+  notes: Free forever; no credit card. Public page says listings go live immediately. No paid listing upgrade was visible on the launch page.
+audience:
+  - saas
+  - software
+  - startups
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email
+submission:
+  url_first: false
+  fields:
+    - name: name
+      required: true
+    - name: logo
+      required: true
+    - name: short pitch
+      required: true
+    - name: screenshots
+      required: false
+    - name: website link
+      required: true
+  conditions:
+    - Free account required
+    - Listing publishes immediately according to public launch page
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: launch_board
+human_only: null
+review_time: "instant, according to the public launch page"
+link:
+  rel: ugc
+  method: own_listing
+  evidence: null
+  samples: 1
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://tolodora.com/launch
+    - https://tolodora.com/signup

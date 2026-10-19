@@ -1,0 +1,49 @@
+id: hightechattic
+name: HighTechAttic
+website: https://hightechattic.com/
+submission_url: https://hightechattic.com/dashboard/projects/new
+cost:
+  classification: FREEMIUM
+  notes: Free account can post up to 10 listings. Optional sidebar ad is $99/month. A $9 restore fee applies only to accounts revoked for Terms violations; it is not a listing fee.
+audience:
+  - saas
+  - startups
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email
+    - password
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Free account required; listing form fields are hidden until sign-in.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://hightechattic.com/projects/3-useurope-indie-developers-is-product-revenue-research-wort-6361d493
+  samples: 1
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://hightechattic.com/free-saas-directory
+    - https://hightechattic.com/pricing
+    - https://hightechattic.com/dashboard/projects/new

@@ -1,0 +1,56 @@
+id: saastore
+name: SaaStore
+website: https://saastore.ai/
+submission_url: https://saastore.ai/signup/seller
+cost:
+  classification: VERIFIED_FREE
+  notes: "Public seller FAQ says listings are free and baseline listings will remain free. Optional premium placement may be offered in the future, but no current paid listing tier is stated. No sales commission."
+audience:
+  - saas
+  - software
+  - startups
+  - developer-tools
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - password
+    - google
+submission:
+  url_first: false
+  fields:
+    - name: seller account
+      required: true
+    - name: product details
+      required: true
+  conditions:
+    - Manual editorial review before publication.
+    - "Seller identity is verified; public pages show phone-verified seller trust badges, but the exact verification step in the seller wizard was not visible."
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://saastore.ai/app/platebook
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://saastore.ai/
+    - https://saastore.ai/faq
+    - https://saastore.ai/signup/seller

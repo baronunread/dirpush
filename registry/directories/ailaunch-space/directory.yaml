@@ -1,0 +1,44 @@
+id: ailaunch-space
+name: AI Launch Space
+website: https://ailaunch.space
+submission_url: https://ailaunch.space/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free 'Standard Listing' requires adding + verifying their badge for the dofollow backlink to activate; $4.99/launch Premium removes badge requirement and adds priority review + featured placement"
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - "unknown - sign-in required, submit form fields not visible without auth"
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - badge required and auto-verified for free tier
+    - admin review 24-48h
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://ailaunch.space/project/cyberscore-labs
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-c
+  sources:
+    - https://ailaunch.space/pricing
+    - https://ailaunch.space/submit

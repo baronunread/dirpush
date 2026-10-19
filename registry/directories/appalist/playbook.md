@@ -1,0 +1,4 @@
+- Submission requires Google-only login (no email/password option); the form itself, including whether a badge is required, is not visible past this wall.
+- No pricing/plan details visible before logging in; listings on the site show Free/Freemium/Paid tags for the tools themselves (not Appa List's own pricing).
+- Live listings sit at /ai/{slug}, e.g. /ai/zinn-hub-freelance-marketplace.
+- Multiple AI categories: Assistants, APIs, Automation, Design, Marketing, etc.

@@ -1,0 +1,53 @@
+id: betterlaunch
+name: BetterLaunch
+website: https://www.betterlaunch.co/
+submission_url: https://www.betterlaunch.co/submit
+cost:
+  classification: FREEMIUM
+  notes: Free submission with standard Monday launch date; $9 one-time skip-the-line and plans from $19 one-time. Badge is optional for dofollow links only.
+audience:
+  - saas
+  - startups
+  - indie-makers
+  - products
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email
+    - password
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Free plan schedules a Monday launch 30+ days out
+    - Badge optional for dofollow backlink; free nofollow listing does not require a badge
+    - Form fields are behind sign-in
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: launch_board
+human_only: null
+review_time: Monday launch date 30+ days out on free plan
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://www.betterlaunch.co/product/nick-launches-directory-finder
+  samples: 4
+  noindex: false
+  claimed: nofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.betterlaunch.co/saas-directory
+    - https://www.betterlaunch.co/pricing
+    - https://www.betterlaunch.co/submit

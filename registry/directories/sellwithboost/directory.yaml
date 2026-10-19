@@ -1,0 +1,54 @@
+id: sellwithboost
+name: SellWithBoost
+website: https://sellwithboost.com/
+submission_url: https://sellwithboost.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Standard is $29 one-time and Premium is $99 one-time; paid plans skip the badge.
+audience:
+  - startups
+  - indie-makers
+  - software
+  - saas
+  - developer-tools
+  - products
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email
+    - password
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - The post-login form was not visible during research.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: Typically a few hours after badge verification.
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://sellwithboost.com/startups/sora-2
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: recaptcha
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://sellwithboost.com/features
+    - https://sellwithboost.com/submit
+    - https://sellwithboost.com/pricing
+    - https://sellwithboost.com/login

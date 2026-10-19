@@ -1,0 +1,44 @@
+id: ai-tool-list
+name: AI Tool List
+website: https://www.aitoollist.org/
+submission_url: https://github.com/aitoollist/awesome-ai-tool-list
+cost:
+  classification: VERIFIED_FREE
+  notes: Open source listing submitted through a GitHub pull request; no fee stated.
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - "Submit a pull request following the repository's CONTRIBUTING.md; GitHub account required."
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.aitoollist.org/
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://github.com/aitoollist/awesome-ai-tool-list
+    - https://github.com/aitoollist/awesome-ai-tool-list/blob/main/CONTRIBUTING.md

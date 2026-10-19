@@ -1,0 +1,1 @@
+Submit from the pricing page after account login. Starter is $29 one-time, Growth $49, and Elite $99. Starter includes a basic listing with logo, screenshots, and clickable site link. No free option is offered.

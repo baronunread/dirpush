@@ -1,0 +1,1 @@
+Enter the tool URL at /submit-tool and continue through the free flow. A free account may be requested after URL validation; account signup supports email, Google, and GitHub. Standard review can take several weeks. Adding a best-ai.org backlink to the product homepage earns free 48-hour priority; paid Fast-Track is $39 one-time.

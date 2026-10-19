@@ -1,0 +1,63 @@
+id: devtools-directory
+name: DevTools Directory
+website: https://devtools.directory
+submission_url: https://github.com/devtoolsd/devtoolsd/new/main/content/tools
+cost:
+  classification: VERIFIED_FREE
+  notes: Open contribution by GitHub pull request; no submission charge stated.
+audience:
+  - developer-tools
+  - open-source
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - github
+submission:
+  url_first: false
+  fields:
+    - name: name
+      required: true
+    - name: slug
+      required: true
+    - name: website
+      required: true
+    - name: description
+      required: true
+    - name: resource_type
+      required: true
+    - name: pricing
+      required: true
+    - name: open_source
+      required: true
+    - name: categories
+      required: true
+  conditions:
+    - Submit a YAML entry through a GitHub pull request; contributions are curated/reviewed.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://devtools.directory/tools/docker/
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://devtools.directory/about/
+    - https://devtools.directory/contribute/
+    - https://github.com/devtoolsd/devtoolsd/blob/main/CONTRIBUTING.md
+    - https://github.com/devtoolsd/devtoolsd/new/main/content/tools

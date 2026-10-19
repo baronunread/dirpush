@@ -1,0 +1,47 @@
+id: my-launch-stash
+name: My Launch Stash
+website: https://mylaunchstash.com
+submission_url: https://mylaunchstash.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Badge required: Website -> Badge -> Details wizard after Google login (same template as appalist.com)."
+audience:
+  - startups
+  - saas
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - manual review before listing goes live
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+    max: 0
+kind: listing
+human_only: null
+listing_url_pattern: "https://mylaunchstash.com/product/{slug}"
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://mylaunchstash.com/product/ecommercedataapi
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bB
+  sources:
+    - https://mylaunchstash.com/submit
+    - https://mylaunchstash.com/product/kodytools

@@ -1,0 +1,1 @@
+Use the Submit Tool link from the homepage. It redirects to /login, where the only visible authentication option is Google. Public pricing advertises a $9.99 one-time Featured Listing with lifetime placement and review within 48 hours; no form fields are visible before sign-in.

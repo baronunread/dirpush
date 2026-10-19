@@ -1,0 +1,71 @@
+id: app-stack-builder
+name: App Stack Builder
+website: https://appstackbuilder.com/
+submission_url: https://appstackbuilder.com/submit-tool
+cost:
+  classification: FREEMIUM
+  notes: "Free listing has no badge requirement; badge/backlink is optional and earns a dofollow link. Featured plan skips queue, shown $9 discounted from $22 one-time."
+audience:
+  - saas
+  - developer-tools
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: name
+      required: true
+    - name: website
+      required: true
+    - name: tagline
+      required: true
+      limit: 100
+    - name: category
+      required: true
+    - name: pricing_information
+      required: false
+    - name: description
+      required: true
+    - name: logo
+      required: false
+    - name: screenshot
+      required: false
+    - name: submitter_name
+      required: false
+    - name: email
+      required: true
+    - name: company
+      required: false
+    - name: x_handle
+      required: false
+  conditions:
+    - Free tier has an 8+ week review queue
+    - Badge or plain-text link is optional; it only changes backlink to dofollow
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 1
+kind: launch_board
+review_time: 8 weeks or more
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://appstackbuilder.com/tools/airtable
+  samples: 3
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://appstackbuilder.com/submit-tool

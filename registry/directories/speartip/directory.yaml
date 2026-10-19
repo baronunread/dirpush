@@ -1,0 +1,48 @@
+id: speartip
+name: Speartip
+website: https://speartip.eu/
+submission_url: https://speartip.eu/en/vendors
+cost:
+  classification: FREEMIUM
+  notes: Free Launch €0 forever; optional Pro Launch €29 one-time (excl. applicable VAT). Company must be established in EU/EEA.
+audience:
+  - saas
+  - ai-tools
+  - developer-tools
+  - startups
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - unknown; Vendor Workspace route not inspected past portal entry
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Provider company must be established in an EU or EEA country
+    - moderated approval
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: launch_board
+review_time: not stated
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://speartip.eu/en/p/2kw-ai
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://speartip.eu/en/launch
+    - https://speartip.eu/en/premium

@@ -1,0 +1,1 @@
+First step includes name, tagline (80 chars), up to 3 categories, pricing model, and optional draft-recovery email. Continue to enrichment and account creation; sign-in supports GitHub, Google, or email magic link. Listing is free. This is a launch board with votes and leaderboard, not a plain listing.

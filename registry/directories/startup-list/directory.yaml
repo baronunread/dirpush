@@ -1,0 +1,81 @@
+id: startup-list
+name: Startup List
+website: https://startup-list.org/
+submission_url: https://startup-list.org/submit
+cost:
+  classification: FREEMIUM
+  notes: "Standard listing is free. Optional Featured plan is £49/week; the review step preselects an optional £10 boost for 3-day placement, so uncheck it for the free path. No badge or backlink condition was shown."
+audience:
+  - startups
+  - saas
+  - software
+  - products
+  - marketing
+  - productivity
+  - developer-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email
+    - password
+submission:
+  url_first: false
+  fields:
+    - name: product_name
+      required: true
+    - name: website_url
+      required: true
+    - name: short_description
+      required: true
+      limit: 200
+    - name: long_description
+      required: false
+    - name: product_card_image_or_logo
+      required: false
+    - name: category
+      required: false
+    - name: pricing_model
+      required: true
+    - name: tags
+      required: false
+    - name: affiliate_or_referral_link
+      required: false
+    - name: pros
+      required: false
+    - name: cons
+      required: false
+  conditions:
+    - "Sign in or create an account with name, email, and password; account creation did not require email verification."
+    - Standard listing is free and manually reviewed; stated review time is 24-48 hours.
+    - The review step preselects an optional £10 boost for 3-day placement; deselect it to avoid payment.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: 24-48 hours for standard submissions.
+listing_url_pattern: "https://startup-list.org/startup/{slug}"
+link:
+  rel: dofollow
+  method: own_listing
+  evidence: null
+  samples: 1
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://startup-list.org/submit
+    - https://startup-list.org/pricing
+    - https://startup-list.org/login
+    - https://startup-list.org/register

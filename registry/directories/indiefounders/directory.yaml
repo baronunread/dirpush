@@ -1,0 +1,48 @@
+id: indiefounders
+name: IndieFounders
+website: https://www.indiefounders.club/
+submission_url: https://www.indiefounders.club/submit
+cost:
+  classification: VERIFIED_FREE
+  notes: The public submit page says listing is free; no paid submission tier was visible.
+audience:
+  - indie-makers
+  - startups
+  - software
+  - saas
+  - developer-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - x
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Sign in with X; post-login form fields were not visible during research.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://www.indiefounders.club/launches/hardwareos
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.indiefounders.club/submit
+    - https://www.indiefounders.club/

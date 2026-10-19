@@ -1,0 +1,47 @@
+id: software-finder
+name: Software Finder
+website: https://softwarefinder.com
+submission_url: https://vendors.softwarefinder.com/
+cost:
+  classification: FREEMIUM
+  notes: "Site copy confirms 'Join Free or Log in' and vendor ToS references both free and paid registered vendors. Paid add-ons: CPC placement, pay-per-lead (PPL), intent data, review-collection/AI-visibility programs."
+audience:
+  - saas
+  - software
+  - b2b-software
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions: []
+autofetch:
+  supported: true
+  expected:
+    - "AI-built profile from product info per on-page claim 'Build Your Entire Profile With AI in Seconds'"
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+kind: lead_gen
+human_only: null
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://softwarefinder.com/supply-chain-management/item/reviews
+  samples: 1
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-28
+  by: sonnet-r1
+  sources:
+    - https://vendors.softwarefinder.com/
+    - https://my.softwarefinder.com/login

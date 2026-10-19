@@ -1,0 +1,64 @@
+id: tool-finder
+name: Tool Finder
+website: https://toolfinder.com/
+submission_url: https://toolfinder.com/submit
+cost:
+  classification: PAID
+  notes: Tool Listing is $29 one-time. Vendor Pro is $79/year and includes a week on the homepage. Both plans include human review; refund if listing is rejected.
+audience:
+  - software
+  - ai-tools
+  - productivity
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: tool name
+      required: true
+    - name: quick summary
+      required: true
+      limit: 32
+    - name: website URL
+      required: true
+    - name: logo
+      required: true
+    - name: platforms
+      required: true
+    - name: best for
+      required: true
+    - name: categories
+      required: true
+    - name: email
+      required: true
+  conditions:
+    - "Paid listing; reviewed by a human, usually within 72 hours."
+    - Email a link to continue on desktop; the site says no account is needed.
+    - Maximum 3 categories selections/uploads
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: usually within 72 hours
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://apps.apple.com/us/app/bento-the-do-less-timer/id1595945715
+  samples: 3
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://toolfinder.com/submit

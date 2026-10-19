@@ -1,0 +1,82 @@
+id: ignlab-launch
+name: Ignlab Launch
+website: https://launch.ignlab.net
+submission_url: https://launch.ignlab.net/submit.html
+cost:
+  classification: VERIFIED_FREE
+  notes: Advertised free forever; no account required. Manual review before publication.
+audience:
+  - saas
+  - software
+  - developer-tools
+  - marketing
+  - productivity
+  - open-source
+authentication:
+  required: false
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: name
+      required: true
+      limit: 120
+    - name: url
+      required: true
+    - name: tagline
+      required: true
+      limit: 160
+    - name: description
+      required: true
+    - name: category
+      required: true
+    - name: tags
+      required: false
+    - name: pricing
+      required: false
+    - name: submitter_email
+      required: false
+    - name: launch_date
+      required: false
+    - name: features
+      required: false
+    - name: platforms
+      required: false
+    - name: screenshot_urls
+      required: false
+    - name: maker_name
+      required: false
+    - name: maker_twitter
+      required: false
+    - name: maker_url
+      required: false
+  conditions:
+    - Manual review before publication.
+    - A simple arithmetic anti-spam question is required.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: true
+kind: launch_board
+human_only: null
+review_time: Manual review; timing not stated.
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://launch.ignlab.net/t/amie
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://launch.ignlab.net/
+    - https://launch.ignlab.net/submit.html

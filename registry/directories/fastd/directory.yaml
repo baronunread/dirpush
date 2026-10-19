@@ -1,0 +1,45 @@
+id: fastd
+name: FastD
+website: https://fastd.top/
+submission_url: https://fastd.top/submit
+cost:
+  classification: FREEMIUM
+  notes: Free listing on FastD after review. Badge is optional and only upgrades backlink to dofollow. Paid one-time tiers begin at $3.99 to skip review queues and publish across partner directories.
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Free account required; form details hidden until login
+    - Optional badge verification changes backlink to dofollow
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: quick review; no specific duration stated
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://fastd.top/ai-tools/andreas-christodoulou-ta0f
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://fastd.top/pricing
+    - https://fastd.top/submit

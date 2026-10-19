@@ -1,0 +1,45 @@
+id: vibe-coding-cloud
+name: Vibe Coding
+website: https://www.vibe-coding.cloud
+submission_url: https://www.vibe-coding.cloud/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free Listing requires adding their badge and verifying a backlink before the submission form even opens; $9 Basic and $29 Advanced one-time paid tiers explicitly waive the badge/backlink requirement.
+audience:
+  - developer-tools
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods:
+    - none observed - flow is plan selection -> badge/link verification (free) or PayPal checkout (paid)
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - badge/backlink required and auto/manually verified before free submission form unlocks
+    - "manual review, results within 48h"
+    - must be relevant to vibe coding / AI-assisted dev / developer workflow or may be declined
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.vibe-coding.cloud/tools
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-c
+  sources:
+    - https://www.vibe-coding.cloud/submit

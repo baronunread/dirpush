@@ -1,0 +1,53 @@
+id: devhunt
+name: DevHunt
+website: https://devhunt.org
+submission_url: https://devhunt.org/submit
+cost:
+  classification: FREEMIUM
+  notes: "Free submission open to devtools/OSS/APIs/frameworks; $49 'Skip the queue' (pick launch week); $397 newsletter ad placement. Free tier has no strings attached beyond the wait."
+audience:
+  - developer-tools
+  - open-source
+  - frameworks
+  - apis
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - github
+    - google
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - github_or_google_oauth_required
+    - average_6_month_queue_for_free_launch
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: launch_board
+human_only: null
+review_time: ~6 months average for the free queue
+listing_url_pattern: "https://devhunt.org/tool/{slug}"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://devhunt.org/tools/open-source
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: unknown
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-28
+  by: sonnet-r2
+  sources:
+    - https://devhunt.org
+    - https://devhunt.org/submit
+    - https://devhunt.org/about
+    - https://devhunt.org/tool/daytona

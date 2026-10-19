@@ -1,0 +1,53 @@
+id: launchbase-india
+name: Launchbase
+website: https://www.launchbase.in/
+submission_url: https://www.launchbase.in/submit
+cost:
+  classification: VERIFIED_FREE
+  notes: Public site says free to submit; no paid submission tier or badge condition found.
+audience:
+  - startups
+  - saas
+  - developer-tools
+  - ai-tools
+  - products
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - linkedin
+    - email
+    - password
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - "Manual moderation for quality, originality, working state, and launch readiness"
+    - Submission form fields are hidden until sign-in
+    - India-focused launch feed
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: launch_board
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://launchbase.in/products/codesamjho
+  samples: 3
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.launchbase.in/
+    - https://www.launchbase.in/submit
+    - https://www.launchbase.in/guidelines

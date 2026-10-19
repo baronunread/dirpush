@@ -1,0 +1,73 @@
+id: submitstartup
+name: SubmitStartup
+website: https://submitstartup.io/
+submission_url: https://submitstartup.io/submit
+cost:
+  classification: FREEMIUM
+  notes: Free listing with a nofollow backlink. Featured upgrade offers dofollow; no listing price was shown on the form.
+audience:
+  - startups
+  - saas
+  - software
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: startup name
+      required: true
+    - name: website URL
+      required: true
+    - name: categories
+      required: true
+    - name: contact email
+      required: true
+    - name: logo
+      required: false
+    - name: pricing model
+      required: false
+    - name: short description
+      required: true
+      limit: 280
+    - name: long description
+      required: false
+    - name: key features
+      required: false
+      limit: 5
+    - name: founder name
+      required: false
+    - name: social links
+      required: false
+  conditions:
+    - Manual review; homepage states 24–48 hours.
+    - "Logo upload accepts PNG, JPG, WebP, or SVG up to 5 MB."
+    - Maximum 5 categories selections/uploads
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+review_time: 24–48 hours
+listing_url_pattern: "https://submitstartup.io/startup/{slug}"
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://submitstartup.io/directory/ai-seo-tracker
+  samples: 4
+  noindex: false
+  claimed: nofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://submitstartup.io/submit
+    - https://submitstartup.io/

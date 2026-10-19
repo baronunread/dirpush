@@ -1,0 +1,48 @@
+id: nextbigwhat
+name: NextBigWhat
+website: https://submit.nextbigwhat.com/
+submission_url: "https://submit.nextbigwhat.com/#pricing"
+cost:
+  classification: PAID
+  notes: Lite $39 one-time; Pro $79 one-time. Checkout is required before the listing form is provided.
+audience:
+  - startups
+  - saas
+  - software
+  - products
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - One-time payment required before the product submission form is provided.
+    - Site says publication is within 24 hours after payment and completed form.
+    - Form fields are not visible before checkout.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: within 24 hours after checkout and completed submission form
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://nextbigwhat.com/process-street/
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://submit.nextbigwhat.com/

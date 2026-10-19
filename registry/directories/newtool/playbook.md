@@ -1,0 +1,1 @@
+Create an account using email/password, Google or GitHub. Free requires a badge backlink kept permanently, with review within 90 days. Pro is $9.90 once and removes the backlink requirement with immediate listing. Form fields are hidden behind login.

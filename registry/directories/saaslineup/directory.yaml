@@ -1,0 +1,68 @@
+id: saaslineup
+name: SaaSLineup
+website: https://saaslineup.com/
+submission_url: https://saaslineup.com/submit/
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free lifetime listing requires a dofollow badge to publish and keep live. $19 one-time for featured without badge; $29 one-time for listing on SaaSLineup and TheAIToolsDir.
+audience:
+  - saas
+  - business-software
+  - products
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: website_url
+      required: true
+    - name: product_name
+      required: true
+      limit: 200
+    - name: tagline
+      required: true
+      limit: 200
+    - name: description
+      required: true
+    - name: screenshot
+      required: false
+    - name: categories
+      required: true
+    - name: tags
+      required: false
+    - name: email
+      required: true
+  conditions:
+    - Dofollow badge required for free publication
+    - "If badge is removed and not restored within 7 days of notice, listing is unpublished"
+    - review within 7 days if badge not already verified
+    - Maximum 3 categories selections/uploads
+autofetch:
+  supported: true
+  expected:
+    - form advertises auto-fill from product URL
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 1
+kind: listing
+review_time: immediate with verified badge; otherwise within 7 days
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://saaslineup.com/product/sitecheck/
+  samples: 2
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://saaslineup.com/submit/
+    - https://saaslineup.com/pricing/

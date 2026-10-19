@@ -1,0 +1,46 @@
+id: aitoolsmagazine
+name: AI Tools Magazine
+website: https://aitoolsmagazine.com
+submission_url: https://aitoolsmagazine.com/submit-listing/details/
+cost:
+  classification: VERIFIED_FREE
+  notes: No pricing page or paid tier found anywhere on the site; submission just requires a free account. The AI Tool Badge Generator is only usable after a tool is already listed and is not required to submit or go live.
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+submission:
+  url_first: true
+  fields: []
+  conditions:
+    - account required (free sign-up)
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 1
+kind: listing
+human_only: null
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://aitoolsmagazine.com/synthesia-ai/
+  samples: 1
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bC
+  sources:
+    - https://aitoolsmagazine.com/submit-listing/details/
+    - https://aitoolsmagazine.com/ai-tool-badge-generator/

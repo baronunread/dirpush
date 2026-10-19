@@ -1,0 +1,46 @@
+id: deeplaunch
+name: DeepLaunch.io
+website: https://deeplaunch.io
+submission_url: https://deeplaunch.io/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free Listing requires adding a dofollow backlink/badge to DeepLaunch.io in the submitter's website footer; review within 2 days. All paid tiers ($5-$199, various cadences) explicitly waive the backlink/badge requirement."
+audience:
+  - ai-tools
+  - saas
+  - developer-tools
+  - products
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - "unknown - Sign In button present, submit form not explored past pricing page"
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - dofollow backlink/badge required in website footer for free tier
+    - review within 2 days on free tier
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://deeplaunch.io/product/cardauthentico
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-c
+  sources:
+    - https://deeplaunch.io/pricing

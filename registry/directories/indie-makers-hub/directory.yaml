@@ -1,0 +1,50 @@
+id: indie-makers-hub
+name: Indie Makers Hub
+website: https://indiemakershub.com/
+submission_url: https://indiemakershub.com/submit/
+cost:
+  classification: VERIFIED_FREE
+  notes: "The submit page states 100% free, with no fees or hidden costs."
+audience:
+  - indie-makers
+  - startups
+  - software
+  - saas
+  - developer-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - The Google Form requires Google sign-in; fields were not visible without signing in.
+    - Manual review stated as 2-3 business days.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: 2-3 business days
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://indiemakershub.com/tool/kie.ai/
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://indiemakershub.com/submit/
+    - https://indiemakershub.com/submit/form/

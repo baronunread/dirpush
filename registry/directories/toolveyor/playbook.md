@@ -1,0 +1,1 @@
+Use /submit, which redirects to sign-in. Sign in with an email magic link or Google. Homepage states submission is free and listings are reviewed before publication. Actual listing fields are hidden until authenticated; no public review-time estimate.

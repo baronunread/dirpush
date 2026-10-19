@@ -1,0 +1,1 @@
+Complete the public first step at /submit: tool name, contact email, website, optional description, image, category, and pricing model. Then choose the free listing or optional fast-track; fast-track price was not displayed before advancing. The listing is described as permanent with a dofollow link.

@@ -1,0 +1,1 @@
+Enter the product website in the public eligibility form. The page says accepted tools go live within 24–48 hours. The free path depends on passing eligibility; the paid Lifetime Listing and Launch Boost are separate options, but public page pricing was not visible.

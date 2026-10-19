@@ -1,0 +1,51 @@
+id: commune-launchpad
+name: Commune Launchpad
+website: https://commune.build/
+submission_url: https://commune.build/launch
+cost:
+  classification: VERIFIED_FREE
+  notes: Weekly cohort submissions are described as free. No fee or badge requirement was visible publicly.
+audience:
+  - startups
+  - software
+  - saas
+  - indie-makers
+  - developer-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - x
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Weekly launch cohorts; next cohort opens Monday.
+    - Product submission fields are behind sign-in.
+    - Positioned for builders shipping inside the Commune community.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: launch_board
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://commune.build/launch/thoughtmint
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://commune.build/launch
+    - https://commune.build/launch/launchaf

@@ -1,0 +1,47 @@
+id: nachonacho
+name: NachoNacho
+website: https://nachonacho.com
+submission_url: https://nachonacho.com/seller
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "No listing fee; NachoNacho takes a revenue share only on completed sales. Listing requires passing an approval gate: mature/established product, targets US SMBs (up to 500 employees), widely applicable (not niche/industry-specific), and must accept virtual cards as a payment method."
+audience:
+  - saas
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - "unknown - apply via 'List your product' flow"
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - must be a mature/established product
+    - must target US SMBs up to 500 employees
+    - "must be widely applicable, not industry-specific"
+    - must accept virtual cards as payment method
+    - manual approval
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://nachonacho.com/product/-CallHippo
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-h1
+  sources:
+    - https://nachonacho.com/seller

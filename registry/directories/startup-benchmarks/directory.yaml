@@ -1,0 +1,59 @@
+id: startup-benchmarks
+name: Startup Benchmarks
+website: https://startupbenchmarks.com
+submission_url: https://startupbenchmarks.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free submission but a do-follow badge linking back to the listing must be installed and pass 'Verify Badge' before the submission form unlocks (submitter-confirmed, form itself is behind login). No separate paid tier found."
+audience:
+  - saas
+  - developer-tools
+  - productivity
+  - business-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+submission:
+  url_first: true
+  fields:
+    - name: product_name
+      required: true
+    - name: product_url
+      required: true
+    - name: description
+      required: true
+    - name: category
+      required: true
+    - name: logo
+      required: false
+  conditions:
+    - "badge required to go live: install a do-follow badge linking to your listing and pass Verify Badge before the details form unlocks"
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+listing_url_pattern: "https://startupbenchmarks.com/product/{slug}"
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://startupbenchmarks.com/product/clockbeam
+  samples: 2
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bA
+  sources:
+    - https://startupbenchmarks.com/submit
+    - https://startupbenchmarks.com
+    - https://startupbenchmarks.com/product/writesprout

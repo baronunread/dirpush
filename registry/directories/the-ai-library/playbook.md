@@ -1,0 +1,1 @@
+The founder submission CTA on the homepage says £49 one-time for a weekly launch slot with voting, leaderboard placement, and upvotes. Submit Now routes to /account/tools/new and requires login; /login shows Google as the only sign-in option. No free listing is advertised.

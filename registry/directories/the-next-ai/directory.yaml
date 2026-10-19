@@ -1,0 +1,62 @@
+id: the-next-ai
+name: The Next AI
+website: https://www.thenextai.com/
+submission_url: https://www.thenextai.com/submit-ai-tool/
+cost:
+  classification: FREEMIUM
+  notes: Free basic permanent listing; optional Featured placement $199 one-time.
+audience:
+  - ai-tools
+  - developer-tools
+authentication:
+  required: false
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: false
+  fields:
+    - name: tool_name
+      required: true
+    - name: website_url
+      required: true
+    - name: category
+      required: true
+    - name: short_description
+      required: true
+      limit: 120
+    - name: full_description
+      required: true
+    - name: pricing_model
+      required: true
+    - name: email
+      required: true
+    - name: logo_url
+      required: false
+  conditions:
+    - Editorial review
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: about 48 hours
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://www.thenextai.com/ai-tools/zapier/
+  samples: 3
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.thenextai.com/submit-ai-tool/

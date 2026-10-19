@@ -1,0 +1,1 @@
+Click Submit; the route opens /get-started and asks the founder to log in with Google. A Create an account link is available. The post-login form and listing terms are not public. Public FAQ says submissions are reviewed before inclusion; its free claim describes browsing and comparison only.

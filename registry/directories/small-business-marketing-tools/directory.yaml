@@ -1,0 +1,67 @@
+id: small-business-marketing-tools
+name: Small Business Marketing Tools
+website: https://www.sbmarketingtools.com/
+submission_url: https://www.sbmarketingtools.com/tools-directory-listings/
+cost:
+  classification: PAID
+  notes: Basic listing $49/year; Enhanced listing $89/year. Payment requested by credit card after submitting listing information.
+audience:
+  - marketing
+  - productivity
+  - small-business
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: Full Name
+      required: true
+    - name: Email
+      required: true
+    - name: Company
+      required: true
+    - name: Website/URL
+      required: true
+    - name: Tools Directory Listing Type
+      required: true
+    - name: Category Choice
+      required: true
+    - name: Company Description
+      required: true
+    - name: Additional Comments/Questions
+      required: false
+    - name: Consent to store information
+      required: true
+  conditions:
+    - Editorial approval required
+    - Credit-card payment requested after submitting the listing form
+    - Enhanced logo upload instructions are provided after payment
+    - Listing is also placed free in the tools directory on MarineMarketingTools.com
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: editorial approval; no duration stated
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://www.sbmarketingtools.com/product/flexclip/
+  samples: 1
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.sbmarketingtools.com/advertise/
+    - https://www.sbmarketingtools.com/tools-directory-listings/

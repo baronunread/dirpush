@@ -1,0 +1,48 @@
+id: claude-plugin-directory
+name: Claude Plugin Directory
+website: https://claude.com/marketplace/plugins
+submission_url: https://claude.ai/directory/manage
+cost:
+  classification: PAID
+  notes: "Official publishing docs require a Pro, Max, Team, or Enterprise Claude plan to submit; free accounts cannot submit. There is no separate listing fee described, but a paid account is a prerequisite. Plugin bundles and MCP connectors are separate submission types."
+audience:
+  - agent-plugins
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - claude-account
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Paid Claude plan and eligible account or organization role required
+    - Plugin folder and plugin.json in a GitHub repository; connected GitHub account must have push access
+    - Repository must be public before listing goes live
+    - "Automated validation, security scanning, and review"
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: plugin_marketplace
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://claude.com/de/product/claude-code
+  samples: 1
+  noindex: false
+  claimed: null
+  bot_check: hcaptcha
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-08
+  by: codex
+  sources:
+    - https://claude.com/docs/directory/publish
+    - https://claude.com/docs/plugins/submit

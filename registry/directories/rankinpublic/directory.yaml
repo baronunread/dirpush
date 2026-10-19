@@ -1,0 +1,50 @@
+id: rankinpublic
+name: RankInPublic
+website: https://rankinpublic.xyz/
+submission_url: https://rankinpublic.xyz/launch
+cost:
+  classification: FREEMIUM
+  notes: "Standard tournament launch $0; Premium $29. Premium guarantees tournament entry, skips the waitlist, and includes a DR55 dofollow backlink."
+audience:
+  - saas
+  - startups
+  - products
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Free Standard launch has a waitlist and requires a qualifying round
+    - Free-tier DR55 dofollow backlink is only for top-three tournament results
+    - Submission fields are hidden until Google sign-in
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: launch_board
+human_only: null
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://rankinpublic.xyz/products/pictwinai.com
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://rankinpublic.xyz/
+    - https://rankinpublic.xyz/pricing
+    - https://rankinpublic.xyz/launch

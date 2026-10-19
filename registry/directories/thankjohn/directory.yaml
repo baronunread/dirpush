@@ -1,0 +1,42 @@
+id: thankjohn
+name: Thank John
+website: https://thankjohn.com
+submission_url: https://thankjohn.com/get-started
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free listing requires adding a backlink to thankjohn.com
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - backlink to thankjohn.com required
+    - manual review within 2 days
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://thankjohn.com/tool/songr
+  samples: 1
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-h3
+  sources:
+    - https://thankjohn.com/get-started

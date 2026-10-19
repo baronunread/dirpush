@@ -1,0 +1,46 @@
+id: steemhunt
+name: Steemhunt
+website: https://steemhunt.com
+submission_url: https://steemhunt.com/sign-in
+cost:
+  classification: VERIFIED_FREE
+  notes: Scam-adjacent crypto (STEEM) reward launch board; login only via Steem blockchain account + posting key. Not worth it.
+audience:
+  - startups
+  - products
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - steem-blockchain-account
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - requires a Steem blockchain account (username + posting key) to log in and post
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 5
+kind: launch_board
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://steemhunt.com/@tandav/llmgrid-the-unified-llm-gateway
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bC
+  sources:
+    - https://steemhunt.com/sign-in
+    - https://steemhunt.com/

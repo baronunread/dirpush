@@ -1,0 +1,45 @@
+id: ai-directories
+name: AI Directories Tools
+website: https://www.aidirectori.es
+submission_url: https://www.aidirectori.es/pricing?tab=tool-submission
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Live Tool submission pricing offers $0 listing only with a homepage/footer backlink and product DR above 10. Optional Pro is $49 one-time and monthly $9.99. This independent catalog listing differs from the directory-submission service.
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Product DR above 10 on free path
+    - Homepage or footer backlink required to get listed free
+    - Free listing review within 72 hours
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: within 72 hours
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://www.aidirectori.es/ai-tools/probeli-ai
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-08
+  by: codex
+  sources:
+    - https://www.aidirectori.es/pricing?tab=tool-submission

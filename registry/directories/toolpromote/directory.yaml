@@ -1,0 +1,81 @@
+id: toolpromote
+name: ToolPromote
+website: https://toolpromote.com/
+submission_url: https://toolpromote.com/submit
+cost:
+  classification: FREEMIUM
+  notes: Free standard directory listing with dofollow backlink and stated 48-hour human review. Featured is $49/month for a badge and priority placement.
+audience:
+  - ai-tools
+  - saas
+  - developer-tools
+  - marketing
+  - software
+authentication:
+  required: false
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: tool name
+      required: true
+    - name: website URL
+      required: true
+    - name: tagline
+      required: true
+      limit: 80
+    - name: category
+      required: true
+    - name: logo
+      required: false
+    - name: full description
+      required: true
+      limit: 1000
+    - name: key features
+      required: true
+    - name: pricing model
+      required: true
+    - name: launch date
+      required: false
+    - name: platforms
+      required: true
+    - name: X/Twitter
+      required: false
+    - name: GitHub repository
+      required: false
+    - name: submitter name
+      required: true
+    - name: email
+      required: true
+    - name: relationship to tool
+      required: true
+  conditions:
+    - Full description must be at least 100 characters.
+    - Logo should be square and at least 256 px.
+    - Standard review is human-reviewed within 48 hours.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+review_time: within 48 hours
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://toolpromote.com/tools/flux-klein-ai
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://toolpromote.com/submit
+    - https://toolpromote.com/

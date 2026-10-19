@@ -1,0 +1,51 @@
+id: startupsfyi
+name: Startups.fyi
+website: https://www.startups.fyi
+submission_url: https://www.startups.fyi/submit
+cost:
+  classification: PAID
+  notes: Featured Listings start at $29; guaranteed publication is contingent on payment. No free listing tier exists.
+audience:
+  - startups
+  - saas
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: first name
+      required: true
+    - name: last name
+      required: true
+    - name: email
+      required: true
+  conditions:
+    - manual review for content/quality guidelines
+    - payment required ($29+) before publication
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.startups.fyi/product/1lookup
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: unknown
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-h2
+  sources:
+    - https://www.startups.fyi/
+    - https://www.startups.fyi/submit

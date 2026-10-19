@@ -1,0 +1,47 @@
+id: opensaas-directory
+name: OpenSaasDirectory
+website: https://opensaas.directory/
+submission_url: https://opensaas.directory/
+cost:
+  classification: VERIFIED_FREE
+  notes: No project submission fee or badge/backlink gate is stated publicly. Free tier and fields are not visible past the Google-only sign-in dialog. Paid sponsorships are separate directory advertising.
+audience:
+  - open-source
+  - software
+  - saas
+  - self-hosted
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - "Only open-source, self-hosted SaaS projects qualify."
+    - Submission details and terms are hidden behind Google sign-in.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://opensaas.directory/projects/mailcheap
+  samples: 3
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://opensaas.directory/
+    - https://opensaas.directory/submit

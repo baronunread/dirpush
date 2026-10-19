@@ -1,0 +1,1 @@
+Submission page (/submit-tool -> /tool/submit-new-tool) only offers paid tiers, no free path: Basic $10 (1-3 day listing), FastTrack $19 (24hr + 7-day featured + priority search), Boosted $49 (24hr + 30-day featured + priority search). A 'Promote' tab on the same page offers additional sponsorship/featured-spot options beyond the base tiers.

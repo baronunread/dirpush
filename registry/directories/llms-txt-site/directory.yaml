@@ -1,0 +1,53 @@
+id: llms-txt-site
+name: llms.txt Site
+website: https://llmstxt.site
+submission_url: https://llmstxt.site/submit
+cost:
+  classification: VERIFIED_FREE
+  notes: "Public submission form asks for product, website, submitter contact, llms.txt URL, optional full-text URL, and notes. No login, payment, or backlink gate was shown. It catalogs llms.txt locations rather than MCP servers."
+audience:
+  - llms-txt
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: product_name
+      required: true
+    - name: website_url
+      required: true
+    - name: submitter_name
+      required: true
+    - name: email
+      required: true
+    - name: llms_txt_url
+      required: true
+  conditions:
+    - Public working llms.txt file required
+    - Submission reviewed for inclusion
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: llms_directory
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://llmstxt.site/
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-08
+  by: codex
+  sources:
+    - https://llmstxt.site/submit

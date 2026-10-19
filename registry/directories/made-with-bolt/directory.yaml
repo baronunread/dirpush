@@ -1,0 +1,58 @@
+id: made-with-bolt
+name: Made with Bolt
+website: https://madewithbolt.com/
+submission_url: https://madewithbolt.com/submit-project
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free to submit, but only projects built with Bolt are accepted."
+audience:
+  - no-code
+  - developer-tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: Project Title
+      required: true
+    - name: Email
+      required: true
+    - name: Short Description
+      required: true
+    - name: Description
+      required: true
+    - name: Website URL
+      required: true
+    - name: Twitter/X Profile
+      required: false
+    - name: Reddit Profile
+      required: false
+  conditions:
+    - Project must be built with Bolt; the site says other projects will not be accepted
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://madewithbolt.com/projects/banvibecoders
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://madewithbolt.com/
+    - https://madewithbolt.com/submit-project

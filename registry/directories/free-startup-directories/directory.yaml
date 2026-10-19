@@ -1,0 +1,70 @@
+id: free-startup-directories
+name: FreeStartupDirectories
+website: https://freestartupdirectories.com/
+submission_url: https://freestartupdirectories.com/submit
+cost:
+  classification: FREEMIUM
+  notes: Free permanent listing with dofollow backlink and human review. PRO is $20 one-time for richer media and priority review. Done-for-you submissions to external directories are a separate paid service starting at $25.
+audience:
+  - startups
+  - saas
+  - software
+  - ai-tools
+  - developer-tools
+  - marketing
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email/password
+    - google
+submission:
+  url_first: false
+  fields:
+    - name: tool name
+      required: true
+    - name: website URL
+      required: true
+    - name: short tagline
+      required: true
+      limit: 180
+    - name: full description
+      required: true
+    - name: primary category
+      required: true
+    - name: pricing model
+      required: true
+    - name: demo URL
+      required: false
+    - name: tool logo
+      required: true
+  conditions:
+    - Account creation or sign-in is required before the free submission can be sent.
+    - Product must be live and publicly accessible.
+    - "Free tier only accepts the essential profile fields and logo; gallery, video, social links, FAQs, and priority review are PRO features."
+    - Human review typically 24–48 hours.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+review_time: 24–48 hours
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://freestartupdirectories.com/tools/noillirk
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://freestartupdirectories.com/submit
+    - https://freestartupdirectories.com/

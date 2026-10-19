@@ -1,0 +1,1 @@
+Use /suggest. Public fields request company/site name, website, country, description and email. Optional checks cover open-source/self-hosted status, EU sovereignty signals, representation, and newsletter. No charge is shown, though pricing is unstated. Catalog displayed inconsistent counts during research, so verify that listings are visible before relying on it.

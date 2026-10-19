@@ -1,0 +1,77 @@
+id: toolpilot-ai
+name: ToolPilot AI
+website: https://www.toolpilot.ai
+submission_url: https://www.toolpilot.ai/pages/submit-your-ai-tool
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free listing requires a backlink (ToolPilot badge/logo on your site) and its URL/email confirmation. Priority $99 one-time (7-day turnaround); Premium $199 first month then $39/month (editor-enhanced, homepage feature)."
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: true
+  fields:
+    - name: First Name
+      required: true
+    - name: Last Name
+      required: true
+    - name: Company
+      required: true
+    - name: Email
+      required: true
+    - name: Backlink URL
+      required: false
+    - name: AI Tool Name
+      required: true
+    - name: URL
+      required: true
+    - name: Tagline
+      required: true
+    - name: Description
+      required: true
+    - name: Overview
+      required: true
+    - name: Top Features (up to 5)
+      required: false
+      limit: 300
+    - name: Platforms & Device Compatibility
+      required: true
+    - name: Subscription Options
+      required: true
+    - name: Billing Options
+      required: true
+    - name: Lowest Price Option (USD)
+      required: true
+  conditions:
+    - backlink to toolpilot.ai badge/logo required for free tier
+    - manual review
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: listing
+human_only: null
+listing_url_pattern: "https://www.toolpilot.ai/products/{slug}"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.toolpilot.ai/products/jasper-ai-transforming-content-creation-with-ai
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: hcaptcha
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-28
+  by: sonnet-rc1
+  sources:
+    - https://www.toolpilot.ai/pages/submit-your-ai-tool
+    - https://form.jotform.com/231772738321053

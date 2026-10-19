@@ -1,0 +1,48 @@
+id: navfolders
+name: NavFolders
+website: https://navfolders.com
+submission_url: https://navfolders.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free plan requires adding a dofollow backlink badge to your site footer before submitting; verified at submit time. Pro ($9.9 one-time) and Sponsor ($19.9/week) skip the backlink requirement.
+audience:
+  - startups
+  - saas
+  - ai-tools
+  - productivity
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - "dofollow backlink badge required in site footer for free plan, verified before review"
+    - review within 72 hours
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://navfolders.com/item/fastlaunch
+  samples: 2
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-f2
+  sources:
+    - https://navfolders.com/pricing
+    - https://navfolders.com/submit

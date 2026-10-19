@@ -1,0 +1,84 @@
+id: stackledge
+name: StackLedge
+website: https://www.stackledge.com/
+submission_url: https://www.stackledge.com/submit
+cost:
+  classification: FREEMIUM
+  notes: Standard listing is free and nofollow; Featured is $9 for 30 days and optional. The site says payment is due only after approval.
+audience:
+  - saas
+  - ai-tools
+  - developer-tools
+  - automation
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email
+    - password
+submission:
+  url_first: true
+  fields:
+    - name: type
+      required: true
+    - name: website_url
+      required: true
+    - name: name
+      required: true
+    - name: short_description
+      required: true
+      limit: 160
+    - name: full_description
+      required: true
+      limit: 2000
+    - name: category
+      required: true
+    - name: pricing_model
+      required: true
+    - name: hosting_model
+      required: true
+    - name: logo
+      required: false
+    - name: screenshots
+      required: false
+    - name: features
+      required: false
+    - name: use_cases
+      required: false
+    - name: faq
+      required: false
+    - name: keywords
+      required: false
+  conditions:
+    - Human review before listing goes live
+    - Must publicly upvote three other listings before continuing to the submit step
+    - Free Standard listing stays nofollow; Featured upgrade is optional and paid
+    - Maximum 5 screenshots selections/uploads
+autofetch:
+  supported: true
+  expected:
+    - "Draft name, description, features, use cases, FAQs, tags, and logo from product URL; review and correct generated content"
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 5
+kind: listing
+review_time: about 24 days in current standard queue; queue length changes
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://www.stackledge.com/tools/instance-scheduler
+  samples: 4
+  noindex: false
+  claimed: nofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-06
+  by: codex
+  sources:
+    - https://www.stackledge.com/pricing
+    - https://www.stackledge.com/submit

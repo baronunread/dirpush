@@ -1,0 +1,55 @@
+id: traffiklist
+name: Traffiklist
+website: https://www.traffiklist.com
+submission_url: https://www.traffiklist.com/submit
+cost:
+  classification: FREEMIUM
+  notes: "Free weekly launch and permanent product page. A do-follow backlink requires 3 upvotes and the Traffiklist badge. Featured is $29 founding rate (shown against $49), one-time, for guaranteed top-five placement and newsletter distribution."
+audience:
+  - indie-makers
+  - startups
+  - saas
+  - developer-tools
+  - marketing
+  - analytics
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Free launches use the weekly upvote-ranked board.
+    - "A do-follow backlink requires 3 upvotes and a site badge; this condition applies to the backlink, not to listing."
+    - Submission fields are hidden until sign-in.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: launch_board
+human_only: null
+review_time: Weekly launch board; exact wait not stated.
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://www.traffiklist.com/p/makerio-io
+  samples: 2
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.traffiklist.com/?board=week
+    - https://www.traffiklist.com/submit
+    - https://www.traffiklist.com/pricing
+    - https://www.traffiklist.com/login?next=/submit

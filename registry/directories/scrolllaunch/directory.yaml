@@ -1,0 +1,54 @@
+id: scrolllaunch
+name: ScrollLaunch
+website: https://www.scrolllaunch.com
+submission_url: https://www.scrolllaunch.com/dashboard/products/new
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Pricing page markets the free tier as going live for $0, but a real submission observed that new products stay Draft/Unverified until the ScrollLaunch badge is added to the submitter's own site ('Verification Required... unlock publishing'). Badge required to go live, not just to keep the backlink dofollow. Premium ($19/product) and Premium+ ($39/product) skip the badge requirement and buy always-dofollow links, priority placement, and (Premium+) a ~1,800-word AI article with 4+ dofollow links."
+audience:
+  - saas
+  - ai-tools
+  - startups
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email-magic-link
+submission:
+  url_first: true
+  fields: []
+  conditions:
+    - weekly leaderboard capped at 20 free listings per week
+    - badge required to go live (not just for dofollow)
+autofetch:
+  supported: true
+  expected:
+    - name
+    - description
+    - logo
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 1
+kind: launch_board
+human_only: null
+listing_url_pattern: "https://www.scrolllaunch.com/products/{slug}"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.scrolllaunch.com/products/revenuebug
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bB
+  sources:
+    - https://www.scrolllaunch.com/pricing
+    - https://www.scrolllaunch.com/auth/signin

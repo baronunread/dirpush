@@ -1,0 +1,49 @@
+id: ultimate-free-tools
+name: Ultimate Free Tools
+website: https://ultimatefreetools.com/
+submission_url: https://ultimatefreetools.com/submit-a-tool/
+cost:
+  classification: VERIFIED_FREE
+  notes: "The public submission page says listings are free, human-reviewed, and never pay-to-rank. A free publisher account is required."
+audience:
+  - productivity
+  - marketing
+  - developer-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Free publisher account required; public signup asks for username and email and sends an email confirmation.
+    - "Human review against the published usability, export, ads, and privacy quality bar."
+    - Tools must be usable end-to-end in-browser without payment or user signup; actual submission form fields are behind publisher login.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://ultimatefreetools.com/utility-tools/pdf-to-images/
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://ultimatefreetools.com/
+    - https://ultimatefreetools.com/submit-a-tool/
+    - https://ultimatefreetools.com/login/?action=register
+    - https://ultimatefreetools.com/about/

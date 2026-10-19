@@ -1,0 +1,92 @@
+id: ctrlaltship
+name: CtrlAltShip
+website: https://ctrlaltship.com/
+submission_url: https://ctrlaltship.com/submit
+cost:
+  classification: VERIFIED_FREE
+  notes: "The site states listing is free, with no payment and no upsell. Automated inclusion review, usually within a few days."
+audience:
+  - indie-makers
+  - saas
+  - software
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: false
+  fields:
+    - name: email address
+      required: true
+    - name: product name
+      required: true
+    - name: URL
+      required: true
+    - name: tagline
+      required: true
+      limit: 70
+    - name: full description
+      required: true
+    - name: main features
+      required: true
+    - name: what makes the product different
+      required: false
+    - name: square logo
+      required: false
+    - name: product screenshots
+      required: false
+    - name: categories
+      required: true
+    - name: big SaaS product replaced
+      required: true
+      limit: 3
+    - name: suggest new SaaS companies
+      required: false
+    - name: pricing model
+      required: true
+    - name: pricing description
+      required: true
+    - name: founder name
+      required: true
+    - name: founder Twitter
+      required: false
+    - name: co-founder name
+      required: false
+    - name: co-founder Twitter
+      required: false
+    - name: anti-spam arithmetic verification
+      required: true
+    - name: terms acceptance
+      required: true
+  conditions:
+    - Automated review requires a live indie product that solves a problem and fits the directory.
+    - "Submission email creates or links the submitter's account."
+    - Maximum 3 categories selections/uploads
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 6
+kind: listing
+human_only: null
+review_time: A few days
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://ctrlaltship.com/product/1clickwebsiteai
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: math
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://ctrlaltship.com/
+    - https://ctrlaltship.com/submit

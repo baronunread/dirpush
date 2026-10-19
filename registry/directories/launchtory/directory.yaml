@@ -1,0 +1,47 @@
+id: launchtory
+name: Launchtory
+website: https://launchtory.com
+submission_url: https://launchtory.com/projects/new
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "No unconditional free tier; the only free paths described are 'community votes' (reach a vote threshold) or 'website link verification' (backlink), available post-approval from the project status page. $19 one-time buys guaranteed 1-year featured placement instead."
+audience:
+  - startups
+  - products
+  - saas
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - unknown - login/signup required before /projects/new form is shown
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - "manual safety/quality review required for all submissions, free or paid"
+    - "free publishing requires either a community vote threshold or website backlink verification, exact mechanics only visible post-approval on project status page"
+    - "rejects adult content, gambling, phishing, scams, malware, illegal activity"
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://launchtory.com/projects/corekeeper-info
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-c
+  sources:
+    - https://launchtory.com/pricing
+    - https://launchtory.com/projects/new

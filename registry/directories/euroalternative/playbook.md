@@ -1,0 +1,1 @@
+The public Submit link redirects to /auth/login?next=/submit. Login offers an email magic link and Google. The post-login form and listing economics are not publicly visible. The About page says the directory focuses on European-made alternatives to big-tech services. Advertising is separate from product submission.

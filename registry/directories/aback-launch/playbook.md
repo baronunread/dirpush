@@ -1,0 +1,1 @@
+Sign in with Google or GitHub, then open /submit. The free option is explicitly a backlink exchange: add the Aback Launch backlink to the product website. A paid launch tier is also available. Submissions are human-reviewed; form fields are not visible while logged out.

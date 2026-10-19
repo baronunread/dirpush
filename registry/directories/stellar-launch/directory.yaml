@@ -1,0 +1,55 @@
+id: stellar-launch
+name: Stellar Launch
+website: https://www.stellarlaunch.org/
+submission_url: https://www.stellarlaunch.org/projects/submit
+cost:
+  classification: FREEMIUM
+  notes: "Free Launch $0, 5 slots daily, up to 180 days scheduling. Basic $6.49 per launch; Premium $34.99 with a dedicated SEO article. Separate Domain Booster package is $99.99."
+audience:
+  - startups
+  - saas
+  - products
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - password
+    - google
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Free queue has 5 slots per day and up to 180 days scheduling
+    - Dofollow backlink for free launches only for daily top 3
+    - Basic Launch provides earlier dates and guaranteed dofollow backlink
+    - Submission form fields are behind sign-in
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: launch_board
+human_only: null
+review_time: up to 180 days scheduling window for free launches
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://www.stellarlaunch.org/projects/magic-eraser
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: turnstile
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.stellarlaunch.org/
+    - https://www.stellarlaunch.org/pricing
+    - https://www.stellarlaunch.org/projects/submit

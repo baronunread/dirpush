@@ -1,0 +1,48 @@
+id: startupbeats
+name: StartupBeats
+website: https://startupbeats.com/
+submission_url: https://startupbeats.com/submit
+cost:
+  classification: FREEMIUM
+  notes: Free plan includes one permanent listing; optional Featured upgrade starts at $29/month. No paid upgrade selected.
+audience:
+  - startups
+  - saas
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: true
+  fields: []
+  conditions:
+    - "human review, usually within 24 hours"
+autofetch:
+  supported: true
+  expected:
+    - listing draft via website URL; exact fields not visible
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: listing
+human_only: null
+review_time: within 24 hours
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://startupbeats.com/startups/tessellate-robotics
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-06
+  by: codex
+  sources:
+    - https://startupbeats.com/free-startup-business-listing
+    - https://startupbeats.com/pricing
+    - https://startupbeats.com/submit

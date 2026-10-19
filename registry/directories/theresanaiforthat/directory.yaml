@@ -1,0 +1,51 @@
+id: theresanaiforthat
+name: "There's An AI For That"
+website: https://theresanaiforthat.com
+submission_url: https://theresanaiforthat.com/get-featured/
+cost:
+  classification: FREEMIUM
+  notes: "Free submission via 'Create tool' (login required); premium 'featured'/launch/sponsorship options via /get-featured/, pricing gated behind tabs. No badge/backlink required for the free listing to go live."
+audience:
+  - ai-tools
+  - saas
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+submission:
+  url_first: true
+  fields: []
+  conditions:
+    - manual review
+    - curation
+autofetch:
+  supported: true
+  expected:
+    - name
+    - description
+    - logo
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 5
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://theresanaiforthat.com/ai/supernormal/
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bA
+  sources:
+    - https://theresanaiforthat.com
+    - https://theresanaiforthat.com/get-featured/

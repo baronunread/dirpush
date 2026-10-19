@@ -1,0 +1,45 @@
+id: indiehackerstacks
+name: IndieHackerStacks
+website: https://indiehackerstacks.com/
+submission_url: https://indiehackerstacks.com/
+cost:
+  classification: FREEMIUM
+  notes: "Free plan includes one product and lifetime placement. Premium upgrade offers unlimited products and one featured label for one month; pricing page displayed $40 USD on early-bird sale, crossed from $85."
+audience:
+  - indie-makers
+  - startups
+  - software
+authentication:
+  required: true
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Free plan is limited to one product; fields and account methods are not visible in the public add flow.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://indiehackerstacks.com/products/crisp
+  samples: 1
+  noindex: false
+  claimed: null
+  bot_check: math
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://indiehackerstacks.com/
+    - https://indiehackerstacks.com/pricing

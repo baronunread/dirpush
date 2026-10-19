@@ -1,0 +1,69 @@
+id: sololaunch
+name: Sololaunch
+website: https://sololaunch.ai/
+submission_url: https://sololaunch.ai/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free listing, but the app must have been built primarily with AI tools; required confirmation checkbox."
+audience:
+  - indie-makers
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: app_name
+      required: true
+    - name: tagline
+      required: true
+    - name: description
+      required: true
+      limit: 1000
+    - name: app_url
+      required: true
+    - name: logo
+      required: false
+    - name: thumbnail
+      required: false
+    - name: category
+      required: true
+    - name: built_with
+      required: true
+    - name: submitter_name
+      required: true
+    - name: email
+      required: true
+    - name: x_handle
+      required: false
+    - name: personal_website
+      required: false
+  conditions:
+    - App must be built primarily with AI tools; submitter must affirm this
+    - Review and publication stated within 24 hours
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 1
+kind: launch_board
+review_time: within 24 hours
+link:
+  rel: ugc
+  method: sample_listing
+  evidence: https://sololaunch.ai/apps/supapark-merlin-ai-disney-world-planner
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://sololaunch.ai/submit

@@ -1,0 +1,68 @@
+id: bsdirectory
+name: BSDirectory
+website: https://directory.project-bs.com/
+submission_url: https://directory.project-bs.com/submit
+cost:
+  classification: FREEMIUM
+  notes: Free standard listing with manual review; Featured costs $4.99 once for priority review and 30 days of highlighted placement.
+audience:
+  - saas
+  - software
+  - startups
+  - productivity
+  - marketing
+  - developer-tools
+  - indie-makers
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: product name
+      required: true
+    - name: website URL
+      required: true
+    - name: short description
+      required: true
+      limit: 220
+    - name: founder name
+      required: true
+    - name: contact email
+      required: true
+    - name: product category
+      required: true
+    - name: product type
+      required: true
+    - name: logo and additional details
+      required: false
+  conditions:
+    - Manual review before publication.
+    - Optional $4.99 one-time Featured upgrade; no subscription or automatic renewal.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: Manual review; timing not stated.
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://directory.project-bs.com/products/bsshipkit
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://directory.project-bs.com/submit
+    - https://directory.project-bs.com/

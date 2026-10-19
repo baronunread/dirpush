@@ -1,0 +1,45 @@
+id: launchvibe
+name: LaunchVibe
+website: https://www.launchvibe.app/
+submission_url: https://www.launchvibe.app/
+cost:
+  classification: FREEMIUM
+  notes: "Free launch, no credit card. Optional Product Sponsor is $29 with 30-day site-wide promotion and social shoutout."
+audience:
+  - startups
+  - products
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions: []
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: launch_board
+human_only: null
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://www.launchvibe.app/launch/1450
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.launchvibe.app/
+    - https://www.launchvibe.app/pricing

@@ -1,0 +1,51 @@
+id: pro-launch
+name: Pro Launch
+website: https://prolaunch.net
+submission_url: https://prolaunch.net/pricing
+cost:
+  classification: FREEMIUM
+  notes: "Free tier only gets a nofollow backlink by default; the dofollow backlink requires adding the Pro Launch badge to submitter's site (optional, only affects link type, not listing). $7.99 Startup Launch includes a guaranteed dofollow backlink without any badge."
+audience:
+  - startups
+  - saas
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - "badge required on submitter's site to upgrade free listing's backlink from nofollow to dofollow"
+    - only 25 free slots/week
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+kind: launch_board
+human_only: null
+listing_url_pattern: "https://prolaunch.net/projects/{slug}"
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://prolaunch.net/projects/sellerview-ai
+  samples: 4
+  noindex: false
+  claimed: nofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-28
+  by: sonnet-rb
+  sources:
+    - https://prolaunch.net/pricing
+    - https://prolaunch.net/sign-up
+    - https://prolaunch.net/projects/pcloud

@@ -1,0 +1,49 @@
+id: saascubes
+name: SaaS Cubes
+website: https://saascubes.com
+submission_url: https://saascubes.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free tier requires adding a badge/backlink to your homepage before the listing publishes. $15 one-time Pro plan removes the badge requirement, adds same-day publish, screenshots and analytics."
+audience:
+  - saas
+authentication:
+  required: false
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: true
+  fields:
+    - name: product_url
+      required: true
+  conditions:
+    - homepage badge/backlink required for free tier
+    - reviewed within 3-5 business days
+autofetch:
+  supported: true
+  expected:
+    - name
+    - description
+    - logo
+    - colors
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 1
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://saascubes.com/saas/w-2-vs-1099-take-home
+  samples: 1
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-f3
+  sources:
+    - https://saascubes.com/submit

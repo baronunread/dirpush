@@ -1,0 +1,47 @@
+id: ventureradar
+name: VentureRadar
+website: https://www.ventureradar.com/
+submission_url: https://www.ventureradar.com/submitcompany?stage=0
+cost:
+  classification: FREEMIUM
+  notes: Company profile submission is free after creating an account; optional Premium Profile offers instant verification. Site also sells paid subscriptions for database access.
+audience:
+  - startups
+  - software
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - linkedin
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - manual profile verification; accepted profiles go live within 21 business days
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: within 21 business days
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://www.ventureradar.com/organisation/Tamarind%20Bio/3ba37cae-577b-4910-92a8-3e586e744352
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: recaptcha
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.ventureradar.com/submitcompany?stage=0
+    - https://www.ventureradar.com/pricing?area=Landing&item=Landing

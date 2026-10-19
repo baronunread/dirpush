@@ -1,0 +1,60 @@
+id: ai-toolz-dir
+name: AI Toolz Dir
+website: https://www.aitoolzdir.com/
+submission_url: https://www.aitoolzdir.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free listing requires a backlink on your site, retained for the listing to remain live; paid option is $25 one time without backlink."
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: false
+  fields:
+    - name: tool_name
+      required: true
+    - name: tool_url
+      required: true
+    - name: logo_url
+      required: true
+    - name: category
+      required: true
+    - name: short_description
+      required: true
+      limit: 200
+    - name: full_description
+      required: true
+      limit: 500
+    - name: email
+      required: true
+  conditions:
+    - Add the AI Toolz Dir backlink to your site before submitting; keep it live to retain listing
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: within 48 hours free; 24 hours paid
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.aitoolzdir.com/tool/2short
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.aitoolzdir.com/submit

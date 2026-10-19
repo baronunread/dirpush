@@ -1,0 +1,67 @@
+id: futuretools
+name: FutureTools
+website: https://futuretools.io
+submission_url: https://futuretools.io/submit-a-tool
+cost:
+  classification: FREEMIUM
+  notes: "Free listing after editorial review by Matt Wolfe, no badge/backlink required. Paid placements (featured listing, site banners, newsletter sponsorship) are concierge-managed via email, no published prices."
+audience:
+  - ai-tools
+  - saas
+authentication:
+  required: false
+  signup_allowed: false
+  methods:
+    - email_form
+submission:
+  url_first: false
+  fields:
+    - name: your_name
+      required: false
+    - name: tool_name
+      required: true
+    - name: tool_url
+      required: true
+    - name: short_description
+      required: true
+    - name: category
+      required: true
+    - name: pricing
+      required: true
+    - name: your_email
+      required: true
+    - name: newsletter_signup
+      required: false
+  conditions:
+    - manual editorial review by Matt Wolfe
+    - typically 1 week review time
+    - no guaranteed inclusion
+    - Cloudflare Turnstile check on the submit form
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+    max: 0
+kind: listing
+human_only: null
+review_time: about 1 week
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://futuretools.io/tools/digup-f59bdde1
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bB
+  sources:
+    - https://futuretools.io/submit-a-tool
+    - https://futuretools.io/advertise
+    - https://futuretools.io/tools

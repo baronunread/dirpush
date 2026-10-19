@@ -1,0 +1,1 @@
+Submit via the GitHub issue template. Requires GitHub account. The template redirects to sign-in, so exact fields are not verified. Only submit tools meeting all criteria: OSI-licensed public source, no-account core functionality, local-first, no ads/tracking, static hostable, and single-purpose.

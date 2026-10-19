@@ -1,0 +1,68 @@
+id: softwaresuggest
+name: SoftwareSuggest
+website: https://softwaresuggest.com
+submission_url: https://www.softwaresuggest.com/vendors
+cost:
+  classification: FREEMIUM
+  notes: "Free basic listing, no badge/backlink required to go live; paid plans $4,000/$9,000/$15,000 (plus $1,000-$5,000 add-ons) for featured placement, reviews, interviews, marketing support"
+audience:
+  - saas
+  - business-software
+  - startups
+authentication:
+  required: false
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: false
+  fields:
+    - name: lastname
+      required: true
+    - name: email
+      required: true
+    - name: company
+      required: true
+    - name: phone
+      required: true
+    - name: product_url
+      required: true
+    - name: company_head_office
+      required: true
+    - name: number_of_employee
+      required: true
+    - name: number_of_customer
+      required: true
+    - name: software_service
+      required: true
+    - name: category_name
+      required: true
+    - name: competitors
+      required: true
+  conditions: []
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 0
+kind: listing
+human_only: null
+link:
+  rel: sponsored
+  method: sample_listing
+  evidence: https://www.softwaresuggest.com/tallyprime
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bA
+  sources:
+    - https://www.softwaresuggest.com/vendors
+    - https://www.softwaresuggest.com/pricing

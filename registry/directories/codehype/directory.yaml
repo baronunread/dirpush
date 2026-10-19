@@ -1,0 +1,68 @@
+id: codehype
+name: CodeHype
+website: https://www.codehype.in
+submission_url: https://www.codehype.in/submit
+cost:
+  classification: FREEMIUM
+  notes: Free organic listing with standard review queue; do-follow link while badge remains on maker site. Plus is $15 one-time per product for instant publish and permanent do-follow link without badge requirement.
+audience:
+  - saas
+  - developer-tools
+  - ai-tools
+  - software
+  - startups
+authentication:
+  required: true
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: website_url
+      required: true
+    - name: product_name
+      required: true
+      limit: 30
+    - name: tagline
+      required: true
+      limit: 140
+    - name: description
+      required: false
+      limit: 10000
+    - name: category
+      required: true
+  conditions:
+    - Free listing is reviewed in the standard queue.
+    - The do-follow link on the free tier remains while the optional badge is installed.
+    - Sign in is requested when ready to upload media and launch.
+autofetch:
+  supported: true
+  expected:
+    - name
+    - tagline
+    - description
+    - other product details
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: launch_board
+human_only: null
+review_time: Standard review queue; timing not stated.
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.codehype.ai/product/cliptudeai
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.codehype.in/submit-saas
+    - https://www.codehype.in/submit
+    - https://www.codehype.in/pricing

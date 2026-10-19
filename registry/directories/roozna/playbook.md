@@ -1,0 +1,1 @@
+Use the Post a Project form. It is visible before sign-in; create an account with Google or email to submit. Choose the free listing and add the Roozna badge to the product website to satisfy its condition. Project name and website are visibly required; tagline, logo, screenshot, description, and tags are optional. Premium ($12) and SEO Growth ($149) are optional upgrades.

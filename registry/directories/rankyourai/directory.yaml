@@ -1,0 +1,50 @@
+id: rankyourai
+name: RankYourAI
+website: https://rankyourai.com/
+submission_url: https://rankyourai.com/p/submit/
+cost:
+  classification: PAID
+  notes: $29 USD one-time Featured Listing via Stripe; no free route visible.
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: email
+      required: true
+    - name: AI tool URL
+      required: true
+    - name: payment card and billing details
+      required: true
+  conditions:
+    - One-time $29 payment required
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: within 48 hours per submit page
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://rankyourai.com/ai/chat2blog/
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://rankyourai.com/p/submit/
+    - https://buy.stripe.com/dR6cQ67RW4UZ7PW8wx

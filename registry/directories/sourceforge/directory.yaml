@@ -1,0 +1,75 @@
+id: sourceforge
+name: SourceForge Business Software Directory
+website: https://sourceforge.net/software/
+submission_url: https://sourceforge.net/software/vendors/new
+cost:
+  classification: FREEMIUM
+  notes: "Free basic listing via request form, no badge/backlink required; premium marketing packages available for enhanced visibility, pricing not disclosed on the form"
+audience:
+  - business-software
+  - saas
+  - tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: your_name
+      required: true
+    - name: email_address
+      required: true
+    - name: company
+      required: true
+    - name: your_title
+      required: true
+    - name: website
+      required: true
+    - name: phone
+      required: false
+    - name: company_founded
+      required: false
+    - name: company_location
+      required: false
+    - name: software_title
+      required: true
+      limit: 52
+    - name: logo
+      required: true
+    - name: product_description
+      required: true
+      limit: 1000
+    - name: audience
+      required: true
+    - name: category
+      required: true
+    - name: starting_price
+      required: false
+  conditions:
+    - manual review
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+kind: listing
+human_only: null
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://sourceforge.net/software/product/Freshservice/
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: unknown
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bB
+  sources:
+    - https://sourceforge.net/software/vendors/new

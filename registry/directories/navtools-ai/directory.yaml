@@ -1,0 +1,51 @@
+id: navtools-ai
+name: NavTools AI
+website: https://navtools.ai/
+submission_url: https://navtools.ai/submit
+cost:
+  classification: FREEMIUM
+  notes: Basic Review is free; optional Fast Track $29.90 one-time and Growth Pro $149 one-time.
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: tool_name
+      required: true
+    - name: website_url
+      required: true
+    - name: contact_email
+      required: true
+  conditions:
+    - Basic Review takes 30–90 days; optional Fast Track review is 48 hours.
+autofetch:
+  supported: true
+  expected:
+    - description
+    - tool details
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: 30–90 days (Basic Review)
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://navtools.ai/tool/chatgpt
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: turnstile
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://navtools.ai/submit

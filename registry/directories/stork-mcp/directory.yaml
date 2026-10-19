@@ -1,0 +1,52 @@
+id: stork-mcp
+name: Stork MCP Servers
+website: https://www.stork.ai/mcp
+submission_url: https://www.stork.ai/mcp/submit
+cost:
+  classification: VERIFIED_FREE
+  notes: Public MCP submission route explicitly says free. Sign-in required; final authenticated form has not been submitted.
+audience:
+  - mcp-servers
+authentication:
+  required: true
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: repository_package_or_endpoint
+      required: true
+    - name: display_name
+      required: false
+    - name: description
+      required: false
+  conditions:
+    - "Actual MCP repository, npm package, or live remote endpoint required"
+    - Real MCP handshake verification
+    - Sign-in required; auth methods not established
+autofetch:
+  supported: true
+  expected:
+    - auth
+    - capabilities
+    - tools
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: mcp_registry
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://www.stork.ai/mcp/unslop-canon
+  samples: 4
+  noindex: true
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-08
+  by: codex
+  sources:
+    - https://www.stork.ai/mcp/submit

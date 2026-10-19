@@ -1,0 +1,1 @@
+Use the Submit link or a Go Submit button on Pricing; the flow leads to a login page with Google and GitHub. The free plan costs $0 but carries a 180+ day estimated queue, limited slots, possible rejection, and a backlink maintenance condition. Paid Listing is shown at $9.9 and waives the wait and backlink requirement.

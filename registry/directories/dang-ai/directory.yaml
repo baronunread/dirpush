@@ -1,0 +1,44 @@
+id: dang-ai
+name: Dang.ai
+website: https://dang.ai
+submission_url: https://dang.ai/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free with backlink requirement; $49 one-time for Basic (no backlink); $30+$19/mo for Pro
+audience:
+  - ai-tools
+  - saas
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - backlink to dang.ai required for free tier
+    - manual review
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 4
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://dang.ai/tool/layso-ai-unified-ai-api-gateway
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: haiku-9
+  sources:
+    - https://dang.ai/submit

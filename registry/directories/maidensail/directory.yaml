@@ -1,0 +1,54 @@
+id: maidensail
+name: Maidensail
+website: https://maidensail.com/
+submission_url: https://maidensail.com/submit/basics
+cost:
+  classification: VERIFIED_FREE
+  notes: "Free launch and permanent unverified Registry listing. Optional badge upgrades the link to dofollow and adds verified ranking/features. Paid ads are separate sponsorship, not required for a listing."
+audience:
+  - startups
+  - saas
+  - software
+  - developer-tools
+  - ai-tools
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - x
+    - google
+    - email
+    - password
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Weekly launch board; form fields are hidden behind account creation.
+    - "Badge is optional for listing. Without it, the public listing remains unverified and its website link is nofollow."
+    - Verified badge requires embedding one line of HTML on the product website; crawler periodically checks it.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: launch_board
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://maidensail.com/startup/eazbuild-ng
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://maidensail.com/
+    - https://maidensail.com/submit/basics
+    - https://maidensail.com/badge

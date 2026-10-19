@@ -1,0 +1,45 @@
+id: indiehub
+name: IndieHub
+website: https://indiehub.best
+submission_url: https://indiehub.best/submit
+cost:
+  classification: PAID
+  notes: "Basic $4.9, Pro $9.9, Sponsor $19.9/week"
+audience:
+  - indie-makers
+  - saas
+  - tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+    - github
+submission:
+  url_first: true
+  fields: []
+  conditions: []
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 5
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://indiehub.best/app/mkdirs
+  samples: 1
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: haiku-22
+  sources:
+    - https://indiehub.best/pricing

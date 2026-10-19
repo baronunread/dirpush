@@ -1,0 +1,49 @@
+id: dirs-cc
+name: Dirs.cc
+website: https://dirs.cc/
+submission_url: https://dirs.cc/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free tier requires maintaining a backlink; queue currently 180+ days and free slots may be rejected. Paid Listing $9.90 waives backlink and wait; Featured $19.90.
+audience:
+  - software
+  - products
+  - ai-tools
+  - developer-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Maintain a backlink for free tier
+    - 180+ day queue; limited free slots
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://dirs.cc/item/dirs
+  samples: 1
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://dirs.cc/pricing
+    - https://dirs.cc/submit

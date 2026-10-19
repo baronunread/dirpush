@@ -1,0 +1,66 @@
+id: toolfound
+name: Toolfound
+website: https://toolfound.com/
+submission_url: https://toolfound.com/submit
+cost:
+  classification: FREEMIUM
+  notes: Free launch and permanent listing with dofollow link. Optional Priority Launch and Toolfound Plus can provide earlier dates; prices were not stated on the inspected public pages.
+audience:
+  - software
+  - saas
+  - startups
+  - developer-tools
+  - ai-tools
+  - indie-makers
+authentication:
+  required: false
+  signup_allowed: true
+  methods:
+    - email verification
+submission:
+  url_first: true
+  fields:
+    - name: product URL
+      required: true
+    - name: product logo
+      required: true
+    - name: email
+      required: true
+    - name: requested launch date
+      required: false
+    - name: X handle
+      required: false
+    - name: pricing
+      required: false
+    - name: listing copy
+      required: false
+  conditions:
+    - Ownership must be verified before publication. Product-domain email verifies in one step; personal email also requires a meta tag or DNS TXT record.
+    - "Logo must be PNG, JPG, GIF, or WebP, max 2 MB; SVG is not accepted."
+    - Launch-date availability and queue position are estimates until ownership verification.
+    - "Rate limits: three submissions per email and ten per network address per day."
+autofetch:
+  supported: true
+  expected:
+    - drafts listing copy from the product URL; all fields editable
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: launch_board
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://toolfound.com/tool/music-road
+  samples: 3
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://toolfound.com/submit
+    - https://toolfound.com/

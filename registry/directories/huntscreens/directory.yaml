@@ -1,0 +1,56 @@
+id: huntscreens
+name: HuntScreens
+website: https://huntscreens.com
+submission_url: https://huntscreens.com/submit
+cost:
+  classification: FREEMIUM
+  notes: "Free listing ($0, ~30 days review, 'Queue'), no badge/backlink required; VIP fast-track $10 (24h review); optional SEO backlink $79 (dofollow, no badge mechanism involved), sidebar ads $29-99, bundle packs."
+audience:
+  - ai-tools
+  - saas
+  - startups
+  - productivity
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+    - github
+submission:
+  url_first: true
+  fields:
+    - name: product_url
+      required: true
+    - name: pricing_tier
+      required: true
+  conditions:
+    - manual editorial review
+    - refund if rejected
+    - login modal (Google/GitHub/email) on Submit for Free; form state survives login; site strips UTM params
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: ~30 days (free); 24h (paid Fast Track)
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://huntscreens.com/products/ai-twin
+  samples: 2
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bC
+  sources:
+    - https://huntscreens.com/submit
+    - https://huntscreens.com/products/thirdspace

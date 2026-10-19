@@ -1,0 +1,67 @@
+id: llm-relevance
+name: LLM Relevance
+website: https://llmrelevance.com
+submission_url: https://llmrelevance.com/submit
+cost:
+  classification: VERIFIED_FREE
+  notes: Free listing for all tools; no badge/backlink required to go live.
+audience:
+  - ai-tools
+  - saas
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: tool_name
+      required: true
+    - name: website_url
+      required: true
+    - name: category
+      required: true
+    - name: starting_price
+      required: true
+    - name: youtube_main_video
+      required: false
+    - name: youtube_channel
+      required: false
+    - name: first_name
+      required: true
+    - name: last_name
+      required: true
+    - name: email
+      required: true
+  conditions:
+    - manual review
+    - 48 hour response
+    - tool must be actively maintained
+autofetch:
+  supported: true
+  expected:
+    - description
+    - features
+    - logo
+media:
+  logo: false
+  screenshots:
+    supported: true
+kind: listing
+human_only: null
+review_time: within 48 hours
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.llmrelevance.com/tools/free
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bA
+  sources:
+    - https://llmrelevance.com/submit

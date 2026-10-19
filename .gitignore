@@ -1,0 +1,37 @@
+# Dependencies and build output
+node_modules/
+dist/
+coverage/
+.cloudflare/
+.wrangler/
+*.tsbuildinfo
+
+# Private operator state (retained locally)
+/data/
+/workspace/
+
+# Credentials and local environment
+.env*
+!.env.example
+.dev.vars*
+!.dev.vars.example
+prod.secrets.env*
+!prod.secrets.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.sqlite3-*
+
+# Logs and local tools
+*.log
+.DS_Store
+.react-doctor/
+react-doctor-results/
+# Generated design inspection screenshots and working notes.
+.taste-skill/

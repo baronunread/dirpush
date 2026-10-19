@@ -1,0 +1,52 @@
+id: buy-sell-startups
+name: Buy Sell Startups Startup Index
+website: https://buysellstartups.com/startup-index
+submission_url: https://buysellstartups.com/startup-index/submit
+cost:
+  classification: PAID
+  notes: Current public page says $30 one-time to get listed; no free listing path verified.
+audience:
+  - startups
+  - saas
+  - products
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Free account required; signup page offers Google or email/password.
+    - The full submission form is behind account creation and was not inspected.
+    - Manual review; public page says publication within 48 hours.
+    - $30 one-time listing fee; do not select without spend permission.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: within 48 hours
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://buysellstartups.com/startup-index/perplexity.ai
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-07
+  by: codex
+  sources:
+    - https://buysellstartups.com/startup-index
+    - https://buysellstartups.com/startup-index/submit

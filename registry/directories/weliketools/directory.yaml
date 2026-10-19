@@ -1,0 +1,50 @@
+id: weliketools
+name: We Like Tools
+website: https://weliketools.com
+submission_url: https://weliketools.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Badge required: after Google login /submit is Website -> Badge -> Details; badge must be on the product homepage/footer before details."
+audience:
+  - startups
+  - saas
+  - productivity
+  - design
+  - developer-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - editorial curation/moderation
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+kind: listing
+human_only: null
+listing_url_pattern: "https://weliketools.com/tool/{slug}"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://weliketools.com/tool/slideeasy
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bB
+  sources:
+    - https://weliketools.com/submit
+    - https://weliketools.com/tool/labrynth-ai

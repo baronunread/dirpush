@@ -1,0 +1,53 @@
+id: fastlaunch
+name: FastLaunch
+website: https://fastlaunch.io
+submission_url: https://fastlaunch.io/projects/submit
+cost:
+  classification: FREEMIUM
+  notes: "Free listing has no strings (standard queue, homepage feature); dofollow backlink only guaranteed with top-3 daily rank; $9.90 Premium guarantees dofollow and skips queue."
+audience:
+  - startups
+  - saas
+  - products
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - 5 free slots/day cap
+    - daily 8:00 AM UTC launch cohort
+    - dofollow backlink requires top-3 daily ranking
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+    max: 0
+kind: launch_board
+human_only: null
+review_time: "same-day (daily 8:00 AM UTC cohort), up to 180-day scheduling window on the free tier"
+listing_url_pattern: "https://fastlaunch.io/projects/{slug}"
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://fastlaunch.io/projects/datahabibi
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-28
+  by: sonnet-r2
+  sources:
+    - https://fastlaunch.io/pricing
+    - https://fastlaunch.io/sign-in?redirect=/projects/submit
+    - https://fastlaunch.io/projects/love-tales

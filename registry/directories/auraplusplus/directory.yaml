@@ -1,0 +1,56 @@
+id: auraplusplus
+name: Aura++
+website: https://auraplusplus.com
+submission_url: https://auraplusplus.com/projects/submit
+cost:
+  classification: FREEMIUM
+  notes: "Free launch $0 (homepage placement, upvotes, badge, Pinterest post); dofollow backlink only if Top 3 + badge displayed (optional bonus). Premium $29/launch (guaranteed dofollow, skip queue); Premium Plus $69 (spotlight placement, priority support)"
+audience:
+  - saas
+  - ai-tools
+  - startup-directories
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+    - github
+submission:
+  url_first: true
+  fields:
+    - name: project_name
+      required: true
+    - name: description
+      required: true
+    - name: website_url
+      required: true
+    - name: category
+      required: true
+  conditions: []
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 10
+kind: launch_board
+human_only: null
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://auraplusplus.com/projects/gixo-quill
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-28
+  by: sonnet-r5
+  sources:
+    - https://auraplusplus.com/pricing
+    - https://auraplusplus.com/sign-in

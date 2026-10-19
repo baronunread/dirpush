@@ -1,0 +1,70 @@
+id: kittylaunch
+name: KittyLaunch
+website: https://kittylaunch.com
+submission_url: https://kittylaunch.com/new/product
+cost:
+  classification: FREEMIUM
+  notes: "Free launch: permanent listing, 7 days on homepage, queue-based launch slot, 3 dofollow backlinks only if you verify a homepage badge (badge affects backlinks/queue speed, not whether you're listed). Paid: Skip the line $9 one-time (no badge needed, pick any date), SuperKitty $29 one-time (skip the line + tools + Spotlight ticket), plus a-la-carte Spotlight (from $15), Highlight ($9/mo), Review ($29)."
+audience:
+  - startups
+  - indie-makers
+  - saas
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+submission:
+  url_first: true
+  fields:
+    - name: website_url
+      required: true
+    - name: product_name
+      required: true
+    - name: category
+      required: true
+    - name: tagline
+      required: true
+    - name: short_description
+      required: true
+      limit: 170
+    - name: logo
+      required: true
+    - name: pricing_structure
+      required: true
+  conditions:
+    - queue-based launch window/leaderboard cycle for the free tier; homepage badge verification needed for dofollow backlinks
+autofetch:
+  supported: true
+  expected:
+    - name
+    - tagline
+    - description
+    - category
+    - logo
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+kind: launch_board
+human_only: null
+listing_url_pattern: "https://kittylaunch.com/p/{slug}"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://kittylaunch.com/p/backlink-guard
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-28
+  by: sonnet-rb
+  sources:
+    - https://kittylaunch.com/pricing
+    - https://kittylaunch.com/new/product
+    - https://kittylaunch.com/p/backlink-guard

@@ -1,0 +1,46 @@
+id: ai-agents-list
+name: AI Agents List
+website: https://aiagentslist.com/
+submission_url: https://aiagentslist.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free listing requires passing an eligibility check; a paid Lifetime Listing and Launch Boost are also offered, with prices not visible on the public page."
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: website_url
+      required: true
+  conditions:
+    - Must pass free eligibility check.
+autofetch:
+  supported: true
+  expected:
+    - tool details
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: 24–48 hours after eligibility approval
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://aiagentslist.com/agents/apiqik
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://aiagentslist.com/submit

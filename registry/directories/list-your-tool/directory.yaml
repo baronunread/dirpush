@@ -1,0 +1,76 @@
+id: list-your-tool
+name: ListYourTool
+website: https://www.listyourtool.com/
+submission_url: https://www.listyourtool.com/submit-tool
+cost:
+  classification: VERIFIED_FREE
+  notes: "The live submission page says listing is completely free. A Price field collects the tool's own price, not a directory fee."
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: tool_name
+      required: true
+    - name: website_url
+      required: true
+    - name: short_description
+      required: true
+      limit: 150
+    - name: detailed_description
+      required: true
+      limit: 2000
+    - name: features
+      required: false
+    - name: how_to_use
+      required: false
+      limit: 1000
+    - name: use_cases
+      required: false
+      limit: 8
+    - name: faq
+      required: false
+      limit: 5
+    - name: tags
+      required: true
+      limit: 3
+    - name: pricing_model
+      required: true
+    - name: product_price
+      required: true
+    - name: submitter_name
+      required: true
+    - name: email
+      required: true
+  conditions:
+    - Manual quality and relevance review.
+autofetch:
+  supported: true
+  expected:
+    - screenshot
+media:
+  logo: false
+  screenshots:
+    supported: true
+    max: 1
+kind: listing
+human_only: null
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://www.listyourtool.com/tools/john-deo
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.listyourtool.com/submit-tool

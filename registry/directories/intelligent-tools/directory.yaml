@@ -1,0 +1,59 @@
+id: intelligent-tools
+name: Intelligent Tools
+website: https://intelligenttools.co/
+submission_url: https://intelligenttools.co/submit
+cost:
+  classification: FREEMIUM
+  notes: Free listing forever; Featured is $19/month or $189/year.
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: tool_name
+      required: true
+    - name: website_url
+      required: true
+    - name: tagline
+      required: true
+      limit: 100
+    - name: description
+      required: true
+      limit: 100
+    - name: category
+      required: true
+    - name: pricing_model
+      required: true
+    - name: email
+      required: true
+  conditions:
+    - Manual review; free submissions reviewed within 7 days.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: within 7 days
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://intelligenttools.co/tools/tunenoodle
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: turnstile
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://intelligenttools.co/submit

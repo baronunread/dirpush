@@ -1,0 +1,46 @@
+id: mapbid
+name: MapBid
+website: https://mapbid.lol
+submission_url: https://mapbid.lol/
+cost:
+  classification: PAID
+  notes: Minimum $1 bid required to list on any country board; no free listing tier exists.
+audience:
+  - indie-makers
+  - startups
+  - saas
+authentication:
+  required: false
+  signup_allowed: true
+  methods:
+    - submit website/handle + card payment via bid flow
+submission:
+  url_first: true
+  fields: []
+  conditions:
+    - "minimum $1 bid, must exceed current top bid by $1 to take #1"
+    - no chat/invite group links
+    - no NSFW/malicious links
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://mapbid.lol/country/us
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-h1
+  sources:
+    - https://mapbid.lol/rules

@@ -1,0 +1,59 @@
+id: aitoolslist
+name: aitoolslist
+website: https://aitoolslist.io
+submission_url: https://aitoolslist.io/submit-ai-tool/
+cost:
+  classification: FREEMIUM
+  notes: "Free submission via Tally form, no badge/backlink required, editorial review ('if it fits our criteria'), no guarantee of inclusion. Paid sponsorship/marketing-agency services available via contact form, no published prices."
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: your_name
+      required: true
+    - name: your_email
+      required: true
+    - name: tool_name
+      required: true
+    - name: tool_link
+      required: true
+    - name: tool_category
+      required: true
+    - name: short_description
+      required: true
+    - name: additional_notes
+      required: true
+  conditions:
+    - "editorial review, no guaranteed inclusion"
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://aitoolslist.io/product/album-10/
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bB
+  sources:
+    - https://aitoolslist.io/submit-ai-tool/
+    - https://aitoolslist.io/sponsor-ai-tools-list/
+    - https://aitoolslist.io/best-ai-tools/

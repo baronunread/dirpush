@@ -1,0 +1,50 @@
+id: showmebest-ai
+name: ShowMeBest.ai
+website: https://showmebest.ai/
+submission_url: https://showmebest.ai/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free Pack $0 forever requires adding ShowMeBest’s badge/link to the product website footer. Paid Basic is $9.99; Pro is $49.99.
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: false
+  fields:
+    - name: website name
+      required: true
+    - name: website URL
+      required: true
+    - name: email
+      required: true
+  conditions:
+    - Add partner’s link/badge to website footer for free approval
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: 72 hours to 4 weeks
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://showmebest.ai/ai-tools/bankingnewsai-com
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://showmebest.ai/submit

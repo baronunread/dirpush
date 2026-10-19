@@ -1,0 +1,44 @@
+id: thesaasdir
+name: TheSaaSDir
+website: https://thesaasdir.com
+submission_url: https://thesaasdir.com/pricing
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free tier requires adding TheSaaSDir's dofollow badge to submitter's site; badge is checked regularly and listing is unpublished if removed and not restored within 7 days. $19 one-time Paid tier removes the badge requirement entirely."
+audience:
+  - saas
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods:
+    - "email only, no account required"
+submission:
+  url_first: true
+  fields: []
+  conditions:
+    - "badge required on submitter's site for free tier, monitored ongoing"
+    - review within 7 days if badge not yet present at submission time
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://thesaasdir.com/product/maarket/
+  samples: 2
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-a
+  sources:
+    - https://thesaasdir.com/pricing

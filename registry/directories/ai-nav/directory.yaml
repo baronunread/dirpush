@@ -1,0 +1,54 @@
+id: ai-nav
+name: AI Nav
+website: https://ai-nav.net/
+submission_url: https://ai-nav.net/submit
+cost:
+  classification: FREEMIUM
+  notes: "Ordinary public submission form is available without a visible payment gate; paid top placement/advertising is offered separately, with prices not shown on the submit page."
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: icon
+      required: false
+    - name: website_url
+      required: true
+    - name: category
+      required: true
+    - name: tags
+      required: false
+    - name: nickname
+      required: true
+    - name: contact
+      required: true
+  conditions:
+    - Manual review; only quality AI websites; ChatGPT mirror sites and AI courses are excluded.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://ai-nav.net/sites/16360.html
+  samples: 3
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://ai-nav.net/submit

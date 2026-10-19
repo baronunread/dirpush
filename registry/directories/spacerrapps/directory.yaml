@@ -1,0 +1,53 @@
+id: spacerrapps
+name: SpacerrApps
+website: https://spacerrapps.com/
+submission_url: https://spacerrapps.com/
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free listing requires verified site badge and upvotes on three other apps; four-week minimum wait. Paid launches from $15 skip badge and queue.
+audience:
+  - mobile-apps
+  - saas
+  - software
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: website
+      required: true
+  conditions:
+    - add and verify SpacerrApps badge on product website
+    - upvote three other apps
+    - free listing launches on first Monday at least four weeks after approval
+    - manual approval
+autofetch:
+  supported: true
+  expected:
+    - app details via submitted website; exact fields not visible
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: launch_board
+human_only: null
+review_time: first Monday at least four weeks after approval
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://spacerrapps.com/apps/gatterie
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://spacerrapps.com/
+    - https://spacerrapps.com/pricing

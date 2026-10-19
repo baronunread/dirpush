@@ -1,0 +1,51 @@
+id: magicbox
+name: MagicBox.tools
+website: https://magicbox.tools
+submission_url: https://magicbox.tools/submit
+cost:
+  classification: PAID
+  notes: "Basic: $15.90 one-time; Featured: $19.90 one-time; Sponsored: $29.90/month; Advanced Member: $49.90/month; No free tier"
+audience:
+  - ai-tools
+  - saas
+  - developer-tools
+authentication:
+  required: false
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: true
+  fields:
+    - name: tool_name
+      required: true
+    - name: website_url
+      required: true
+    - name: contact_email
+      required: true
+  conditions:
+    - paid submission required
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://magicbox.tools/ai/getrender-ai
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: haiku-13
+  sources:
+    - https://magicbox.tools/submit
+    - https://magicbox.tools/pricing

@@ -1,0 +1,63 @@
+id: from-europe-with-love
+name: "From Europe, With Love"
+website: https://www.fromeuropewithlove.eu/en
+submission_url: https://www.fromeuropewithlove.eu/en/submit
+cost:
+  classification: VERIFIED_FREE
+  notes: Listings are free. Sponsorship is offered separately and is not a listing requirement.
+audience:
+  - saas
+  - software
+  - marketing
+  - ai-tools
+  - developer-tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: tool_name
+      required: true
+    - name: website_url
+      required: true
+    - name: headquarters_country
+      required: true
+    - name: headquarters_city
+      required: false
+    - name: category
+      required: true
+    - name: subcategory
+      required: true
+    - name: company_and_product_description
+      required: true
+  conditions:
+    - Company headquarters must be in the EU or UK.
+    - "If a parent or holding company exists, it must also be headquartered in the EU or UK."
+    - Editorial review; the remaining form steps were not opened.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.fromeuropewithlove.eu/en/tool/odoo-crm
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.fromeuropewithlove.eu/en/submit
+    - https://www.fromeuropewithlove.eu/en/about

@@ -1,0 +1,48 @@
+id: uno-directory
+name: Uno Directory
+website: https://uno.directory
+submission_url: https://uno.directory/submit-tool
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free listing requires placing the Uno Directory badge on the submitter's site and passing automated backlink verification. Alternatively, pay $10 one-time to skip the backlink requirement."
+audience:
+  - saas
+  - startups
+  - software
+  - productivity
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+submission:
+  url_first: true
+  fields: []
+  conditions:
+    - backlink badge verification required for the free tier
+    - manual/automated guideline review
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 1
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://uno.directory/listings/productivity/openbeta
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-review
+  sources:
+    - https://uno.directory/faq
+    - https://uno.directory/pricing

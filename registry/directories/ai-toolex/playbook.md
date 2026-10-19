@@ -1,0 +1,1 @@
+Sign in or sign up (email, Google, or GitHub), then use Submit Free. The logged-out pricing page has a free-submission FAQ and plans, but plan prices and the form fields are not visible until authenticated.

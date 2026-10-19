@@ -1,0 +1,64 @@
+id: billion-dollar-pitch-decks
+name: Billion Dollar Pitch Decks
+website: https://www.billiondollarpitchdecks.com/
+submission_url: https://www.billiondollarpitchdecks.com/submit
+cost:
+  classification: PAID
+  notes: Pro Submission $75; Premium Submission $125. No free option. Both include a permanent do-follow backlink.
+audience:
+  - startups
+  - saas
+  - developer-tools
+  - open-source
+  - investors
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: website URL
+      required: true
+    - name: startup name
+      required: true
+    - name: tagline
+      required: true
+    - name: description
+      required: true
+    - name: full name
+      required: true
+    - name: email
+      required: true
+    - name: plan
+      required: true
+  conditions:
+    - Pro costs $75 and includes listing within 48 hours and permanent DR 38+ do-follow backlink.
+    - Premium costs $125 and adds 30 days homepage featuring.
+    - No free listing path is shown.
+autofetch:
+  supported: true
+  expected:
+    - details from website URL
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: within 48 hours
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.billiondollarpitchdecks.com/startups-in/london
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-07
+  by: codex
+  sources:
+    - https://www.billiondollarpitchdecks.com/submit

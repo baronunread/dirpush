@@ -1,0 +1,55 @@
+id: free-tools-directory
+name: The Free Tools Directory
+website: https://thefreetoolsdirectory.com/
+submission_url: https://thefreetoolsdirectory.com/submit
+cost:
+  classification: VERIFIED_FREE
+  notes: The public form is free to submit. No payment or account is requested.
+audience:
+  - productivity
+  - marketing
+  - developer-tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: site name
+      required: true
+    - name: URL
+      required: true
+    - name: description
+      required: true
+    - name: category
+      required: false
+    - name: email
+      required: false
+  conditions:
+    - Human review before inclusion.
+    - The directory focuses on genuinely free online tools; the optional email is used only to notify submitters when a listing is approved.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://thefreetoolsdirectory.com/tools/developer/gitignore-generator
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://thefreetoolsdirectory.com/
+    - https://thefreetoolsdirectory.com/submit

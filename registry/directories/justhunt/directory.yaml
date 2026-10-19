@@ -1,0 +1,55 @@
+id: justhunt
+name: JustHunt
+website: https://justhunt.co
+submission_url: https://justhunt.co/submit
+cost:
+  classification: FREEMIUM
+  notes: "Free weekly launch includes a product page, homepage placement for a week, and a do-follow backlink. 25 free slots/week, first come, first served. Optional Featured Spot $19; Boosted placement $9.99/week; Featured placement $19.99/week; a paid slot unlock costs $2.99 if free slots are full; Launch Boost directory-submission service starts at $39."
+audience:
+  - indie-makers
+  - startups
+  - saas
+  - software
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+submission:
+  url_first: true
+  fields:
+    - name: website_url
+      required: true
+  conditions:
+    - "25 free weekly launch slots are first come, first served; paid slot unlocks are offered when full."
+autofetch:
+  supported: true
+  expected:
+    - title
+    - description
+    - logo
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: launch_board
+human_only: null
+review_time: "Weekly launch schedule; 25 free slots per week, first come, first served."
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://justhunt.co/startups/helpdol
+  samples: 2
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://justhunt.co/submit
+    - https://justhunt.co/pricing
+    - https://justhunt.co/

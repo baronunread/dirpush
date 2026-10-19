@@ -1,0 +1,44 @@
+id: fazier
+name: Fazier
+website: https://fazier.com
+submission_url: https://fazier.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free with backlink requirement; paid options $29-139 one-time
+audience:
+  - saas
+  - startups
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - backlink or badge on homepage/footer required for free tier
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://fazier.com/launches/gpt-image-2-5-ai-video-generator
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: haiku-8
+  sources:
+    - https://fazier.com/submit

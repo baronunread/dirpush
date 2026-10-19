@@ -1,0 +1,47 @@
+id: bestaito
+name: BestAITo
+website: https://bestaito.com/
+submission_url: https://bestaito.com/submit-ai-tool/
+cost:
+  classification: PAID
+  notes: "Fast Track is $29 one-time, with a stated 24-hour listing; Promoted is $39 one-time and includes 14 days featured. No free listing option is shown."
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: AI tool URL
+      required: true
+  conditions:
+    - Paid package required
+    - Directory accepts AI tools
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: within 24 hours for Fast Track
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://bestaito.com/tool/thing-translator/
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: unknown
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://bestaito.com/
+    - https://bestaito.com/submit-ai-tool/

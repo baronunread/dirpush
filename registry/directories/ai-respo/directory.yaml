@@ -1,0 +1,43 @@
+id: ai-respo
+name: AI Respo
+website: https://airespo.com/
+submission_url: https://airespo.com/submit-tool/
+cost:
+  classification: VERIFIED_FREE
+  notes: "The public submission page explicitly describes submitting an AI tool for free; account required, with no paid condition shown."
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Sign in or create an account to access the submission form.
+    - Acceptance criteria are linked on the submit page.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://airespo.com/tool-categories/business/
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: recaptcha
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://airespo.com/submit-tool/

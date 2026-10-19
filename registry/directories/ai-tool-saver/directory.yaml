@@ -1,0 +1,52 @@
+id: ai-tool-saver
+name: AI Tools Saver
+website: https://www.aitoolsaver.com/
+submission_url: https://www.aitoolsaver.com/submit-ai-tool
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free Verified Partner tier requires link exchange. Fast Track $25, More Impact $49, and Featured $300 are one-time paid tiers."
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: tool_name
+      required: true
+    - name: category
+      required: true
+    - name: website_url
+      required: true
+    - name: offer
+      required: true
+    - name: contact_email
+      required: true
+  conditions:
+    - Free listing requires reciprocal link exchange.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.aitoolsaver.com/tools/teachany
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.aitoolsaver.com/submit-ai-tool

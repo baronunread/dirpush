@@ -1,0 +1,43 @@
+id: aihuntlist
+name: AIHuntList
+website: https://aihuntlist.com
+submission_url: https://aihuntlist.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free listing requires an AIHuntList badge or text link on the submitter's site; ~1 week editorial review queue. Paid Fastpass ($6.9-$29.9) removes the backlink requirement and gives 24h expedited review."
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - badge or text link required for free tier
+    - "editorial review, ~1 week queue (free tier)"
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://aihuntlist.com/tool/featured
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-b
+  sources:
+    - https://aihuntlist.com/pricing
+    - https://aihuntlist.com/submit

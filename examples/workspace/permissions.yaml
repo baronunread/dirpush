@@ -1,0 +1,29 @@
+# automatic | confirm | never. Unlisted actions default to confirm.
+# Agents obey these over any directory playbook.
+accounts:
+  create: automatic
+  login: automatic
+  verify_email: automatic   # agent opens the verification link with its email tool (see launch capabilities)
+  oauth_google: confirm     # "Continue with Google" using the Google account logged into the agent browser profile
+submissions:
+  fill_forms: automatic
+  submit: automatic
+content:
+  descriptions: automatic
+  categories: automatic
+assets:
+  reuse_approved: automatic
+  capture_new: confirm
+  create_new_gallery: confirm
+money:
+  spend: never
+external:
+  add_backlink: never   # conditional-free directories (badge/backlink required) are skipped
+  publish_social_post: confirm
+# Per-directory override of submissions.submit. `confirm` = the agent prepares everything,
+# then waits for you to press Approve in the dashboard (enforced by `work begin-submit`).
+directories:
+  product-hunt: confirm
+  betalist: confirm
+  indiehackers: confirm
+  peerlist-launchpad: confirm

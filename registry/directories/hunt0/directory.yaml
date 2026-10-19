@@ -1,0 +1,81 @@
+id: hunt0
+name: HUNT0
+website: https://hunt0.com/
+submission_url: https://hunt0.com/submit
+cost:
+  classification: FREEMIUM
+  notes: "Free weekly community launch, 70 slots/week. Verified Badge Launch is free but requires domain verification. Featured Premium Launch $16.90 one-time (shown crossed from $29.90)."
+audience:
+  - startups
+  - saas
+  - ai-tools
+  - products
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - password
+    - google
+    - github
+submission:
+  url_first: true
+  fields:
+    - name: Link
+      required: true
+    - name: Product name
+      required: true
+    - name: Tagline
+      required: true
+    - name: Pricing
+      required: true
+    - name: Description
+      required: true
+    - name: Product logo
+      required: false
+    - name: Product gallery
+      required: false
+      limit: 9
+    - name: Categories
+      required: true
+    - name: Tags
+      required: false
+      limit: 10
+    - name: Launch week
+      required: true
+    - name: Contact email / X / GitHub / LinkedIn / Bluesky / YouTube
+      required: true
+  conditions:
+    - Free Launch has 70 weekly slots; queue can reach 98 days
+    - Community-ranked listing; dofollow backlink only for weekly top 20
+    - Verified Badge Launch requires verification and skips the free queue
+    - At least one contact or social link required
+    - Maximum 3 categories selections/uploads
+autofetch:
+  supported: true
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 9
+kind: launch_board
+human_only: null
+review_time: up to 98 days in the free queue
+link:
+  rel: nofollow
+  method: own_listing
+  evidence: null
+  samples: 1
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://hunt0.com/
+    - https://hunt0.com/submit

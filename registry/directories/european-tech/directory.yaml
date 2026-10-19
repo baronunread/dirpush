@@ -1,0 +1,55 @@
+id: european-tech
+name: European-tech.com
+website: https://european-tech.com/
+submission_url: https://european-tech.com/contact/submit-a-service/
+cost:
+  classification: VERIFIED_FREE
+  notes: No fee stated. Curated listings are for EU-based digital services; form asks for a professional email.
+audience:
+  - saas
+  - software
+  - developer-tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: submitter_type
+      required: true
+    - name: service_url
+      required: true
+    - name: additional_information
+      required: false
+    - name: professional_email
+      required: true
+  conditions:
+    - Product or service must be based in Europe.
+    - Editorial review; site says it may take a few days.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: "A few days, depending on demand."
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://european-tech.com/service/proton-mail/
+  samples: 3
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://european-tech.com/
+    - https://european-tech.com/contact/submit-a-service/

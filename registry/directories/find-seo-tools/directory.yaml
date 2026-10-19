@@ -1,0 +1,72 @@
+id: find-seo-tools
+name: Find SEO Tools
+website: https://findseotools.com/
+submission_url: https://findseotools.com/submit
+cost:
+  classification: VERIFIED_FREE
+  notes: "Public tool submission form shows no listing fee, payment step, or paid placement; submitters provide tool details for editorial review."
+audience:
+  - marketing
+  - saas
+  - software
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: Tool name
+      required: true
+    - name: Tool value
+      required: true
+      limit: 9
+    - name: Category
+      required: true
+    - name: Pricing model
+      required: true
+    - name: Website
+      required: true
+    - name: Description
+      required: true
+    - name: Twitter account
+      required: true
+    - name: Launch year
+      required: true
+    - name: Image URL
+      required: false
+    - name: Submitter name
+      required: true
+    - name: Submitter email
+      required: true
+    - name: Founder details
+      required: true
+  conditions:
+    - Curated editorial review for category fit
+    - Twitter account required
+    - Tool value tagline is limited to 9 words
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: listing
+human_only: null
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://findseotools.com/tools/adobe-analytics
+  samples: 3
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://findseotools.com/
+    - https://findseotools.com/submit

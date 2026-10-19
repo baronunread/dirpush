@@ -1,0 +1,1 @@
+Use Submit Yours at /s/submit. It redirects to /user/signin and states that submission is free; Continue with Google is the only visible sign-in option. Form fields and review timing are behind login; do not create an account during research.

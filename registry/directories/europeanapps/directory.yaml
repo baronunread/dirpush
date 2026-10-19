@@ -1,0 +1,52 @@
+id: europeanapps
+name: EuropeanApps
+website: https://www.europeanapps.com/
+submission_url: mailto:hello@europeanapps.com
+cost:
+  classification: FREEMIUM
+  notes: Free email submission in the standard queue. Optional priority verification costs €99 and guarantees check/publication within 7 days; €99/month homepage sponsorship is separate.
+audience:
+  - consumer-apps
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: app_or_service_name
+      required: true
+    - name: country_of_origin
+      required: true
+    - name: shortcoming_note
+      required: false
+  conditions:
+    - Company must be based in Europe.
+    - "Personal-use apps/services only; business, marketing, CRM, website, and online-store tools are excluded."
+    - Free submissions enter the standard editorial queue.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: Free queue timing not stated; €99 priority review within 7 days.
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://www.europeanapps.com/sofatutor/
+  samples: 3
+  noindex: false
+  claimed: null
+  bot_check: unknown
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.europeanapps.com/submit/
+    - https://www.europeanapps.com/for-companies/

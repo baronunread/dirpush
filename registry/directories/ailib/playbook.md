@@ -1,0 +1,1 @@
+Choose Добавить AI (Add AI), then select the Бесплатно (Free) plan to open the form. Enter email, tool name, website, description, application area, and task; optionally mark paid/free/trial/API. No account or payment is needed. The page says you may support the project after sending, but it is optional.

@@ -1,0 +1,47 @@
+id: pitchground
+name: PitchGround
+website: https://pitchground.com
+submission_url: https://pitchground.com/
+cost:
+  classification: PAID
+  notes: "Pay-to-rank leaderboard; minimum bid $5 for a new spot, existing spots require outbidding current holder; board resets monthly; bids are non-refundable."
+audience:
+  - startups
+  - saas
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: product_url_or_handle
+      required: true
+    - name: category
+      required: true
+  conditions:
+    - payment required
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://pitchground.com/hall-of-fame/2026-09
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-f3
+  sources:
+    - https://pitchground.com/
+    - https://pitchground.com/about

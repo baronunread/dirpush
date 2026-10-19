@@ -1,0 +1,1 @@
+Open /submit; it redirects to /auth/login with Google and GitHub login. The submit form is behind authentication. The free plan requires backlink maintenance and currently has a 180+ day wait; paid Listing starts at $9.90 and removes the wait and backlink requirement.

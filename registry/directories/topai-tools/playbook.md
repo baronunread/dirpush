@@ -1,0 +1,1 @@
+No free path. Choose Fast Track ($47) for a permanent listing live in 24-48hrs, or Featured ($229) for a 7-day homepage/category boost. Automated refund if the tool is rejected in review. A separate 'Verified' badge exists but cannot be purchased - requires emailing the team for hands-on review.

@@ -1,0 +1,51 @@
+id: startup-ranking
+name: Startup Ranking
+website: https://startupranking.com
+submission_url: https://www.startupranking.com/create-startup/
+cost:
+  classification: FREEMIUM
+  notes: "Free listing goes live via manual approval, up to 80 days per the site's own how-it-works copy, no badge/backlink required. Paid: SR Faster Approval $49 one-time (24hr review instead of up to 80 days), SR Booster (submit to 120+ directories), SR Premium Profile, SR Advertising."
+audience:
+  - startups
+  - saas
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - facebook
+    - linkedin
+    - x
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - "manual review, up to 80 days free / 24hr paid"
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+    max: 0
+kind: listing
+human_only: null
+review_time: up to 80 days free; 24 hours with paid SR Faster Approval
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://www.startupranking.com/startup/carvuk
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bC
+  sources:
+    - https://www.startupranking.com/login
+    - https://www.startupranking.com/how-it-works

@@ -1,0 +1,53 @@
+id: mcpservers
+name: MCP Servers
+website: https://mcpservers.org
+submission_url: https://mcpservers.org/submit
+cost:
+  classification: FREEMIUM
+  notes: "The public form explicitly offers Free ($0), reviewed within two weeks, or optional Premium Submit at $39 for 24-hour review, priority, official badge, and dofollow link."
+audience:
+  - mcp-servers
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: server_name
+      required: true
+    - name: category
+      required: true
+    - name: short_description
+      required: true
+    - name: repository_website_or_documentation
+      required: true
+    - name: contact_email
+      required: true
+  conditions:
+    - Manual review; free tier does not guarantee the paid dofollow perk
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: mcp_registry
+human_only: null
+review_time: within 2 weeks
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://mcpservers.org/servers/blender-mcp
+  samples: 2
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-08
+  by: codex
+  sources:
+    - https://mcpservers.org/submit

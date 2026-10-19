@@ -1,0 +1,46 @@
+id: startuptrusted
+name: StartupTrusted
+website: https://startuptrusted.com
+submission_url: https://startuptrusted.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "$0 tier requires adding StartupTrusted's badge to your site to qualify (verified automatically before submission), then manual review. $11 one-time Pro removes the badge requirement (dofollow backlink, instant approval). $19 one-time Featured adds homepage placement."
+audience:
+  - startups
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - badge on your site required for the free tier
+    - manual review for free tier
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: listing
+human_only: null
+review_time: "free tier: after manual review (duration unstated); paid: instant"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://startuptrusted.com/startup/macigniter
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-28
+  by: sonnet-r3
+  sources:
+    - https://startuptrusted.com/pricing

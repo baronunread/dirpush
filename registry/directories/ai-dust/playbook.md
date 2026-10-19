@@ -1,0 +1,1 @@
+The public /submit/ page says submission is free and human-reviewed within 48 hours. Collect tool name, URL, category, tagline (max 90 chars), pricing model, founder, founding date, optional founder LinkedIn URL, platform, tool details, submitter name and email. The tool details accept a Word document, PDF, or plain text upload; the form also asks to set a featured image.

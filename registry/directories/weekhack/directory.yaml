@@ -1,0 +1,56 @@
+id: weekhack
+name: WeekHack
+website: https://www.weekhack.com/
+submission_url: https://www.weekhack.com/launches/submit
+cost:
+  classification: FREEMIUM
+  notes: "Free launch enters the next available week. Premium is $19 one-time to choose a week, skip review, and receive guaranteed promotion/backlink benefits."
+audience:
+  - indie-makers
+  - startups
+  - software
+  - saas
+  - developer-tools
+  - products
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - github
+    - email
+    - password
+submission:
+  url_first: true
+  fields: []
+  conditions:
+    - Sign in before submitting; post-login form fields were not visible.
+    - Free launches are scheduled for the next available week and reviewed before publishing.
+    - Free dofollow backlink is earned only by finishing in the top three; no badge requirement was stated.
+autofetch:
+  supported: true
+  expected:
+    - launch details from product website or Product Hunt URL
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: launch_board
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.weekhack.com/launches/social-media-hook-generator
+  samples: 1
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.weekhack.com/pricing
+    - https://www.weekhack.com/auth?next=%2Flaunches%2Fsubmit
+    - https://www.weekhack.com/

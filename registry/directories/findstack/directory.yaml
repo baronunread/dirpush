@@ -1,0 +1,46 @@
+id: findstack
+name: Findstack
+website: https://findstack.com
+submission_url: https://findstack.com/get-listed
+cost:
+  classification: VERIFIED_FREE
+  notes: "Free listing/claim for software vendors, no badge/backlink required; no pricing page or paid tier found on the public site"
+audience:
+  - saas
+  - business-software
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions: []
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 0
+kind: listing
+human_only: null
+listing_url_pattern: "https://findstack.com/products/{slug}/reviews"
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://findstack.com/products/inboxally
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bB
+  sources:
+    - https://findstack.com/get-listed
+    - https://findstack.com/products/monday-com/reviews

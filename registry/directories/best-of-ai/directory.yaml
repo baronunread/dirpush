@@ -1,0 +1,57 @@
+id: best-of-ai
+name: Best of AI
+website: https://bestofai.io/
+submission_url: https://submit.bestofai.io/
+cost:
+  classification: FREEMIUM
+  notes: Free permanent directory listing; optional paid featured advertising after listing (one-time or annual placements; exact price not visible on submission page).
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: website URL
+      required: true
+    - name: name
+      required: true
+    - name: tagline
+      required: true
+    - name: description
+      required: true
+    - name: logo
+      required: true
+    - name: screenshots
+      required: false
+  conditions:
+    - Manual editorial review
+    - No account required to start; sign-in used to pull details after URL entry
+autofetch:
+  supported: true
+  expected:
+    - product details from URL
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: listing
+human_only: null
+review_time: review usually takes a few days
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://bestofai.io/tools/chatgpt/
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://submit.bestofai.io/

@@ -1,0 +1,47 @@
+id: indiesignal
+name: IndieSignal
+website: https://www.indiesignal.club/
+submission_url: https://www.indiesignal.club/submit
+cost:
+  classification: FREEMIUM
+  notes: Free listing after editorial review. Optional Priority Launch costs $29 one-time and is reviewed within 3 business days; placement is labelled.
+audience:
+  - ai-tools
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Editorial review; public page states no fee for standard listing
+    - Submission form fields are hidden until sign-in
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: launch_board
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.indiesignal.club/products/storyverse-4670b635-b191-4f0c-95d8-361720b99ace
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.indiesignal.club/submit
+    - https://www.indiesignal.club/pricing

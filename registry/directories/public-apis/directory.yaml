@@ -1,0 +1,47 @@
+id: public-apis
+name: Public APIs
+website: https://github.com/public-apis/public-apis
+submission_url: https://github.com/public-apis/public-apis/blob/master/CONTRIBUTING.md
+cost:
+  classification: VERIFIED_FREE
+  notes: "Primary contribution guide accepts free public APIs or APIs with a free tier via PR, and also documents a separate MCP Servers section. Company marketing attempts are rejected; no fee is charged to contribute."
+audience:
+  - apis
+  - mcp-servers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - API must offer full free access or a free tier without a prerequisite paid device/service
+    - "Use API documentation link and accurate authentication, HTTPS, and CORS values"
+    - "MCP entries use separate name, description, auth, transport, install format"
+    - Maintainer review; do not submit promotional marketing copy
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: api_catalog
+human_only: null
+link:
+  rel: nofollow
+  method: platform_rule
+  evidence: https://github.com/public-apis/public-apis
+  samples: 0
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-08
+  by: codex
+  sources:
+    - https://github.com/public-apis/public-apis/blob/master/CONTRIBUTING.md

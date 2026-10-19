@@ -1,0 +1,63 @@
+id: marketraa
+name: Marketraa
+website: https://www.marketraa.com/
+submission_url: https://www.marketraa.com/
+cost:
+  classification: VERIFIED_FREE
+  notes: "Free submission and no paid placements, as stated in the submission form and footer."
+audience:
+  - marketing
+  - saas
+  - software
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: tool name
+      required: true
+    - name: website
+      required: true
+    - name: email
+      required: true
+    - name: company
+      required: false
+    - name: category
+      required: false
+    - name: one-line description
+      required: false
+    - name: full description
+      required: false
+    - name: pricing
+      required: false
+    - name: what makes it unique
+      required: false
+  conditions:
+    - Editorial review before publication
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: Manual review; timing not stated.
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.marketraa.com/tools/accuranker/
+  samples: 3
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.marketraa.com/

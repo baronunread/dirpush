@@ -1,0 +1,60 @@
+id: launchigniter
+name: LaunchIgniter
+website: https://launchigniter.com
+submission_url: https://launchigniter.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free ($0): requires badge verification and manual review, limited backlinks (top 3 only); Basic ($12): guaranteed date, lifetime DR 75 backlink; Pro ($15): includes backlinks from 3 directories (DR 75, 58, 61)"
+audience:
+  - startups
+  - saas
+  - indie-makers
+  - ai-tools
+  - developer-tools
+authentication:
+  required: false
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: true
+  fields:
+    - name: product_url
+      required: true
+    - name: product_name
+      required: true
+    - name: tagline
+      required: true
+    - name: category
+      required: true
+  conditions:
+    - manual review (free tier only)
+    - badge verification (free tier only)
+    - dofollow backlink (free tier only for top 3)
+autofetch:
+  supported: true
+  expected:
+    - name
+    - description
+    - logo
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 5
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://launchigniter.com/product/ai-fruit
+  samples: 3
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: haiku-1
+  sources:
+    - https://launchigniter.com
+    - https://launchigniter.com/pricing

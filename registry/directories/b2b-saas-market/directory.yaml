@@ -1,0 +1,63 @@
+id: b2b-saas-market
+name: B2B SaaS Market
+website: https://b2bsaasmarket.com/
+submission_url: https://b2bsaasmarket.com/submit
+cost:
+  classification: PAID
+  notes: "€49/year, auto-renewing; refund if listing cannot be published."
+audience:
+  - saas
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: name
+      required: true
+    - name: tagline
+      required: true
+    - name: website
+      required: true
+    - name: description
+      required: false
+    - name: category
+      required: true
+    - name: pricing_model
+      required: true
+    - name: starting_price
+      required: false
+    - name: logo_url
+      required: false
+    - name: contact_email
+      required: true
+    - name: offers_free_trial
+      required: false
+    - name: has_api
+      required: false
+  conditions:
+    - €49/year subscription paid before human review
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://b2bsaasmarket.com/tool/twist
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://b2bsaasmarket.com/submit

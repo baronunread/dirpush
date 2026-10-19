@@ -1,0 +1,48 @@
+id: launched-tools
+name: launched.tools
+website: https://launched.tools/
+submission_url: https://launched.tools/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free Bootstrap listing requires embedding the badge to publish. Launched++ is $9.99 one-time and removes the badge requirement.
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email one-time code
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Badge must be embedded and verified for the free listing to publish
+    - Human review and test-driven scoring
+    - AI/SaaS tools only
+    - Form fields are hidden until account creation
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://launched.tools/tools/find-your-co-founder-in-germany
+  samples: 3
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://launched.tools/submit
+    - https://launched.tools/pricing

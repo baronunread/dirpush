@@ -1,0 +1,46 @@
+id: startup88
+name: Startup88
+website: https://startup88.com
+submission_url: https://startup88.typeform.com/to/CRjWqM
+cost:
+  classification: VERIFIED_FREE
+  notes: Free to pitch via Typeform; no payment or badge/backlink requirement mentioned anywhere on site or form intro
+audience:
+  - startups
+  - ai-tools
+  - saas
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - editorial review before publishing
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+    max: 0
+kind: listing
+human_only: null
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://startup88.com/startups/2026/04/18/sitewatch/88462
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bB
+  sources:
+    - https://startup88.com/
+    - https://startup88.typeform.com/to/CRjWqM

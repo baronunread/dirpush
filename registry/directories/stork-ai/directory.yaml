@@ -1,0 +1,49 @@
+id: stork-ai
+name: Stork.AI
+website: https://www.stork.ai
+submission_url: https://www.stork.ai/submit
+cost:
+  classification: PAID
+  notes: New software listings cost $49 one-time. Badge-for-free listing offer ended 2026-10-04; badge now optional. Separate free MCP server route is tracked as stork-mcp.
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: true
+  fields: []
+  conditions:
+    - Payment required for new software listing
+    - Quality and content review
+autofetch:
+  supported: true
+  expected:
+    - name
+    - description
+    - logo
+    - category
+    - pricing tag
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+kind: listing
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.stork.ai/en/muvio
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-08
+  by: codex
+  sources:
+    - https://www.stork.ai/submit
+    - https://www.stork.ai/badge

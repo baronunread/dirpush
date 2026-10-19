@@ -1,0 +1,72 @@
+id: ebool
+name: eBool
+website: https://www.ebool.com
+submission_url: https://www.ebool.com/submit
+cost:
+  classification: FREEMIUM
+  notes: "Free listing, ~6 month approval queue, no badge/backlink required to submit or go live. Premium $47 one-time (2-3 day review, SEO/AI citation benefits), Pro $117 one-time (top-5 ranking, 3 categories), Super $197 one-time (homepage rotation, #1 ranking)."
+audience:
+  - saas
+  - business-software
+  - productivity
+  - developer-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: false
+  fields:
+    - name: Your Name
+      required: true
+    - name: Your Email
+      required: true
+    - name: Password
+      required: true
+    - name: Confirm Password
+      required: true
+    - name: Product / Software Name
+      required: true
+    - name: Website URL
+      required: true
+    - name: Company
+      required: false
+    - name: Country
+      required: false
+    - name: Description
+      required: true
+      limit: 500
+    - name: Logo
+      required: false
+    - name: Primary Category
+      required: true
+  conditions:
+    - manual review
+    - account (email/password) created as part of submission
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 5
+kind: listing
+human_only: invisible reCAPTCHA on submit final submit rejected an automated browser during an actual submission attempt
+review_time: ~6 months (free); 2-3 days on paid tiers
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://www.ebool.com/alternatives/sheetgpt
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: recaptcha
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bB
+  sources:
+    - https://www.ebool.com/submit

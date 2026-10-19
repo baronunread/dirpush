@@ -1,0 +1,83 @@
+id: truerev
+name: TrueRev
+website: https://www.truerev.in
+submission_url: https://www.truerev.in/submit
+cost:
+  classification: FREEMIUM
+  notes: Free listing publishes immediately. Paid promotions and optional Stripe revenue verification are separate; verified through a completed submission.
+audience:
+  - startups
+  - saas
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email
+submission:
+  url_first: false
+  fields:
+    - name: name
+      required: true
+      limit: 60
+    - name: slug
+      required: true
+      limit: 60
+    - name: website
+      required: true
+    - name: tagline
+      required: true
+      limit: 120
+    - name: category
+      required: true
+    - name: description
+      required: true
+      limit: 5000
+    - name: founded_at
+      required: false
+    - name: launched_at
+      required: false
+    - name: business_model
+      required: false
+    - name: customer_type
+      required: false
+    - name: pricing
+      required: false
+    - name: starting_price
+      required: false
+    - name: target_audience
+      required: false
+    - name: monthly_revenue
+      required: false
+    - name: growth
+      required: false
+  conditions:
+    - Account required; five-step wizard publishes immediately after Review
+    - Revenue verification is a separate Stripe restricted-key process; never supply keys or invent financial figures
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+listing_url_pattern: "https://www.truerev.in/startup/{slug}"
+link:
+  rel: nofollow
+  method: own_listing
+  evidence: null
+  samples: 1
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-10
+  by: codex
+  sources:
+    - https://www.truerev.in/
+    - https://www.truerev.in/login?next=%2Fsubmit
+    - https://www.truerev.in/verification

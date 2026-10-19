@@ -1,0 +1,55 @@
+id: victrays
+name: Victrays
+website: https://victrays.com
+submission_url: https://victrays.com/submit-ai-tool/
+cost:
+  classification: PAID
+  notes: "Standard Listing $9.99 (one-time, 72h review, lifetime listing)"
+audience:
+  - ai-tools
+  - chatgpt-plugins
+  - ai-prompts
+authentication:
+  required: false
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: tool_name
+      required: true
+    - name: website
+      required: true
+    - name: description
+      required: true
+    - name: pricing
+      required: true
+    - name: categories
+      required: true
+    - name: screenshots
+      required: false
+  conditions:
+    - manual review
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 10
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://victrays.com/my-ai-tools/
+  samples: 1
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: haiku-22
+  sources:
+    - https://victrays.com/submit-ai-tool/

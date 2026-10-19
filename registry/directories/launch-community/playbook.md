@@ -1,0 +1,1 @@
+Sign in with Google (the submit route shows logged-out status and Sign In redirects to Google OAuth). Standard submit is labeled $0. Optional paid promotions are separate; advertise pricing is public. Form supports square logo upload up to 10MB, logo URL, up to 5 screenshots of 10MB each, and product/social details.

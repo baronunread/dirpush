@@ -1,0 +1,50 @@
+id: microsaasexamples
+name: Micro SaaS Examples
+website: https://microsaasexamples.com
+submission_url: https://microsaasexamples.com/submit
+cost:
+  classification: PAID
+  notes: "Three paid tiers: Basic $3 (with backlink requirement), Featured $29 (no backlink), Sponsored $147 (featured placement + newsletter)"
+audience:
+  - saas
+  - micro-saas
+  - startups
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: product_name
+      required: true
+    - name: contact_email
+      required: true
+    - name: product_url
+      required: true
+  conditions:
+    - payment required
+    - manual review
+    - backlink required for Basic tier
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://www.microsaasexamples.com/p/heybop-ai
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: haiku-2
+  sources:
+    - https://microsaasexamples.com/submit

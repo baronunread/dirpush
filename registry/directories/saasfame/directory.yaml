@@ -1,0 +1,47 @@
+id: saasfame
+name: SaaSFame
+website: https://saasfame.com
+submission_url: https://saasfame.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free tier requires permanent badge on submitter's site (checked regularly, unpublished if removed), may be rejected, reviewed within 180 days. $14.9 Basic removes badge requirement and lists instantly; $49.9 Pro adds featured placement."
+audience:
+  - saas
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - "permanent badge on submitter's site (free tier)"
+    - manual review up to 180 days (free tier)
+    - may be rejected
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://saasfame.com/item/productfame
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: turnstile
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-b
+  sources:
+    - https://saasfame.com/pricing
+    - https://saasfame.com/submit

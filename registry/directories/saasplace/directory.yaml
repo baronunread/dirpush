@@ -1,0 +1,66 @@
+id: saasplace
+name: Saasplace
+website: https://saasplace.io/
+submission_url: https://saasplace.io/submit
+cost:
+  classification: VERIFIED_FREE
+  notes: Public form explicitly states submissions are free with no strings.
+audience:
+  - saas
+  - products
+  - indie-makers
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: Product name
+      required: true
+    - name: Website
+      required: true
+    - name: One-line tagline
+      required: true
+      limit: 60
+    - name: Description
+      required: true
+    - name: Categories
+      required: false
+    - name: Pricing model
+      required: true
+    - name: Your role
+      required: true
+    - name: Anything else?
+      required: false
+  conditions:
+    - Hand review within 3 business days
+    - "Categories: pick up to 2"
+    - "Description: 2–3 sentences"
+    - Maximum 2 categories selections/uploads
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: 3 business days
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://saasplace.io/product/query-domains/
+  samples: 1
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://saasplace.io/
+    - https://saasplace.io/submit

@@ -1,0 +1,52 @@
+id: startup-og
+name: Startup OG
+website: https://startupog.com/
+submission_url: https://startupog.com/submit-your-product
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free publication requires adding and verifying the Startup OG badge on your website; paid alternative is $19 one time without a badge.
+audience:
+  - startups
+  - saas
+  - software
+  - products
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email magic link
+submission:
+  url_first: true
+  fields: []
+  conditions:
+    - Add and verify Startup OG badge before free listing can go live
+    - Fields are behind sign-in; URL starts a prefilled draft
+autofetch:
+  supported: true
+  expected:
+    - description
+    - category
+    - logo
+    - links
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://startupog.com/products/backlinkgenie
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://startupog.com/submit-your-product
+    - https://startupog.com/pricing

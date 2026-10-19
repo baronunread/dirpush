@@ -1,0 +1,47 @@
+id: aitooltrek
+name: AI Tool Trek
+website: https://aitooltrek.com
+submission_url: https://aitooltrek.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free Pack requires adding AI Tool Trek's backlink to your homepage for approval; listing is removed if the backlink is later removed. Paid Fast Track ($19.90 one-time) and Unlimited Pack ($39.90/mo) tiers remove the backlink requirement."
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: true
+  methods:
+    - "login button present but submit form itself only asked for website name/URL, no visible signup gate"
+submission:
+  url_first: true
+  fields:
+    - name: WEBSITE NAME
+      required: true
+    - name: WEBSITE URL
+      required: true
+  conditions:
+    - homepage backlink to aitooltrek.com required and checked during review for free tier
+    - "72h review, up to 15 days to list on free tier"
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://aitooltrek.com/ai/bulin47maker-org
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-c
+  sources:
+    - https://aitooltrek.com/submit

@@ -1,0 +1,1 @@
+Choose Tournament Launch > Launch now. Standard is free but has a waitlist and qualifying round; dofollow backlink is only for top-three finishers. Premium costs $29 and guarantees entry, skips the waitlist, and guarantees a DR55 dofollow backlink. The flow redirects to Google sign-in, and product form fields are not visible until login.

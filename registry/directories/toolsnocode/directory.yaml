@@ -1,0 +1,48 @@
+id: toolsnocode
+name: ToolsNoCode
+website: https://toolsnocode.com
+submission_url: https://toolsnocode.com/signup
+cost:
+  classification: FREEMIUM
+  notes: "Free standard listing (ordered by date added), no badge/backlink required; $49.90/year Boost gets a full-width featured card at the top of the directory/category/homepage, a demo video, a boosted badge, and higher search ranking."
+audience:
+  - ai-tools
+  - no-code
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+submission:
+  url_first: true
+  fields: []
+  conditions: []
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+kind: listing
+human_only: null
+listing_url_pattern: "https://toolsnocode.com/tools/{slug}"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://toolsnocode.com/tools/launchautopilot
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bB
+  sources:
+    - https://toolsnocode.com/pricing
+    - https://toolsnocode.com/signup
+    - https://toolsnocode.com/tools/cognira

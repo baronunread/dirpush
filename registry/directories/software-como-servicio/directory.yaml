@@ -1,0 +1,64 @@
+id: software-como-servicio
+name: Software Como Servicio
+website: https://softwarecomoservicio.com/
+submission_url: https://softwarecomoservicio.com/enviar
+cost:
+  classification: CONDITIONAL_FREE
+  notes: No paid placement or paid shortcut. The submission page describes the free listing as conditional on adding the SCS badge linking to https://softwarecomoservicio.com with no query parameters; badge listings are ranked first.
+audience:
+  - saas
+  - startups
+  - marketing
+  - productivity
+  - indie-makers
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: tool name
+      required: true
+    - name: product homepage URL
+      required: true
+    - name: one-line description
+      required: true
+      limit: 120
+    - name: categories
+      required: true
+    - name: email
+      required: true
+    - name: X/Twitter or LinkedIn
+      required: false
+    - name: badge confirmation
+      required: true
+  conditions:
+    - Add the SCS badge to the product site with a dofollow link to https://softwarecomoservicio.com and no extra query parameters.
+    - Manual editorial review; accepted tools appear in the directory.
+    - Maximum 3 categories selections/uploads
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://softwarecomoservicio.com/en/tools/123rf
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://softwarecomoservicio.com/
+    - https://softwarecomoservicio.com/enviar

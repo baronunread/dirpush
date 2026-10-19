@@ -1,0 +1,68 @@
+id: joinly
+name: Joinly
+website: https://joinly.xyz/
+submission_url: https://joinly.xyz/submit-startup
+cost:
+  classification: VERIFIED_FREE
+  notes: "Public form shows no submission fee, paid tier, badge, or backlink requirement before submission."
+audience:
+  - startups
+  - software
+  - saas
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: startup or product name
+      required: true
+    - name: website URL
+      required: true
+    - name: email address
+      required: true
+    - name: headline
+      required: true
+      limit: 80
+    - name: long description
+      required: false
+    - name: country
+      required: true
+    - name: thumbnail image
+      required: true
+    - name: gallery images
+      required: false
+    - name: terms and privacy agreement
+      required: true
+  conditions:
+    - Website URL must be a main domain or subdomain without paths or parameters
+    - Thumbnail image max 200 KB; recommended 256 × 256 px
+    - "Up to 3 gallery images, max 400 KB each; recommended 1024 × 768 px"
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 3
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.joinly.xyz/startups/novovibe-com
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://joinly.xyz/
+    - https://joinly.xyz/submit-startup

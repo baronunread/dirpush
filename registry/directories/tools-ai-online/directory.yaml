@@ -1,0 +1,65 @@
+id: tools-ai-online
+name: Tools AI Online
+website: https://www.tools-ai.online/
+submission_url: https://www.tools-ai.online/submit-tool
+cost:
+  classification: FREEMIUM
+  notes: "Free submission form. Optional featured plans: $5 for 1 month, $10 for 3 months, or $20 for 12 months."
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: tool name
+      required: true
+    - name: website URL
+      required: true
+    - name: tool description
+      required: true
+    - name: categories
+      required: true
+    - name: tags
+      required: true
+    - name: pricing
+      required: true
+    - name: contact email
+      required: true
+    - name: tool icon
+      required: false
+    - name: featured image / website screenshot
+      required: true
+  conditions:
+    - AI-powered tools only
+    - Manual review
+    - Choose up to 3 categories and 5 tags
+    - Tool screenshot is required; icon is optional
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 1
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.tools-ai.online/tool/chatgpt-openai
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.tools-ai.online/submit-tool
+    - https://www.tools-ai.online/feature-tool

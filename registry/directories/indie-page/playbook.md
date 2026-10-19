@@ -1,0 +1,1 @@
+Start at the homepage and claim a founder page by choosing a slug. Indie Page has a public directory at /discover with founder pages and startup categories. The homepage advertises a free page; optional one-time plans are $25 for a 1-Year Pass and $45 for a Lifetime Deal. Product fields and sign-up methods are behind account creation, so do not assume field names or auth options.

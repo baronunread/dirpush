@@ -1,0 +1,50 @@
+id: everydev-ai
+name: EveryDev.ai
+website: https://www.everydev.ai
+submission_url: https://www.everydev.ai/create/tool
+cost:
+  classification: FREEMIUM
+  notes: "Base tool submission free, no badge/backlink required; paid Featured Listing (includes a 'Featured' badge) / Newsletter Sponsorship upsells via /advertise (contact for pricing). Badge gate not visible past login - the submission form itself is gated behind GitHub/Google sign-in."
+audience:
+  - ai-tools
+  - developer-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - github
+    - google
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - login required (GitHub or Google) -- no email/password option
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+    max: 0
+kind: listing
+human_only: null
+listing_url_pattern: "https://www.everydev.ai/tools/{slug}"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.everydev.ai/tools/dial-agent
+  samples: 3
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bB
+  sources:
+    - https://www.everydev.ai/
+    - https://www.everydev.ai/create/tool
+    - https://www.everydev.ai/advertise
+    - https://www.everydev.ai/tools/yello

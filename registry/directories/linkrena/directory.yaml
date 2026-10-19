@@ -1,0 +1,58 @@
+id: linkrena
+name: Linkrena
+website: https://linkrena.com/
+submission_url: https://linkrena.com/submit
+cost:
+  classification: FREEMIUM
+  notes: "Free permanent listing and weekly launch round. Optional paid visibility/review: Arena bids from $1; skip queue $4.99; featured $29 for 7 days; homepage spotlight $39 for 30 days; Maker Pro $9/month or $79/year. Top-three voters may earn a badge; it is not required to list."
+audience:
+  - saas
+  - ai-tools
+  - developer-tools
+  - productivity
+  - marketing
+authentication:
+  required: false
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: product URL
+      required: true
+    - name: name
+      required: true
+    - name: one-line description
+      required: true
+    - name: email
+      required: false
+  conditions:
+    - Free submissions enter the review queue and the weekly launch round.
+    - Top-three finish awards an optional badge; no badge is needed for listing.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: launch_board
+human_only: null
+review_time: Review timing not stated; free submissions enter a weekly round.
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://linkrena.com/tools/yttext
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://linkrena.com/
+    - https://linkrena.com/submit
+    - https://linkrena.com/pricing

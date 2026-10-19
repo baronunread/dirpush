@@ -1,0 +1,51 @@
+id: saasrow
+name: SaaSRow
+website: https://saasrow.com/
+submission_url: https://saasrow.com/submit
+cost:
+  classification: FREEMIUM
+  notes: "One free listing for 90 days, renewable; standard review 7–10 days. Featured annual plan is $1.60/month billed annually for permanent listings and priority review."
+audience:
+  - saas
+  - software
+authentication:
+  required: false
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: true
+  fields:
+    - name: software URL
+      required: true
+  conditions:
+    - Free listing expires after 90 days; renewable
+    - Standard review 7–10 days
+autofetch:
+  supported: true
+  expected:
+    - title
+    - description
+    - other details
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: listing
+human_only: null
+review_time: 7–10 days free; 2–3 days Featured
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.saasrow.com/software/d336edf0-f6a5-4352-a594-7b9510ba8f27
+  samples: 3
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://saasrow.com/submit

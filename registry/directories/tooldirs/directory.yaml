@@ -1,0 +1,64 @@
+id: tooldirs
+name: ToolDirs
+website: https://tooldirs.com
+submission_url: https://tooldirs.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free listing requires a dofollow backlink/badge in the submitter's website footer, reviewed within 2 days. $9.99 lifetime One-Time plan and $14.99+ Featured Listing both explicitly require no badge."
+audience:
+  - saas
+  - software
+  - developer-tools
+  - productivity
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: Tool Name
+      required: true
+    - name: Tagline
+      required: true
+      limit: 160
+    - name: Description
+      required: true
+      limit: 5000
+    - name: Logo
+      required: true
+    - name: Screenshots
+      required: false
+    - name: Categories (up to 3)
+      required: true
+  conditions:
+    - dofollow backlink/badge in website footer (free tier)
+    - review within 2 days (free tier)
+    - description minimum 500 characters
+autofetch:
+  supported: true
+  expected:
+    - name
+    - tagline
+    - description
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 4
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://tooldirs.com/product/growth-pigeon
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-b
+  sources:
+    - https://tooldirs.com/pricing
+    - https://tooldirs.com/submit

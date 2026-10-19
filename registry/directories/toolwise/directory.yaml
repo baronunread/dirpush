@@ -1,0 +1,67 @@
+id: toolwise
+name: ToolWise
+website: https://toolwise.ai/
+submission_url: https://toolwise.ai/submit-tool
+cost:
+  classification: FREEMIUM
+  notes: Free $0 forever basic listing; paid monthly tiers begin at $9 for fuller profile and promotional features
+audience:
+  - ai-tools
+  - small-business
+authentication:
+  required: false
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: tool_name
+      required: true
+    - name: website_url
+      required: true
+    - name: tagline
+      required: true
+    - name: category
+      required: true
+    - name: pricing_model
+      required: true
+    - name: description
+      required: true
+    - name: screenshot
+      required: true
+    - name: key_features
+      required: true
+    - name: best_for
+      required: true
+    - name: contact_email
+      required: true
+  conditions:
+    - "free listing reviewed/published within 48 hours, as stated on submit page"
+    - screenshot PNG/JPEG/WebP under 5MB
+    - description requested as 2–3 sentences
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: true
+    max: 1
+kind: listing
+human_only: null
+review_time: within 48 hours
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://toolwise.ai/tools/vapi
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://toolwise.ai/submit-tool

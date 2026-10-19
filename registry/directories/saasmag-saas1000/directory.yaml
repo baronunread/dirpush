@@ -1,0 +1,71 @@
+id: saasmag-saas1000
+name: SaaS Mag - SaaS 1000
+website: https://www.saasmag.com
+submission_url: https://www.saasmag.com/saas1000
+cost:
+  classification: VERIFIED_FREE
+  notes: Free application to ranking list. No payment required.
+audience:
+  - saas
+authentication:
+  required: false
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: false
+  fields:
+    - name: company_name
+      required: true
+    - name: website
+      required: true
+    - name: linkedin_url
+      required: true
+    - name: twitter_url
+      required: true
+    - name: facebook_url
+      required: false
+    - name: address
+      required: true
+    - name: phone
+      required: true
+    - name: email
+      required: true
+    - name: current_employees
+      required: true
+    - name: employees_6mo_ago
+      required: false
+    - name: investors
+      required: true
+    - name: company_bio
+      required: true
+  conditions:
+    - requires phone number
+    - requires investor/bootstrapped status
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+    max: 0
+kind: launch_board
+human_only: null
+review_time: unknown
+listing_url_pattern: ""
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.saasmag.com/saas-1000-2021/
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: unknown
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: haiku-rB
+  sources:
+    - https://www.saasmag.com/saas1000

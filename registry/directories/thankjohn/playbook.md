@@ -1,0 +1,1 @@
+Only one plan shown ('Free', $0). Clicking SUBMIT presumably opens the listing form; it requires adding a dofollow backlink to thankjohn.com to qualify, and review takes ~2 days.

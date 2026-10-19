@@ -1,0 +1,55 @@
+id: awesome-tools
+name: Awesome Tools
+website: https://awesome.tools
+submission_url: https://awesome.tools/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free submission but requires Domain Rating 30+ OR 1,000+ monthly visitors"
+audience:
+  - software
+  - tools
+  - saas
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: website_url
+      required: true
+    - name: product_name
+      required: true
+    - name: your_name
+      required: true
+    - name: your_email
+      required: true
+    - name: note
+      required: false
+  conditions:
+    - "Domain Rating 30+ OR 1,000+ monthly visitors"
+    - manual review
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: sponsored
+  method: sample_listing
+  evidence: https://awesome.tools/apps/adalo
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: haiku-22
+  sources:
+    - https://awesome.tools/submit

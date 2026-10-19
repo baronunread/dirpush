@@ -1,0 +1,72 @@
+id: junkstartups
+name: JunkStartups
+website: https://junkstartups.com/
+submission_url: https://junkstartups.com/submit
+cost:
+  classification: VERIFIED_FREE
+  notes: "Free product listing. The live submission form says 'List for free'; no listing fee or paid submission tier was shown."
+audience:
+  - startups
+  - saas
+  - software
+  - products
+  - indie-makers
+  - developer-tools
+  - marketing
+  - productivity
+  - open-source
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - github
+    - google
+    - email magic link
+submission:
+  url_first: true
+  fields:
+    - name: website URL
+      required: true
+    - name: startup name
+      required: true
+    - name: tagline
+      required: true
+      limit: 80
+    - name: categories
+      required: true
+    - name: pricing model
+      required: true
+    - name: email
+      required: false
+  conditions:
+    - Three-step flow continues through enrichment and account creation.
+    - Terms allow moderation; homepage says no approval gate.
+    - Maximum 3 categories selections/uploads
+autofetch:
+  supported: true
+  expected:
+    - name
+    - tagline
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: launch_board
+human_only: null
+link:
+  rel: dofollow
+  method: own_listing
+  evidence: null
+  samples: 1
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://junkstartups.com/submit
+    - https://junkstartups.com/auth/signin
+    - https://junkstartups.com/terms

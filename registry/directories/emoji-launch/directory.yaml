@@ -1,0 +1,60 @@
+id: emoji-launch
+name: EmojiLaunch
+website: https://emojilaunch.com/
+submission_url: https://emojilaunch.com/submit
+cost:
+  classification: PAID
+  notes: Single-use launch code must be purchased via Gumroad; price not visible in research browser.
+audience:
+  - startups
+  - products
+  - software
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: launch code
+      required: true
+    - name: name
+      required: true
+      limit: 40
+    - name: tagline
+      required: true
+      limit: 60
+    - name: emoji
+      required: true
+    - name: URL
+      required: true
+    - name: launch date
+      required: true
+    - name: email
+      required: true
+  conditions:
+    - Product must be ready to use; waitlists and coming-soon pages excluded
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: launch_board
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://emojilaunch.com/
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://emojilaunch.com/submit

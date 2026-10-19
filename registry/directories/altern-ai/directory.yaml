@@ -1,0 +1,50 @@
+id: altern-ai
+name: Altern
+website: https://altern.ai
+submission_url: https://altern.ai/submit
+cost:
+  classification: FREEMIUM
+  notes: "Free Plan: listed, standard review, no badge/backlink required to go live. Base Plan $29 and Featured Listing $49 (priority placement, badge, newsletter) are optional upsells."
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - github
+    - google
+submission:
+  url_first: true
+  fields:
+    - name: name
+      required: true
+    - name: website
+      required: true
+  conditions:
+    - manual review
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 5
+kind: listing
+human_only: null
+review_time: a few days
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://altern.ai/ai/anyword
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bA
+  sources:
+    - https://altern.ai/submit

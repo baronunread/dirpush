@@ -1,0 +1,51 @@
+id: dailypings
+name: DailyPings
+website: https://dailypings.com
+submission_url: https://dailypings.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free tier requires a badge installed on submitter's homepage, checked daily; removal unfeatures the listing. $19 one-time Premium removes the badge requirement and publishes instantly."
+audience:
+  - startups
+  - saas
+  - products
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - github
+    - google
+    - x
+submission:
+  url_first: true
+  fields: []
+  conditions:
+    - "badge installed on submitter's homepage, checked daily (free tier only)"
+autofetch:
+  supported: true
+  expected:
+    - name
+    - tagline
+    - thumbnail
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://dailypings.com/p/clausify
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-b
+  sources:
+    - https://dailypings.com/pricing
+    - https://dailypings.com/submit

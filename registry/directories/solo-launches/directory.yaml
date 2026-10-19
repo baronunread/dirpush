@@ -1,0 +1,48 @@
+id: solo-launches
+name: Solo Launches
+website: https://sololaunches.com/
+submission_url: https://sololaunches.com/sign-in
+cost:
+  classification: FREEMIUM
+  notes: "Standard launch is free, queued with up to five launches per day. Top three ranked products get a winner badge and dofollow backlink. Optional Premium Launch is $9 one-time for a guaranteed next-week slot and backlink; Featured is $19/week; Featured + SEO Boost is $39 one-time."
+audience:
+  - saas
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Standard free launches enter a queue limited to five launches per day; top-three ranking earns a winner badge and dofollow backlink.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: launch_board
+human_only: null
+review_time: Standard queue; up to five launches per day.
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://sololaunches.com/startups/imposter-game-party-word-game-app
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://sololaunches.com/
+    - https://sololaunches.com/pricing
+    - https://sololaunches.com/sign-in

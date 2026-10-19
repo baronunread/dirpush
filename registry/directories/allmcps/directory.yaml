@@ -1,0 +1,55 @@
+id: allmcps
+name: AllMCPs
+website: https://allmcps.com
+submission_url: https://allmcps.com/submit
+cost:
+  classification: FREEMIUM
+  notes: Free listing review via public form without an account. Website links are nofollow on free listings; optional verification plus reciprocal badge or Premium enables dofollow. Paid boosts are optional after submission.
+audience:
+  - mcp-servers
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: server_name
+      required: true
+    - name: contact_email
+      required: true
+    - name: short_description
+      required: true
+    - name: category
+      required: true
+  conditions:
+    - Manual listing review
+    - "A reciprocal badge is optional for dofollow, not required for the free listing"
+autofetch:
+  supported: true
+  expected:
+    - name
+    - description
+    - category
+    - website
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: mcp_registry
+human_only: null
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://allmcps.com/mcp/priors
+  samples: 4
+  noindex: false
+  claimed: nofollow
+  bot_check: turnstile
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-08
+  by: codex
+  sources:
+    - https://allmcps.com/submit

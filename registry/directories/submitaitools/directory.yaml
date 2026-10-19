@@ -1,0 +1,57 @@
+id: submitaitools
+name: Submit AI Tools
+website: https://submitaitools.org
+submission_url: https://submitaitools.org/
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free with verified backlink requirement; Paid: Basic $19 lifetime, Pro $99/month, Spotlight $999/month"
+audience:
+  - ai-tools
+  - saas
+  - developer-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email
+submission:
+  url_first: true
+  fields:
+    - name: tool_name
+      required: true
+    - name: tagline
+      required: true
+    - name: email
+      required: true
+    - name: website_url
+      required: true
+    - name: pricing_type
+      required: true
+    - name: app_platform
+      required: false
+  conditions:
+    - "verified backlink required on submitter's website"
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://submitaitools.org/igfollowerexporter-com/
+  samples: 3
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: haiku-13
+  sources:
+    - https://submitaitools.org/

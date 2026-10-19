@@ -1,0 +1,68 @@
+id: roozna
+name: Roozna
+website: https://roozna.com/
+submission_url: https://roozna.com/
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free listing includes one dofollow backlink but requires adding the Roozna badge to the product website. Premium is $12 with four dofollow backlinks; SEO Growth is $149.
+audience:
+  - startups
+  - saas
+  - software
+  - products
+  - developer-tools
+  - productivity
+  - marketing
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email
+submission:
+  url_first: false
+  fields:
+    - name: project name
+      required: true
+    - name: tagline
+      required: false
+    - name: website
+      required: true
+    - name: category
+      required: false
+    - name: logo
+      required: false
+    - name: screenshot
+      required: false
+    - name: description
+      required: false
+    - name: tags
+      required: false
+  conditions:
+    - Free listing requires adding the Roozna badge to the product website.
+    - Email sign-in displays a Cloudflare verification checkbox.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: listing
+human_only: null
+review_time: Not stated.
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://roozna.com/project/aicost
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://roozna.com/

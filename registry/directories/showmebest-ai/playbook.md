@@ -1,0 +1,1 @@
+The public free form requests website name, URL, and email. Free Pack is $0 forever and requires adding the ShowMeBest badge/link to the site footer; stated review time is 72 hours to four weeks. Paid alternatives are shown on the same page.

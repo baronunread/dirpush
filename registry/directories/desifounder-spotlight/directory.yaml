@@ -1,0 +1,49 @@
+id: desifounder-spotlight
+name: DesiFounder Spotlight
+website: https://desifounder.com/spotlight/2026/41
+submission_url: https://desifounder.com/create/project
+cost:
+  classification: VERIFIED_FREE
+  notes: Official Spotlight FAQ says launches are free during beta; no paid requirement stated.
+audience:
+  - startups
+  - products
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Manual screening; approved entries launch publicly on Monday.
+    - Same product may launch once; major updates may reapply after 30 days.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: launch_board
+human_only: null
+review_time: manual review for the next Monday launch
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://desifounder.com/spotlight/project/ai/Stack_Directory
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: turnstile
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://desifounder.com/spotlight/2026/41
+    - https://desifounder.com/login?ReturnUrl=%2Fcreate%2Fproject

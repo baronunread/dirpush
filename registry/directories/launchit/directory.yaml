@@ -1,0 +1,48 @@
+id: launchit
+name: LaunchIt
+website: https://launchit.fast/
+submission_url: https://launchit.fast/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Basic Launch is free but requires a backlink before approval; free queue showed Dec 5. Premium costs $14.99 one-time and skips both queue and backlink.
+audience:
+  - startups
+  - saas
+  - products
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - "unknown; form requires proceeding through free launch flow, not inspected past plan selection"
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Backlink to LaunchIt required before free listing approval
+    - manual review queue
+    - free slot currently shown as Dec 5
+autofetch:
+  supported: true
+  expected:
+    - AI fills listing from submission details; exact fields not inspected
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: launch_board
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://launchit.fast/tools/sora-2-ai-co
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://launchit.fast/submit
+    - https://launchit.fast/pricing

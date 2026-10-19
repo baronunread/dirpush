@@ -1,0 +1,61 @@
+id: startupslab
+name: Startups Lab
+website: https://startupslab.site
+submission_url: https://startupslab.site/submit
+cost:
+  classification: FREEMIUM
+  notes: "$0 free launch, standard queue (next available Monday), up to 2 active free submissions/account. Paid: Skip the Queue $9/launch (guaranteed dofollow backlink + pick any Monday), Spotlight $29/30 days (homepage placement). Top-3 upvoted free launches get a free dofollow backlink automatically -- a bonus, not a requirement."
+audience:
+  - startups
+  - saas
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+submission:
+  url_first: true
+  fields:
+    - name: product_name
+      required: true
+    - name: product_url
+      required: true
+    - name: tagline
+      required: true
+      limit: 80
+  conditions:
+    - "AI-generated tagline/category/description from URL, reviewed and edited before publish"
+autofetch:
+  supported: true
+  expected:
+    - tagline
+    - category
+    - description
+    - logo
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 1
+kind: launch_board
+human_only: null
+review_time: next available Monday (standard/free queue); instant with paid Skip the Queue
+listing_url_pattern: "https://startupslab.site/product/{slug}"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://startupslab.site/product/kai
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: unknown
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-28
+  by: sonnet-rc
+  sources:
+    - https://startupslab.site/
+    - https://startupslab.site/pricing
+    - https://startupslab.site/submit

@@ -1,0 +1,70 @@
+id: builtineu
+name: BuiltInEu
+website: https://builtineu.eu/
+submission_url: https://builtineu.eu/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "No submission charge is displayed. Eligibility requires EU/EEA/Swiss/UK headquarters, EU/EEA user-data storage, a published privacy policy, and an active product. Sponsor slots are advertised separately."
+audience:
+  - saas
+  - marketing
+  - software
+authentication:
+  required: false
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: product name
+      required: true
+    - name: company name
+      required: true
+    - name: company country
+      required: true
+    - name: website URL
+      required: true
+    - name: category
+      required: true
+    - name: US product it replaces
+      required: false
+    - name: description
+      required: false
+    - name: pricing model
+      required: false
+    - name: relationship to product
+      required: true
+    - name: email
+      required: true
+  conditions:
+    - "Company headquartered in the EU, EEA, Switzerland, or UK"
+    - User data stored on EU/EEA servers
+    - "Published, readable privacy policy"
+    - Product currently available and maintained
+    - Manual review
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: 1-5 business days
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://builtineu.eu/tools/lifetime-cloud-storage-calculator
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://builtineu.eu/submit
+    - https://builtineu.eu/

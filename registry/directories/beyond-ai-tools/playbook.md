@@ -1,0 +1,1 @@
+Use /product/submit. Basic costs $9.90 one-time; Standard costs $29.90 one-time and adds two weeks of site-wide promotion. Manual review is required, and the page promises a refund if a product is rejected. The live page says listings do not expire.

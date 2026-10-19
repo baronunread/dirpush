@@ -1,0 +1,50 @@
+id: webcurate
+name: WebCurate
+website: https://webcurate.co
+submission_url: https://webcurate.co/
+cost:
+  classification: PAID
+  notes: $4 one-time processing fee required on every submission; no free tier
+audience:
+  - design
+  - startups
+  - saas
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: name
+      required: true
+    - name: url
+      required: true
+    - name: email
+      required: true
+  conditions:
+    - $4 processing fee required
+    - manual review
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://webcurate.co/lofizen
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-h4
+  sources:
+    - https://webcurate.co/

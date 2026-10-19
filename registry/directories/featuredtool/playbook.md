@@ -1,0 +1,1 @@
+Open /submit; it redirects to /auth/login with Google and GitHub login. The submit form is behind authentication. Public pricing shows the $0 tier requires backlink maintenance, has limited slots, and currently waits 180+ days. Paid Listing ($9.90) removes the queue and backlink requirements; Featured ($19.90) adds seven days of top placement.

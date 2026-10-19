@@ -1,0 +1,64 @@
+id: superlaunch
+name: Super Launch
+website: https://superlaun.ch
+submission_url: https://superlaun.ch/
+cost:
+  classification: FREEMIUM
+  notes: "Free listing for 7 days on front page, no strings; $49 one-time ad slot (10/month max) for extra visibility across the platform"
+audience:
+  - saas
+  - ai-tools
+  - startups
+  - productivity
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+submission:
+  url_first: true
+  fields:
+    - name: product_name
+      required: true
+    - name: tagline
+      required: true
+    - name: category
+      required: true
+    - name: description
+      required: true
+    - name: url
+      required: true
+  conditions:
+    - manual review
+    - 7 days visibility
+autofetch:
+  supported: true
+  expected:
+    - name
+    - description
+    - logo
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 5
+kind: launch_board
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.superlaun.ch/categories/productivity
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-28
+  by: sonnet-r5
+  sources:
+    - https://superlaun.ch/
+    - https://superlaun.ch/advertise
+    - https://accounts.superlaun.ch/sign-up

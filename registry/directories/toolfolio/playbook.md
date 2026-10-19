@@ -1,0 +1,1 @@
+Use Submit tool to open /boosted-listing. A new listing requires Startup ($99 one-time) or Growth ($250/month or $2,500/year); free claims apply only to tools already listed. Approval is curated and usually takes 24–48 hours. Startup includes one media upload, while Growth includes up to four images.

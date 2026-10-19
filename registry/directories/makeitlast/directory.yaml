@@ -1,0 +1,63 @@
+id: makeitlast
+name: MakeItLast
+website: https://www.makeitla.st
+submission_url: https://www.makeitla.st/get-listed
+cost:
+  classification: FREEMIUM
+  notes: "Being listed (catalog + nofollow link) is free with no condition - confirmed via a real submission that picking the Nofollow link type publishes the listing immediately on save. A free dofollow link needs a homepage badge (SEO perk only, not a listing requirement). $9 one-time buys permanent dofollow without a badge; $49 buys a homepage ad slot."
+audience:
+  - saas
+  - software
+  - startups
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - magic-link-email
+submission:
+  url_first: true
+  fields:
+    - name: tags
+      required: true
+    - name: logo
+      required: true
+  conditions:
+    - automated review blocks adult/spam/malware/gambling content; software products and agencies allowed
+    - exactly 5 tags required
+    - link-type radio defaults to Dofollow+badge; choose Nofollow to publish free with no badge requirement
+autofetch:
+  supported: true
+  expected:
+    - name
+    - tagline
+    - description
+    - category
+    - tags
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 3
+kind: listing
+human_only: null
+review_time: instant (automated review runs in the same request)
+listing_url_pattern: "https://www.makeitla.st/tools/{slug}"
+link:
+  rel: nofollow
+  method: own_listing
+  evidence: null
+  samples: 1
+  noindex: false
+  claimed: nofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bB
+  sources:
+    - https://www.makeitla.st/get-listed
+    - https://www.makeitla.st/login
+    - https://www.makeitla.st/submit
+    - https://www.makeitla.st/tools/p2p-companion

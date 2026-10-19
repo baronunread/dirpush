@@ -1,0 +1,1 @@
+Select category, enter product name and site URL, then provide optional descriptions and screenshot. Free Track costs $0 but requires DR >15 and a homepage backlink; the listing disappears if the backlink is removed. Premium is optional at $9.99/month for immediate publication.

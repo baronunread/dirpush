@@ -1,0 +1,1 @@
+Click Submit Tool; the public submit page's CTA opens a Stripe checkout for $29. Provide email and tool URL, then payment details. No free route was visible; the listing page promises publication within 48 hours.

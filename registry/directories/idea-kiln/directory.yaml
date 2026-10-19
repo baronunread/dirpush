@@ -1,0 +1,50 @@
+id: idea-kiln
+name: Idea Kiln
+website: https://ideakiln.com
+submission_url: https://ideakiln.com/dashboard/submit-idea
+cost:
+  classification: FREEMIUM
+  notes: "$0 free tier goes through the standard review queue with no dofollow backlink unless you add their badge (optional). Paid one-time boosts: Queue Skipper $5, Promoted $19 (badge+backlink+skip queue), Premium $29 (marketing page features)."
+audience:
+  - startups
+  - indie-makers
+  - saas
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+    - apple
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - signup required
+    - manual review
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+    max: 0
+kind: launch_board
+human_only: null
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://ideakiln.com/ideas/quviai
+  samples: 3
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-28
+  by: sonnet-rc
+  sources:
+    - https://ideakiln.com/dashboard/submit-idea
+    - https://ideakiln.com/pricing

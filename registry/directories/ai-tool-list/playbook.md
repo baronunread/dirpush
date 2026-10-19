@@ -1,0 +1,1 @@
+Follow the public CONTRIBUTING.md guide, add the product in the repository's expected list format, then open a GitHub pull request. The directory README says this repository powers the searchable site; no fee is stated.

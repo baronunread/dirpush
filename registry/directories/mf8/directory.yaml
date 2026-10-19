@@ -1,0 +1,53 @@
+id: mf8
+name: MF8.BIZ
+website: https://www.mf8.biz/en
+submission_url: https://www.mf8.biz/en/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free single-site listing uses MF8's regular review flow but requires adding an MF8 badge to the product site. Paid AAT multi-site distribution is optional."
+audience:
+  - software
+  - saas
+  - productivity
+  - marketing
+  - developer-tools
+  - startups
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - github
+    - email code
+submission:
+  url_first: true
+  fields: []
+  conditions:
+    - Submit form appears after login; fields not visible during research.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://www.mf8.biz/en/product/supa-social
+  samples: 3
+  noindex: false
+  claimed: null
+  bot_check: turnstile
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.mf8.biz/en
+    - https://www.mf8.biz/en/submit
+    - https://www.mf8.biz/en/pricing
+    - https://www.mf8.biz/en/login

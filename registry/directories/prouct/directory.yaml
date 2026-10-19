@@ -1,0 +1,93 @@
+id: prouct
+name: Prouct
+website: https://www.prouct.com/
+submission_url: https://www.prouct.com/en/submit
+cost:
+  classification: VERIFIED_FREE
+  notes: "Submission is free with no payment, badge, or backlink-on-your-site requirement. Prouct says its listing provides an inbound SEO backlink to the product website. The success screen said the listing was live, though the generated detail URL returned 404 and My submissions was empty on this run."
+audience:
+  - startups
+  - saas
+  - software
+  - products
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - password
+submission:
+  url_first: false
+  fields:
+    - name: product type
+      required: true
+    - name: name
+      required: true
+    - name: website URL
+      required: true
+    - name: tagline
+      required: true
+    - name: category
+      required: true
+    - name: description
+      required: true
+    - name: tags
+      required: false
+    - name: logo
+      required: false
+    - name: cover image
+      required: false
+    - name: screenshots
+      required: false
+    - name: demo video URL
+      required: false
+    - name: pricing model
+      required: true
+    - name: starting price and currency
+      required: false
+    - name: free trial
+      required: false
+    - name: pricing tiers
+      required: false
+    - name: company details
+      required: false
+    - name: social links
+      required: false
+    - name: "features, use cases, pros, and cons"
+      required: false
+    - name: submitter name
+      required: true
+    - name: submitter email
+      required: true
+    - name: privacy policy consent
+      required: true
+  conditions:
+    - Registration requires agreement to the terms of service.
+    - Publishing requires acceptance of the privacy policy.
+    - "The site claims immediate publication; verify the generated listing route because this submission's success screen was followed by a 404 and an empty My submissions page."
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 5
+kind: listing
+human_only: null
+review_time: "Immediate publication after submission, per FAQ."
+link:
+  rel: dofollow
+  method: own_listing
+  evidence: null
+  samples: 1
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.prouct.com/fr/soumettre

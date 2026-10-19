@@ -1,0 +1,46 @@
+id: developers-digest-mcp
+name: Developers Digest MCP Directory
+website: https://mcp.developersdigest.tech
+submission_url: https://mcp.developersdigest.tech/submit
+cost:
+  classification: VERIFIED_FREE
+  notes: "Public submission guide explicitly says Free to submit and routes server contributions through a GitHub issue or a PR to lib/servers.ts, with quality review usually within a few days."
+audience:
+  - mcp-servers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Public GitHub or GitLab repository with clear README
+    - Runnable install command and at least one documented MCP tool or resource
+    - Submit via GitHub issue or pull request; this is not a web listing form
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: mcp_registry
+human_only: null
+review_time: usually within a few days
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://mcp.developersdigest.tech/servers/redis-official-mcp
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-08
+  by: codex
+  sources:
+    - https://mcp.developersdigest.tech/submit

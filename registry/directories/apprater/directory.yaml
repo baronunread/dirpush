@@ -1,0 +1,65 @@
+id: apprater
+name: AppRater
+website: https://apprater.net
+submission_url: https://apprater.net/
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free submission; $5-$10+ optional for bidding to boost ranking after approval
+audience:
+  - saas
+  - productivity
+  - developer-tools
+  - mobile-apps
+authentication:
+  required: false
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: true
+  fields:
+    - name: app_name
+      required: true
+    - name: platform
+      required: true
+    - name: app_url
+      required: true
+    - name: description
+      required: true
+      limit: 500
+    - name: tags
+      required: false
+    - name: image_url
+      required: false
+    - name: submitter_name
+      required: true
+    - name: email
+      required: true
+    - name: twitter_username
+      required: false
+    - name: website
+      required: false
+  conditions:
+    - manual review before appearing in archive
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://apprater.net/a/typemorse
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: haiku-4
+  sources:
+    - https://apprater.net/

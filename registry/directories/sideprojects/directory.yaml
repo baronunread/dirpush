@@ -1,0 +1,52 @@
+id: sideprojects
+name: SideProjects.net
+website: https://sideprojects.net/
+submission_url: https://sideprojects.net/projects/submit
+cost:
+  classification: FREEMIUM
+  notes: Free queue launch; Skip the line with exact date is $29 one-time; relaunch is $15; SideProjects Pro is $8/month or $79/year.
+audience:
+  - startups
+  - saas
+  - products
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - password
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Free launch queue usually opens within a few weeks
+    - Exact date selection costs $29 one-time
+    - Project form details are behind free account sign-up
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: launch_board
+human_only: null
+review_time: usually within a few weeks for free queue
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://sideprojects.net/projects/xcrawl
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://sideprojects.net/
+    - https://sideprojects.net/pricing
+    - https://sideprojects.net/projects/submit

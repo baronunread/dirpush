@@ -1,0 +1,29 @@
+# Canonical product facts (product id = this folder name). Agents may reword these, never contradict or extend them.
+name: Example
+url: https://example.com
+tagline: A concise canonical tagline.
+descriptions:
+  short: One sentence, under 160 characters.
+  medium: A paragraph describing what the product does and who it is for.
+categories: [developer-tools, saas]
+features:
+  - Feature A
+  - Feature B
+pricing:
+  free_plan: true
+social:
+  github: null
+  x: null
+country: null          # e.g. Italy
+city: null             # e.g. Trieste (forms ask for a state/province)
+launched: null         # YYYY-MM
+status: launched       # idea | beta | launched
+tech_stack: []
+assets:
+  logo: assets/brand/logo.svg
+  icon: assets/brand/logo.png   # PNG for upload fields
+screenshots: []
+#  - id: dashboard
+#    path: assets/screenshots/dashboard.png
+#    description: Main product dashboard
+#    priority: 100

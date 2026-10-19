@@ -1,0 +1,63 @@
+id: betabound
+name: Betabound
+website: https://betabound.com
+submission_url: https://betabound.com/product-developer-faq
+cost:
+  classification: VERIFIED_FREE
+  notes: "Free to submit. No paid tiers for featured placement; 'no direct way to pay' for a post. No badge/backlink required to go live."
+audience:
+  - saas
+  - developer-tools
+  - mobile-apps
+  - hardware
+  - gaming
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: product_name
+      required: true
+    - name: brief_description
+      required: true
+      limit: 120
+    - name: beta_url
+      required: true
+    - name: product_type
+      required: true
+    - name: requirements
+      required: false
+    - name: incentives
+      required: false
+    - name: expiration_date
+      required: true
+  conditions:
+    - "manual review - product must be actively in beta (not a released product/sign-up/free-trial page), free to access, complete and reasonable quality"
+    - requires your own landing page explaining how testers join and give feedback
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: a few business days
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://betabound.com/ratemyapp-public-beta/
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bA
+  sources:
+    - https://betabound.com/product-developer-faq

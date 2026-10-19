@@ -1,0 +1,68 @@
+id: must-tools
+name: must.tools
+website: https://must.tools
+submission_url: https://must.tools/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free listing requires adding a dofollow backlink to must.tools in the submitter's site footer; paid \"Monthly Promotion\" tier also exists"
+audience:
+  - ai-tools
+  - saas
+authentication:
+  required: false
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: Tool URL
+      required: true
+    - name: Tool Name
+      required: true
+    - name: Tagline
+      required: true
+      limit: 160
+    - name: Description
+      required: true
+      limit: 5000
+    - name: Logo
+      required: true
+    - name: Screenshots
+      required: false
+    - name: Categories
+      required: true
+    - name: Pricing Model
+      required: true
+    - name: Platforms
+      required: true
+  conditions:
+    - dofollow backlink to must.tools required in footer for free listing
+    - "manual review, ~3 days"
+autofetch:
+  supported: true
+  expected:
+    - name
+    - tagline
+    - description
+    - logo
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 4
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://must.tools/product/must-tools-seed-03
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-f2
+  sources:
+    - https://must.tools/submit
+    - https://must.tools/pricing

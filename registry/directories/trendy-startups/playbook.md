@@ -1,0 +1,1 @@
+Submit from the homepage's Submit button, which redirects to /register. Create account with full name, email, password, and image-value check; then the submission form is available after login. FAQ says free queue takes a few months and paid expedited review is available (price not published).

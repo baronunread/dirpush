@@ -1,0 +1,58 @@
+id: once-tools
+name: once.tools
+website: https://once.tools
+submission_url: https://once.tools/submit
+cost:
+  classification: VERIFIED_FREE
+  notes: "Free submission, no account or badge needed"
+audience:
+  - one-time-purchase
+authentication:
+  required: false
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: true
+  fields:
+    - name: name
+      required: true
+    - name: email
+      required: true
+    - name: tool_name
+      required: true
+    - name: tool_url
+      required: true
+    - name: tagline
+      required: true
+    - name: description
+      required: true
+    - name: price
+      required: true
+    - name: video
+      required: false
+  conditions: []
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://once.tools/tools/utilbolt
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bC
+  sources:
+    - https://once.tools/submit

@@ -1,0 +1,50 @@
+id: built-here
+name: Built Here
+website: https://builthere.eu/
+submission_url: https://builthere.eu/login
+cost:
+  classification: FREEMIUM
+  notes: "All launches free during beta; Premium currently €0, stated regular price €29, with dofollow link, scheduled date, and homepage spotlight"
+audience:
+  - startups
+  - saas
+  - developer-tools
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - github
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - EU-focused curation
+    - free launch enters queue
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: launch_board
+human_only: null
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://builthere.eu/product/aitraining-jobs
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://builthere.eu/
+    - https://builthere.eu/pricing
+    - https://builthere.eu/login

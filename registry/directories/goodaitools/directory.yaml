@@ -1,0 +1,46 @@
+id: goodaitools
+name: Good AI Tools
+website: https://goodaitools.com
+submission_url: https://goodaitools.com/submit
+cost:
+  classification: FREEMIUM
+  notes: "Free submission via Google-login-gated form (no visible fee or badge requirement site-wide, but the form itself sits behind login); paid 'sponsored placement' exists for featured spots per FAQ, though no public price is listed. Badge gate not visible past login - could not confirm the final submit step's conditions."
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+submission:
+  url_first: false
+  fields: []
+  conditions: []
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+kind: listing
+human_only: null
+listing_url_pattern: "https://goodaitools.com/ai/{slug}"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://goodaitools.com/ai/testneo
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bB
+  sources:
+    - https://goodaitools.com/submit
+    - https://goodaitools.com/explore
+    - https://goodaitools.com/ai/dmly

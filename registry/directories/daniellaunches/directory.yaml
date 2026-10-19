@@ -1,0 +1,47 @@
+id: daniellaunches
+name: DanielLaunches
+website: https://daniellaunches.com
+submission_url: https://daniellaunches.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free tier requires active backlink badge on your site to stay live; $9.99 one-time Pro removes badge requirement and adds priority/featured placement
+audience:
+  - startups
+  - saas
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - unknown - sign-in required before submit form is shown
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - badge required to keep free listing/backlinks live
+    - 8 launches/day standard queue
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+    max: 0
+kind: launch_board
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://daniellaunches.com/tools/sellphotos-online
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-c
+  sources:
+    - https://daniellaunches.com/pricing
+    - https://daniellaunches.com/submit

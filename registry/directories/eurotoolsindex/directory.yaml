@@ -1,0 +1,68 @@
+id: eurotoolsindex
+name: EuroToolsIndex
+website: https://www.eurotoolsindex.com/
+submission_url: https://www.eurotoolsindex.com/submit
+cost:
+  classification: PAID
+  notes: "Every listing is paid: Basic €5 one-time; Priority €19 one-time; Featured Boost €39/30 days; Launch Spotlight €79/7 days. Payment link is sent only after editorial approval."
+audience:
+  - saas
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: product name
+      required: true
+    - name: company name
+      required: true
+    - name: email
+      required: true
+    - name: website
+      required: true
+    - name: tagline
+      required: true
+    - name: short description
+      required: true
+    - name: category
+      required: true
+    - name: country
+      required: true
+    - name: requested plan
+      required: true
+    - name: notes
+      required: false
+  conditions:
+    - European SaaS context; country is required.
+    - Editorial review precedes payment and publication.
+autofetch:
+  supported: true
+  expected:
+    - logo
+    - website preview
+    - AI draft copy
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: listing
+human_only: null
+review_time: not stated
+link:
+  rel: sponsored
+  method: sample_listing
+  evidence: https://www.eurotoolsindex.com/countries/PL
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.eurotoolsindex.com/pricing
+    - https://www.eurotoolsindex.com/submit

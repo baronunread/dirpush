@@ -1,0 +1,48 @@
+id: saasvault
+name: SaaSVault
+website: https://saasvault.pro/
+submission_url: https://saasvault.pro/distribution
+cost:
+  classification: FREEMIUM
+  notes: Free basic listing with category/search placement and a nofollow link. Optional $5 one-time Starter and $20 one-time Growth upgrades; distribution page says paid checkout unavailable currently.
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - github
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Human review before publication; form details are behind sign-in.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: listing
+human_only: null
+review_time: not stated for free tier
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://saasvault.pro/p/HaveTML
+  samples: 1
+  noindex: false
+  claimed: nofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://saasvault.pro/
+    - https://saasvault.pro/distribution
+    - https://saasvault.pro/auth/login

@@ -1,0 +1,60 @@
+id: app-scout
+name: App Scout
+website: https://www.appscout.co/
+submission_url: https://www.appscout.co/submit/
+cost:
+  classification: PAID
+  notes: $1.00/month per app after approval; no free option displayed
+audience:
+  - software
+  - mobile-apps
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: false
+  fields:
+    - name: email
+      required: true
+    - name: password
+      required: true
+    - name: app_name
+      required: true
+    - name: url
+      required: true
+    - name: description
+      required: true
+      limit: 80
+    - name: payment_card
+      required: true
+  conditions:
+    - manual approval before monthly charge
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: 1–2 business days
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.appscout.co/apps/
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.appscout.co/
+    - https://www.appscout.co/submit/

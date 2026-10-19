@@ -1,0 +1,44 @@
+id: theres-an-ai
+name: "There's an AI"
+website: https://findanaitools.com/
+submission_url: https://findanaitools.com/s/submit
+cost:
+  classification: VERIFIED_FREE
+  notes: Sign-in page explicitly says submit is free; no paid upsell visible there.
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Submission actions require sign-in; review timing and form fields are not visible before login.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://findanaitools.com/chatgpt
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://findanaitools.com/s/submit
+    - https://findanaitools.com/user/signin

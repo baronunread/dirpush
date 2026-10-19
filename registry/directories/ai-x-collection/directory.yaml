@@ -1,0 +1,45 @@
+id: ai-x-collection
+name: AI X Collection
+website: https://aixcollection.com/
+submission_url: https://aixcollection.com/get-started
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Submission fee/free terms are not visible before Google login; public FAQ confirms free browsing only, not free submission."
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - AI tool submissions are reviewed before inclusion
+    - Submission fields and listing cost are hidden behind Google login
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://aixcollection.com/ai/soundclean
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://aixcollection.com/
+    - https://aixcollection.com/get-started

@@ -1,0 +1,50 @@
+id: product-rally
+name: Product Rally
+website: https://productrally.com
+submission_url: https://productrally.com/submit
+cost:
+  classification: FREEMIUM
+  notes: "Posting products and voting are free. Optional Pro is $48/year billed annually (page also shows $72 crossed out) for analytics, deal codes, and profile badge; Pro does not affect rankings."
+audience:
+  - design
+  - indie-makers
+  - software
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Sign-in required to publish; fields are behind login.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: launch_board
+human_only: null
+review_time: Weekly board resets Monday and closes Sunday; exact moderation wait not stated.
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://productrally.com/
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: turnstile
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://productrally.com/
+    - https://productrally.com/submit
+    - https://productrally.com/signin?next=%2Fsubmit
+    - https://productrally.com/pricing

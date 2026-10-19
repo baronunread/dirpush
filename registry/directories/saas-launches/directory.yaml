@@ -1,0 +1,47 @@
+id: saas-launches
+name: SaaS Launches
+website: https://saaslaunches.com/
+submission_url: https://saaslaunches.com/submit
+cost:
+  classification: FREEMIUM
+  notes: Free forever launch listing; optional sponsored placement (price not publicly stated on inspected page)
+audience:
+  - saas
+  - indie-makers
+  - startups
+authentication:
+  required: true
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - account required
+    - choose a launch date
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: true
+kind: launch_board
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://saaslaunches.com/product/meetwise/
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://saaslaunches.com/
+    - https://saaslaunches.com/about/
+    - https://saaslaunches.com/submit

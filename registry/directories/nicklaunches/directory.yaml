@@ -1,0 +1,70 @@
+id: nicklaunches
+name: Nick Launches
+website: https://nicklaunches.com
+submission_url: https://nicklaunches.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free launch listing requires keeping the 'Featured on Nick Launches' backlink badge live; Premium paid tier also exists where the badge is optional"
+audience:
+  - startups
+  - indie-makers
+  - saas
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+submission:
+  url_first: true
+  fields:
+    - name: url
+      required: true
+    - name: name
+      required: false
+    - name: tagline
+      required: false
+    - name: description
+      required: false
+    - name: categories
+      required: false
+      limit: 3
+    - name: pricing
+      required: false
+    - name: twitterUsername
+      required: false
+    - name: targetKeyword
+      required: false
+  conditions:
+    - free tier requires backlink badge to remain live
+    - admin review before going live
+    - weekly launch batches
+autofetch:
+  supported: true
+  expected:
+    - name
+    - tagline
+    - description
+    - categories
+    - pricing
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://nicklaunches.com/products/repliq/
+  samples: 3
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-h3
+  sources:
+    - https://nicklaunches.com/submit
+    - https://nicklaunches.com/badge

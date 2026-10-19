@@ -1,0 +1,4 @@
+#!/bin/sh
+# No AI. Checks pending submissions against each directory's listing_url_pattern and marks live ones.
+# Schedule it yourself, e.g. daily at 9:00:  crontab -e  →  0 9 * * * /path/to/repo/scripts/check-listings
+cd "$(dirname "$0")/.." && mkdir -p data && bun src/cli.ts submissions check >> data/check-listings.log 2>&1

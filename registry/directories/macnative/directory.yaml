@@ -1,0 +1,47 @@
+id: macnative
+name: MacNative
+website: https://macnative.io
+submission_url: https://macnative.io/submit
+cost:
+  classification: FREEMIUM
+  notes: "Free tier lists forever at no cost, no badge required to submit or go live (FAQ: 'No. Every app starts on the Free plan — submit, get reviewed, and go live in the directory at no cost.'); the embeddable 'Featured on' badge is a perk given to free listers, not a gate. $19/app/month Pro adds featured placement, priority review, unlimited screenshots, newsletter promo, GitHub 'Awesome' list inclusion."
+audience:
+  - mac-apps
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - standard review queue (free); priority review with Pro
+    - "native or compiled-to-native macOS apps only, no browser wrappers"
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 999
+kind: listing
+human_only: null
+review_time: "manual, one-by-one (no fixed time stated); Pro gets priority"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://macnative.io/apps/flow-diagram
+  samples: 3
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bC
+  sources:
+    - https://macnative.io/submit
+    - https://macnative.io/pricing

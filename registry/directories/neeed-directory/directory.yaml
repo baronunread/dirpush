@@ -1,0 +1,60 @@
+id: neeed-directory
+name: Neeed Directory
+website: https://neeed.directory
+submission_url: https://neeed.directory/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free tier is $0 but the final submit step (confirmed by a real, human-accepted submission) is a modal requiring you to agree to add neeed's badge to your site before you can submit - the only button is 'I'll add the badge - Submit'; badge presence is then verified by the team. Premium ($19 one-time) skips the badge requirement entirely, includes a permanent dofollow backlink, enhanced profile with FAQ schema, and 7 days 'Just launched' homepage feature."
+audience:
+  - saas
+  - ai-tools
+  - productivity
+  - design-tools
+  - developer-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+submission:
+  url_first: false
+  fields:
+    - name: product_name
+      required: true
+    - name: website_url
+      required: true
+    - name: category
+      required: true
+    - name: description
+      required: true
+  conditions:
+    - automatic moderation check
+    - "badge required to go live on free tier (only submit button is 'I'll add the badge - Submit')"
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+kind: listing
+human_only: null
+review_time: automatic (immediate)
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://neeed.directory/products/jobcrawls
+  samples: 3
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bC
+  sources:
+    - https://neeed.directory/submit
+    - https://neeed.directory/submit?plan=free

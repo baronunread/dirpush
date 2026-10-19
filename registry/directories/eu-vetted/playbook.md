@@ -1,0 +1,1 @@
+Send the request from an address on the product's domain to listings@euvetted.com. Include public DPA, subprocessors, hosting region, company registration/imprint, category, and US products you replace. Site promises acknowledgment in 3 business days and a decision within 14 days. The current research task did not authorize sending the request.

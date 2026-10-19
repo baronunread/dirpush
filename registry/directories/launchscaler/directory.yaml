@@ -1,0 +1,53 @@
+id: launchscaler
+name: LaunchScaler
+website: https://www.launchscaler.com/
+submission_url: https://www.launchscaler.com/scan
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free launch requires adding a LaunchScaler badge to the submitter’s site; $29 one-time Premium launch skips the badge and selects a launch day. Free dofollow link also requires passing the published readiness bar. $59 review articles and featured placements are separate optional upgrades.
+audience:
+  - saas
+  - startups
+  - software
+  - developer-tools
+  - marketing
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: website URL
+      required: true
+  conditions:
+    - The free path begins with a URL scan; subsequent fields appear after scanning.
+    - Free listing requires adding the site badge; Premium launch ($29 once) skips the badge.
+    - Dofollow backlink requires passing the readiness threshold.
+autofetch:
+  supported: true
+  expected:
+    - reads the site and drafts listing copy
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: launch_board
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.launchscaler.com/products/magicshot.ai
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.launchscaler.com/pricing
+    - https://www.launchscaler.com/scan
+    - https://www.launchscaler.com/

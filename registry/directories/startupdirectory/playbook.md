@@ -1,0 +1,1 @@
+Free listing requires adding StartupDirectory's badge to the product site, then it publishes after badge verification. Submit redirects to login; login offers GitHub, Google, or passwordless email. Fields are not visible before login.

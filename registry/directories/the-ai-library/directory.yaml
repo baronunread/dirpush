@@ -1,0 +1,46 @@
+id: the-ai-library
+name: The AI Library
+website: https://www.theailibrary.co/
+submission_url: https://www.theailibrary.co/account/tools/new
+cost:
+  classification: PAID
+  notes: £49 one-time payment for a weekly launch slot with voting and leaderboard placement; no free path advertised.
+audience:
+  - ai-tools
+  - startups
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Paid submission required; page says launches participate in weekly voting and leaderboard.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: launch_board
+human_only: null
+review_time: weekly launch cycle
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.theailibrary.co/tool/clear-cortex
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.theailibrary.co/
+    - https://www.theailibrary.co/login

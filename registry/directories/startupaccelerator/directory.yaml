@@ -1,0 +1,76 @@
+id: startupaccelerator
+name: StartupAccelerator
+website: https://startupaccelerator.dev/
+submission_url: https://startupaccelerator.dev/submit
+cost:
+  classification: FREEMIUM
+  notes: "Free permanent profile, community voting and newsletter eligibility; optional separately purchased sponsored featured placement. Featured-on badge is only for post-publication perks."
+audience:
+  - startups
+  - saas
+  - ai-tools
+  - developer-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+submission:
+  url_first: true
+  fields:
+    - name: project name
+      required: true
+    - name: one-line pitch
+      required: true
+    - name: full project story
+      required: true
+      limit: 5000
+    - name: website
+      required: true
+    - name: category
+      required: true
+    - name: immediate need
+      required: true
+    - name: logo
+      required: true
+    - name: thumbnail / OG image
+      required: true
+    - name: demo or promo video
+      required: false
+    - name: Reddit username
+      required: false
+    - name: first comment
+      required: false
+    - name: founder email
+      required: false
+  conditions:
+    - "manual review, usually within 24 hours"
+autofetch:
+  supported: true
+  expected:
+    - logo
+    - thumbnail / OG image
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 0
+kind: launch_board
+human_only: null
+review_time: usually within 24 hours
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://startupaccelerator.dev/project/bottally
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://startupaccelerator.dev/submit
+    - https://startupaccelerator.dev/

@@ -1,0 +1,1 @@
+Paste one software URL on /submit; title, description, and details are automatically fetched with AI. Free listings include a basic listing page and backlink and expire after 90 days but are described as renewable. Featured is optional at $1.60/month when billed annually.

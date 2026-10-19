@@ -1,0 +1,45 @@
+id: mcp-repository
+name: MCP Repository
+website: https://mcprepository.com
+submission_url: https://mcprepository.com/submit
+cost:
+  classification: VERIFIED_FREE
+  notes: "Live public submission form accepts a GitHub repository URL for an MCP server not yet indexed. No login, payment, badge, or promotional tier was shown on the submission page."
+audience:
+  - mcp-servers
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: github_repository_url
+      required: true
+  conditions:
+    - Submit a public GitHub link for an MCP server
+    - Check existing index before submitting
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: mcp_registry
+human_only: null
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://mcprepository.com/executeautomation/mcp-playwright
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-08
+  by: codex
+  sources:
+    - https://mcprepository.com/submit

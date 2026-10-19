@@ -1,0 +1,46 @@
+id: glama
+name: Glama MCP Registry
+website: https://glama.ai/mcp/servers
+submission_url: https://glama.ai/mcp/servers
+cost:
+  classification: VERIFIED_FREE
+  notes: Public Add Server route requires sign-in. Official FAQ documents GitHub server indexing and hosted connector submission with quality and health checks; listing has no stated fee. Submission details beyond sign-in were not inspected.
+audience:
+  - mcp-servers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - GitHub server submissions need a public repository
+    - Hosted connector submissions need a public HTTPS Streamable HTTP endpoint
+    - Only healthy connectors are indexed; complete ownership verification to manage imported listings
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: mcp_registry
+human_only: null
+link:
+  rel: ugc
+  method: sample_listing
+  evidence: https://glama.ai/mcp/servers/ProofHoldings/mcp-server
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-08
+  by: codex
+  sources:
+    - https://glama.ai/mcp/servers
+    - https://glama.ai/mcp/faq

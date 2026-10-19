@@ -1,0 +1,45 @@
+id: web-store-extensions
+name: Web Store Extensions
+website: https://webstoreextensions.com
+submission_url: https://webstoreextensions.com/auth
+cost:
+  classification: FREEMIUM
+  notes: "Free tier: full submission + moderation, public listing, no backlink or badge required. $6 one-time 'Boost' = priority review + months of featured placement. $25 one-time 'Pro' = lifetime listing + ongoing featured eligibility."
+audience:
+  - browser-extensions
+  - developer-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - manual moderation review
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://webstoreextensions.com/extensions/save-image-as-png
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bC
+  sources:
+    - https://webstoreextensions.com/pricing

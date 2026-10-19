@@ -1,0 +1,54 @@
+id: phyco
+name: Phyco
+website: https://phyco.org/
+submission_url: https://phyco.org/submit
+cost:
+  classification: VERIFIED_FREE
+  notes: Listing is free; no submission fee or badge backlink requirement.
+audience:
+  - software
+  - products
+authentication:
+  required: false
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: false
+  fields:
+    - name: website_name
+      required: true
+    - name: website_url
+      required: true
+    - name: category
+      required: true
+    - name: submitter_email
+      required: true
+  conditions:
+    - "Manual review, usually within a couple of days"
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: listing
+human_only: null
+review_time: usually a couple of days
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://phyco.org/review/mounjaro-ozempic.com
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://phyco.org/submit
+    - https://phyco.org/for-website-owners

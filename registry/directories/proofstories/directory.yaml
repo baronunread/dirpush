@@ -1,0 +1,47 @@
+id: proofstories
+name: ProofStories
+website: https://proofstories.io/
+submission_url: https://proofstories.io/submit
+cost:
+  classification: FREEMIUM
+  notes: Standard Launch is free with standard queue and homepage placement for multiple days. Sponsored Launch $9.99 skips queue. Premium Launch $39.99 adds newsletter and social promotion.
+audience:
+  - indie-makers
+  - startups
+  - saas
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Submission form fields are hidden behind Google OAuth
+    - Free Standard Launch uses the standard queue
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: launch_board
+human_only: null
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://proofstories.io/directory/products/schedpilot/
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://proofstories.io/
+    - https://proofstories.io/plans/

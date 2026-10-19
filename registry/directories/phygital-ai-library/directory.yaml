@@ -1,0 +1,47 @@
+id: phygital-ai-library
+name: Phygital+ AI Library
+website: https://library.phygital.plus
+submission_url: https://library.phygital.plus
+cost:
+  classification: VERIFIED_FREE
+  notes: No cost or pricing mentioned anywhere on the site. No badge/backlink required.
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: tool_link
+      required: true
+    - name: description
+      required: true
+    - name: contact_or_social_handle
+      required: false
+  conditions: []
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://library.phygital.plus/details
+  samples: 3
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bA
+  sources:
+    - https://library.phygital.plus

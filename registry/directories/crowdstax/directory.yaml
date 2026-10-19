@@ -1,0 +1,54 @@
+id: crowdstax
+name: Crowdstax
+website: https://www.crowdstax.com
+submission_url: https://www.crowdstax.com/submit
+cost:
+  classification: FREEMIUM
+  notes: Free community listing with manual review and no payment; product-page backlink and launch-feed placement after approval. Pro $19.99 for instant publication and 15.5 days featured. Sponsor $49.99 for maximum visibility.
+audience:
+  - startups
+  - saas
+  - ai-tools
+  - developer-tools
+  - software
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Free listings are manually reviewed before publication.
+    - Free tier has no guaranteed featured placement or instant publication.
+    - Submission fields are behind account login.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: launch_board
+human_only: null
+review_time: Manual review; timing not stated.
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.crowdstax.com/products/insidertradingradar
+  samples: 3
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.crowdstax.com/submit
+    - https://www.crowdstax.com/pricing
+    - https://www.crowdstax.com/login

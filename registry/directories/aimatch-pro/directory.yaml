@@ -1,0 +1,42 @@
+id: aimatch-pro
+name: AiMatch
+website: https://aimatch.pro/
+submission_url: https://aimatch.pro/
+cost:
+  classification: PAID
+  notes: Homepage advertises listing for $29; no free path visible.
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - The direct listing route currently returns 404; homepage advertises a $29 fact-checked page and Google submission.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://aimatch.pro/tool/name/kane-cli-by-testmu-ai
+  samples: 3
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://aimatch.pro/

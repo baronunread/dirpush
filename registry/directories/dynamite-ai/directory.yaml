@@ -1,0 +1,59 @@
+id: dynamite-ai
+name: Dynamite AI
+website: https://www.dynamite-ai.com/
+submission_url: https://www.dynamite-ai.com/submit
+cost:
+  classification: FREEMIUM
+  notes: Free to list. Optional paid fast-track reduces review to 24 hours; price is not shown before entering submission details.
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: false
+  fields:
+    - name: tool name
+      required: true
+    - name: email
+      required: true
+    - name: website
+      required: true
+    - name: description
+      required: false
+    - name: image
+      required: true
+    - name: category
+      required: true
+    - name: pricing model
+      required: true
+  conditions:
+    - Manual review; paid fast-track optional
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 1
+kind: listing
+human_only: null
+review_time: fast-track within 24 hours; standard duration not stated
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://dynamite-ai.com/tools/image-to-crochet-pattern
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.dynamite-ai.com/submit

@@ -1,0 +1,55 @@
+id: 1000-tools
+name: 1000.tools
+website: https://1000.tools/
+submission_url: https://1000.tools/my/tools/create
+cost:
+  classification: PAID
+  notes: $5.99/month (first month $1) or $59.99/year; charged only after review and acceptance. No free option shown.
+audience:
+  - ai-tools
+  - software
+  - saas
+  - developer-tools
+authentication:
+  required: false
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: true
+  fields:
+    - name: tool URL
+      required: true
+    - name: email address
+      required: true
+    - name: pricing plan
+      required: true
+  conditions:
+    - Tool must be functional and deliver what it promises
+    - Not an infoproduct
+    - Charge collected only after review and acceptance
+autofetch:
+  supported: true
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://1000.tools/drizz
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://1000.tools/
+    - https://1000.tools/my/tools/create

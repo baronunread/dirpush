@@ -1,0 +1,59 @@
+id: free-startup-listing
+name: Free Startup Listing
+website: https://freestartuplisting.org/
+submission_url: https://freestartuplisting.org/
+cost:
+  classification: VERIFIED_FREE
+  notes: Free forever; no premium tier or paywall stated
+audience:
+  - startups
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: startup_name
+      required: true
+    - name: one_liner
+      required: true
+    - name: description
+      required: false
+    - name: stage
+      required: true
+    - name: sector
+      required: true
+    - name: website_or_demo
+      required: false
+    - name: contact_email
+      required: true
+    - name: founder_name
+      required: false
+  conditions:
+    - visible immediately after submit
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: immediate
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://freestartuplisting.org/
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://freestartuplisting.org/

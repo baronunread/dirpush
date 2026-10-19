@@ -1,0 +1,52 @@
+id: launch-list
+name: Launch List
+website: https://www.launch-list.org
+submission_url: https://www.launch-list.org/login?callbackUrl=/my-products
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free community launch requires upvoting 3 other products launching that week and placing the Launch List badge to receive its do-follow backlink. Paid: $19 for a 7-day featured launch; $39 for a 14-day premium launch. No subscription."
+audience:
+  - startups
+  - saas
+  - indie-makers
+  - software
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Free launch asks the maker to upvote 3 other products launching that week.
+    - Badge must be placed to receive the free do-follow backlink.
+    - Submission fields are behind sign-in.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: launch_board
+human_only: null
+review_time: Weekly community queue; exact wait not stated.
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://launch-list.org/product/esidehustles
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.launch-list.org/pricing
+    - https://www.launch-list.org/login?callbackUrl=/my-products
+    - https://www.launch-list.org/product/startup-directory

@@ -1,0 +1,81 @@
+id: lachief
+name: Lachief.io
+website: https://www.lachief.io/
+submission_url: https://www.lachief.io/submit-tool
+cost:
+  classification: FREEMIUM
+  notes: Listing only is free; Featured listing is $250 for 7 days. Video promo + featured option is listed with no price on the form.
+audience:
+  - ai-tools
+  - saas
+  - software
+authentication:
+  required: false
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: Name
+      required: true
+    - name: Last name
+      required: true
+    - name: Company
+      required: false
+    - name: Email
+      required: true
+    - name: Name of the tool
+      required: true
+    - name: Tagline
+      required: true
+    - name: Description of the tool
+      required: true
+    - name: Tool url
+      required: true
+    - name: Category
+      required: true
+      limit: 3
+    - name: Topic
+      required: false
+      limit: 6
+    - name: Tool logo
+      required: false
+    - name: Tool pricing
+      required: false
+    - name: Affiliate program application link
+      required: false
+    - name: Promo code
+      required: false
+    - name: Message
+      required: false
+  conditions:
+    - Manual review
+    - Free approved listings can take up to 7 days
+    - One listing per submitted tool
+    - Affiliate URLs and bit.ly links are rejected
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: up to 7 days
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.lachief.io/tool-posts/postiz
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: unknown
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.lachief.io/
+    - https://www.lachief.io/submit-tool

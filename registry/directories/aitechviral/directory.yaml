@@ -1,0 +1,47 @@
+id: aitechviral
+name: AI Tech Viral
+website: https://aitechviral.com
+submission_url: https://aitechviral.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: No payment required for free listing; no pricing page exists. Live submit flow requires installing and verifying an AI Tech Viral badge on the product website before listing details; listing URL rejects query parameters.
+audience:
+  - ai-tools
+  - saas
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+submission:
+  url_first: true
+  fields: []
+  conditions:
+    - Must install and verify AI Tech Viral badge on product website before continuing
+    - Website URL must not include query parameters
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://aitechviral.com/ai/verla
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bA
+  sources:
+    - https://aitechviral.com/submit
+    - https://aitechviral.com/signup

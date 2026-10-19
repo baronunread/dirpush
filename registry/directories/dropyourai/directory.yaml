@@ -1,0 +1,73 @@
+id: dropyourai
+name: DropYourAI
+website: https://www.dropyourai.com/
+submission_url: https://www.dropyourai.com/submit-tool
+cost:
+  classification: FREEMIUM
+  notes: "Free listing on All Products; optional paid placement: Top Products $19/month or $39/year, homepage $25/day."
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: false
+  fields:
+    - name: project_name
+      required: true
+    - name: email
+      required: true
+    - name: website_url
+      required: true
+    - name: pricing_type
+      required: true
+    - name: price
+      required: true
+    - name: tagline
+      required: true
+      limit: 40
+    - name: description
+      required: true
+    - name: category
+      required: true
+    - name: image
+      required: false
+    - name: phone
+      required: false
+    - name: youtube_url
+      required: false
+    - name: twitter_url
+      required: false
+    - name: linkedin_url
+      required: false
+  conditions:
+    - Staff verifies and approves listing
+    - Optional paid homepage or Top Products promotion
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: not stated
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.dropyourai.com/products/3f28171e-d064-468d-8f9a-5d4328138cbf
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.dropyourai.com/submit-tool
+    - https://www.dropyourai.com/terms-and-conditions

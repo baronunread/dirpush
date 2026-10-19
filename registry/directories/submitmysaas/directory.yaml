@@ -1,0 +1,51 @@
+id: submitmysaas
+name: SubmitMySaas
+website: https://submitmysaas.com
+submission_url: https://submitmysaas.com/projects/submit
+cost:
+  classification: FREEMIUM
+  notes: "Free listing (10 slots/week, standard queue) has no strings attached; dofollow backlink bonus requires top-3 ranking or displaying their badge; $19 Premium guarantees backlink and skips queue"
+audience:
+  - saas
+  - startups
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - 10 free slots/week cap
+    - weekly Monday launch schedule
+    - backlink only guaranteed with top-3 rank or badge display
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+    max: 0
+kind: launch_board
+human_only: null
+review_time: next available Monday slot; 10 free slots/week
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://submitmysaas.com/projects/veo-3-flow-ai
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: turnstile
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-28
+  by: sonnet-r6
+  sources:
+    - https://submitmysaas.com/pricing
+    - https://submitmysaas.com/submit

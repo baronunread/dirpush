@@ -1,0 +1,54 @@
+id: techboard-australia
+name: Techboard
+website: https://techboard.com.au/
+submission_url: https://techboard.com.au/get-listed/add-a-company/
+cost:
+  classification: VERIFIED_FREE
+  notes: Company profiles and access to the announcements platform are stated to be free.
+audience:
+  - australia
+  - startups
+  - software
+  - developer-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - apple
+    - facebook
+    - google
+    - linkedin
+    - x
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Company must be Australian-founded or have relocated headquarters and significant operational activities to Australia
+    - Focused on startups and young technology companies
+    - Applications are screened and publication is not guaranteed
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://techboard.com.au/company-profile/orkestra/
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://techboard.com.au/startups-raise-profile-techboard/
+    - https://techboard.com.au/about/how-it-works/techboard-listing-rules/

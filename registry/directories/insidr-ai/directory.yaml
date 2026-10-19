@@ -1,0 +1,49 @@
+id: insidr-ai
+name: Insidr.ai
+website: https://www.insidr.ai/
+submission_url: https://www.insidr.ai/submit-tools/
+cost:
+  classification: VERIFIED_FREE
+  notes: Public submission form with no fee or backlink condition shown; sponsorship is offered separately by contact.
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: message
+      required: false
+    - name: link
+      required: false
+    - name: tag
+      required: true
+  conditions:
+    - Editorial approval before inclusion.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://www.insidr.ai/ai-tools/ai-image-generators/
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://www.insidr.ai/submit-tools/
+    - https://www.insidr.ai/

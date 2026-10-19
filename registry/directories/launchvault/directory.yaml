@@ -1,0 +1,52 @@
+id: launchvault
+name: Launch Vault
+website: https://launchvault.dev
+submission_url: https://www.launchvault.dev/projects/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free launch requires a verified dofollow backlink to LaunchVault before scheduling; also sits behind a free-queue. Premium ($9.99-$19.99/launch) skips the queue and gives a guaranteed dofollow backlink instead of requiring one. Separate monthly sponsor slots: Hero $79/mo, Sidebar $39/mo."
+audience:
+  - startups
+  - saas
+  - ai-tools
+  - products
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - dofollow backlink to LaunchVault required for free tier
+    - manual/priority review tiers
+    - "8:00 AM UTC launch schedule, limited slots per day"
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: launch_board
+human_only: null
+listing_url_pattern: "https://www.launchvault.dev/projects/{slug}"
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://www.launchvault.dev/projects/photo-to-video-1196
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: turnstile
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-28
+  by: sonnet-rc2
+  sources:
+    - https://www.launchvault.dev/pricing
+    - https://www.launchvault.dev/projects/submit

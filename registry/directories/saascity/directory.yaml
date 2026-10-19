@@ -1,0 +1,50 @@
+id: saascity
+name: SaaSCity
+website: https://saascity.io/
+submission_url: https://saascity.io/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free listing requires an embedded SaaSCity badge and an estimated 238-day queue. $19.99 one-time Quick Pass removes badge and queue; live within 24 hours. Premium $39.99 and Max $99 add editorial/visibility extras.
+audience:
+  - saas
+  - startups
+  - software
+  - ai-tools
+  - developer-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Free listing requires adding SaaSCity’s badge to the submitter’s site.
+    - Free review queue is estimated at 238 days.
+    - Product fields are hidden behind account creation/sign-in.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: launch_board
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://saascity.io/live/songfor---personalized-song-gift
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://saascity.io/pricing
+    - https://saascity.io/submit

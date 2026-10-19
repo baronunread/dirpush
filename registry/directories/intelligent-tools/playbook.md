@@ -1,0 +1,1 @@
+The public form is at /submit and requires no account or card. Submit name, website URL, tagline (max 100 characters), description (minimum 100 characters), category, pricing model, and contact email. Free review takes up to 7 days. Featured is optional at $19/month or $189/year.

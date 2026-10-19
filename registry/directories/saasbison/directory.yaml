@@ -1,0 +1,44 @@
+id: saasbison
+name: SaaSBison
+website: https://saasbison.com
+submission_url: https://saasbison.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free listing requires a badge on submitter's site and goes through a slow manual review queue. $9.99 (one-time, discounted from $29.99) Premium Listing removes the badge requirement, gives instant approval and 3x the backlinks."
+audience:
+  - saas
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: true
+  fields: []
+  conditions:
+    - "badge required on submitter's site for free tier"
+    - slow manual review queue for free tier
+    - no crypto/adult/gambling/illegal content
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://saasbison.com/item/song-lyrics-review
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-27
+  by: sonnet-a
+  sources:
+    - https://saasbison.com/submit

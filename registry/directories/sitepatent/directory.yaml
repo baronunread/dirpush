@@ -1,0 +1,58 @@
+id: sitepatent
+name: SitePatent
+website: https://sitepatent.com/
+submission_url: https://sitepatent.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free listing is $0 forever, but a SitePatent badge must remain on the submitter's homepage. Free entries are Unverified and reviewed manually, typically a week or more. Paid one-time listings start at $19 and remove the badge requirement."
+audience:
+  - startups
+  - saas
+  - software
+  - products
+  - indie-makers
+  - developer-tools
+  - marketing
+  - productivity
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - password
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Badge required on homepage to keep free listing live.
+    - Manual review; typically one week or more.
+    - Submission fields hidden until account creation.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: launch_board
+human_only: null
+review_time: One week or more for free listings.
+listing_url_pattern: "https://sitepatent.com/listing/{slug}"
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://sitepatent.com/listing/quotelyo
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://sitepatent.com/pricing
+    - https://sitepatent.com/submit
+    - https://sitepatent.com/register
+    - https://sitepatent.com/listing/affligo

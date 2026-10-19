@@ -1,0 +1,48 @@
+id: aitools-inc
+name: AI Tools
+website: https://aitools.inc
+submission_url: https://aitools.inc/submit
+cost:
+  classification: FREEMIUM
+  notes: Free listing or $129 one-time Fast Lane fee for guaranteed 24-48 hour placement. No badge/backlink required to go live.
+audience:
+  - ai-tools
+  - productivity
+  - automation
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - "free option: 30-90 day listing queue, no guaranteed placement"
+    - "paid option: skip queue with 24-48 hour placement guarantee or full refund"
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+    max: 0
+kind: listing
+human_only: null
+review_time: 30-90 days (free); 24-48 hours (paid Fast Lane)
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://aitools.inc/tools/milvus
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bA
+  sources:
+    - https://aitools.inc/submit

@@ -1,0 +1,47 @@
+id: shipycorn
+name: shipycorn
+website: https://shipycorn.com/
+submission_url: https://shipycorn.com/projects/submit
+cost:
+  classification: FREEMIUM
+  notes: "Free weekly launch listing; optional $9 one-time Premium for guaranteed backlink, homepage banner, spotlight, and queue skip. Optional $89 bundle includes 30-directory submissions. Free backlink is earned only by top-three voting; no backlink guaranteed."
+audience:
+  - startups
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email magic link
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Submission form fields are behind sign-in and were not visible during research.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: launch_board
+human_only: null
+review_time: Weekly launch slots; free tier capped at 10 launches/week.
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://shipycorn.com/projects/happlicant
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://shipycorn.com/
+    - https://shipycorn.com/pricing

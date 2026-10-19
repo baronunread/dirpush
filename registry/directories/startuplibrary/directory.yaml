@@ -1,0 +1,46 @@
+id: startuplibrary
+name: StartupLibrary
+website: https://startuplibrary.net
+submission_url: https://startuplibrary.net/submit
+cost:
+  classification: FREEMIUM
+  notes: Free Launch forever; optional Pro Launch $5.99 early bird (normally $9.99) adds queue skip and toolkit credits.
+audience:
+  - startups
+  - saas
+  - software
+  - products
+  - indie-makers
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - launch board with community upvotes and weekly leaderboard
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: launch_board
+human_only: null
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://startuplibrary.net/startup/transcrisper
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://startuplibrary.net/submit

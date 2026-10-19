@@ -1,0 +1,54 @@
+id: product-hunt
+name: Product Hunt
+website: https://producthunt.com
+submission_url: https://producthunt.com/launch
+cost:
+  classification: VERIFIED_FREE
+  notes: "100% free to use, submit, and engage"
+audience:
+  - saas
+  - mobile-apps
+  - web-apps
+  - ai-tools
+  - startups
+  - developer-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - social
+submission:
+  url_first: true
+  fields: []
+  conditions: []
+autofetch:
+  supported: true
+  expected:
+    - name
+    - description
+    - logo
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 0
+kind: launch_board
+human_only: null
+review_time: instant (goes live on the leaderboard the day you launch)
+link:
+  rel: ugc
+  method: own_listing
+  evidence: null
+  samples: 1
+  noindex: true
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-28
+  by: sonnet-r2
+  sources:
+    - https://www.producthunt.com/launch
+    - https://www.producthunt.com/leaderboard/daily/2026/9/27

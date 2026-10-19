@@ -1,0 +1,51 @@
+id: launchaf
+name: LaunchAF
+website: https://launchaf.com/
+submission_url: https://launchaf.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free launch requires installing and verifying LaunchAF’s badge before the reviewed listing goes live. Paid instant launches: $19/7 days, $39/14 days, $99/21 days, or $199/30 days. Separate directory-submission services cost $99–$199/month."
+audience:
+  - startups
+  - saas
+  - software
+  - ai-tools
+  - developer-tools
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email one-time code
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Free Launch requires installing and verifying the LaunchAF badge before publication.
+    - Free launch is reviewed before it goes live; paid launch is instant.
+    - Submission fields are behind sign-in.
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: launch_board
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://launchaf.com/products/product-301
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-10-05
+  by: codex
+  sources:
+    - https://launchaf.com/pricing
+    - https://launchaf.com/submit

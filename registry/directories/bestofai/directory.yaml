@@ -1,0 +1,45 @@
+id: bestofai
+name: BestofAI
+website: https://bestofai.com
+submission_url: https://bestofai.com
+cost:
+  classification: FREEMIUM
+  notes: "Free tool submission, no badge/backlink required; optional $250/month 'Sponsor Your Tool' for featured placement"
+audience:
+  - ai-tools
+  - saas
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+submission:
+  url_first: false
+  fields: []
+  conditions: []
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 5
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://bestofai.com/tool/fliki
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-19
+verification:
+  status: verified
+  checked_at: 2026-09-29
+  by: sonnet-bB
+  sources:
+    - https://bestofai.com/
