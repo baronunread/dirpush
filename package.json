@@ -1,14 +1,11 @@
 {
-  "name": "launch",
+  "name": "dirpush",
   "type": "module",
-  "private": true,
   "devDependencies": {
     "@types/bun": "latest",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
-    "drizzle-kit": "^0.31.11"
-  },
-  "peerDependencies": {
+    "drizzle-kit": "^0.31.11",
     "typescript": "^7.0.2"
   },
   "dependencies": {
@@ -18,7 +15,7 @@
     "zod": "^4.6.5"
   },
   "bin": {
-    "launch": "src/cli.ts"
+    "dirpush": "bin/dirpush.cjs"
   },
   "scripts": {
     "dev": "bun --watch src/cli.ts serve",
@@ -33,11 +30,49 @@
     "repo:check": "bun scripts/check-repo.ts",
     "verify": "bun run repo:check && bun run typecheck && bun test src"
   },
-  "description": "Local-first directory launch tool: verified directory registry, job queue and dashboard for your coding agent",
+  "description": "Submit your product to startup and SaaS directories with your own coding agent. Verified directory registry, job queue and local dashboard.",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/baronunread/dirpush.git"
   },
-  "homepage": "https://dirpush.com"
+  "homepage": "https://dirpush.com",
+  "version": "0.1.0",
+  "keywords": [
+    "directories",
+    "startup",
+    "saas",
+    "launch",
+    "backlinks",
+    "agent",
+    "claude-code",
+    "codex",
+    "agent-browser",
+    "cli"
+  ],
+  "files": [
+    "bin/",
+    "src/",
+    "!src/**/*.test.ts",
+    "drizzle/",
+    "examples/",
+    "registry/directories/",
+    "registry/LICENSE",
+    "scripts/ab",
+    "scripts/google-login",
+    "scripts/show-browser",
+    "scripts/check-listings",
+    ".agents/skills/dirpush/",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "bugs": "https://github.com/baronunread/dirpush/issues",
+  "fledgling": {
+    "provider": "github",
+    "workflow": "release.yml",
+    "environment": "npm",
+    "publish": true
+  }
 }

@@ -1,6 +1,6 @@
 # Launch
 
-Operating this repo (researching directories, submitting listings, "continue my launch"): use the **launch** skill at `.agents/skills/launch/SKILL.md`.
+Operating this repo (researching directories, submitting listings, "continue my launch"): use the **dirpush** skill at `.agents/skills/dirpush/SKILL.md`.
 
 - Never read or write `data/launch.db` directly — all state goes through `bun launch …` (JSON out).
 - Set `LAUNCH_WORKER=codex` before `work` commands.

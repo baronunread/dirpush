@@ -5,14 +5,17 @@
 # Gmail, Drive, account settings, passwords or payments. Routes vanish when the browser restarts,
 # so they are (re)applied on every call (~10 ms each). accounts.google.com stays open: OAuth needs it.
 set -e
-cd "$(dirname "$0")/.."
+# Your launch data: LAUNCH_HOME, else the repo itself for a git checkout, else ~/.dirpush (installed package).
+PKG="$(cd "$(dirname "$0")/.." && pwd)"
+if [ -n "$LAUNCH_HOME" ]; then H="$LAUNCH_HOME"; elif [ -d "$PKG/.git" ]; then H="$PKG"; else H="$HOME/.dirpush"; fi
+mkdir -p "$H/data" && cd "$H"
 # Real Chrome, not Chrome for Testing: Google refuses sign-in in the testing build, and the human
 # signs in once in this same profile with `scripts/google-login`.
 CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 # Always headed: submissions regularly need the human to click something in this window.
 # AB_PROFILE / AB_SESSION let parallel workers use a throwaway profile and their own session (no-account
 # directories only; the real profile holds the Google login and can only be open once).
-AB="agent-browser --headed --session ${AB_SESSION:-default} --profile ${AB_PROFILE:-./data/browser-profile} --executable-path"
+AB="agent-browser --headed --session ${AB_SESSION:-default} --profile ${AB_PROFILE:-$H/data/browser-profile} --executable-path"
 # `launch browser start` already runs this profile (Google services blocked by its PAC script): attach to it
 # instead of launching a second Chrome on the same profile.
 PORT="${LAUNCH_BROWSER_PORT:-9222}"
@@ -33,5 +36,5 @@ for path in "b/*/ManageAccount*" "ManageAccount*" "security*" "*/personal-info*"
   $AB "$CHROME" network route "*://accounts.google.com/$path" --abort >/dev/null 2>&1 || true
 done
 # Per-call time limit (AB_TIMEOUT seconds, default 90): a hung call (seen on file uploads) must not freeze a worker.
-# Exit 142 = timed out; then run `scripts/ab close` and start over from the last checkpoint.
+# Exit 142 = timed out; then run `dirpush ab close` and start over from the last checkpoint.
 exec perl -e 'alarm shift; exec @ARGV' "${AB_TIMEOUT:-90}" $AB "$CHROME" "$@"

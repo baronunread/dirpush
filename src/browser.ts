@@ -9,10 +9,10 @@
 import { randomBytes } from "node:crypto";
 import { existsSync } from "node:fs";
 import { join } from "node:path";
-import { ROOT } from "./db";
+import { HOME } from "./db";
 
 export const BROWSER_PORT = Number(process.env.LAUNCH_BROWSER_PORT ?? 9222);
-export const PROFILE = join(ROOT, "data/browser-profile");
+export const PROFILE = join(HOME, "data/browser-profile");
 const CHROME = process.env.LAUNCH_CHROME ?? "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
 const BASE = `http://127.0.0.1:${BROWSER_PORT}`;
 /** One agent-browser session for secret handling, attached to the same Chrome. */

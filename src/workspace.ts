@@ -1,9 +1,9 @@
 import { existsSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { z } from "zod";
-import { ROOT } from "./db";
+import { HOME } from "./db";
 
-export const WORKSPACE = process.env.LAUNCH_WORKSPACE ?? join(ROOT, "workspace");
+export const WORKSPACE = process.env.LAUNCH_WORKSPACE ?? join(HOME, "workspace");
 export const PRODUCTS = join(WORKSPACE, "products");
 
 // The product id is its directory name: workspace/products/<id>/product.yaml
@@ -50,7 +50,7 @@ export const Permissions = z.record(z.string(), z.record(z.string(), Mode));
 export type Mode = z.infer<typeof Mode>;
 
 async function load<T extends z.ZodType>(path: string, schema: T): Promise<z.infer<T>> {
-  if (!existsSync(path)) throw new Error(`missing ${path} — run 'launch init <product-id>' and fill it in`);
+  if (!existsSync(path)) throw new Error(`missing ${path} — run 'dirpush init <product-id>' and fill it in`);
   return schema.parse(Bun.YAML.parse(await Bun.file(path).text()));
 }
 
@@ -65,7 +65,7 @@ export function resolveProductId(id = process.env.LAUNCH_PRODUCT) {
   }
   const ids = productIds();
   if (ids.length === 1) return ids[0]!;
-  throw new Error(ids.length ? `several products (${ids.join(", ")}): pass --product <id> or set LAUNCH_PRODUCT` : "no products yet: run 'launch init <product-id>'");
+  throw new Error(ids.length ? `several products (${ids.join(", ")}): pass --product <id> or set LAUNCH_PRODUCT` : "no products yet: run 'dirpush init <product-id>'");
 }
 
 export async function loadProduct(id?: string): Promise<Product> {

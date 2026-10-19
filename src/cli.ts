@@ -1,10 +1,11 @@
 #!/usr/bin/env bun
 import { parseArgs } from "node:util";
-import { cpSync, existsSync, mkdirSync } from "node:fs";
+import { cpSync, existsSync, mkdirSync, rmSync } from "node:fs";
+import { homedir } from "node:os";
 import { join } from "node:path";
 import { and, desc, eq, inArray, sql } from "drizzle-orm";
 import { z } from "zod";
-import { openDb, ROOT } from "./db";
+import { HOME, openDb, PKG } from "./db";
 import { events, galleries, jobs, productApprovals, registryChanges, todos, type GalleryItem } from "./db/schema";
 import * as J from "./jobs";
 import { checkListing, closeBrowser, findInSitemap } from "./listings";
@@ -22,6 +23,19 @@ import { ratingDomain, ratingHistory, refreshRatings } from "./ratings";
 import { fetchRegistryFile, registrySource, registryUpdates } from "./registry-updates";
 import { loadIdentity, loadPermissions, loadProduct, permission, productIds, resolveProductId, PRODUCTS, utm, WORKSPACE } from "./workspace";
 
+// Browser helpers run as shell scripts with their arguments untouched (`dirpush ab snapshot -i`), against your launch home.
+const SCRIPTS: Record<string, string> = { ab: "ab", "google-login": "google-login", "show-browser": "show-browser", "check-listings": "check-listings" };
+const first = process.argv[2];
+if (first && SCRIPTS[first]) {
+  const p = Bun.spawn([join(PKG, "scripts", SCRIPTS[first]), ...process.argv.slice(3)], { stdio: ["inherit", "inherit", "inherit"], env: { ...process.env, LAUNCH_HOME: HOME } });
+  process.exit(await p.exited);
+}
+if (first === "--version" || first === "-v") {
+  console.log((await Bun.file(join(PKG, "package.json")).json()).version);
+  process.exit(0);
+}
+if (first === "--help" || first === "-h") process.argv.splice(2, 1, "help");
+
 const { values: flags, positionals } = parseArgs({
   allowPositionals: true,
   options: {
@@ -30,6 +44,7 @@ const { values: flags, positionals } = parseArgs({
     status: { type: "string" },
     limit: { type: "string" },
     claim: { type: "boolean" },
+    skill: { type: "boolean" },
     free: { type: "boolean" },
     unsubmitted: { type: "boolean" },
     badge: { type: "boolean" },
@@ -134,26 +149,47 @@ function googleScopes(url: string) {
 
 const SubmittableCost = ["VERIFIED_FREE", "FREEMIUM", "CONDITIONAL_FREE"];
 
+/** Installs the skill for every agent on this computer. A git checkout already has it in .agents/skills (--skill installs it anyway). */
+function installSkill() {
+  if (HOME === PKG && !flags.skill) return { installed: [], note: "git checkout: the skill is in .agents/skills/dirpush; pass --skill to install it for every agent" };
+  const src = join(PKG, ".agents/skills/dirpush");
+  const to = [join(homedir(), ".claude/skills/dirpush"), join(homedir(), ".agents/skills/dirpush")];
+  for (const d of to) {
+    rmSync(d, { recursive: true, force: true });
+    cpSync(src, d, { recursive: true });
+  }
+  return { installed: to };
+}
+
 const commands: Record<string, (() => Promise<unknown> | unknown) | undefined> = {
+  /** Sets up your launch home and the agent skill; with a product id, also scaffolds that product. Safe to re-run. */
   async "init"() {
     const id = sub;
-    if (!id || !/^[a-z0-9-]+$/.test(id)) throw new Error("usage: launch init <product-id>  (lowercase slug, e.g. acme)");
+    if (id && !/^[a-z0-9-]+$/.test(id)) throw new Error("usage: dirpush init [product-id]  (a lowercase slug, e.g. acme)");
     const created: string[] = [];
     const copy = (from: string, to: string) => {
       if (existsSync(to)) return;
-      cpSync(join(ROOT, "examples/workspace", from), to);
-      created.push(to.slice(WORKSPACE.length + 1));
+      cpSync(join(PKG, "examples/workspace", from), to);
+      created.push(to.slice(HOME.length + 1));
     };
+    mkdirSync(WORKSPACE, { recursive: true });
     copy("identity.yaml", join(WORKSPACE, "identity.yaml"));
     copy("permissions.yaml", join(WORKSPACE, "permissions.yaml"));
-    for (const d of ["assets/brand", "assets/screenshots"]) mkdirSync(join(PRODUCTS, id, d), { recursive: true });
-    copy("product.yaml", join(PRODUCTS, id, "product.yaml"));
+    if (id) {
+      for (const d of ["assets/brand", "assets/screenshots"]) mkdirSync(join(PRODUCTS, id, d), { recursive: true });
+      copy("product.yaml", join(PRODUCTS, id, "product.yaml"));
+    }
+    const skill = installSkill();
     const caps = await loadCapabilities();
+    const detected = detect();
     return {
-      product: id, created, detected: detect(),
+      home: HOME, product: id ?? null, created, skill, detected,
       next: [
-        `edit workspace/products/${id}/product.yaml, then 'launch product show --product ${id}'`,
-        ...(caps ? [] : ["agent: run the capability check (SKILL.md, Setup) and record it with 'launch capabilities set'"]),
+        ...(id ? [`fill in ${join(PRODUCTS, id, "product.yaml")}, then check it with 'dirpush product show --product ${id}'`]
+          : productIds().length ? [] : ["add your product: 'dirpush init <product-id>' (a lowercase slug, e.g. acme)"]),
+        ...(detected.agentBrowser ? [] : ["install agent-browser, which agents use to drive Chrome: 'npm i -g agent-browser'"]),
+        ...(caps ? [] : [`open your agent and say "set up dirpush": it checks which tools it has (email, browser) and records them`]),
+        `then ask your agent to "continue my launch"; 'dirpush serve' opens the dashboard`,
       ],
     };
   },
@@ -208,7 +244,7 @@ const commands: Record<string, (() => Promise<unknown> | unknown) | undefined> =
     const job = J.block(db, arg(0, "job"), worker(), flags.type ?? "user", flags.message ?? "");
     // Urgent blocks hold a worker that is waiting right now: ping the human's desktop (macOS; no-op elsewhere).
     if (URGENT.has(flags.type ?? "") && process.platform === "darwin" && !process.env.LAUNCH_QUIET)
-      Bun.spawn(["osascript", "-e", `display notification ${JSON.stringify(`${job.subject}: open the dashboard (Needs you)`)} with title "launch needs you" sound name "Glass"`]);
+      Bun.spawn(["osascript", "-e", `display notification ${JSON.stringify(`${job.subject}: open the dashboard (Needs you)`)} with title "dirpush: needs you" sound name "Glass"`]);
     return job;
   },
   "work unblock": () => J.unblock(db, arg(0, "job"), flags.note),
@@ -565,14 +601,14 @@ const commands: Record<string, (() => Promise<unknown> | unknown) | undefined> =
   // ---- one-off import ---------------------------------------------------------
   /** Imports the retired dirpush.com D1 export (--input dir, default data/hosted-export). Safe to re-run. */
   async "import hosted"() {
-    const dir = flags.input ?? join(ROOT, "data/hosted-export");
+    const dir = flags.input ?? join(HOME, "data/hosted-export");
     return importHosted(db, await readHostedExport(dir), productIds());
   },
 
   // ---- capabilities: what the working agent can use (browser, email…), recorded during setup ----
   async "capabilities"() {
     const caps = await loadCapabilities();
-    if (!caps) note("not checked yet: run the capability check in SKILL.md (Setup), then 'launch capabilities set --input json'");
+    if (!caps) note("not checked yet: run the capability check in SKILL.md (Setup), then 'dirpush capabilities set --input json'");
     return { recorded: caps, detected: detect() };
   },
   async "capabilities set"() {
@@ -589,7 +625,7 @@ const commands: Record<string, (() => Promise<unknown> | unknown) | undefined> =
   "accounts show": () => {
     const id = arg(0, "directory-id");
     const rows = accountsFor(db, id, flags.product ? resolveProductId(flags.product) : undefined);
-    return { directory: id, hasAccount: rows.length > 0, accounts: rows, signIn: rows[0] ? (rows[0].vault ? `scripts/ab auth login ${rows[0].vault}` : rows[0].method === "google" || rows[0].method === "github" ? `use the site's "Sign in with ${rows[0].method === "google" ? "Google" : "GitHub"}" button` : "magic link / email code to the identity email") : "no account: follow authentication.md (new account only if permitted)" };
+    return { directory: id, hasAccount: rows.length > 0, accounts: rows, signIn: rows[0] ? (rows[0].vault ? `dirpush ab auth login ${rows[0].vault}` : rows[0].method === "google" || rows[0].method === "github" ? `use the site's "Sign in with ${rows[0].method === "google" ? "Google" : "GitHub"}" button` : "magic link / email code to the identity email") : "no account: follow authentication.md (new account only if permitted)" };
   },
   async "accounts backfill"() {
     const p = Bun.spawnSync(["agent-browser", "auth", "list", "--json"], { stdout: "pipe", stderr: "ignore" });
@@ -620,7 +656,7 @@ const commands: Record<string, (() => Promise<unknown> | unknown) | undefined> =
 
 const HELP: [string, [string, string][]][] = [
   ["Start", [
-    ["init <product-id>", "create workspace/products/<id>/product.yaml from the template"],
+    ["init [product-id] [--skill]", "set up your launch home (~/.dirpush, or the repo for a git checkout) and install the agent skill; with an id, scaffold that product. Safe to re-run"],
     ["product show [--product id]", "the product's canonical facts (never invent beyond these)"],
     ["products list", "all products in this workspace"],
     ["permission <group.action>", "automatic | confirm | never for an action, e.g. accounts.oauth_google"],
@@ -674,6 +710,8 @@ const HELP: [string, [string, string][]][] = [
     ["accounts backfill", "one-time: fill accounts from old job data and the agent-browser vault"],
   ]],
   ["Browser", [
+    ["ab <agent-browser command…>", "drive the agents' Chrome: dirpush ab open <url>, ab snapshot -i, ab fill @e3 \"text\", ab click @e5…"],
+    ["google-login", "the human signs into Google once in the agents' Chrome profile"],
     ["browser start | status | stop", "the dedicated Chrome (real profile, Google services blocked) agents drive"],
     ["browser login <vault-name>", "fill a saved login into the open tab on that site (password never shown)"],
     ["browser password <vault-name> --url u --username e <selector…>", "new account: generate, fill, verify and save a password (never shown)"],
@@ -684,14 +722,14 @@ const HELP: [string, [string, string][]][] = [
   ]],
 ];
 if (!cmd || cmd === "help") {
-  console.log(`launch: durable directory submissions. Output is JSON on stdout (compact; --pretty to indent, --full for raw rows).\n\n${HELP.map(([group, rows]) => `${group}\n${rows.map(([c, d]) => `  ${c}\n      ${d}`).join("\n")}`).join("\n\n")}\n`);
+  console.log(`dirpush: durable directory submissions. Output is JSON on stdout (compact; --pretty to indent, --full for raw rows).\n\n${HELP.map(([group, rows]) => `${group}\n${rows.map(([c, d]) => `  ${c}\n      ${d}`).join("\n")}`).join("\n\n")}\n`);
   process.exit(0);
 }
 const run = commands[`${cmd} ${sub}`] ?? commands[cmd ?? ""];
 if (!run) {
   const tried = sub ? `${cmd} ${sub}` : cmd;
   const close = Object.keys(commands).filter((c) => c.startsWith(cmd) || c.includes(tried) || (sub && c.endsWith(sub)));
-  console.error(JSON.stringify({ error: `unknown command: ${tried}`, ...(close.length && { didYouMean: close.slice(0, 5) }), help: "launch help" }));
+  console.error(JSON.stringify({ error: `unknown command: ${tried}`, ...(close.length && { didYouMean: close.slice(0, 5) }), help: "dirpush help" }));
   process.exit(1);
 }
 try {

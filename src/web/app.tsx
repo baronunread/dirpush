@@ -200,7 +200,7 @@ function Empty() {
   return (
     <section className="page">
       <h1>No product yet</h1>
-      <p className="lede">Run <code>launch init &lt;product-id&gt;</code>, fill in <code>product.yaml</code>, then ask your agent to “continue my launch”.</p>
+      <p className="lede">Run <code>dirpush init &lt;product-id&gt;</code>, fill in <code>product.yaml</code>, then ask your agent to “continue my launch”.</p>
     </section>
   );
 }

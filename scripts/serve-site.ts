@@ -1,9 +1,9 @@
 /** Serves dist/site locally (directory URLs resolve to index.html). Build first: bun run site:build */
 import { existsSync, statSync } from "node:fs";
 import { join, resolve, sep } from "node:path";
-import { ROOT } from "../src/db";
+import { PKG } from "../src/db";
 
-const root = resolve(join(ROOT, "dist/site"));
+const root = resolve(join(PKG, "dist/site"));
 const server = Bun.serve({
   port: Number(process.env.PORT ?? 4500),
   hostname: process.env.HOST ?? "127.0.0.1", // HOST=0.0.0.0 to preview from another device on the LAN

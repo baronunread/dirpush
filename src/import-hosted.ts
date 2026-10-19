@@ -143,7 +143,7 @@ export function importHosted(
 export async function readHostedExport(dir: string) {
   const table = async <T>(name: string): Promise<T[]> => {
     const file = join(dir, `${name}.json`);
-    if (!existsSync(file)) throw new Error(`missing ${file}; export it first (see 'launch import hosted' in docs/operator.md)`);
+    if (!existsSync(file)) throw new Error(`missing ${file}; export it first (see 'dirpush import hosted' in docs/operator.md)`);
     const parsed = JSON.parse(await Bun.file(file).text()) as { results?: T[]; error?: unknown }[] | { error: unknown };
     if (!Array.isArray(parsed) || !parsed[0]?.results) throw new Error(`${file} is not a successful wrangler --json export`);
     return parsed[0].results;

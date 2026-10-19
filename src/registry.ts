@@ -1,11 +1,16 @@
-import { mkdirSync, readdirSync, existsSync, rmSync } from "node:fs";
+import { cpSync, mkdirSync, readdirSync, existsSync, rmSync } from "node:fs";
 import { join } from "node:path";
 import { z } from "zod";
-import { ROOT } from "./db";
+import { HOME, PKG } from "./db";
 import { CLASSIFICATIONS } from "./db/schema";
 import { DIRECTORY_KINDS } from "./directory-kinds";
 
-export const REGISTRY = process.env.LAUNCH_REGISTRY ?? join(ROOT, "registry/directories");
+/**
+ * Your copy of the registry. An installed package seeds ~/.dirpush/registry from the one it ships, once; after that
+ * `registry updates --apply` keeps it current, and edits never touch the package.
+ */
+export const REGISTRY = process.env.LAUNCH_REGISTRY ?? join(HOME, "registry/directories");
+if (!process.env.LAUNCH_REGISTRY && HOME !== PKG && !existsSync(REGISTRY)) cpSync(join(PKG, "registry/directories"), REGISTRY, { recursive: true });
 
 export const Directory = z.object({
   id: z.string().regex(/^[a-z0-9-]+$/),

@@ -1,10 +1,13 @@
 #!/bin/sh
-# Bring the agents' browser window (the one scripts/ab drives) to the front, on the tab the worker is using,
+# Bring the agents' browser window (the one `dirpush ab` drives) to the front, on the tab the worker is using,
 # so the human can tick a CAPTCHA etc. without hunting through windows. Called by the dashboard.
 set -e
-cd "$(dirname "$0")/.."
-PORT=$(scripts/ab get cdp-url | sed -E 's#^ws://[^:]+:([0-9]+)/.*#\1#')
-CUR=$(scripts/ab get url)
+# Your launch data: LAUNCH_HOME, else the repo itself for a git checkout, else ~/.dirpush (installed package).
+PKG="$(cd "$(dirname "$0")/.." && pwd)"
+if [ -n "$LAUNCH_HOME" ]; then H="$LAUNCH_HOME"; elif [ -d "$PKG/.git" ]; then H="$PKG"; else H="$HOME/.dirpush"; fi
+mkdir -p "$H/data" && cd "$H"
+PORT=$("$PKG/scripts/ab" get cdp-url | sed -E 's#^ws://[^:]+:([0-9]+)/.*#\1#')
+CUR=$("$PKG/scripts/ab" get url)
 ID=$(curl -s "http://127.0.0.1:$PORT/json/list" | CUR="$CUR" bun -e '
   const t = JSON.parse(await Bun.stdin.text()).filter(t => t.type === "page");
   console.log((t.find(t => t.url === process.env.CUR) ?? t[0]).id)')

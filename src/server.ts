@@ -1,7 +1,7 @@
 import { desc, eq, sql } from "drizzle-orm";
 import { existsSync, readdirSync } from "node:fs";
 import { join, resolve, sep } from "node:path";
-import { openDb, ROOT } from "./db";
+import { HOME, openDb, PKG } from "./db";
 import { events, galleries, jobs, productApprovals, registryChanges, todos } from "./db/schema";
 import * as J from "./jobs";
 import { loadDirectories, loadDirectory } from "./registry";
@@ -29,7 +29,7 @@ export function serve(port: number, hostname = "127.0.0.1") {
     if (!path.startsWith(resolve(root) + sep)) return new Response("forbidden", { status: 403 });
     return new Response(Bun.file(path));
   };
-  const EVIDENCE = join(ROOT, "data/evidence");
+  const EVIDENCE = join(HOME, "data/evidence");
   const optional = async <T>(fn: () => Promise<T>) => fn().catch((e: Error) => ({ error: e.message }));
 
   const server = Bun.serve({
@@ -120,7 +120,7 @@ export function serve(port: number, hostname = "127.0.0.1") {
       "/api/google-login": {
         POST: (req) => {
           if ((req.headers.get("sec-fetch-site") ?? "same-origin") !== "same-origin") return new Response("forbidden", { status: 403 });
-          Bun.spawn([join(ROOT, "scripts/google-login")], { cwd: ROOT, stdout: "ignore", stderr: "ignore" }).unref();
+          Bun.spawn([join(PKG, "scripts/google-login")], { cwd: PKG, env: { ...process.env, LAUNCH_HOME: HOME }, stdout: "ignore", stderr: "ignore" }).unref();
           return Response.json({ ok: true });
         },
       },
@@ -128,7 +128,7 @@ export function serve(port: number, hostname = "127.0.0.1") {
       "/api/show-browser": {
         POST: async (req) => {
           if ((req.headers.get("sec-fetch-site") ?? "same-origin") !== "same-origin") return new Response("forbidden", { status: 403 });
-          const p = Bun.spawn([join(ROOT, "scripts/show-browser")], { cwd: ROOT, stdout: "ignore", stderr: "ignore" });
+          const p = Bun.spawn([join(PKG, "scripts/show-browser")], { cwd: PKG, env: { ...process.env, LAUNCH_HOME: HOME }, stdout: "ignore", stderr: "ignore" });
           return (await p.exited) === 0 ? Response.json({ ok: true }) : Response.json({ error: "agent browser is not open" }, { status: 409 });
         },
       },
@@ -136,7 +136,7 @@ export function serve(port: number, hostname = "127.0.0.1") {
       "/api/submissions/check": {
         POST: async (req) => {
           const { job } = (await req.json().catch(() => ({}))) as { job?: string };
-          const p = Bun.spawn(["bun", "src/cli.ts", "submissions", "check", ...(job ? [job] : [])], { cwd: ROOT, stdout: "pipe", stderr: "ignore" });
+          const p = Bun.spawn([process.execPath, join(PKG, "src/cli.ts"), "submissions", "check", ...(job ? [job] : [])], { cwd: PKG, env: { ...process.env, LAUNCH_HOME: HOME }, stdout: "pipe", stderr: "ignore" });
           const out = await new Response(p.stdout).text();
           return Response.json({ results: JSON.parse(out.slice(out.indexOf("["))) });
         },
@@ -181,6 +181,6 @@ export function serve(port: number, hostname = "127.0.0.1") {
       "/evidence/*": files(EVIDENCE, "/evidence/"),
     },
   });
-  console.log(`launch dashboard: ${server.url}`);
+  console.log(`dirpush dashboard: ${server.url}`);
   return server;
 }

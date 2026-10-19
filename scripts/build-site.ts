@@ -1,10 +1,10 @@
 /**
  * Builds the static dirpush.com site into dist/site: landing page, one page per directory, a filterable
- * index, and registry.json (what `launch registry updates` downloads). No server, no tracking, no web fonts.
+ * index, and registry.json (what `dirpush registry updates` downloads). No server, no tracking, no web fonts.
  */
 import { cpSync, mkdirSync, rmSync } from "node:fs";
 import { join } from "node:path";
-import { openDb, ROOT } from "../src/db";
+import { openDb, PKG } from "../src/db";
 import { DIRECTORY_KINDS } from "../src/directory-kinds";
 import { scrubber } from "../src/public";
 import { platformHosted, ratingDomain, ratingHistory } from "../src/ratings";
@@ -12,7 +12,7 @@ import { loadDirectories, type Directory } from "../src/registry";
 import { buildRegistryFile } from "../src/registry-updates";
 import { loadProduct, productIds } from "../src/workspace";
 
-const OUT = process.argv[2] ?? join(ROOT, "dist/site");
+const OUT = process.argv[2] ?? join(PKG, "dist/site");
 const SITE = "https://dirpush.com";
 const REPO = "https://github.com/baronunread/dirpush";
 
@@ -59,7 +59,7 @@ const signIn = (d: Directory) => {
   const NAMES: Record<string, string> = { github: "GitHub", "github-oidc": "GitHub OIDC", linkedin: "LinkedIn", x: "X", dns: "DNS record" };
   return methods.length ? methods.map((m) => NAMES[m.toLowerCase()] ?? m.replace(/^\w/, (c) => c.toUpperCase())).join(", ") : "Account required";
 };
-// Ahrefs Domain Rating per directory, latest reading (local DR history; see `launch dr`).
+// Ahrefs Domain Rating per directory, latest reading (local DR history; see `dirpush dr`).
 let drs = new Map<string, { measuredAt: number; rating: number }[]>();
 const dr = (d: Directory) => (platformHosted(d.website) ? null : drs.get(ratingDomain(d.website))?.[0] ?? null);
 const drMonth = (ms: number) => new Date(ms).toLocaleDateString("en-US", { month: "short", year: "numeric" });
@@ -217,7 +217,7 @@ stripTiles = ORDER.flatMap((r) => byRel[r]).map((d) => `<i class="t-${relOf(d)}"
 
 rmSync(OUT, { recursive: true, force: true });
 mkdirSync(join(OUT, "directories"), { recursive: true });
-cpSync(join(ROOT, "site"), OUT, { recursive: true });
+cpSync(join(PKG, "site"), OUT, { recursive: true });
 
 // ---- landing ----------------------------------------------------------------
 // The map: every directory is one tile, grouped by what its link is worth.
@@ -240,7 +240,7 @@ const receipts = mismatches.slice(0, 5).map((d) => {
 }).join("");
 
 const steps = [
-  ["Describe", "Run <code>dirpush init</code>. It drafts every fact forms ask for: taglines at the right lengths, categories, pricing, what you replace. You confirm it once."],
+  ["Describe", "Run <code>dirpush init</code>, then tell your agent “set up dirpush”. It drafts every fact forms ask for: taglines at the right lengths, categories, pricing, what you replace. You confirm it once."],
   ["Submit", "Your agent picks the directories that fit, signs up and fills each form in a real browser on your machine. Every step is recorded, so a crashed session never submits twice."],
   ["Answer", "CAPTCHAs, email links and real decisions land in one list. Standing answers mean the same question is never asked twice."],
   ["Track", "Listings are re-checked until they go live, and your Domain Rating is charted so you can see what the launch did."],

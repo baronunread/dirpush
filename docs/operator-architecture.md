@@ -63,7 +63,7 @@ One Bun package. Split into workspaces only if parts ever ship separately.
 launch/
 ├── AGENTS.md / CLAUDE.md          # thin adapters -> the launch skill
 ├── architecture.md
-├── .agents/skills/launch/         # portable skill (symlinked at .claude/skills/launch)
+├── .agents/skills/dirpush/         # portable skill (symlinked at .claude/skills/dirpush)
 │   ├── SKILL.md
 │   └── references/{research,submissions,authentication,assets,recovery}.md
 ├── src/

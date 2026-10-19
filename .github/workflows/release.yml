@@ -1,0 +1,29 @@
+name: Release
+# Publishes to npm when a version tag is pushed (git tag v0.1.0 && git push origin v0.1.0).
+# Token-less: npm trusts this workflow through OIDC trusted publishing (set up with `npx fledgling sync`).
+on:
+  push:
+    tags: ['v*']
+permissions:
+  contents: read
+  id-token: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: npm
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: '1.4.3'
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+          registry-url: 'https://registry.npmjs.org'
+      - run: bun install --frozen-lockfile
+      - run: bun run verify
+      - name: Tag matches package.json
+        run: test "v$(node -p 'require("./package.json").version')" = "$GITHUB_REF_NAME"
+      - run: npm install -g npm@latest
+      - run: npm publish --access public

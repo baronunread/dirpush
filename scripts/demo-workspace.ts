@@ -14,15 +14,15 @@ mkdirSync(join(dir, "workspace/products/ledgerline"), { recursive: true });
 process.env.LAUNCH_DB = join(dir, "launch.db");
 process.env.LAUNCH_WORKSPACE = join(dir, "workspace");
 
-const { openDb, ROOT } = await import("../src/db");
+const { openDb, PKG } = await import("../src/db");
 const J = await import("../src/jobs");
 const { recordRating } = await import("../src/ratings");
 const { loadDirectories } = await import("../src/registry");
 const { jobs } = await import("../src/db/schema");
 const { eq } = await import("drizzle-orm");
 
-cpSync(join(ROOT, "examples/workspace/identity.yaml"), join(dir, "workspace/identity.yaml"));
-cpSync(join(ROOT, "examples/workspace/permissions.yaml"), join(dir, "workspace/permissions.yaml"));
+cpSync(join(PKG, "examples/workspace/identity.yaml"), join(dir, "workspace/identity.yaml"));
+cpSync(join(PKG, "examples/workspace/permissions.yaml"), join(dir, "workspace/permissions.yaml"));
 await Bun.write(join(dir, "workspace/products/ledgerline/product.yaml"), `name: Ledgerline
 url: https://ledgerline.app
 tagline: Invoices that follow up for you.

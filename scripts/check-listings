@@ -1,4 +1,8 @@
 #!/bin/sh
 # No AI. Checks pending submissions against each directory's listing_url_pattern and marks live ones.
 # Schedule it yourself, e.g. daily at 9:00:  crontab -e  →  0 9 * * * /path/to/repo/scripts/check-listings
-cd "$(dirname "$0")/.." && mkdir -p data && bun src/cli.ts submissions check >> data/check-listings.log 2>&1
+# Your launch data: LAUNCH_HOME, else the repo itself for a git checkout, else ~/.dirpush (installed package).
+PKG="$(cd "$(dirname "$0")/.." && pwd)"
+if [ -n "$LAUNCH_HOME" ]; then H="$LAUNCH_HOME"; elif [ -d "$PKG/.git" ]; then H="$PKG"; else H="$HOME/.dirpush"; fi
+mkdir -p "$H/data" && cd "$H"
+bun "$PKG/src/cli.ts" submissions check >> data/check-listings.log 2>&1

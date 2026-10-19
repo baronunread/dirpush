@@ -1,6 +1,6 @@
 # Operator guide
 
-Read `.agents/skills/launch/SKILL.md` before research, submissions or state changes. Set `LAUNCH_WORKER=claude-code` (or `codex`) before `work` commands. Never read or edit `data/launch.db` directly.
+Read `.agents/skills/dirpush/SKILL.md` before research, submissions or state changes. Set `LAUNCH_WORKER=claude-code` (or `codex`) before `work` commands. Never read or edit `data/launch.db` directly.
 
 ## Setup
 

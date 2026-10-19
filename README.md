@@ -2,38 +2,47 @@
 
 Submit your product to startup and SaaS directories with your own coding agent, and keep track of every submission on your own machine.
 
-Dirpush is local-only. The `launch` CLI gives your agent a durable job queue, a verified registry of directories with playbooks, and your product's facts. The agent drives a browser on your computer, and a localhost dashboard shows what is live, what is pending and what needs you. There is no server and no account, and nothing leaves your machine unless you choose to share it.
+Dirpush is local-only. The `dirpush` CLI gives your agent a durable job queue, a verified registry of directories with playbooks, and your product's facts. The agent drives a browser on your computer, and a localhost dashboard shows what is live, what is pending and what needs you. There is no server and no account, and nothing leaves your machine unless you choose to share it.
 
 Browse the registry at [dirpush.com](https://dirpush.com): every directory with its cost, its link type (dofollow, nofollow, ugc or sponsored, measured on real listing pages) and how to submit.
 
 ## Setup
 
-Requires Bun and Google Chrome. Hand it to the agent you already use: any coding agent or computer-use bot that can run shell commands. It's tested with Claude Code and Codex. Agents drive their own Chrome profile with [agent-browser](https://github.com/vercel-labs/agent-browser), never your everyday browser, and saved passwords are filled by the CLI so they never pass through the model.
+Requires [Bun](https://bun.sh) and Google Chrome. Hand it to the agent you already use: any coding agent or computer-use bot that can run shell commands. It's tested with Claude Code and Codex. Agents drive their own Chrome profile with [agent-browser](https://github.com/vercel-labs/agent-browser), never your everyday browser, and saved passwords are filled by the CLI so they never pass through the model.
 
 ```sh
-git clone https://github.com/baronunread/dirpush.git && cd dirpush
-bun install --frozen-lockfile
-bun launch init acme                  # creates workspace/products/acme/product.yaml
-bun launch product show --product acme
-bun run dev                           # dashboard on localhost
+npm i -g dirpush agent-browser   # or run everything below with npx
+dirpush init acme                # sets up ~/.dirpush and installs the agent skill
 ```
 
-Then ask your agent to "continue my launch". The workflow it follows is in [the launch skill](.agents/skills/launch/SKILL.md). On the first run it records what it can use, such as an email tool for verification links (`launch capabilities`).
+`init` keeps your launch in `~/.dirpush` (database, product files, the agents' Chrome profile) and installs the dirpush skill for your agents in `~/.claude/skills` and `~/.agents/skills`. Then open your agent and say **"set up dirpush"**: it fills in your product's facts with you and checks which tools it has, such as an email tool for verification links. After that, **"continue my launch"** runs the whole loop. `dirpush serve` opens the dashboard.
 
 ## Useful commands
 
 | Command | Purpose |
 | --- | --- |
-| `launch directories recommend --free --unsubmitted --product <id>` | Directories that fit and haven't been tried |
-| `launch submissions list --product <id>` | Every submission and its outcome |
-| `launch submissions check` | Re-check pending listings and mark live ones |
-| `launch todo list` | What needs you: CAPTCHAs, verification emails, questions |
-| `launch registry updates [--apply]` | Compare your registry with the published one on dirpush.com |
-| `launch registry audit` | Measure link type, noindex and bot checks on real listing pages |
-| `launch submissions add <id or URL>` | Record a listing you made yourself |
-| `launch dr refresh` / `launch dr show` | Optional Ahrefs Domain Rating history (needs `AHREFS_API_KEY`) |
+| `dirpush directories recommend --free --unsubmitted --product <id>` | Directories that fit and haven't been tried |
+| `dirpush submissions list --product <id>` | Every submission and its outcome |
+| `dirpush submissions check` | Re-check pending listings and mark live ones |
+| `dirpush todo list` | What needs you: CAPTCHAs, verification emails, questions |
+| `dirpush registry updates [--apply]` | Update your registry from the published one on dirpush.com |
+| `dirpush registry audit` | Measure link type, noindex and bot checks on real listing pages |
+| `dirpush submissions add <id or URL>` | Record a listing you made yourself |
+| `dirpush dr refresh` / `dirpush dr show` | Optional Ahrefs Domain Rating history (needs `AHREFS_API_KEY`) |
 
-`bun launch help` lists everything.
+`dirpush help` lists everything.
+
+## Working on dirpush
+
+```sh
+git clone https://github.com/baronunread/dirpush.git && cd dirpush
+bun install --frozen-lockfile
+bun launch init acme             # a git checkout keeps its data in the repo (data/, workspace/)
+bun run dev                      # dashboard on localhost
+bun run verify                   # repo checks, typecheck, tests
+```
+
+Releases publish to npm from GitHub Actions when a `v*` tag is pushed (trusted publishing, no token).
 
 ## Repository layout
 
@@ -48,11 +57,7 @@ Then ask your agent to "continue my launch". The workflow it follows is in [the 
 
 ## Contributing
 
-Know a directory that's missing, or one whose details are wrong? [Open an issue](https://github.com/baronunread/dirpush/issues/new?labels=new-directory&title=New%20directory%3A%20) with its URL. Pull requests that add or fix a directory in `registry/directories/` are welcome; run the checks first:
-
-```sh
-bun run verify
-```
+Know a directory that's missing, or one whose details are wrong? [Open an issue](https://github.com/baronunread/dirpush/issues/new?labels=new-directory&title=New%20directory%3A%20) with its URL. Pull requests that add or fix a directory in `registry/directories/` are welcome; run `bun run verify` first.
 
 ## License
 
