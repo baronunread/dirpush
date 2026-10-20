@@ -9,6 +9,7 @@ import { and, eq, gt, inArray } from "drizzle-orm";
 import { HOME, PKG, type Db } from "./db";
 import { jobs } from "./db/schema";
 import * as J from "./jobs";
+import { loadCapabilities } from "./capabilities";
 import { loadDirectory } from "./registry";
 
 const color = process.stdout.isTTY && !process.env.NO_COLOR;
@@ -56,12 +57,12 @@ export async function checks(db: Db, opts: { product?: string; types: string[] }
   const handedBack: string[] = [], byYou: string[] = [], skipped: string[] = [];
   let signedIn = false;
 
-  const summary = () => {
+  const summary = async () => {
     console.log(`\n${bold("Done for now.")}`);
-    if (handedBack.length) console.log(`${green("✓")} Back to the agents: ${handedBack.join(", ")}`);
+    if (handedBack.length) console.log(`${green("✓")} Ready for the agents to finish: ${handedBack.join(", ")}`);
     if (byYou.length) console.log(`${green("✓")} Submitted by you: ${byYou.join(", ")}`);
     if (skipped.length) console.log(`${dim("·")} Skipped, still waiting: ${skipped.join(", ")}`);
-    if (handedBack.length) console.log(`\nNext: ask your agent to ${bold("“continue my launch”")}.`);
+    if (handedBack.length) await startAgent(handedBack.length);
   };
 
   const googleSignIn = async () => {
@@ -81,13 +82,13 @@ export async function checks(db: Db, opts: { product?: string; types: string[] }
 
   console.log(`${bold("dirpush checks")}  ${dim(`${google.length} need Google sign-in · ${queue.length} CAPTCHAs or bot checks`)}`);
   if (!google.length && !queue.length) return console.log("Nothing is waiting on you.");
-  console.log(dim("Agents never solve these; you do, and each job goes back to them."));
+  console.log(dim("Agents never solve these. You clear each one, then an agent finishes the submission (at the end I can start yours)."));
 
   if (google.length) {
     console.log(`\n${bold("1. Sign into Google")}  ${dim(google.map((j) => j.subject).join(", "))}`);
     console.log("These directories use “Sign in with Google”. Sign in once and the agents can use it from then on.");
     const k = await key(`${cyan("[enter]")} sign in now   ${cyan("[n]")} later   ${cyan("[q]")} quit `, "\rnq");
-    if (k === "q") return summary();
+    if (k === "q") return await summary();
     if (k === "\r" && (await googleSignIn())) {
       for (const j of google) { J.unblock(db, j.id, "human signed into Google in the agents' Chrome profile"); handedBack.push(j.subject); }
     } else skipped.push(...google.map((j) => j.subject));
@@ -109,10 +110,10 @@ export async function checks(db: Db, opts: { product?: string; types: string[] }
     console.log(dim("Check never passes there? Submit it from your own browser instead, then press s."));
     open();
     for (;;) {
-      const k = await key(`${cyan("enter")} done  ${cyan("s")} I submitted it  ${cyan("o")} reopen  ${cyan("g")} Google sign-in  ${cyan("n")} skip  ${cyan("q")} quit › `, "\rsognq");
+      const k = await key(`${cyan("enter")} cleared, agent finishes it  ${cyan("s")} I submitted it  ${cyan("o")} reopen  ${cyan("g")} Google sign-in  ${cyan("n")} skip  ${cyan("q")} quit › `, "\rsognq");
       if (k === "o") { open(); continue; }
       if (k === "g") { if (!signedIn) await googleSignIn(); open(); continue; }
-      if (k === "q") return summary();
+      if (k === "q") return await summary();
       if (k === "n") skipped.push(job.subject);
       else if (k === "\r") {
         J.unblock(db, job.id, "human cleared the check in the agents' Chrome; continue in the same browser session");
@@ -125,6 +126,28 @@ export async function checks(db: Db, opts: { product?: string; types: string[] }
       break;
     }
   }
-  summary();
+  await summary();
 }
 
+
+/** The agent CLIs we can open on "continue my launch", most likely first: the one that recorded capabilities, then any on PATH. */
+async function startAgent(n: number) {
+  const caps = await loadCapabilities().catch(() => null);
+  const known = [
+    { id: "claude-code", name: "Claude Code", bin: "claude" },
+    { id: "codex", name: "Codex", bin: "codex" },
+  ].filter((a) => Bun.which(a.bin));
+  const agent = known.find((a) => caps?.checked_by?.startsWith(a.id)) ?? known[0];
+  const prompt = "continue my launch";
+  if (!agent || process.platform !== "darwin") {
+    console.log(`\nNext: open your agent and say ${bold(`“${prompt}”`)}; it finishes the ${n} job(s) above.`);
+    return;
+  }
+  console.log(`\nThe ${n} job(s) above are waiting for an agent to finish them.`);
+  const k = await key(`${cyan("[enter]")} open ${agent.name} on “${prompt}” now   ${cyan("[n]")} I'll do it later `, "\rn");
+  if (k === "n") return console.log(dim(`Whenever you're ready: open your agent and say “${prompt}”.`));
+  // A new Terminal window, so the human watches it work and approves what it asks for. Nothing runs unattended.
+  const cmd = `cd ${JSON.stringify(process.cwd())} && ${agent.bin} ${JSON.stringify(prompt)}`;
+  const ok = Bun.spawnSync(["osascript", "-e", `tell application "Terminal" to do script ${JSON.stringify(cmd)}`, "-e", `tell application "Terminal" to activate`], { stdin: "ignore", stdout: "ignore", stderr: "ignore" }).exitCode === 0;
+  console.log(ok ? `${green("✓")} Opened ${agent.name} in a new Terminal window.` : `Couldn't open Terminal. Run this yourself: ${cmd}`);
+}
