@@ -79,6 +79,7 @@ const { values: flags, positionals } = parseArgs({
     source: { type: "string" },
     job: { type: "string" },
     url: { type: "string" },
+    "login-url": { type: "string" },
     username: { type: "string" },
     rel: { type: "string" }, // registry set-link
     samples: { type: "string" },
@@ -655,8 +656,8 @@ const commands: Record<string, (() => Promise<unknown> | unknown) | undefined> =
   "browser stop": () => stopBrowser(),
   "browser login": () => vaultLogin(arg(0, "vault-name")),
   "browser password": () => {
-    if (!flags.url || !flags.username) throw new Error("browser password <vault-name> --url <login-url> --username <email> <field-selector…>");
-    return newPassword(arg(0, "vault-name"), flags.url, flags.username, args.slice(1));
+    if (!flags.url || !flags.username) throw new Error("browser password <vault-name> --url <page-url> --username <email> [--login-url <sign-in page>] <field-selector…>");
+    return newPassword(arg(0, "vault-name"), flags.url, flags.username, args.slice(1), flags["login-url"]);
   },
   async "serve"() {
     const { serve } = await import("./server");
@@ -730,7 +731,7 @@ const HELP: [string, [string, string][]][] = [
     ["google-login", "the human signs into Google once in the agents' Chrome profile"],
     ["browser start | status | stop", "the dedicated Chrome (real profile, Google services blocked) agents drive"],
     ["browser login <vault-name>", "fill a saved login into the open tab on that site (password never shown)"],
-    ["browser password <vault-name> --url u --username e <selector…>", "new account: generate, fill, verify and save a password (never shown)"],
+    ["browser password <vault-name> --url u --username e [--login-url u] <selector…>", "new password (sign-up or reset): generate, fill, verify and save it (never shown); --login-url when the page isn't the sign-in page (e.g. a reset link)"],
   ]],
   ["Other", [
     ["dr show | dr refresh [--all]", "Domain Rating history (refresh needs AHREFS_API_KEY)"],

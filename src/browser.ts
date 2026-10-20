@@ -136,7 +136,7 @@ export function strongPassword() {
  * New account password: generated here, typed into every given field of the open tab on `url`'s site, checked,
  * then saved to the vault as `name`. Returns no secret.
  */
-export async function newPassword(name: string, url: string, username: string, selectors: string[]) {
+export async function newPassword(name: string, url: string, username: string, selectors: string[], loginUrl = url) {
   if (!selectors.length) throw new Error("pass the password field selector(s), e.g. 'input[type=password]'");
   const page = await pageOn(url);
   const pw = strongPassword();
@@ -145,6 +145,7 @@ export async function newPassword(name: string, url: string, username: string, s
   const lengths = JSON.parse(ab(["eval", `JSON.stringify(${JSON.stringify(selectors)}.map((s) => document.querySelector(s)?.value.length ?? -1))`]));
   const got = (typeof lengths === "string" ? JSON.parse(lengths) : lengths) as number[];
   if (got.some((n) => n !== pw.length)) throw new Error(`password fields not filled (lengths ${got.join(", ")}); nothing saved`);
-  ab(["auth", "save", name, "--url", url, "--username", username, "--password-stdin"], pw);
+  // The vault keeps the sign-in page: `browser login` opens on it later, so a reset or sign-up URL there breaks logins.
+  ab(["auth", "save", name, "--url", loginUrl, "--username", username, "--password-stdin"], pw);
   return { vault: name, username, fields: selectors.length, page: page.url.slice(0, 200), saved: true };
 }

@@ -13,14 +13,14 @@ Always drive the browser through `dirpush ab` (agent-browser on the agents' own 
 
 ## Creating a password without ever seeing it
 
-Generate, fill, and store in **one** shell command so the secret never appears in your context or in any file:
+With the sign-up (or reset) page open in `dirpush ab`, one command generates the password, types it into every field you name, checks the site got it, and saves it to the vault. It never appears in your context or any file:
 
 ```bash
-PW=$(openssl rand -base64 18) && dirpush ab fill @<password-ref> "$PW" && \
-  printf %s "$PW" | agent-browser auth save <directory-id>-<product-id> --url <login-url> --username <email> --password-stdin && unset PW
+dirpush browser password <directory-id>-<product-id> --url <this page's url> --username <email> \
+  [--login-url <the site's sign-in page>] '<password selector>' ['<confirm selector>']
 ```
 
-(Repeat the `fill` for a "confirm password" field inside the same command.) Before `auth save`, check the fields really hold it, e.g. `agent-browser eval '[...document.querySelectorAll("input[type=password]")].map(p=>p.value.length)'` → all 24. A `fill` can report success on a selector that matched nothing, leaving a vault entry for a password the site never got.
+Passwords always have upper, lower, digit and symbol (24 chars). Pass `--login-url` whenever the page isn't the sign-in page (a sign-up form, a reset link): the vault opens that URL for every later `browser login`. Never generate passwords yourself (`openssl rand -base64` can lack a symbol, and sites reject it).
 
 ## Continue with Google (`accounts.oauth_google`)
 
