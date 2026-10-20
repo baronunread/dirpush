@@ -42,11 +42,6 @@ async function ask(prompt: string) {
   try { return (await rl.question(prompt)).trim(); } finally { rl.close(); }
 }
 
-const WHAT: Record<string, string> = {
-  captcha: "Tick the CAPTCHA, then do whatever the note above asks.",
-  bot_protection: "Wait for the “checking your browser” page to pass, or tick its box if it shows one.",
-};
-
 export async function checks(db: Db, opts: { product?: string; types: string[] }) {
   if (!process.stdin.isTTY) throw new Error("checks is interactive: run `dirpush checks` yourself in a terminal");
   const blocked = (types: string[]) => db.select().from(jobs)
@@ -58,36 +53,35 @@ export async function checks(db: Db, opts: { product?: string; types: string[] }
   let signedIn = false;
 
   const summary = async () => {
-    console.log(`\n${bold("Done for now.")}`);
-    if (handedBack.length) console.log(`${green("✓")} Ready for the agents to finish: ${handedBack.join(", ")}`);
-    if (byYou.length) console.log(`${green("✓")} Submitted by you: ${byYou.join(", ")}`);
-    if (skipped.length) console.log(`${dim("·")} Skipped, still waiting: ${skipped.join(", ")}`);
+    const parts = [handedBack.length && `${handedBack.length} back to the agents`, byYou.length && `${byYou.length} done by you`, skipped.length && `${skipped.length} skipped`].filter(Boolean);
+    console.log(`\n${green("✓")} ${bold("Done.")} ${parts.join(" · ") || "Nothing changed."}`);
     if (handedBack.length) await startAgent(handedBack.length);
   };
 
   const googleSignIn = async () => {
     const busy = db.select().from(jobs).where(and(eq(jobs.status, "running"), gt(jobs.leaseExpiresAt, Date.now()))).all();
     if (busy.length) {
-      console.log(yellow(`An agent is using the browser right now (${busy.map((j) => j.subject).join(", ")}). Signing in closes that window.`));
-      if ((await key(`${cyan("[enter]")} close it and sign in   ${cyan("[n]")} not now `, "\rn")) === "n") return false;
+      console.log(yellow(`      An agent is using the browser (${busy.map((j) => j.subject).join(", ")}); signing in closes it.`));
+      if ((await key(`      ${cyan("enter")} sign in anyway   ${cyan("n")} not now  `, "\rn")) === "n") return false;
     }
-    console.log(`A normal Chrome window opens on Google's sign-in page (the agents' own profile, nothing automated).`);
-    console.log(`Sign in, then ${bold("quit that window with ⌘Q")} to come back here.`);
+    console.log(dim("      Waiting for you to quit that Chrome window…"));
     script("google-login"); // returns when that Chrome quits
-    const ok = (await key(`Signed in?  ${cyan("[y]")} yes   ${cyan("[n]")} no `, "yn")) === "y";
+    const ok = (await key(`      Signed in?  ${cyan("y")} yes   ${cyan("n")} no  `, "yn")) === "y";
     if (ok) signedIn = true;
-    else console.log(dim("No problem: run `dirpush checks` again whenever you want to retry."));
     return ok;
   };
 
-  console.log(`${bold("dirpush checks")}  ${dim(`${google.length} need Google sign-in · ${queue.length} CAPTCHAs or bot checks`)}`);
-  if (!google.length && !queue.length) return console.log("Nothing is waiting on you.");
-  console.log(dim("Agents never solve these. You clear each one, then an agent finishes the submission (at the end I can start yours)."));
+  const total = queue.length + (google.length ? 1 : 0);
+  if (!total) return console.log("Nothing is waiting on you.");
+  console.log(`${bold("dirpush checks")} ${dim(`· ${total} to clear · an agent finishes each one after you`)}`);
+  const host = (u: string) => u.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "");
+  const item = (n: number, name: string, where: string, todo: string) =>
+    console.log(`\n${dim(`${n}/${total}`)}  ${bold(name)}  ${dim(where)}\n      ${todo}`);
+  const keys = (pairs: [string, string][]) => `      ${pairs.map(([k, l]) => `${cyan(k)} ${l}`).join("   ")}  `;
 
   if (google.length) {
-    console.log(`\n${bold("1. Sign into Google")}  ${dim(google.map((j) => j.subject).join(", "))}`);
-    console.log("These directories use “Sign in with Google”. Sign in once and the agents can use it from then on.");
-    const k = await key(`${cyan("[enter]")} sign in now   ${cyan("[n]")} later   ${cyan("[q]")} quit `, "\rnq");
+    item(1, "Google sign-in", google.length === 1 ? "1 directory" : `${google.length} directories`, "A Chrome window opens: sign in, then quit it with ⌘Q.");
+    const k = await key(keys([["enter", "sign in"], ["n", "later"], ["q", "quit"]]), "\rnq");
     if (k === "q") return await summary();
     if (k === "\r" && (await googleSignIn())) {
       for (const j of google) { J.unblock(db, j.id, "human signed into Google in the agents' Chrome profile"); handedBack.push(j.subject); }
@@ -97,21 +91,21 @@ export async function checks(db: Db, opts: { product?: string; types: string[] }
   for (const [i, job] of queue.entries()) {
     const dir = await loadDirectory(job.subject).then((d) => d.directory).catch(() => null);
     const url = job.blockMessage?.match(/https?:\/\/[^\s)'"”]+/)?.[0]?.replace(/[.,;:]$/, "") ?? dir?.submission_url ?? dir?.website;
+    // Sites that break under automation: the human does them in their own browser (the agent's note says what to do).
+    const yours = /your own browser/i.test(job.blockMessage ?? "");
     const open = () => {
-      if (!url) return console.log(yellow("No page saved for this one; open the directory yourself."));
-      if (script("ab", "open", url) === 0) script("show-browser");
-      else console.log(yellow(`Couldn't open the agents' Chrome. Open it yourself: ${url}`));
+      if (!url) return;
+      if (yours) Bun.spawnSync(["open", url]);
+      else if (script("ab", "open", url) === 0) script("show-browser");
+      else console.log(yellow(`      Couldn't open the agents' Chrome; open ${url} yourself.`));
     };
-    console.log(`\n${bold(`${google.length ? i + 2 : i + 1}. ${dir?.name ?? job.subject}`)}  ${dim(`${i + 1} of ${queue.length}`)}`);
-    if (job.blockMessage) console.log(dim(job.blockMessage));
-    if (url) console.log(`${dim("Page:")} ${url}`);
-    console.log(WHAT[job.blockType ?? ""] ?? "Do what the note above asks.");
-    console.log(dim("Asked to sign in with Google? Press g: Google refuses sign-in in the agents' window."));
-    console.log(dim("No box on the page? It may have passed already, or it only shows on the form's last step: press enter and an agent tries again."));
-    console.log(dim("Check never passes there? Submit it from your own browser instead, then press s."));
+    const todo = yours
+      ? `Do this one in your own browser: ${(job.blockMessage ?? "").split(/your own browser:?/i)[1]?.trim().replace(/,? then press s in dirpush checks\.?$/i, "") ?? "submit rdyrct"}.`
+      : "Tick the box in the window that opened. No box? Just press enter.";
+    item(i + 1 + (google.length ? 1 : 0), dir?.name ?? job.subject, url ? host(url) : "", todo);
     open();
     for (;;) {
-      const k = await key(`${cyan("enter")} cleared, agent finishes it  ${cyan("s")} I submitted it  ${cyan("o")} reopen  ${cyan("g")} Google sign-in  ${cyan("n")} skip  ${cyan("q")} quit › `, "\rsognq");
+      const k = await key(keys(yours ? [["s", "done"], ["n", "skip"], ["q", "quit"]] : [["enter", "done"], ["s", "I submitted it myself"], ["n", "skip"], ["q", "quit"]]), yours ? "sognq" : "\rsognq");
       if (k === "o") { open(); continue; }
       if (k === "g") { if (!signedIn) await googleSignIn(); open(); continue; }
       if (k === "q") return await summary();
@@ -120,7 +114,7 @@ export async function checks(db: Db, opts: { product?: string; types: string[] }
         J.unblock(db, job.id, "human cleared the check in the agents' Chrome; continue in the same browser session");
         handedBack.push(job.subject);
       } else {
-        const link = await ask(`Listing URL, if there is one ${dim("(enter to skip)")}: `);
+        const link = await ask(`      Listing link ${dim("(enter to skip)")}: `);
         J.recordManual(db, job.id, "pending", link || undefined);
         byYou.push(job.subject);
       }
@@ -141,12 +135,11 @@ async function startAgent(n: number) {
   const agent = known.find((a) => caps?.checked_by?.startsWith(a.id)) ?? known[0];
   const prompt = "continue my launch";
   if (!agent || process.platform !== "darwin") {
-    console.log(`\nNext: open your agent and say ${bold(`“${prompt}”`)}; it finishes the ${n} job(s) above.`);
+    console.log(`Next: tell your agent ${bold(`“${prompt}”`)} to finish them.`);
     return;
   }
-  console.log(`\nThe ${n} job(s) above are waiting for an agent to finish them.`);
-  const k = await key(`${cyan("[enter]")} open ${agent.name} on “${prompt}” now   ${cyan("[n]")} I'll do it later `, "\rn");
-  if (k === "n") return console.log(dim(`Whenever you're ready: open your agent and say “${prompt}”.`));
+  const k = await key(`  ${cyan("enter")} open ${agent.name} to finish them   ${cyan("n")} later  `, "\rn");
+  if (k === "n") return console.log(dim(`  Later: tell your agent “${prompt}”.`));
   // A new Terminal window, so the human watches it work and approves what it asks for. Nothing runs unattended.
   const cmd = `cd ${JSON.stringify(process.cwd())} && ${agent.bin} ${JSON.stringify(prompt)}`;
   const ok = Bun.spawnSync(["osascript", "-e", `tell application "Terminal" to do script ${JSON.stringify(cmd)}`, "-e", `tell application "Terminal" to activate`], { stdin: "ignore", stdout: "ignore", stderr: "ignore" }).exitCode === 0;
