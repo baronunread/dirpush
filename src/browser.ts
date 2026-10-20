@@ -78,8 +78,22 @@ export async function stopBrowser() {
   return { stopped: true };
 }
 
+/**
+ * The CDP port of the agents' Chrome: the one `browser start` runs on BROWSER_PORT, else the one `dirpush ab` launched
+ * through agent-browser (its port is in the profile's DevToolsActivePort file). Only a live port counts.
+ */
+async function agentsChromePort() {
+  const live = async (port: number) => fetch(`http://127.0.0.1:${port}/json/version`, { signal: AbortSignal.timeout(1500) }).then((r) => r.ok, () => false);
+  if (await live(BROWSER_PORT)) return BROWSER_PORT;
+  const file = Bun.file(join(PROFILE, "DevToolsActivePort"));
+  const port = (await file.exists()) ? Number((await file.text()).split("\n")[0]) : NaN;
+  if (port && (await live(port))) return port;
+  throw new Error("the agents' browser is not open: open the page with 'dirpush ab open <url>' first");
+}
+let cdpPort = BROWSER_PORT;
+
 function ab(args: string[], stdin?: string) {
-  const p = Bun.spawnSync(["agent-browser", "--session", SECRETS_SESSION, "--cdp", String(BROWSER_PORT), ...args], { stdin: stdin === undefined ? "ignore" : Buffer.from(stdin), stdout: "pipe", stderr: "pipe", timeout: 60_000 });
+  const p = Bun.spawnSync(["agent-browser", "--session", SECRETS_SESSION, "--cdp", String(cdpPort), ...args], { stdin: stdin === undefined ? "ignore" : Buffer.from(stdin), stdout: "pipe", stderr: "pipe", timeout: 60_000 });
   const out = p.stdout.toString().trim();
   if (p.exitCode !== 0) throw new Error(`agent-browser ${args[0]} failed: ${(p.stderr.toString() || out).trim().slice(0, 300)}`);
   return out;
@@ -88,8 +102,9 @@ function ab(args: string[], stdin?: string) {
 /** The open tab on `site`'s host (the one the agent is working in); the most recently active one if several. */
 async function pageOn(site: string) {
   const host = new URL(site.includes("://") ? site : `https://${site}`).hostname.replace(/^www\./, "");
-  if (!(await browserStatus()).running) throw new Error("the browser is not running: launch browser start");
-  const page = (await json<Target[]>("/json/list")).find((t) => t.type === "page" && /^https?:/.test(t.url) && new URL(t.url).hostname.replace(/^www\./, "").endsWith(host));
+  cdpPort = await agentsChromePort();
+  const list = (await (await fetch(`http://127.0.0.1:${cdpPort}/json/list`, { signal: AbortSignal.timeout(1500) })).json()) as Target[];
+  const page = list.find((t) => t.type === "page" && /^https?:/.test(t.url) && new URL(t.url).hostname.replace(/^www\./, "").endsWith(host));
   if (!page) throw new Error(`no open tab on ${host}; open the login/sign-up page first`);
   ab(["tab", page.id]);
   return page;
@@ -97,12 +112,24 @@ async function pageOn(site: string) {
 
 /** Fills a saved login (agent-browser vault) into the open tab on that site. The password never leaves the vault. */
 export async function vaultLogin(name: string) {
+  cdpPort = await agentsChromePort();
   const meta = JSON.parse(ab(["auth", "show", name, "--json"])) as { data?: { profile?: { url?: string } } };
   const url = meta.data?.profile?.url;
   if (!url) throw new Error(`vault entry ${name} has no login URL`);
   const page = await pageOn(url);
   ab(["auth", "login", name]);
   return { vault: name, page: page.url.slice(0, 200), filled: true };
+}
+
+/** 24 random characters with every class sites ask for (upper, lower, digit, symbol), symbols that forms accept. */
+export function strongPassword() {
+  const sets = ["ABCDEFGHJKLMNPQRSTUVWXYZ", "abcdefghijkmnopqrstuvwxyz", "23456789", "!@#%^*-_=+?"];
+  const all = sets.join("");
+  const pick = (set: string, b: number) => set[b % set.length]!;
+  const bytes = randomBytes(32);
+  const chars = [...sets.map((set, i) => pick(set, bytes[i]!)), ...Array.from({ length: 20 }, (_, i) => pick(all, bytes[i + 4]!))];
+  for (let i = chars.length - 1; i > 0; i--) { const j = bytes[(i + 8) % 32]! % (i + 1); [chars[i], chars[j]] = [chars[j]!, chars[i]!]; }
+  return chars.join("");
 }
 
 /**
@@ -112,7 +139,7 @@ export async function vaultLogin(name: string) {
 export async function newPassword(name: string, url: string, username: string, selectors: string[]) {
   if (!selectors.length) throw new Error("pass the password field selector(s), e.g. 'input[type=password]'");
   const page = await pageOn(url);
-  const pw = randomBytes(18).toString("base64");
+  const pw = strongPassword();
   for (const s of selectors) ab(["fill", s, pw]);
   // A fill can "succeed" on a selector that matched nothing; never save a password the site didn't get.
   const lengths = JSON.parse(ab(["eval", `JSON.stringify(${JSON.stringify(selectors)}.map((s) => document.querySelector(s)?.value.length ?? -1))`]));
