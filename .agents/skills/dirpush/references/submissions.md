@@ -19,7 +19,7 @@ The registry describes **expected** behaviour; the live site wins. Any mismatch 
    One directory account per product is the default (vault name `<directory-id>-<product-id>`); reuse one account across products only if the directory lists several products per account.
 3. **url_imported** — if `submission.url_first` / `autofetch.supported`: enter the product URL first and let the site fill fields. Save what it fetched: `--data '{"fetched":{…}}'`.
 4. **resolved** — compare every fetched/required field with canonical facts. Keep accurate values, correct wrong ones, fill missing ones from `product.yaml`, respect live character limits. Never keep an auto-generated claim that conflicts with product facts. Save `--data '{"resolved":{…}}'`.
-5. **assets_selected** — logo from `product.assets.logo`; screenshots from the approved gallery (see assets.md). No approved gallery and the directory needs screenshots → propose one and block.
+5. **assets_selected** — logo from `product.assets.logo`; the square icon field takes `product.assets.icon` (PNG). URL-first forms often pre-fill the logo/icon from the site (a screenshot or OG image): always replace it, or moderators reject the listing; screenshots from the approved gallery (see assets.md). No approved gallery and the directory needs screenshots → propose one and block.
 6. **ready** — form filled, nothing submitted yet. Take a screenshot as evidence: `dirpush ab screenshot data/evidence/<job>/ready.png`.
 7. `dirpush work begin-submit <job>` → click submit → observe the result →
    `dirpush work submitted <job> --outcome submitted|pending|live [--listing-url <url>]`.
