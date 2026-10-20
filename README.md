@@ -15,23 +15,31 @@ npm i -g dirpush agent-browser   # or run everything below with npx
 dirpush init acme                # sets up ~/.dirpush and installs the agent skill
 ```
 
-`init` keeps your launch in `~/.dirpush` (database, product files, the agents' Chrome profile) and installs the dirpush skill for your agents in `~/.claude/skills` and `~/.agents/skills`. Then open your agent and say **"set up dirpush"**: it fills in your product's facts with you and checks which tools it has, such as an email tool for verification links. After that, **"continue my launch"** runs the whole loop. `dirpush serve` opens the dashboard.
+`init` keeps your launch in `~/.dirpush` (database, product files, the agents' Chrome profile) and installs the dirpush skill for your agents in `~/.claude/skills` and `~/.agents/skills`. That's the only command you need.
 
-## Useful commands
+## Talk to your agent
+
+| Say | What happens |
+| --- | --- |
+| **"set up dirpush"** | It fills in your product's facts with you and checks its tools (an email tool for verification links, the browser). |
+| **"continue my launch"** | It finds directories that fit, submits, verifies emails, re-checks pending listings, and records everything. |
+| **"what do you need from me?"** | It walks you through the few things only you can do, one at a time: sign into Google once, tick a bot check in a window it opens, rarely submit a site by hand. You answer "done" and it carries on. |
+| **"how is my launch going?"** | Live, pending and rejected listings, and what's waiting. |
+
+Agents never solve CAPTCHAs, never pay, and ask before anything your `permissions.yaml` marks as "confirm". `dirpush serve` opens a local dashboard if you want to look around.
+
+## The CLI, if you want it
+
+Agents drive everything below; you never have to. `dirpush help` lists it all.
 
 | Command | Purpose |
 | --- | --- |
-| `dirpush directories recommend --free --unsubmitted --product <id>` | Directories that fit and haven't been tried |
+| `dirpush actions` | What's waiting on you |
+| `dirpush handoff` | Walk your part yourself in the terminal instead of in chat |
 | `dirpush submissions list --product <id>` | Every submission and its outcome |
-| `dirpush submissions check` | Re-check pending listings and mark live ones |
-| `dirpush actions` | What needs you: CAPTCHAs, verification emails, questions |
-| `dirpush checks` | Your part, guided: sign into Google, then clear CAPTCHAs and bot checks one by one; agents pick each job back up |
+| `dirpush directories recommend --free --unsubmitted --product <id>` | Directories that fit and haven't been tried |
 | `dirpush registry updates [--apply]` | Update your registry from the published one on dirpush.com |
-| `dirpush registry audit` | Measure link type, noindex and bot checks on real listing pages |
-| `dirpush submissions add <id or URL>` | Record a listing you made yourself |
-| `dirpush dr refresh` / `dirpush dr show` | Optional Ahrefs Domain Rating history (needs `AHREFS_API_KEY`) |
-
-`dirpush help` lists everything.
+| `dirpush dr show` | Domain Rating history (optional, needs `AHREFS_API_KEY`) |
 
 ## Working on dirpush
 

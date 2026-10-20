@@ -19,7 +19,8 @@ import { auditDirectory, auditDirectoryBrowser } from "./audit";
 import { browserStatus, newPassword, startBrowser, stopBrowser, vaultLogin } from "./browser";
 import { accountsFor, backfillAccounts, listAccounts } from "./accounts";
 import { detect, loadCapabilities, saveCapabilities } from "./capabilities";
-import { checks } from "./checks";
+import { handoffDone, handoffMine, handoffNext, handoffQueue, handoffSkip } from "./handoff";
+import { walk } from "./walk";
 import { ratingDomain, ratingHistory, refreshRatings } from "./ratings";
 import { fetchRegistryFile, registrySource, registryUpdates } from "./registry-updates";
 import { loadIdentity, loadPermissions, loadProduct, permission, productIds, resolveProductId, PRODUCTS, utm, WORKSPACE } from "./workspace";
@@ -37,7 +38,7 @@ if (first === "--version" || first === "-v") {
 }
 if (first === "--help" || first === "-h") process.argv.splice(2, 1, "help");
 // Names people type for the human-facing commands.
-const ALIASES: Record<string, string> = { check: "checks", captchas: "checks", needs: "actions", todos: "actions" };
+const ALIASES: Record<string, string> = { checks: "handoff", check: "handoff", captchas: "handoff", needs: "actions", todos: "actions" };
 if (first && ALIASES[first]) process.argv.splice(2, 1, ALIASES[first]);
 /** Agents read JSON errors; a person at a terminal gets a plain sentence. */
 function fail(error: string, extra: { didYouMean?: string[] } = {}): never {
@@ -537,7 +538,17 @@ const commands: Record<string, (() => Promise<unknown> | unknown) | undefined> =
   },
   "assets capture-complete": () => consumeProductApproval(db, Number(arg(0, "approval-id"))),
   /** The human's part, interactive: Google sign-in, then CAPTCHAs and bot checks one by one (src/checks.ts). */
-  "checks": async () => { await checks(db, { product: flags.product, types: (flags.type ?? "captcha,bot_protection").split(",").map((t) => t.trim()) }); process.exit(0); },
+  // Hand-offs (src/handoff.ts): agents call next/done/mine/skip and talk the human through it in chat;
+  // a human at a terminal can run plain `dirpush handoff` to walk the same queue.
+  "handoff": async () => {
+    if (process.stdin.isTTY && process.stdout.isTTY) { await walk(db, flags.product); process.exit(0); }
+    return handoffQueue(db, flags.product);
+  },
+  "handoff list": () => handoffQueue(db, flags.product, { includeSkipped: flags.all }),
+  "handoff next": () => handoffNext(db, flags.product),
+  "handoff done": () => handoffDone(db, arg(0, "job or google")),
+  "handoff mine": () => handoffMine(db, arg(0, "job"), flags["listing-url"]),
+  "handoff skip": () => handoffSkip(db, arg(0, "job")),
 
   /** Everything waiting on the human, grouped. --product narrows it. */
   "actions": () => {
@@ -677,7 +688,9 @@ const HELP: [string, [string, string][]][] = [
     ["products list", "all products in this workspace"],
     ["permission <group.action>", "automatic | confirm | never for an action, e.g. accounts.oauth_google"],
     ["actions [--product id]", "everything waiting on the human, grouped"],
-    ["checks [--type captcha,bot_protection] [--product id]", "for the human: sign into Google, then clear CAPTCHAs and bot checks one by one; each job goes back to the agents"],
+    ["handoff next [--product id]", "the next thing only the human can do (Google sign-in, a bot check, a by-hand site): opens it and returns the sentence to say in chat"],
+    ["handoff done <job|google> | mine <job> [--listing-url u] | skip <job>", "the human answered: hand the job back (then finish it now), they submitted it themselves, or not now"],
+    ["handoff list [--all]", "everything waiting on the human (a person at a terminal: plain 'dirpush handoff' walks it)"],
   ]],
   ["Work loop", [
     ["work next [--claim]", "next submission job (unknown ones first); --claim leases it to you"],

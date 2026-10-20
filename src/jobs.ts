@@ -16,6 +16,11 @@ function logEvent(tx: Tx | Db, jobId: string | null, type: string, worker: strin
   tx.insert(events).values({ jobId, type, worker, data }).run();
 }
 
+/** A plain event on a job (no state change), e.g. a hand-off the human skipped. */
+export function noteEvent(db: Db, jobId: string, type: string, data: Record<string, unknown> = {}) {
+  logEvent(db, jobId, type, "human", data);
+}
+
 function get(tx: Tx, id: string): Job {
   const job = tx.select().from(jobs).where(eq(jobs.id, id)).get();
   if (!job) throw new JobError(`no such job: ${id}`);

@@ -23,8 +23,8 @@ You are a **worker**, not the source of truth. SQLite (via the `dirpush` CLI) ow
    Something the human should do that doesn't stop the job (verify an email later, check a listing) → `dirpush todo add --job <job> --message "…" [--url …]`. It shows in the dashboard's Actions tab.
 10. **Hold your lease.** Checkpoints extend it; on long pages call `dirpush work heartbeat <job>` at least every 10 minutes. Stopping cleanly: `dirpush work release <job>`.
 11. **Browser = `dirpush ab <agent-browser command>`.** It drives the agents' own Chrome profile (logged into the human's Google account; Gmail, Drive and account pages blocked), never the human's everyday browser. Any agent that can run shell commands can use it. Never call `agent-browser` directly on that profile, never `network unroute`, never another browser tool or extension. Google sign-in rules in [authentication.md](references/authentication.md) are hard rules.
-   Habits: `dirpush ab open <url>`, `dirpush ab snapshot -i` (refs like `@e3`), `dirpush ab fill @e3 "text"`, `dirpush ab select`, `dirpush ab check`, `dirpush ab click`. Uploads: `dirpush ab upload '<input[type=file] selector>' <absolute path>`, never a button ref; sign in before uploading. Every call has a 90 s limit (`AB_TIMEOUT`); exit 142 = it hung: close that tab (`dirpush ab tab close`), reopen, continue from your last checkpoint. If every call hangs while one site is open (some pages freeze any automated browser on purpose), close that tab and `work block --type bot_protection` saying the human must submit it in their own browser; never close the whole browser for this.
-12. **Bot checks: wait, don't fight.** Cloudflare / Turnstile usually clears by itself in this Chrome: wait ~10 s and re-snapshot. Never click a CAPTCHA or Turnstile checkbox yourself and never use a solving service. Still there → `work block --type captcha` with the page left open. A plain arithmetic question in a form is part of the form: answer it.
+   Habits: `dirpush ab open <url>`, `dirpush ab snapshot -i` (refs like `@e3`), `dirpush ab fill @e3 "text"`, `dirpush ab select`, `dirpush ab check`, `dirpush ab click`. Uploads: `dirpush ab upload '<input[type=file] selector>' <absolute path>`, never a button ref; sign in before uploading. Every call has a 90 s limit (`AB_TIMEOUT`); exit 142 = it hung: close that tab (`dirpush ab tab close`), reopen, continue from your last checkpoint. If every call hangs while one site is open (some pages freeze any automated browser on purpose), close that tab and `work block --type bot_protection --message "<Site> breaks under automation. Do it in your own browser: <the steps, with the URL>"` (that phrase makes it a by-hand hand-off); never close the whole browser for this.
+12. **Bot checks: wait, don't fight.** Cloudflare / Turnstile usually clears by itself in this Chrome: wait ~10 s and re-snapshot. Never click a CAPTCHA or Turnstile checkbox yourself and never use a solving service. Still there → `work block --type captcha` with the page left open; it becomes a hand-off (below). A plain arithmetic question in a form is part of the form: answer it.
 13. **Close your browser** (`dirpush ab close`) when you stop, unless a job of yours is blocked on the human in that window (CAPTCHA, login) — leave it for them. A throwaway profile (`AB_PROFILE`) loses the filled form when closed: in the block message, list exactly what to re-enter.
 
 ## Loop
@@ -61,13 +61,29 @@ Workers read `dirpush capabilities` at the start of a session: email verificatio
 - **"Set up dirpush"** / **"set up this product"** / **"add a product"**: `dirpush init <product-id>`, run the Setup check above if `dirpush capabilities` says it hasn't been done, then help the user fill `workspace/products/<id>/product.yaml` (and the shared `workspace/identity.yaml`, `permissions.yaml` the first time). Validate with `dirpush product show --product <id>`.
 - **"Find N free directories I haven't submitted to and submit"**: `dirpush directories recommend --free --unsubmitted --limit N --product <id>`, show the list, `dirpush submissions enqueue <dir-id…> --product <id>`, then run the loop.
 - **"Continue my launch"**: the whole routine, no other instructions needed (nothing from a previous conversation is either):
-  1. `dirpush actions` — tell the human what's waiting on them. Google sign-in, CAPTCHAs and bot checks: tell them to run `dirpush checks` in their terminal (it walks them through each one and hands the jobs back); never solve them yourself.
+  1. `dirpush actions` — note what's waiting on the human; if they're here, do the **hand-offs** below with them now (before step 3, so their jobs join the loop).
   2. `dirpush submissions check` — marks pending listings live (skip if run in the last day).
   3. Run the loop until `work next` is empty. Jobs still showing another worker with an expired lease are abandoned: `work next` hands them to you; continue from their last step.
   4. Queue empty → `dirpush directories recommend --free --unsubmitted --limit 10 --product <id>`, show the list, enqueue only what the human approves.
   5. `dirpush capabilities` has no email tool, or you don't have that tool this session → verification steps are a `work block --type email_verification` with what to click, never a wait.
+- **"What do you need from me?"** / the human is around and `dirpush handoff list` isn't empty: do the hand-offs below.
 - **"Add a directory I submitted to myself"**: `dirpush submissions add <directory-id or URL> --listing-url <url> [--outcome live|pending]`.
 - New directories go upstream: tell the human to report them on the dirpush repository; the registry is not researched locally.
+
+## Hand-offs: the human's part, done with you in chat
+
+The human never needs the CLI. Some steps only they can do: sign into Google once, tick a bot check, or (rarely) submit by hand on a site that breaks under automation. You walk them through these one at a time, in chat:
+
+1. `dirpush handoff next` opens the page itself (Google's sign-in window, the agents' Chrome on the check, or their own browser for a by-hand site) and returns `ask`: one sentence. Say exactly that. For a by-hand site it also returns `paste`: give them those values to copy.
+2. Wait for their reply. Never solve a CAPTCHA or bot check yourself, and don't poll the page while they work.
+3. Their answer:
+   - "done" → `dirpush handoff done <job>` (`google` for the sign-in, which hands back every Google job), then **claim that job and finish it right away**, in the same tab, before the page goes stale. Then the next hand-off.
+   - submitted it themselves → `dirpush handoff mine <job> [--listing-url <url>]`.
+   - "not now" / "skip" → `dirpush handoff skip <job>` (hidden from `next` for 12 hours).
+   - "stop" → stop asking; the rest stays in `dirpush handoff list` for next time.
+4. Keep it short: one hand-off per message, no lists of commands, no internal job ids unless they ask. If the human isn't around, don't start hand-offs; mention how many are waiting at the end.
+
+A human who prefers the terminal can run plain `dirpush handoff` to walk the same queue themselves; then `continue my launch` finishes what they cleared.
 
 ## Command reference
 
