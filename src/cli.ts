@@ -36,6 +36,17 @@ if (first === "--version" || first === "-v") {
   process.exit(0);
 }
 if (first === "--help" || first === "-h") process.argv.splice(2, 1, "help");
+// Names people type for the human-facing commands.
+const ALIASES: Record<string, string> = { check: "checks", captchas: "checks", needs: "actions", todos: "actions" };
+if (first && ALIASES[first]) process.argv.splice(2, 1, ALIASES[first]);
+/** Agents read JSON errors; a person at a terminal gets a plain sentence. */
+function fail(error: string, extra: { didYouMean?: string[] } = {}): never {
+  if (process.stderr.isTTY) {
+    const alts = extra.didYouMean?.map((c) => `dirpush ${c}`).join(", ");
+    console.error(`dirpush: ${error}${alts ? `\nDid you mean: ${alts}?` : ""}\nRun 'dirpush help' for every command.`);
+  } else console.error(JSON.stringify({ error, ...extra, help: "dirpush help" }));
+  process.exit(1);
+}
 
 const { values: flags, positionals } = parseArgs({
   allowPositionals: true,
@@ -733,14 +744,22 @@ if (!cmd || cmd === "help") {
 const run = commands[`${cmd} ${sub}`] ?? commands[cmd ?? ""];
 if (!run) {
   const tried = sub ? `${cmd} ${sub}` : cmd;
-  const close = Object.keys(commands).filter((c) => c.startsWith(cmd) || c.includes(tried) || (sub && c.endsWith(sub)));
-  console.error(JSON.stringify({ error: `unknown command: ${tried}`, ...(close.length && { didYouMean: close.slice(0, 5) }), help: "dirpush help" }));
-  process.exit(1);
+  // Typos too: "chek" → checks (edit distance on the first word).
+  const dist = (x: string, y: string) => {
+    let prev = Array.from({ length: y.length + 1 }, (_, j) => j);
+    for (let i = 1; i <= x.length; i++) {
+      const row = [i];
+      for (let j = 1; j <= y.length; j++) row[j] = Math.min(prev[j]! + 1, row[j - 1]! + 1, prev[j - 1]! + (x[i - 1] === y[j - 1] ? 0 : 1));
+      prev = row;
+    }
+    return prev[y.length]!;
+  };
+  const close = Object.keys(commands).filter((c) => c.startsWith(cmd) || c.includes(tried) || (sub && c.endsWith(sub)) || dist(c.split(" ")[0] ?? c, cmd ?? "") <= 2);
+  fail(`unknown command: ${tried}`, close.length ? { didYouMean: close.slice(0, 5) } : {});
 }
 try {
   const result = await run();
   if (result !== undefined) out(result);
 } catch (e) {
-  console.error(JSON.stringify({ error: e instanceof z.ZodError ? z.prettifyError(e) : (e as Error).message }));
-  process.exit(1);
+  fail(e instanceof z.ZodError ? z.prettifyError(e) : (e as Error).message);
 }

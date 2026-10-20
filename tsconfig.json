@@ -26,5 +26,7 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noPropertyAccessFromIndexSignature": false
-  }
+  },
+  // Local state (data/: Chrome profile, extensions) and build output are not ours to typecheck.
+  "exclude": ["node_modules", "dist", "data", "workspace"]
 }
