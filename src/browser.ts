@@ -46,6 +46,9 @@ export async function browserStatus() {
   }
 }
 
+/** Flags every Chrome on the agents' profile gets (scripts/google-login repeats them). */
+export const AGENT_CHROME_FLAGS = ["--use-mock-keychain", "--password-store=basic", "--no-first-run", "--no-default-browser-check", "--disable-extensions", "--disable-sync"];
+
 export async function startBrowser() {
   const now = await browserStatus();
   if (now.running) return { ...now, started: false };
@@ -53,8 +56,9 @@ export async function startBrowser() {
   const pac = `data:application/x-ns-proxy-autoconfig;base64,${Buffer.from(pacScript()).toString("base64")}`;
   // Plain Chrome, headed, no automation flags: Google sign-in and bot checks see a normal browser. The keychain
   // flags match agent-browser and scripts/google-login: the profile's cookies are encrypted with that key, so
-  // without them every saved session would be unreadable.
-  Bun.spawn([CHROME, `--user-data-dir=${PROFILE}`, `--remote-debugging-port=${BROWSER_PORT}`, `--proxy-pac-url=${pac}`, "--use-mock-keychain", "--password-store=basic", "--no-first-run", "--no-default-browser-check"], {
+  // without them every saved session would be unreadable. No extensions and no sync: signing into Google here turns on
+  // Chrome sync, which copies the human's own extensions in (one with debugger access hijacked every agent session).
+  Bun.spawn([CHROME, `--user-data-dir=${PROFILE}`, `--remote-debugging-port=${BROWSER_PORT}`, `--proxy-pac-url=${pac}`, ...AGENT_CHROME_FLAGS], {
     stdout: "ignore", stderr: "ignore", stdin: "ignore",
   }).unref();
   for (let i = 0; i < 40; i++) {

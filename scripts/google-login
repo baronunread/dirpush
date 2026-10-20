@@ -13,5 +13,5 @@ bun "$PKG/src/cli.ts" browser stop >/dev/null 2>&1
 # so `dirpush checks` can carry on. A separate --user-data-dir is its own Chrome process; the human's Chrome is untouched.
 for i in 1 2 3 4 5 6 7 8 9 10; do [ -L data/browser-profile/SingletonLock ] || break; sleep 0.5; done
 "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --user-data-dir="$PWD/data/browser-profile" \
-  --use-mock-keychain --password-store=basic --no-first-run --no-default-browser-check \
+  --use-mock-keychain --password-store=basic --no-first-run --no-default-browser-check --disable-extensions --disable-sync \
   "https://accounts.google.com/ServiceLogin?continue=https%3A%2F%2Fwww.google.com%2F" >/dev/null 2>&1

@@ -19,7 +19,14 @@ AB="agent-browser --headed --session ${AB_SESSION:-default} --profile ${AB_PROFI
 # `launch browser start` already runs this profile (Google services blocked by its PAC script): attach to it
 # instead of launching a second Chrome on the same profile.
 PORT="${LAUNCH_BROWSER_PORT:-9222}"
-if [ -z "$AB_PROFILE" ] && curl -s -m 1 "http://127.0.0.1:$PORT/json/version" >/dev/null 2>&1; then
+up() { curl -s -m 1 "http://127.0.0.1:$PORT/json/version" >/dev/null 2>&1; }
+# The real profile always runs as that dedicated Chrome. Launching it through agent-browser instead relaunches Chrome
+# on every call (losing tabs and filled forms), so start it here when it's down (e.g. after a Google sign-in).
+if [ -z "$AB_PROFILE" ] && ! up && [ "$1" != "close" ]; then
+  agent-browser --session "${AB_SESSION:-default}" close >/dev/null 2>&1 || true
+  bun "$PKG/src/cli.ts" browser start >/dev/null 2>&1 || { echo "couldn't start the agents' Chrome: run 'dirpush browser start' and read its error" >&2; exit 1; }
+fi
+if [ -z "$AB_PROFILE" ] && up; then
   exec perl -e 'alarm shift; exec @ARGV or die "cannot run $ARGV[0]: $!\n"' "${AB_TIMEOUT:-90}" agent-browser --session "${AB_SESSION:-default}" --cdp "$PORT" "$@"
 fi
 for host in mail.google.com gmail.com www.gmail.com inbox.google.com \
