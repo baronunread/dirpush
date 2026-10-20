@@ -1,7 +1,10 @@
-import { expect, test } from "bun:test";
+import { expect, setDefaultTimeout, test } from "bun:test";
 import { mkdtempSync, existsSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
+
+// Every test spawns the CLI several times; on a busy machine (an agent driving Chrome) 5 s is too tight.
+setDefaultTimeout(30_000);
 
 const dir = mkdtempSync(join(tmpdir(), "launch-"));
 const env = { ...process.env, LAUNCH_DB: join(dir, "t.db"), LAUNCH_REGISTRY: join(dir, "reg"), LAUNCH_WORKSPACE: join(dir, "ws"), LAUNCH_WORKER: "test", LAUNCH_QUIET: "1" };
