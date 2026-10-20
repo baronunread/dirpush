@@ -107,6 +107,7 @@ export async function checks(db: Db, opts: { product?: string; types: string[] }
     if (url) console.log(`${dim("Page:")} ${url}`);
     console.log(WHAT[job.blockType ?? ""] ?? "Do what the note above asks.");
     console.log(dim("Asked to sign in with Google? Press g: Google refuses sign-in in the agents' window."));
+    console.log(dim("No box on the page? It may have passed already, or it only shows on the form's last step: press enter and an agent tries again."));
     console.log(dim("Check never passes there? Submit it from your own browser instead, then press s."));
     open();
     for (;;) {
