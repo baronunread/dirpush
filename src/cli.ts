@@ -395,13 +395,18 @@ const commands: Record<string, (() => Promise<unknown> | unknown) | undefined> =
     const product = await loadProduct(flags.product);
     const ids = args;
     if (!ids.length) throw new Error("missing <directory-id...>");
-    const noBadges = (await permission("external.add_backlink", product.id)) === "never";
+    // --badge: the human agreed to link back from their site for these directories (a one-off over add_backlink: never).
+    const noBadges = !flags.badge && (await permission("external.add_backlink", product.id)) === "never";
     for (const id of ids) {
       const { directory } = await loadDirectory(id); // must exist in the verified registry
       if (noBadges && directory.cost.classification === "CONDITIONAL_FREE")
-        throw new Error(`${id} is free only with a badge/backlink, and permissions say external.add_backlink: never`);
+        throw new Error(`${id} is free only with a badge/backlink, and permissions say external.add_backlink: never (pass --badge if the human agreed to link back for it)`);
     }
-    return ids.map((id) => J.enqueue(db, "submission", id, product.id));
+    return ids.map((id) => {
+      const job = J.enqueue(db, "submission", id, product.id);
+      // An earlier worker declined it for the badge; with --badge that reason is gone, so it goes back in the queue.
+      return flags.badge && job.status === "failed" && job.lastError?.startsWith("badge:") ? J.requeue(db, job.id) : job;
+    });
   },
   "submissions list": () => {
     const rows = db.select().from(jobs).where(and(
@@ -709,7 +714,7 @@ const HELP: [string, [string, string][]][] = [
   ]],
   ["Directories", [
     ["directories recommend --product id [--free] [--unsubmitted] [--all] [--kind k] [--limit n]", "directories that fit and are allowed"],
-    ["submissions enqueue <directory-id…> --product id", "queue submissions"],
+    ["submissions enqueue <directory-id…> --product id [--badge]", "queue submissions; --badge when the human agreed to link back from their site"],
     ["registry show <id>", "full definition and playbook for one directory"],
     ["registry list [--free] [--kind k] [--limit n]", "registry rows (50 by default)"],
     ["registry report-change <id> --input json", "record a fix you made to a directory's YAML"],
