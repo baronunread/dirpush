@@ -4,7 +4,7 @@ website: https://fazier.com
 submission_url: https://fazier.com/submit
 cost:
   classification: CONDITIONAL_FREE
-  notes: Free with backlink requirement; paid options $29-139 one-time
+  notes: "Free launch needs the Fazier badge image on the homepage, 3 comments on other launches, and DR > 0; paid options $29-139 one-time"
 audience:
   - saas
   - startups
@@ -19,7 +19,8 @@ submission:
   url_first: false
   fields: []
   conditions:
-    - backlink or badge on homepage/footer required for free tier
+    - Fazier badge image in the homepage HTML (the check asks for "a Fazier badge"; a text link was not tested)
+    - 3 public comments on other Fazier launches before verification
 autofetch:
   supported: false
   expected: []
