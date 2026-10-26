@@ -1,0 +1,53 @@
+id: official-mcp-registry
+name: Official MCP Registry
+website: https://registry.modelcontextprotocol.io/
+submission_url: https://modelcontextprotocol.io/registry/quickstart
+cost:
+  classification: VERIFIED_FREE
+  notes: No fee is stated in the official docs. Publishing needs the mcp-publisher CLI and a verified namespace (GitHub login or a domain you own). The registry is in preview, so breaking changes or data resets may occur.
+audience:
+  - mcp-servers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Publish with the mcp-publisher CLI from a server.json file; there is no web submission form
+    - Namespace must match the login. GitHub login requires io.github.<user-or-org>/*; DNS or HTTP domain verification requires the reversed domain, for example com.example/*
+    - Server must be installable from a public package (npm, PyPI, NuGet, Cargo, OCI image or MCPB) or be a publicly reachable remote server; private servers are not supported
+    - Package ownership is proven in the package itself (mcpName in package.json for npm, mcp-name README string for PyPI/NuGet/Cargo, OCI label, or an MCPB URL containing "mcp" plus a SHA-256)
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: mcp_registry
+human_only: null
+link:
+  rel: unknown
+  method: none
+  evidence: https://registry.modelcontextprotocol.io/
+  samples: 0
+  noindex: null
+  claimed: null
+  bot_check: none
+  unmeasured: no_listings
+  checked_at: 2026-10-26
+verification:
+  status: verified
+  checked_at: 2026-10-26
+  by: claude-code
+  sources:
+    - https://modelcontextprotocol.io/registry/quickstart
+    - https://modelcontextprotocol.io/registry/about
+    - https://modelcontextprotocol.io/registry/authentication.md
+    - https://modelcontextprotocol.io/registry/package-types.md
+    - https://modelcontextprotocol.io/registry/remote-servers.md
+    - https://registry.modelcontextprotocol.io/
+    - https://github.blog/ai-and-ml/generative-ai/how-to-find-install-and-manage-mcp-servers-with-the-github-mcp-registry/

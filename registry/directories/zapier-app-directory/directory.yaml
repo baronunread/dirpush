@@ -1,0 +1,54 @@
+id: zapier-app-directory
+name: Zapier App Directory
+website: https://zapier.com/apps
+submission_url: https://developer.zapier.com
+cost:
+  classification: VERIFIED_FREE
+  notes: "Zapier docs state building and publishing a public integration on the Developer Platform is free, with no publishing fees. Goes through review, then 90 days in public beta with a Beta tag before becoming fully public."
+audience:
+  - saas
+  - developer-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - "Build the integration in the Zapier Platform UI or Platform CLI, then Integration Home, Publish, complete the form, Submit for Review"
+    - Must be fully launched to the public (not invite-only or beta) and compliant with the published integration requirements
+    - Every trigger, action and search tested with at least one successful Zap run in history
+    - Non-expiring test account for integration-testing@zapier.com required, plus at least one admin team member with a qualifying email domain
+    - Zapier developer replies within about 1 week; Zapier may reject or remove integrations at its discretion
+    - After approval the integration is in Beta for 90 days, then public; an active-user threshold is not stated in the official docs read
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: marketplace
+human_only: null
+review_time: "about 1 week for first developer response; 90 days in beta before public"
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://zapier.com/apps/slack/integrations
+  samples: 3
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-26
+verification:
+  status: verified
+  checked_at: 2026-10-26
+  by: claude-code
+  sources:
+    - https://docs.zapier.com/platform/publish/public-integration
+    - https://docs.zapier.com/platform/publish/integration-publishing-requirements
+    - https://zapier.com/apps/slack/integrations
+    - https://zapier.com/apps/asana/integrations
+    - https://zapier.com/apps/notion/integrations

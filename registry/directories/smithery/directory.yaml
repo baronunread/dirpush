@@ -1,0 +1,48 @@
+id: smithery
+name: Smithery
+website: https://smithery.ai/servers
+submission_url: https://smithery.ai/docs/build/publish
+cost:
+  classification: VERIFIED_FREE
+  notes: The publishing docs and pricing page state no fee for listing a server, and no plan details were found on the pricing page. Pricing for publishing was not established beyond that. A notice on the site says Smithery's MCP Proxy and managed identity shut down on October 31.
+audience:
+  - mcp-servers
+authentication:
+  required: true
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: true
+  fields: []
+  conditions:
+    - Remote servers need a public HTTPS URL using Streamable HTTP transport, with OAuth if the server needs auth
+    - Local stdio servers are published as a .mcpb bundle
+    - Smithery scans the server for tools, prompts and resources; WAF or bot protection can block the scan
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: mcp_registry
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://smithery.ai/servers/brave
+  samples: 1
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-26
+verification:
+  status: verified
+  checked_at: 2026-10-26
+  by: claude-code
+  sources:
+    - https://smithery.ai/docs
+    - https://smithery.ai/docs/build/publish.md
+    - https://smithery.ai/pricing
+    - https://smithery.ai/servers
+    - https://smithery.ai/servers/brave

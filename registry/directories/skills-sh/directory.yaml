@@ -1,0 +1,51 @@
+id: skills-sh
+name: skills.sh (Vercel agent skills directory)
+website: https://skills.sh
+submission_url: null
+cost:
+  classification: VERIFIED_FREE
+  notes: "No submission and no fee. The FAQ states skills are not submitted: they appear automatically through anonymous install telemetry when users run npx skills add <owner/repo>. Listing is therefore earned by real installs, not requested."
+audience:
+  - agent-plugins
+  - developer-tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - No submit form; a skill appears only after installs are reported by the skills CLI telemetry
+    - Skill must be a public GitHub repository with a SKILL.md
+    - Ranking is by install count (All Time, Trending 24h, Hot)
+    - Telemetry can be disabled by users, so counts may under-report
+    - No removal process documented; the FAQ points to opening an issue in the skill's repo
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: plugin_marketplace
+human_only: null
+link:
+  rel: ugc
+  method: sample_listing
+  evidence: https://skills.sh/vercel-labs/skills/find-skills
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-26
+verification:
+  status: verified
+  checked_at: 2026-10-26
+  by: claude-code
+  sources:
+    - https://skills.sh
+    - https://skills.sh/docs
+    - https://skills.sh/docs/faq
+    - https://skills.sh/vercel-labs/skills/find-skills
+    - https://skills.sh/anthropics/skills/pdf

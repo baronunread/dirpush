@@ -1,0 +1,52 @@
+id: chatgpt-apps
+name: ChatGPT App and Plugin Directory
+website: https://chatgpt.com/apps
+submission_url: https://platform.openai.com/plugins
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "No submission fee in the docs read. Requires an OpenAI Platform organization with individual or business verification, and the guidelines forbid selling digital goods or subscriptions inside the app. Whether a paid OpenAI plan is needed to submit is not established."
+audience:
+  - agent-plugins
+  - mcp-servers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - openai-account
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Submit from the OpenAI Platform Plugins dashboard (platform.openai.com/plugins) as a ZIP package; organization owner or member with Apps Management Write permission
+    - Verified individual or organization identity in organization settings
+    - Remote MCP server must be a stable public HTTPS endpoint with domain verification via /.well-known/openai-apps-challenge; auth is none, OAuth or mixed only; one MCP server per plugin
+    - Published privacy policy, HTTPS website, support and terms URLs; 5 positive and 3 negative test cases; reviewer video walkthrough URL; demo account credentials if sign-in is needed
+    - Manual review by OpenAI; after approval the developer chooses when to publish
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: plugin_marketplace
+human_only: null
+link:
+  rel: unknown
+  method: none
+  evidence: null
+  samples: 0
+  noindex: null
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-26
+  unmeasured: bot_wall
+verification:
+  status: verified
+  checked_at: 2026-10-26
+  by: claude-code
+  sources:
+    - https://developers.openai.com/apps-sdk/deploy/submission
+    - https://developers.openai.com/plugins/plugin-guidelines
+    - https://developers.openai.com/apps-sdk/app-submission-guidelines
+    - https://openai.com/index/developers-can-now-submit-apps-to-chatgpt/

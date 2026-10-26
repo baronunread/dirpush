@@ -1,0 +1,49 @@
+id: docker-mcp-catalog
+name: Docker MCP Catalog
+website: https://hub.docker.com/mcp
+submission_url: https://github.com/docker/mcp-registry
+cost:
+  classification: VERIFIED_FREE
+  notes: Submission is a pull request to the docker/mcp-registry repository. The contributing guide mentions no fee. Docker team reviews every PR.
+audience:
+  - mcp-servers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Pull request to github.com/docker/mcp-registry adding servers/<name>/server.yaml; CI must pass and the Docker team reviews every PR
+    - Local servers need a Dockerfile in the source repo; remote servers need a public streamable-http or sse endpoint plus server.yaml, tools.json and readme.md
+    - Server license must allow others to use it (MIT or Apache 2 recommended; GPL not a fit)
+    - Without an image, Docker builds and hosts it in the mcp namespace with signatures, provenance and SBOMs; a self-built image (--image) gets container isolation only
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: mcp_registry
+human_only: null
+review_time: "listed within 24 hours of approval (per CONTRIBUTING)"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://hub.docker.com/mcp/server/notion
+  samples: 1
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-26
+verification:
+  status: verified
+  checked_at: 2026-10-26
+  by: claude-code
+  sources:
+    - https://github.com/docker/mcp-registry/blob/main/CONTRIBUTING.md
+    - https://hub.docker.com/mcp
+    - https://hub.docker.com/mcp/server/notion

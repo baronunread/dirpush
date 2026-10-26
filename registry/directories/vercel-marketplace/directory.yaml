@@ -1,0 +1,75 @@
+id: vercel-marketplace
+name: Vercel Marketplace (Integrations)
+website: https://vercel.com/marketplace
+submission_url: https://vercel.com/docs/integrations/create-integration
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Creating a connectable account (OAuth/redirect) integration is open to any Vercel account via the Integrations Console, and no fee is stated. It gets a Community badge and is NOT listed in the public marketplace until it has 500 active installations and passes review. Native integrations (Marketplace API, billing through Vercel) are effectively partner-only: you apply to the Marketplace provider program and work with Vercel; eligibility, fees and revenue share are not published."
+audience:
+  - saas
+  - developer-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - vercel-account
+submission:
+  url_first: false
+  fields:
+    - name: Name
+      required: true
+    - name: URL Slug
+      required: true
+    - name: Developer (legal name)
+      required: true
+    - name: Contact Email
+      required: true
+    - name: Support Contact Email (public)
+      required: true
+    - name: Short Description
+      required: true
+    - name: Logo
+      required: true
+    - name: Category
+      required: true
+    - name: Website, Documentation URL, EULA URL, Privacy Policy URL
+      required: true
+    - name: Overview
+      required: true
+    - name: Feature Media (1-8 images, 16:9)
+      required: true
+  conditions:
+    - "Connectable account integration: create via Integrations Console, instantly installable (Community badge) but not in the public marketplace"
+    - "Public listing needs at least 500 active installations, passing the approval checklist, then an email to integrations@vercel.com"
+    - "Native integration: apply to the Marketplace provider program (company name, contact, email, website); Vercel reviews and gets in touch; Integration API server, billing and a Marketplace template required; effectively partner-only"
+    - Integration creator is solely responsible for user support and must accept Vercel integration terms
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 8
+kind: marketplace
+human_only: null
+review_time: "not established (Vercel developer replies by email; native adds a walkthrough call)"
+link:
+  rel: unknown
+  method: none
+  evidence: null
+  samples: 0
+  noindex: null
+  claimed: null
+  bot_check: none
+  unmeasured: no_outbound_link
+  checked_at: 2026-10-26
+verification:
+  status: verified
+  checked_at: 2026-10-26
+  by: claude-code
+  sources:
+    - https://vercel.com/docs/integrations/create-integration
+    - https://vercel.com/docs/integrations/create-integration/approval-checklist
+    - https://vercel.com/marketplace/program
+    - https://vercel.com/marketplace/neon

@@ -1,0 +1,47 @@
+id: awesome-mcp-servers
+name: Awesome MCP Servers (punkpeye)
+website: https://github.com/punkpeye/awesome-mcp-servers
+submission_url: https://github.com/punkpeye/awesome-mcp-servers/blob/main/CONTRIBUTING.md
+cost:
+  classification: VERIFIED_FREE
+  notes: A free pull request to the repository. CONTRIBUTING.md states no fee, star requirement or Glama requirement. Many existing entries carry a Glama score badge, but the contribution guide does not require one.
+audience:
+  - mcp-servers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Server must have a public GitHub repository and be something users install and run themselves; remote-only servers belong in awesome-remote-mcp-servers
+    - Edit README.md in the existing format, in the right category, alphabetical within the category, one server per line
+    - Agents can add the robot emojis 🤖🤖🤖 to the end of the PR title for fast-track merging
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: github_list
+human_only: null
+link:
+  rel: nofollow
+  method: platform_rule
+  evidence: https://github.com/punkpeye/awesome-mcp-servers
+  samples: 0
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-26
+verification:
+  status: verified
+  checked_at: 2026-10-26
+  by: claude-code
+  sources:
+    - https://github.com/punkpeye/awesome-mcp-servers/blob/main/CONTRIBUTING.md
+    - https://raw.githubusercontent.com/punkpeye/awesome-mcp-servers/main/README.md
+    - https://github.com/punkpeye/awesome-mcp-servers

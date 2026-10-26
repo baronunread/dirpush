@@ -1,0 +1,46 @@
+id: pulsemcp
+name: PulseMCP
+website: https://www.pulsemcp.com/servers
+submission_url: https://www.pulsemcp.com/submit
+cost:
+  classification: VERIFIED_FREE
+  notes: No fee is stated. The submit page currently says new server and client submissions are paused and existing listings are not being changed; it points to publishing on the Official MCP Registry instead.
+audience:
+  - mcp-servers
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - Submissions are paused as of 2026-10-26 with no reopening date
+    - Publish to the Official MCP Registry; PulseMCP says it will pick that up automatically once it resumes
+autofetch:
+  supported: true
+  expected:
+    - official-mcp-registry
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: mcp_registry
+human_only: null
+link:
+  rel: unknown
+  method: none
+  evidence: https://www.pulsemcp.com/servers/modelcontextprotocol-filesystem
+  samples: 0
+  noindex: null
+  claimed: null
+  bot_check: unknown
+  unmeasured: bot_wall
+  checked_at: 2026-10-26
+verification:
+  status: verified
+  checked_at: 2026-10-26
+  by: claude-code
+  sources:
+    - https://www.pulsemcp.com/submit
+    - https://www.pulsemcp.com/servers/modelcontextprotocol-filesystem
