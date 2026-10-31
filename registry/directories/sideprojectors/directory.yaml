@@ -31,10 +31,10 @@ autofetch:
   supported: false
   expected: []
 media:
-  logo: false
+  logo: true
   screenshots:
     supported: true
-    max: 0
+    max: 3
 kind: marketplace
 human_only: null
 link:

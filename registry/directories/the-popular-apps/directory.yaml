@@ -8,9 +8,10 @@ cost:
 audience:
   - mobile-apps
 authentication:
-  required: false
-  signup_allowed: false
-  methods: []
+  required: true
+  signup_allowed: true
+  methods:
+    - email
 submission:
   url_first: false
   fields: []
