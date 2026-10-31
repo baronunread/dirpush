@@ -13,9 +13,11 @@ mkdir -p "$H/data" && cd "$H"
 # signs in once in this same profile with `scripts/google-login`.
 CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 # Always headed: submissions regularly need the human to click something in this window.
-# AB_PROFILE / AB_SESSION let parallel workers use a throwaway profile and their own session (no-account
-# directories only; the real profile holds the Google login and can only be open once).
-AB="agent-browser --headed --session ${AB_SESSION:-default} --profile ${AB_PROFILE:-$H/data/browser-profile} --executable-path"
+# The worker's session: AB_SESSION, else its LAUNCH_WORKER name, else "default" (abSession in src/browser.ts).
+# Parallel workers share the one Chrome below, each in its own pinned tab. AB_PROFILE runs a throwaway profile
+# instead (no Google login there).
+S="${AB_SESSION:-${LAUNCH_WORKER:-default}}"
+AB="agent-browser --headed --session $S --profile ${AB_PROFILE:-$H/data/browser-profile} --executable-path"
 # `launch browser start` already runs this profile (Google services blocked by its PAC script): attach to it
 # instead of launching a second Chrome on the same profile.
 PORT="${LAUNCH_BROWSER_PORT:-9222}"
@@ -23,11 +25,23 @@ up() { curl -s -m 1 "http://127.0.0.1:$PORT/json/version" >/dev/null 2>&1; }
 # The real profile always runs as that dedicated Chrome. Launching it through agent-browser instead relaunches Chrome
 # on every call (losing tabs and filled forms), so start it here when it's down (e.g. after a Google sign-in).
 if [ -z "$AB_PROFILE" ] && ! up && [ "$1" != "close" ]; then
-  agent-browser --session "${AB_SESSION:-default}" close >/dev/null 2>&1 || true
+  agent-browser --session "$S" close >/dev/null 2>&1 || true
   bun "$PKG/src/cli.ts" browser start >/dev/null 2>&1 || { echo "couldn't start the agents' Chrome: run 'dirpush browser start' and read its error" >&2; exit 1; }
 fi
 if [ -z "$AB_PROFILE" ] && up; then
-  exec perl -e 'alarm shift; exec @ARGV or die "cannot run $ARGV[0]: $!\n"' "${AB_TIMEOUT:-90}" agent-browser --session "${AB_SESSION:-default}" --cdp "$PORT" "$@"
+  PIN=""
+  if [ "$S" != default ]; then
+    # A named session gets a tab of its own, once per Chrome launch (the marker holds that Chrome's id), and stays
+    # pinned to it: it never drifts onto another worker's tab. A closed tab fails with tab_gone: 'dirpush ab tab new'.
+    PIN="--pin-tab"
+    ID=$(curl -s -m 1 "http://127.0.0.1:$PORT/json/version" | sed -n 's#.*devtools/browser/\([^"]*\)".*#\1#p')
+    M="$H/data/ab-sessions/$S"
+    if [ "$(cat "$M" 2>/dev/null)" != "$ID" ]; then
+      agent-browser --session "$S" --cdp "$PORT" tab new >/dev/null # unpinned: a pinned attach opens a second, blank tab
+      mkdir -p "$H/data/ab-sessions" && printf '%s\n' "$ID" > "$M"
+    fi
+  fi
+  exec perl -e 'alarm shift; exec @ARGV or die "cannot run $ARGV[0]: $!\n"' "${AB_TIMEOUT:-90}" agent-browser --session "$S" --cdp "$PORT" $PIN "$@"
 fi
 for host in mail.google.com gmail.com www.gmail.com inbox.google.com \
   drive.google.com drive.usercontent.google.com docs.google.com sheets.google.com slides.google.com forms.google.com \

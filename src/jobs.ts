@@ -1,4 +1,4 @@
-import { and, asc, eq, inArray, isNull, lte, or } from "drizzle-orm";
+import { and, asc, eq, gt, inArray, isNull, lte, or } from "drizzle-orm";
 import type { Db } from "./db";
 import { events, jobs, type Job, type JobKind } from "./db/schema";
 import { recordAccount } from "./accounts";
@@ -67,41 +67,70 @@ function claimableWhere(now: number, kind?: JobKind) {
   return kind ? and(eq(jobs.kind, kind), ready) : ready;
 }
 
-/** Unknown first (they block retries), then oldest. */
-export function next(db: Db, kind?: JobKind, now = Date.now()): Job | undefined {
-  const rows = db.select().from(jobs).where(claimableWhere(now, kind)).orderBy(asc(jobs.createdAt)).all();
+/** Directories a live worker is on right now. Parallel workers share one Chrome profile (one cookie jar), so two
+ *  submissions to the same site at once would sign each other out or mix accounts. */
+function busySubjects(tx: Tx | Db, now: number, except?: string) {
+  const live = tx.select({ id: jobs.id, subject: jobs.subject }).from(jobs)
+    .where(and(eq(jobs.kind, "submission"), inArray(jobs.status, ["running", "unknown"]), gt(jobs.leaseExpiresAt, now))).all();
+  return new Set(live.filter((j) => j.id !== except).map((j) => j.subject));
+}
+
+/** Unknown first (they block retries), then oldest. Skips directories another worker is on. */
+export function next(db: Db | Tx, kind?: JobKind, now = Date.now()): Job | undefined {
+  const busy = busySubjects(db, now);
+  const rows = db.select().from(jobs).where(claimableWhere(now, kind)).orderBy(asc(jobs.createdAt)).all()
+    .filter((j) => j.kind !== "submission" || !busy.has(j.subject));
   return rows.find((j) => j.status === "unknown") ?? rows[0];
 }
 
-export function claim(db: Db, id: string, worker: string, now = Date.now()): Job {
+/** Directories with a submission job a worker could claim now: the most parallel workers that can be busy. */
+export function claimableSubjects(db: Db, now = Date.now()) {
+  const busy = busySubjects(db, now);
+  const rows = db.select({ subject: jobs.subject }).from(jobs).where(claimableWhere(now, "submission")).all();
+  return [...new Set(rows.map((j) => j.subject))].filter((s) => !busy.has(s));
+}
+
+/** `next` + `claim` in one transaction, so parallel workers never race for the same job. */
+export function claimNext(db: Db, kind: JobKind, worker: string, now = Date.now()): Job | undefined {
   return tx(db, (t) => {
-    const job = get(t, id);
-    const ok = t.select({ id: jobs.id }).from(jobs).where(and(eq(jobs.id, id), claimableWhere(now))).get();
-    if (!ok) throw new JobError(`job ${id} is not claimable (${job.status}, worker ${job.worker ?? "-"})`);
-    let status = job.status;
-    if (status === "running") {
-      logEvent(t, id, "lease_expired", job.worker, { step: job.step });
-      if (job.step === SUBMITTING) {
-        status = "unknown";
-        logEvent(t, id, "submission_state_unknown", job.worker, { reason: "lease expired during submit" });
-      }
-    }
-    const fresh = status === "queued" || status === "retry";
-    const updated = set(
-      t,
-      id,
-      {
-        status: status === "unknown" ? "unknown" : "running",
-        worker,
-        leaseExpiresAt: now + LEASE_MS,
-        attempts: fresh ? job.attempts + 1 : job.attempts,
-        notBefore: null,
-      },
-      now,
-    );
-    logEvent(t, id, "claimed", worker, { status: updated.status, step: updated.step, attempt: updated.attempts });
-    return updated;
+    const job = next(t, kind, now);
+    return job && claimIn(t, job.id, worker, now);
   });
+}
+
+export function claim(db: Db, id: string, worker: string, now = Date.now()): Job {
+  return tx(db, (t) => claimIn(t, id, worker, now));
+}
+
+function claimIn(t: Tx, id: string, worker: string, now: number): Job {
+  const job = get(t, id);
+  const ok = t.select({ id: jobs.id }).from(jobs).where(and(eq(jobs.id, id), claimableWhere(now))).get();
+  if (!ok) throw new JobError(`job ${id} is not claimable (${job.status}, worker ${job.worker ?? "-"})`);
+  if (job.kind === "submission" && busySubjects(t, now, id).has(job.subject))
+    throw new JobError(`another worker is on ${job.subject} right now; take a different job (work next --claim)`);
+  let status = job.status;
+  if (status === "running") {
+    logEvent(t, id, "lease_expired", job.worker, { step: job.step });
+    if (job.step === SUBMITTING) {
+      status = "unknown";
+      logEvent(t, id, "submission_state_unknown", job.worker, { reason: "lease expired during submit" });
+    }
+  }
+  const fresh = status === "queued" || status === "retry";
+  const updated = set(
+    t,
+    id,
+    {
+      status: status === "unknown" ? "unknown" : "running",
+      worker,
+      leaseExpiresAt: now + LEASE_MS,
+      attempts: fresh ? job.attempts + 1 : job.attempts,
+      notBefore: null,
+    },
+    now,
+  );
+  logEvent(t, id, "claimed", worker, { status: updated.status, step: updated.step, attempt: updated.attempts });
+  return updated;
 }
 
 export function heartbeat(db: Db, id: string, worker: string, now = Date.now()) {
@@ -166,11 +195,12 @@ export function complete(db: Db, id: string, worker: string, outcome: string, da
   });
 }
 
-export function block(db: Db, id: string, worker: string, type: string, message: string, now = Date.now()) {
+/** `session`: the worker's agent-browser session, so a hand-off can raise the tab the worker left open. */
+export function block(db: Db, id: string, worker: string, type: string, message: string, now = Date.now(), session?: string) {
   return tx(db, (t) => {
     const job = get(t, id);
     owned(job, worker, now, ["running", "unknown"]);
-    logEvent(t, id, "blocked", worker, { type, message, step: job.step });
+    logEvent(t, id, "blocked", worker, { type, message, step: job.step, ...(session ? { session } : {}) });
     return set(t, id, { status: "blocked", blockType: type, blockMessage: message, worker: null, leaseExpiresAt: null }, now);
   });
 }

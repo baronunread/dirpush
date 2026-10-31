@@ -13,14 +13,23 @@ import { loadDirectory } from "./registry";
 import { loadProduct, utm } from "./workspace";
 
 export type Kind = "google_login" | "tick" | "own_browser";
-/** `ask`: what the agent says in chat. `todo`: the same, short, for the terminal walk. */
-export type Handoff = { kind: Kind; jobs: string[]; directory: string; name: string; url?: string; ask: string; todo: string };
+/** `ask`: what the agent says in chat. `todo`: the same, short, for the terminal walk. `session`: the agent-browser
+ *  session of the worker that blocked, whose tab is still open on the check. */
+export type Handoff = { kind: Kind; jobs: string[]; directory: string; name: string; url?: string; session?: string; ask: string; todo: string };
 
 const TICK = ["captcha", "bot_protection"];
 const SKIP_HOURS = 12;
 const env = { ...process.env, LAUNCH_HOME: HOME };
-export const script = (name: string, ...args: string[]) =>
-  Bun.spawnSync([join(PKG, "scripts", name), ...args], { env, stdin: "ignore", stdout: "ignore", stderr: "ignore" }).exitCode;
+export const script = (name: string, ...args: string[]) => scriptAs(undefined, name, ...args);
+/** Runs a script in a worker's agent-browser session (its own tab), or the caller's when none is given. */
+const scriptAs = (session: string | undefined, name: string, ...args: string[]) =>
+  Bun.spawnSync([join(PKG, "scripts", name), ...args], { env: session ? { ...env, AB_SESSION: session } : env, stdin: "ignore", stdout: "ignore", stderr: "ignore" }).exitCode;
+
+/** The session recorded on the job's latest block, if the worker had one. */
+function blockedSession(db: Db, jobId: string) {
+  const last = db.select().from(events).where(and(eq(events.jobId, jobId), eq(events.type, "blocked"))).all().at(-1);
+  return typeof last?.data.session === "string" ? last.data.session : undefined;
+}
 
 /** Sites that break under automation: the agent's block message says the human must use their own browser. */
 export const ownBrowser = (job: Job) => /your own browser/i.test(job.blockMessage ?? "");
@@ -54,7 +63,7 @@ export async function handoffQueue(db: Db, product?: string, opts: { includeSkip
     out.push(ownBrowser(job)
       ? { kind: "own_browser", jobs: [job.id], directory: job.subject, name, url, todo: `Do this one in your own browser: ${instruction(job)}.`,
           ask: `${name} breaks when an agent drives the browser, so this one's by hand. I opened it in your browser: ${instruction(job)}. Tell me when it's submitted, with the listing link if there is one.` }
-      : { kind: "tick", jobs: [job.id], directory: job.subject, name, url, todo: "Tick the box in the window that opened. No box? Just press enter.",
+      : { kind: "tick", jobs: [job.id], directory: job.subject, name, url, session: blockedSession(db, job.id), todo: "Tick the box in the window that opened. No box? Just press enter.",
           ask: `A Chrome window is open on ${name}. Tick the box if you see one (no box is fine too), then tell me "done".` });
   }
   return out;
@@ -69,6 +78,8 @@ export function openHandoff(h: Handoff) {
   }
   if (!h.url) return false;
   if (h.kind === "own_browser") return Bun.spawnSync(["open", h.url]).exitCode === 0;
+  // The worker left its tab on the check: raise that tab as it is. Reopening the URL would reload the challenge.
+  if (h.session && scriptAs(h.session, "show-browser") === 0) return true;
   if (script("ab", "open", h.url) !== 0) return false;
   script("show-browser");
   return true;
@@ -107,7 +118,10 @@ export function handoffDone(db: Db, id: string) {
     ? db.select().from(jobs).where(and(eq(jobs.status, "blocked"), eq(jobs.blockType, "google_login"))).all().map((j) => j.id)
     : [id];
   const note = id === "google" ? "human signed into Google in the agents' Chrome profile" : "human cleared the check in the agents' Chrome; continue in the same tab";
-  return { handedBack: ids.map((j) => J.unblock(db, j, note)).map((j) => ({ id: j.id, directory: j.subject })), then: "claim each and finish it now" };
+  return {
+    handedBack: ids.map((j) => J.unblock(db, j, note)).map((j) => ({ id: j.id, directory: j.subject, session: blockedSession(db, j.id) })),
+    then: "claim each and finish it now, with AB_SESSION=<its session> so you continue in the tab the human just used",
+  };
 }
 
 /** The human submitted it themselves. */

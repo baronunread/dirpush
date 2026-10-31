@@ -15,8 +15,13 @@ export const BROWSER_PORT = Number(process.env.LAUNCH_BROWSER_PORT ?? 9222);
 export const PROFILE = join(HOME, "data/browser-profile");
 const CHROME = process.env.LAUNCH_CHROME ?? "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
 const BASE = `http://127.0.0.1:${BROWSER_PORT}`;
-/** One agent-browser session for secret handling, attached to the same Chrome. */
-const SECRETS_SESSION = "dirpush-secrets";
+/**
+ * The agent-browser session a worker drives: AB_SESSION, else its LAUNCH_WORKER name, else "default" (scripts/ab uses
+ * the same rule). Parallel workers share the one Chrome; each named session gets its own tab, pinned, on first use.
+ */
+export const abSession = () => process.env.AB_SESSION || process.env.LAUNCH_WORKER || "default";
+/** scripts/ab writes the Chrome instance id here once it has opened this session's own tab in that Chrome. */
+const tabMarker = (session: string) => join(HOME, "data/ab-sessions", session);
 
 /** Same list as scripts/ab: the profile is signed into the human's Google account; only sign-in pages may load. */
 export const BLOCKED_HOSTS = [
@@ -97,32 +102,39 @@ async function agentsChromePort() {
 let cdpPort = BROWSER_PORT;
 
 function ab(args: string[], stdin?: string) {
-  const p = Bun.spawnSync(["agent-browser", "--session", SECRETS_SESSION, "--cdp", String(cdpPort), ...args], { stdin: stdin === undefined ? "ignore" : Buffer.from(stdin), stdout: "pipe", stderr: "pipe", timeout: 60_000 });
+  const session = abSession();
+  const pin = session === "default" ? [] : ["--pin-tab"];
+  const p = Bun.spawnSync(["agent-browser", "--session", session, "--cdp", String(cdpPort), ...pin, ...args], { stdin: stdin === undefined ? "ignore" : Buffer.from(stdin), stdout: "pipe", stderr: "pipe", timeout: 60_000 });
   const out = p.stdout.toString().trim();
   if (p.exitCode !== 0) throw new Error(`agent-browser ${args[0]} failed: ${(p.stderr.toString() || out).trim().slice(0, 300)}`);
   return out;
 }
 
-/** The open tab on `site`'s host (the one the agent is working in); the most recently active one if several. */
-async function pageOn(site: string) {
-  const host = new URL(site.includes("://") ? site : `https://${site}`).hostname.replace(/^www\./, "");
+const hostOf = (url: string) => new URL(url.includes("://") ? url : `https://${url}`).hostname.replace(/^www\./, "");
+
+/** This worker's own tab (never another worker's), checked to be on `site`'s host when given. */
+async function workerTab(site?: string) {
   cdpPort = await agentsChromePort();
-  const list = (await (await fetch(`http://127.0.0.1:${cdpPort}/json/list`, { signal: AbortSignal.timeout(1500) })).json()) as Target[];
-  const page = list.find((t) => t.type === "page" && /^https?:/.test(t.url) && new URL(t.url).hostname.replace(/^www\./, "").endsWith(host));
-  if (!page) throw new Error(`no open tab on ${host}; open the login/sign-up page first`);
-  ab(["tab", page.id]);
-  return page;
+  const session = abSession();
+  if (session !== "default") {
+    const marker = Bun.file(tabMarker(session));
+    const chrome = (await json<{ webSocketDebuggerUrl: string }>("/json/version").catch(() => null))?.webSocketDebuggerUrl.split("/").pop();
+    if (!(await marker.exists()) || (await marker.text()).trim() !== chrome)
+      throw new Error(`session ${session} has no tab in this Chrome yet: open the page with 'dirpush ab open <url>' first`);
+  }
+  const url = ab(["get", "url"]);
+  if (site && (!/^https?:/.test(url) || !hostOf(url).endsWith(hostOf(site))))
+    throw new Error(`your tab is on ${url.slice(0, 120)}, not ${hostOf(site)}: open the login/sign-up page first`);
+  return url;
 }
 
-/** Fills a saved login (agent-browser vault) into the open tab on that site. The password never leaves the vault. */
+/** Fills a saved login (agent-browser vault) into this worker's tab, on the vault's sign-in page. The password never leaves the vault. */
 export async function vaultLogin(name: string) {
-  cdpPort = await agentsChromePort();
+  await workerTab();
   const meta = JSON.parse(ab(["auth", "show", name, "--json"])) as { data?: { profile?: { url?: string } } };
-  const url = meta.data?.profile?.url;
-  if (!url) throw new Error(`vault entry ${name} has no login URL`);
-  const page = await pageOn(url);
+  if (!meta.data?.profile?.url) throw new Error(`vault entry ${name} has no login URL`);
   ab(["auth", "login", name]);
-  return { vault: name, page: page.url.slice(0, 200), filled: true };
+  return { vault: name, page: ab(["get", "url"]).slice(0, 200), filled: true };
 }
 
 /** 24 random characters with every class sites ask for (upper, lower, digit, symbol), symbols that forms accept. */
@@ -142,7 +154,7 @@ export function strongPassword() {
  */
 export async function newPassword(name: string, url: string, username: string, selectors: string[], loginUrl = url) {
   if (!selectors.length) throw new Error("pass the password field selector(s), e.g. 'input[type=password]'");
-  const page = await pageOn(url);
+  const page = await workerTab(url);
   const pw = strongPassword();
   for (const s of selectors) ab(["fill", s, pw]);
   // A fill can "succeed" on a selector that matched nothing; never save a password the site didn't get.
@@ -151,5 +163,5 @@ export async function newPassword(name: string, url: string, username: string, s
   if (got.some((n) => n !== pw.length)) throw new Error(`password fields not filled (lengths ${got.join(", ")}); nothing saved`);
   // The vault keeps the sign-in page: `browser login` opens on it later, so a reset or sign-up URL there breaks logins.
   ab(["auth", "save", name, "--url", loginUrl, "--username", username, "--password-stdin"], pw);
-  return { vault: name, username, fields: selectors.length, page: page.url.slice(0, 200), saved: true };
+  return { vault: name, username, fields: selectors.length, page: page.slice(0, 200), saved: true };
 }

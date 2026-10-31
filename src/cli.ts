@@ -16,7 +16,7 @@ import { importHosted, readHostedExport } from "./import-hosted";
 import { addManualSubmission } from "./manual";
 import { present } from "./views";
 import { auditDirectory, auditDirectoryBrowser } from "./audit";
-import { browserStatus, newPassword, startBrowser, stopBrowser, vaultLogin } from "./browser";
+import { abSession, browserStatus, newPassword, startBrowser, stopBrowser, vaultLogin } from "./browser";
 import { accountsFor, backfillAccounts, listAccounts } from "./accounts";
 import { detect, loadCapabilities, saveCapabilities } from "./capabilities";
 import { handoffDone, handoffMine, handoffNext, handoffQueue, handoffSkip } from "./handoff";
@@ -56,6 +56,7 @@ const { values: flags, positionals } = parseArgs({
     kind: { type: "string" },
     status: { type: "string" },
     limit: { type: "string" },
+    max: { type: "string" },
     claim: { type: "boolean" },
     skill: { type: "boolean" },
     free: { type: "boolean" },
@@ -225,9 +226,17 @@ const commands: Record<string, (() => Promise<unknown> | unknown) | undefined> =
 
   // ---- work protocol --------------------------------------------------------
   "work next"() {
-    const job = J.next(db, "submission");
+    const job = flags.claim ? J.claimNext(db, "submission", worker()) : J.next(db, "submission");
     if (!job) return { job: null, message: "no claimable work" };
-    return { job: flags.claim ? J.claim(db, job.id, worker()) : job };
+    return { job };
+  },
+  /** How many submission workers to run in parallel, and their names: one per directory with work, up to --max (3). */
+  "work workers"() {
+    const max = Number(flags.max ?? process.env.LAUNCH_WORKERS ?? 3);
+    const base = (process.env.LAUNCH_WORKER ?? "claude-code").replace(/-\d+$/, "");
+    const directories = J.claimableSubjects(db).length;
+    const n = Math.max(0, Math.min(max, directories));
+    return { workers: Array.from({ length: n }, (_, i) => `${base}-${i + 1}`), directories, max };
   },
   "work list": () =>
     db.select().from(jobs).where(and(eq(jobs.kind, "submission"), flags.status ? eq(jobs.status, flags.status as any) : undefined)).orderBy(desc(jobs.updatedAt)).limit(limit).all(),
@@ -256,7 +265,7 @@ const commands: Record<string, (() => Promise<unknown> | unknown) | undefined> =
   "work submitted": () => J.recordSubmitted(db, arg(0, "job"), worker(), (flags.outcome ?? "submitted") as J.Outcome, flags["listing-url"]),
   "work not-submitted": () => J.recordNotSubmitted(db, arg(0, "job"), worker(), flags.evidence ?? ""),
   "work block"() {
-    const job = J.block(db, arg(0, "job"), worker(), flags.type ?? "user", flags.message ?? "");
+    const job = J.block(db, arg(0, "job"), worker(), flags.type ?? "user", flags.message ?? "", Date.now(), abSession());
     // Urgent blocks hold a worker that is waiting right now: ping the human's desktop (macOS; no-op elsewhere).
     if (URGENT.has(flags.type ?? "") && process.platform === "darwin" && !process.env.LAUNCH_QUIET)
       Bun.spawn(["osascript", "-e", `display notification ${JSON.stringify(`${job.subject}: open the dashboard (Needs you)`)} with title "dirpush: needs you" sound name "Glass"`]);
@@ -700,7 +709,8 @@ const HELP: [string, [string, string][]][] = [
     ["handoff list [--all]", "everything waiting on the human (a person at a terminal: plain 'dirpush handoff' walks it)"],
   ]],
   ["Work loop", [
-    ["work next [--claim]", "next submission job (unknown ones first); --claim leases it to you"],
+    ["work next [--claim]", "next submission job (unknown ones first), skipping directories another worker is on; --claim leases it to you"],
+    ["work workers [--max n]", "names for parallel workers: one per directory with work, up to --max (default 3)"],
     ["work show <job> [--all]", "a job, its saved data and its last 20 events"],
     ["work checkpoint <job> <step> [--data json]", "record progress; extends the lease"],
     ["work heartbeat <job>", "extend the lease on a long page"],

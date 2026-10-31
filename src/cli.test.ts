@@ -216,3 +216,15 @@ test("submissions add records a listing made by hand, from a registry id or any 
   expect(elsewhere).toMatchObject({ subject: "news.ycombinator.com", outcome: "live", inRegistry: false });
   expect(() => launch("submissions", "add", "example-dir", "--product", "beta", "--outcome", "maybe")).toThrow(/outcome/);
 });
+
+test("work workers: one per directory with work, up to --max", async () => {
+  for (const id of ["dir-a", "dir-b"]) {
+    Bun.spawnSync(["mkdir", "-p", join(dir, `reg/${id}`)]);
+    await Bun.write(join(dir, `reg/${id}/directory.yaml`), Bun.YAML.stringify({ ...directoryFixture, id }));
+  }
+  launch("submissions", "enqueue", "dir-a", "dir-b", "--product", "alpha");
+  const w = launch("work", "workers", "--max", "3");
+  expect(w.workers.length).toBeLessThanOrEqual(w.directories);
+  expect(w.workers.every((n: string) => /^test-\d+$/.test(n))).toBe(true);
+  expect(launch("work", "workers", "--max", "1").workers).toEqual(["test-1"]);
+});

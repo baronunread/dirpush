@@ -75,3 +75,24 @@ test("unknown jobs are served first", () => {
   J.release(db, b.id, "w", T0 + 3);
   expect(J.next(db, undefined, T0 + 4)?.id).toBe(b.id);
 });
+
+test("parallel workers never share a directory (one Chrome profile, one cookie jar)", () => {
+  const db = openDb(":memory:");
+  const a1 = J.enqueue(db, "submission", "saashub", "alpha", T0);
+  const a2 = J.enqueue(db, "submission", "saashub", "beta", T0 + 1);
+  const b = J.enqueue(db, "submission", "toolscout", "alpha", T0 + 2);
+  expect(J.claimableSubjects(db, T0 + 3).sort()).toEqual(["saashub", "toolscout"]);
+
+  expect(J.claimNext(db, "submission", "w-1", T0 + 3)?.id).toBe(a1.id);
+  // saashub is busy: the second worker gets the other directory, not saashub for the other product
+  expect(J.claimNext(db, "submission", "w-2", T0 + 4)?.id).toBe(b.id);
+  expect(J.claimNext(db, "submission", "w-3", T0 + 5)).toBeUndefined();
+  expect(() => J.claim(db, a2.id, "w-3", T0 + 5)).toThrow(/another worker is on saashub/);
+  expect(J.claimableSubjects(db, T0 + 5)).toEqual([]);
+
+  // a blocked job frees its directory; so does an expired lease
+  J.block(db, a1.id, "w-1", "captcha", "tick it", T0 + 6, "w-1");
+  expect(J.claimNext(db, "submission", "w-3", T0 + 7)?.id).toBe(a2.id);
+  expect(J.jobEvents(db, a1.id).at(-1)?.data.session).toBe("w-1");
+  expect(J.next(db, "submission", T0 + 7 + J.LEASE_MS + 1)?.subject).toBeDefined();
+});
