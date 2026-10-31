@@ -11,6 +11,7 @@ features:
   - Feature B
 pricing:
   free_plan: true
+  model: subscription # free | subscription | one_time | usage_based; some directories only take one kind
 social:
   github: null
   x: null

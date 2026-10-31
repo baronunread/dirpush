@@ -23,7 +23,7 @@ import { handoffDone, handoffMine, handoffNext, handoffQueue, handoffSkip } from
 import { walk } from "./walk";
 import { ratingDomain, ratingHistory, refreshRatings } from "./ratings";
 import { fetchRegistryFile, registrySource, registryUpdates } from "./registry-updates";
-import { loadIdentity, loadPermissions, loadProduct, permission, productIds, resolveProductId, PRODUCTS, utm, WORKSPACE } from "./workspace";
+import { loadIdentity, loadPermissions, loadProduct, permission, pricingMismatch, productIds, resolveProductId, PRODUCTS, utm, WORKSPACE } from "./workspace";
 
 // Browser helpers run as shell scripts with their arguments untouched (`dirpush ab snapshot -i`), against your launch home.
 const SCRIPTS: Record<string, string> = { ab: "ab", "google-login": "google-login", "show-browser": "show-browser", "check-listings": "check-listings" };
@@ -388,6 +388,8 @@ const commands: Record<string, (() => Promise<unknown> | unknown) | undefined> =
     if (flags.free || (await permission("money.spend", product.id)) === "never") dirs = dirs.filter((d) => SubmittableCost.includes(d.cost.classification));
     if (!flags.badge && (await permission("external.add_backlink", product.id)) === "never") dirs = dirs.filter((d) => d.cost.classification !== "CONDITIONAL_FREE");
     if (flags.unsubmitted) dirs = dirs.filter((d) => !done.has(d.id));
+    // Directories whose pricing rule the product can't meet (one-time purchases only, …): never, not even with --all.
+    dirs = dirs.filter((d) => !pricingMismatch(product, d.audience));
     // Launch boards, campaigns, lead-gen sites and human-only directories need a decision; show them only with --all.
     if (!flags.all) dirs = dirs.filter((d) => (!d.kind || d.kind === "listing") && !d.human_only);
     // Exact category match scores 2; general startup/software audiences fit any product (1).
@@ -410,6 +412,8 @@ const commands: Record<string, (() => Promise<unknown> | unknown) | undefined> =
     const noBadges = !flags.badge && (await permission("external.add_backlink", product.id)) === "never";
     for (const id of ids) {
       const { directory } = await loadDirectory(id); // must exist in the verified registry
+      const mismatch = pricingMismatch(product, directory.audience);
+      if (mismatch) throw new Error(`${id} doesn't fit ${product.id}: ${mismatch}`);
       if (noBadges && directory.cost.classification === "CONDITIONAL_FREE")
         throw new Error(`${id} is free only with a badge/backlink, and permissions say external.add_backlink: never (pass --badge if the human agreed to link back for it)`);
     }

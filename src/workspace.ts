@@ -16,7 +16,8 @@ export const Product = z.object({
   descriptions: z.object({ short: z.string(), medium: z.string().optional(), long: z.string().optional() }),
   categories: z.array(z.string()).default([]),
   features: z.array(z.string()).default([]),
-  pricing: z.object({ free_plan: z.boolean(), notes: z.string().optional() }),
+  // model: how paying works (directories like once.tools only take one-time purchases). Unset: read from the notes.
+  pricing: z.object({ free_plan: z.boolean(), model: z.enum(["free", "subscription", "one_time", "usage_based"]).optional(), notes: z.string().optional() }),
   social: z.record(z.string(), z.string().nullable()).default({}),
   // Facts forms often ask for (country, launch date/status, tech stack).
   country: z.string().nullish(),
@@ -36,6 +37,25 @@ export const Product = z.object({
     .default([]),
 });
 export type Product = z.infer<typeof Product> & { id: string; dir: string };
+
+/** The product's pricing model: `pricing.model`, else what the notes say ("$9/mo" is a subscription), else unknown. */
+export function pricingModel(p: Pick<Product, "pricing">): NonNullable<Product["pricing"]["model"]> | undefined {
+  if (p.pricing.model) return p.pricing.model;
+  const notes = p.pricing.notes ?? "";
+  if (/\/\s*(mo|month|yr|year)\b|per (month|year|seat)|monthly|yearly|annual|subscription/i.test(notes)) return "subscription";
+  if (/one[- ]time|lifetime|pay once/i.test(notes)) return "one_time";
+  return undefined;
+}
+
+/** Audience tags that are a pricing rule, not a topic: the directory only lists products sold this way. */
+const PRICING_AUDIENCES: Record<string, NonNullable<Product["pricing"]["model"]>> = { "one-time-purchase": "one_time" };
+
+/** Why this product can't be listed on a directory with these audience tags, or null. Unknown pricing never excludes. */
+export function pricingMismatch(p: Pick<Product, "pricing">, audience: string[]) {
+  const model = pricingModel(p);
+  const need = audience.map((a) => PRICING_AUDIENCES[a]).find(Boolean);
+  return model && need && model !== need ? `it only lists ${need.replace("_", "-")} products and this one is ${model.replace("_", "-")}` : null;
+}
 
 export const Identity = z.object({
   display_name: z.string(),

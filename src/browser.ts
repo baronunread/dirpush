@@ -152,15 +152,52 @@ export function strongPassword() {
  * New account password: generated here, typed into every given field of the open tab on `url`'s site, checked,
  * then saved to the vault as `name`. Returns no secret.
  */
+/** Page-side, before the fill: tags the first visible, editable password input for each selector (a hidden login modal
+ *  often has one too) and keeps every other field's value in the page, to spot a password that lands elsewhere. */
+export const tagPasswordFields = (selectors: string[]) => `(() => {
+  const shown = (e) => e.type === "password" && !e.disabled && !e.readOnly && e.getClientRects().length > 0 && getComputedStyle(e).visibility !== "hidden";
+  const found = ${JSON.stringify(selectors)}.map((s, i) => {
+    const el = [...document.querySelectorAll(s)].find((e) => e instanceof HTMLInputElement && shown(e));
+    if (el) el.setAttribute("data-dirpush-pw", String(i));
+    return !!el;
+  });
+  const fields = [...document.querySelectorAll("input, textarea")].filter((e) => !e.hasAttribute("data-dirpush-pw"));
+  window.__dirpushBefore = fields.map((e) => [e, e.value]);
+  return JSON.stringify(found);
+})()`;
+
+/** Page-side, after the fill: the tagged fields' lengths, and how many other fields changed (put back as they were). */
+export const checkPasswordFields = (count: number) => `(() => {
+  const lengths = Array.from({ length: ${count} }, (_, i) => document.querySelector(\`[data-dirpush-pw="\${i}"]\`)?.value.length ?? -1);
+  let leaked = 0;
+  for (const [e, before] of window.__dirpushBefore ?? []) {
+    if (e.value === before) continue;
+    leaked++;
+    Object.getOwnPropertyDescriptor(Object.getPrototypeOf(e), "value").set.call(e, before);
+    e.dispatchEvent(new Event("input", { bubbles: true }));
+  }
+  delete window.__dirpushBefore;
+  document.querySelectorAll("[data-dirpush-pw]").forEach((e) => e.removeAttribute("data-dirpush-pw"));
+  return JSON.stringify({ lengths, leaked });
+})()`;
+
+const evalJson = <T>(script: string): T => {
+  const out = JSON.parse(ab(["eval", script]));
+  return (typeof out === "string" ? JSON.parse(out) : out) as T;
+};
+
 export async function newPassword(name: string, url: string, username: string, selectors: string[], loginUrl = url) {
   if (!selectors.length) throw new Error("pass the password field selector(s), e.g. 'input[type=password]'");
   const page = await workerTab(url);
+  const found = evalJson<boolean[]>(tagPasswordFields(selectors));
+  const missing = selectors.filter((_, i) => !found[i]);
+  if (missing.length) throw new Error(`no visible password field matches ${missing.join(", ")}; nothing typed`);
   const pw = strongPassword();
-  for (const s of selectors) ab(["fill", s, pw]);
-  // A fill can "succeed" on a selector that matched nothing; never save a password the site didn't get.
-  const lengths = JSON.parse(ab(["eval", `JSON.stringify(${JSON.stringify(selectors)}.map((s) => document.querySelector(s)?.value.length ?? -1))`]));
-  const got = (typeof lengths === "string" ? JSON.parse(lengths) : lengths) as number[];
-  if (got.some((n) => n !== pw.length)) throw new Error(`password fields not filled (lengths ${got.join(", ")}); nothing saved`);
+  selectors.forEach((_, i) => ab(["fill", `[data-dirpush-pw="${i}"]`, pw]));
+  // A fill can "succeed" on nothing, or spill into another field; never save a password the site didn't get exactly.
+  const { lengths, leaked } = evalJson<{ lengths: number[]; leaked: number }>(checkPasswordFields(selectors.length));
+  if (leaked) throw new Error(`the password also went into ${leaked} other field(s), now put back; nothing saved. Retry with a more specific selector`);
+  if (lengths.some((n) => n !== pw.length)) throw new Error(`password fields not filled (lengths ${lengths.join(", ")}); nothing saved`);
   // The vault keeps the sign-in page: `browser login` opens on it later, so a reset or sign-up URL there breaks logins.
   ab(["auth", "save", name, "--url", loginUrl, "--username", username, "--password-stdin"], pw);
   return { vault: name, username, fields: selectors.length, page: page.slice(0, 200), saved: true };
