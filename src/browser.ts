@@ -66,7 +66,7 @@ export async function startBrowser() {
   Bun.spawn([CHROME, `--user-data-dir=${PROFILE}`, `--remote-debugging-port=${BROWSER_PORT}`, `--proxy-pac-url=${pac}`, ...AGENT_CHROME_FLAGS], {
     stdout: "ignore", stderr: "ignore", stdin: "ignore",
   }).unref();
-  for (let i = 0; i < 40; i++) {
+  for (let i = 0; i < 120; i++) { // up to 30 s: a cold start of the real profile can take over 10
     await Bun.sleep(250);
     const s = await browserStatus();
     if (s.running) return { ...s, started: true };
