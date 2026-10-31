@@ -21,7 +21,7 @@ external:
   add_backlink: never   # conditional-free directories (badge/backlink required) are skipped
   publish_social_post: confirm
 # Per-directory override of submissions.submit. `confirm` = the agent prepares everything,
-# then waits for you to press Approve in the dashboard (enforced by `work begin-submit`).
+# then waits for your go: say it in chat, or press Approve in the dashboard (enforced by `work begin-submit`).
 directories:
   product-hunt: confirm
   betalist: confirm

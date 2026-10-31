@@ -139,7 +139,7 @@ test("specialized catalogs are filterable and excluded from ordinary listing rec
   }
 });
 
-test("confirm directories can't be submitted until the human presses Approve", async () => {
+test("confirm directories can't be submitted until the human approves in the dashboard", async () => {
   Bun.spawnSync(["mkdir", "-p", join(dir, "reg/product-hunt")]);
   await Bun.write(join(dir, "reg/product-hunt/directory.yaml"), Bun.YAML.stringify({ ...directoryFixture, id: "product-hunt" }));
   const [j] = launch("submissions", "enqueue", "product-hunt", "--product", "alpha");
@@ -155,6 +155,28 @@ test("confirm directories can't be submitted until the human presses Approve", a
   unblock(openDb(env.LAUNCH_DB), j.id, "", Date.now(), true); // the dashboard's Approve
   launch("work", "claim", j.id);
   expect(launch("work", "begin-submit", j.id).step).toBe("submitting");
+});
+
+test("the human can approve a confirm directory in chat", async () => {
+  Bun.spawnSync(["mkdir", "-p", join(dir, "reg/betalist")]);
+  await Bun.write(join(dir, "reg/betalist/directory.yaml"), Bun.YAML.stringify({ ...directoryFixture, id: "betalist" }));
+  Bun.spawnSync(["mkdir", "-p", join(dir, "reg/indiehackers")]);
+  await Bun.write(join(dir, "reg/indiehackers/directory.yaml"), Bun.YAML.stringify({ ...directoryFixture, id: "indiehackers" }));
+  const [a, b] = launch("submissions", "enqueue", "betalist", "indiehackers", "--product", "alpha");
+
+  // Running job, human right there.
+  launch("work", "claim", a.id);
+  expect(() => launch("work", "approve", a.id)).toThrow(/--said is required/);
+  launch("work", "approve", a.id, "--said", "go ahead");
+  expect(launch("work", "begin-submit", a.id).step).toBe("submitting");
+  expect(launch("work", "show", a.id).events.some((e: { type: string }) => e.type === "approved")).toBe(true);
+
+  // Parked on a permission hold, approved later in chat.
+  launch("work", "claim", b.id);
+  launch("work", "block", b.id, "--type", "permission", "--message", "Ready to submit to indiehackers");
+  launch("work", "approve", b.id, "--said", "yes, launch it");
+  launch("work", "claim", b.id);
+  expect(launch("work", "begin-submit", b.id).step).toBe("submitting");
 });
 
 test("registry updates: reports added/changed, keeps newer local entries, --apply writes", async () => {

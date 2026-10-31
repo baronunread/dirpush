@@ -62,6 +62,7 @@ const { values: flags, positionals } = parseArgs({
     unsubmitted: { type: "boolean" },
     badge: { type: "boolean" },
     retryable: { type: "boolean" },
+    said: { type: "string" },
     reason: { type: "string" },
     type: { type: "string" },
     message: { type: "string" },
@@ -249,7 +250,7 @@ const commands: Record<string, (() => Promise<unknown> | unknown) | undefined> =
     const mode = perms.directories?.[job.subject] ?? perms.submissions?.submit ?? "confirm";
     if (mode === "never") throw new Error(`permissions say never submit to ${job.subject}: work fail ${id} --reason "submission not permitted"`);
     if (mode === "confirm" && !J.approved(db, id))
-      throw new Error(`${job.subject} needs the human's approval before submitting: work block ${id} --type permission --message "Ready to submit to ${job.subject} — approve in the dashboard"`);
+      throw new Error(`${job.subject} needs the human's approval before submitting: ask them in chat, then work approve ${id} --said "<their reply>"; if they aren't around, work block ${id} --type permission --message "Ready to submit to ${job.subject}"`);
     return J.beginSubmit(db, id, worker());
   },
   "work submitted": () => J.recordSubmitted(db, arg(0, "job"), worker(), (flags.outcome ?? "submitted") as J.Outcome, flags["listing-url"]),
@@ -262,6 +263,7 @@ const commands: Record<string, (() => Promise<unknown> | unknown) | undefined> =
     return job;
   },
   "work unblock": () => J.unblock(db, arg(0, "job"), flags.note),
+  "work approve": () => J.approve(db, arg(0, "job"), worker(), flags.said ?? ""),
   "work fail": () => J.fail(db, arg(0, "job"), worker(), flags.reason ?? "unspecified", !!flags.retryable),
   "work release": () => J.release(db, arg(0, "job"), worker()),
   "work requeue": () => J.requeue(db, arg(0, "job")),
@@ -702,6 +704,7 @@ const HELP: [string, [string, string][]][] = [
     ["work show <job> [--all]", "a job, its saved data and its last 20 events"],
     ["work checkpoint <job> <step> [--data json]", "record progress; extends the lease"],
     ["work heartbeat <job>", "extend the lease on a long page"],
+    ["work approve <job> --said text", "the human approved the final submit in chat; --said is their reply, verbatim"],
     ["work begin-submit <job>", "right before the final submit click"],
     ["work submitted <job> [--outcome pending|live] [--listing-url u]", "right after the submit result"],
     ["work not-submitted <job> --evidence text", "an unknown job was verified as not received"],

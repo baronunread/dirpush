@@ -175,7 +175,7 @@ export function block(db: Db, id: string, worker: string, type: string, message:
   });
 }
 
-/** Human resolved the block. `approved` = explicit go-ahead on a permission block (dashboard Approve only). */
+/** Human resolved the block. `approved` = explicit go-ahead on a permission block (the dashboard's Approve). */
 export function unblock(db: Db, id: string, note = "", now = Date.now(), approved = false) {
   return tx(db, (t) => {
     const job = get(t, id);
@@ -215,9 +215,27 @@ export function release(db: Db, id: string, worker: string, now = Date.now()) {
   });
 }
 
-/** Did the human press Approve on a permission block of this job? */
+/** The human approved the final submit in chat. `said` is their reply, verbatim, kept as the record.
+ *  Works on the worker's own running job, or on a permission block (which it releases, approved). */
+export function approve(db: Db, id: string, worker: string, said: string, now = Date.now()) {
+  if (!said.trim()) throw new JobError("--said is required: the human's own words approving this submission");
+  return tx(db, (t) => {
+    const job = get(t, id);
+    if (job.status === "blocked") {
+      if (job.blockType !== "permission") throw new JobError(`job ${id} is blocked on ${job.blockType}, not an approval`);
+      logEvent(t, id, "unblocked", "human", { type: job.blockType, note: said, approved: true, via: "chat", recordedBy: worker });
+      return set(t, id, { status: released(job) ?? "queued", blockType: null, blockMessage: null }, now);
+    }
+    owned(job, worker, now);
+    logEvent(t, id, "approved", "human", { said, via: "chat", recordedBy: worker, step: job.step });
+    return set(t, id, {}, now);
+  });
+}
+
+/** Did the human approve this job's final submit (dashboard Approve or `work approve`)? */
 export function approved(db: Db, id: string) {
-  return db.select().from(events).where(and(eq(events.jobId, id), eq(events.type, "unblocked"))).all().some((e) => e.data.approved === true);
+  return db.select().from(events).where(and(eq(events.jobId, id), inArray(events.type, ["unblocked", "approved"]))).all()
+    .some((e) => e.type === "approved" || e.data.approved === true);
 }
 
 /** Human: give a failed job another go. */

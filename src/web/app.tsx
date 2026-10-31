@@ -120,7 +120,8 @@ function describe(e: Event): string {
     case "checkpoint": return `Step: ${words(String(d.step ?? ""))}`;
     case "blocked": return `Needed you: ${d.message ?? words(d.type ?? "")}`;
     case "needs_user": return `Needed you: ${d.detail ?? words(d.block_type ?? "")}`;
-    case "unblocked": return `You answered${d.note ? `: ${d.note}` : ""}`;
+    case "unblocked": return d.approved ? `You approved${d.via === "chat" ? ` in chat: "${d.note}"` : ""}` : `You answered${d.note ? `: ${d.note}` : ""}`;
+    case "approved": return `You approved in chat: "${d.said}"`;
     case "reply_to_target": return `You answered${d.decision ? `: ${d.decision}` : ""}`;
     case "failed": return `Didn't work: ${d.reason}`;
     case "failed_retryable": return `Will retry: ${d.reason}`;
@@ -388,9 +389,8 @@ function needsCount(d: Actions, pid: string) {
   return subs.length + mine(d.galleries).length + mine(d.productApprovals).length + mine(d.todos).length + d.registryChanges.length;
 }
 
-/** Only an explicit dashboard press may approve a final submission. */
-const wantsApproval = (j: Job) => j.blockType === "permission" && ["ready", "submitting"].includes(j.step) &&
-  /submit|send|final action/i.test(j.blockMessage ?? "") && /approve.{0,100}dashboard|dashboard.{0,100}approve/i.test(j.blockMessage ?? "");
+/** A permission hold on a filled form is waiting for the final-submit approval. */
+const wantsApproval = (j: Job) => j.blockType === "permission" && ["ready", "submitting"].includes(j.step);
 
 function NeedsYou({ d, pid, open }: { d: Actions; pid: string; open: { job: (id: string) => void } }) {
   const dirs = useApi<Dir[]>("/api/registry", 60000);
