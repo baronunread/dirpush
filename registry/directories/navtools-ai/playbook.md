@@ -1,1 +1,3 @@
 At /submit, select Basic Review ($0); the page initially has the paid Fast Track selected. Quick Submit asks for tool name, website URL, and contact email, then says it generates detail-page content. A Cloudflare verification iframe is present; do not submit until completing normal account/workflow approval if required.
+
+Real flow (verified 2026-10-26): pick Basic Review ($0) and "Add Details Yourself". The manual form needs short + full description, categories (multi), pricing, How to Use, and at least one FAQ question/answer. Turnstile cleared on its own. After Submit an upsell modal appears: click "No thanks, I'll wait 30-90 days"; "Submission Successful" follows.

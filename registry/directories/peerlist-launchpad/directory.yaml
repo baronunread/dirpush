@@ -1,0 +1,55 @@
+id: peerlist-launchpad
+name: Peerlist Launchpad
+website: https://peerlist.io/launchpad
+submission_url: https://peerlist.io/launchpad
+cost:
+  classification: VERIFIED_FREE
+  notes: "Free weekly launches, but only from an ID-verified personal profile (government ID). No paid tier found on the launch flow."
+audience:
+  - saas
+  - startups
+  - developer-tools
+  - ai-tools
+  - web-apps
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - ID-verified personal Peerlist profile (government ID) at 40%+ completion; company profiles cannot launch
+    - the Launch Project button opens "Get verified to Launch" for an unverified profile
+    - the project is added to the profile's Work tab and 100% complete (name, tagline, cover image, demo link…)
+    - launches run on Mondays (UTC); any other day, schedule from the project's Launch button
+    - SEO agencies may not launch on a client's behalf
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: launch_board
+human_only: null
+review_time: instant (live on the weekly board on launch day)
+link:
+  rel: ugc
+  method: sample_listing
+  evidence: https://peerlist.io/markafan_dev/project/ship-plainly
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-10-26
+verification:
+  status: verified
+  checked_at: 2026-10-26
+  by: claude-code
+  sources:
+    - https://help.peerlist.io/individual/launchpad/how-to-launch-a-project-on-peerlist-launchpad
+    - https://help.peerlist.io/individual/launchpad/guidelines-faqs
+    - https://peerlist.io/launchpad

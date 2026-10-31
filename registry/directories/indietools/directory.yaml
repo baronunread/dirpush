@@ -3,8 +3,8 @@ name: IndieTools
 website: https://www.indietools.app/
 submission_url: https://www.indietools.app/submit
 cost:
-  classification: FREEMIUM
-  notes: "One permanent free listing per owner lifetime after manual review; badge is optional and only enables dofollow. Standard $10 once; Authority $39 once with SEO/GEO controls, reviewed article and labelled 30-day Featured period."
+  classification: CONDITIONAL_FREE
+  notes: "Free review requires a verified IndieTools badge on the product website (checked 2026-10-26); the free link is nofollow until the badge is verified. Standard $20 once (no badge, dofollow); Authority $39 once."
 audience:
   - saas
   - software
@@ -41,7 +41,8 @@ submission:
     - One free listing per owner for the lifetime of the account.
     - Free submission reserves the entitlement; publication permanently consumes it.
     - Manual review for Free; paid paths use automated validation after payment.
-    - Website badge is optional; free website link is nofollow by default and becomes dofollow while the badge is verified.
+    - Verified IndieTools website badge required before a Free listing can be submitted for review (2026-10-26).
+    - Free website link is nofollow by default and becomes dofollow while the badge is verified.
 autofetch:
   supported: false
   expected: []

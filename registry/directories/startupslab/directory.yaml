@@ -4,7 +4,7 @@ website: https://startupslab.site
 submission_url: https://startupslab.site/submit
 cost:
   classification: FREEMIUM
-  notes: "$0 free launch, standard queue (next available Monday), up to 2 active free submissions/account. Paid: Skip the Queue $9/launch (guaranteed dofollow backlink + pick any Monday), Spotlight $29/30 days (homepage placement). Top-3 upvoted free launches get a free dofollow backlink automatically -- a bonus, not a requirement."
+  notes: "$0 free launch, standard queue (next free Monday; ~7.5 months out as of 2026-10), up to 2 active free submissions/account. Paid: Skip the Queue $6/launch (guaranteed dofollow backlink + pick any Monday), Spotlight $29/30 days (homepage placement). Top-3 upvoted free launches get a free dofollow backlink automatically -- a bonus, not a requirement."
 audience:
   - startups
   - saas
@@ -40,7 +40,7 @@ media:
     max: 1
 kind: launch_board
 human_only: null
-review_time: next available Monday (standard/free queue); instant with paid Skip the Queue
+review_time: next free Monday in the standard queue (a submission on 2026-10-26 got 2027-06-14); instant with paid Skip the Queue
 listing_url_pattern: "https://startupslab.site/product/{slug}"
 link:
   rel: dofollow
@@ -53,7 +53,7 @@ link:
   checked_at: 2026-10-19
 verification:
   status: verified
-  checked_at: 2026-09-28
+  checked_at: 2026-10-28
   by: sonnet-rc
   sources:
     - https://startupslab.site/

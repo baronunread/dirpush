@@ -1,0 +1,11 @@
+# Peerlist Launchpad
+
+- The launch belongs to the human's personal Peerlist profile (company profiles are not allowed), so everything posts in their name. Sign in with email/password or Google at https://peerlist.io/login.
+- The profile must pass 40% completion ("You can't interact yet" on the profile until it does) **and be ID-verified** (profile menu → Verification → Identity, government ID). Both are the human's job: check them first and `work block --type manual` before building the project. The profile page only says verification "boosts ranking", but an unverified profile gets "Get verified to Launch" when it clicks Launch Project (2026-10-26).
+- Step 1, add the project: https://peerlist.io/user/projects/add-project. Skip "Autofill with AI". The right panel tracks completion; 100% needs name (45 chars), project URL, tagline (60), categories (up to 3, pick from the dropdown), built with, description (up to 5000, a contenteditable: click it and `keyboard type`, Enter between paragraphs), logo (500×500) and at least one cover image (1200×630, up to 4). "This project is open source" adds a required GitHub/GitLab URL field.
+  - Built with: click the combobox, `keyboard type` the name, click the matching option (or `Add "<name>"` for one it doesn't know). Never select-all + Backspace in that box: it deletes the chips already added.
+  - Uploads: the file inputs re-render after each upload, so re-query `input[type=file]` before every upload (logo input accepts no gif; cover inputs do).
+- "Save Project" lands on `https://peerlist.io/<username>/project/<slug>`. Saving only adds it to the profile; it is not the launch.
+- Step 2, launch: the project page's green "Launch →" button (not in the accessibility snapshot: click it via `eval` on the button whose text is "Launch →") opens "Project Launch - Week N, YYYY" with a "Launch Project" button. That is the final submit. On Mondays (UTC) it goes live right away; other days the dialog offers "Schedule Launch • Week N".
+- Listing URL: the project page. The outbound link is `rel="ugc"` and carries `?utm_source=peerlist&ref=peerlist`; the page is indexed.
+- Rules: never ask for upvotes, never DM strangers launch links, never over-share the link on Scroll.
