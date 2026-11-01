@@ -77,7 +77,7 @@ Workers read `dirpush capabilities` at the start of a session: email verificatio
 
 Submissions run up to 3 at a time, one per directory, all in the one signed-in Chrome, each worker in its own tab.
 
-1. `dirpush work workers` returns the worker names to use (`claude-code-1`, …): one per directory with work, at most 3 (`--max n` to change it). One name → just run the loop yourself.
+1. `dirpush work workers` returns the worker names to use (`claude-code-1`, …): one per directory with work, at most 3 (`--max n` to change it). One name → just run the loop yourself. An error about the agent-browser version → tell the human to update it (`npm i -g agent-browser@latest`), and run the loop alone meanwhile.
 2. `dirpush browser start` first (one Chrome for all; workers starting it together would race), then start one subagent per name, all at once, on a cheaper model (Sonnet). Each gets this brief: use the dirpush skill; `export LAUNCH_WORKER=<its name>`; run the loop with `dirpush work next --claim` until it returns no job; never ask the human anything (block instead); report what it submitted and blocked.
 3. Stay with the human yourself: approvals for `confirm` directories and hand-offs (CAPTCHAs etc.) come to you, not to the workers. A worker blocks; you relay.
 

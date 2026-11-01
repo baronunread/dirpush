@@ -223,8 +223,16 @@ test("work workers: one per directory with work, up to --max", async () => {
     await Bun.write(join(dir, `reg/${id}/directory.yaml`), Bun.YAML.stringify({ ...directoryFixture, id }));
   }
   launch("submissions", "enqueue", "dir-a", "dir-b", "--product", "alpha");
-  const w = launch("work", "workers", "--max", "3");
-  expect(w.workers.length).toBeLessThanOrEqual(w.directories);
+  // A stub agent-browser on PATH stands in for the installed version.
+  const withAb = (version: string) => {
+    const bin = join(dir, `ab-${version}`);
+    Bun.spawnSync(["mkdir", "-p", bin]);
+    Bun.spawnSync(["sh", "-c", `printf '#!/bin/sh\\necho agent-browser ${version}\\n' > ${bin}/agent-browser && chmod +x ${bin}/agent-browser`]);
+    return { PATH: `${bin}:${process.env.PATH}` };
+  };
+  const w = launchEnv(withAb("0.39.1"), "work", "workers", "--max", "3");
+  expect(w.workers.length).toBe(Math.min(3, w.directories));
   expect(w.workers.every((n: string) => /^test-\d+$/.test(n))).toBe(true);
-  expect(launch("work", "workers", "--max", "1").workers).toEqual(["test-1"]);
+  expect(() => launchEnv(withAb("0.33.0"), "work", "workers", "--max", "3")).toThrow(/agent-browser 0.34.0 or newer \(found 0.33.0\)/);
+  expect(launchEnv(withAb("0.33.0"), "work", "workers", "--max", "1").workers).toEqual(["test-1"]);
 });

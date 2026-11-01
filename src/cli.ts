@@ -236,6 +236,10 @@ const commands: Record<string, (() => Promise<unknown> | unknown) | undefined> =
     const base = (process.env.LAUNCH_WORKER ?? "claude-code").replace(/-\d+$/, "");
     const directories = J.claimableSubjects(db).length;
     const n = Math.max(0, Math.min(max, directories));
+    // Each worker pins its own tab with --pin-tab, which agent-browser added in 0.34.0.
+    const version = detect().agentBrowser?.version?.match(/\d+\.\d+\.\d+/)?.[0];
+    if (n > 1 && (!version || Bun.semver.order(version, "0.34.0") < 0))
+      throw new Error(`parallel workers need agent-browser 0.34.0 or newer (found ${version ?? "none"}): 'npm i -g agent-browser@latest', or run one worker`);
     return { workers: Array.from({ length: n }, (_, i) => `${base}-${i + 1}`), directories, max };
   },
   "work list": () =>
