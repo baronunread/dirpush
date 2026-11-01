@@ -214,7 +214,11 @@ const commands: Record<string, (() => Promise<unknown> | unknown) | undefined> =
     const p = await loadProduct(id).catch((e: Error) => ({ id, error: e.message }));
     return "error" in p ? p : { id, name: p.name, url: p.url };
   })),
-  "product show": () => loadProduct(flags.product),
+  // The identity that signs up and fills "company"/"founder" fields for this product: its own identity.yaml, else the shared one.
+  "product show": async () => {
+    const p = await loadProduct(flags.product);
+    return { ...p, identity: await loadIdentity(p.id).catch(() => null) };
+  },
   "permission": async () => {
     let pid: string | undefined;
     try {

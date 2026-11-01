@@ -61,7 +61,7 @@ Workers read `dirpush capabilities` at the start of a session: email verificatio
 
 ## Common starting requests
 
-- **"Set up dirpush"** / **"set up this product"** / **"add a product"**: `dirpush init <product-id>`, run the Setup check above if `dirpush capabilities` says it hasn't been done, then help the user fill `workspace/products/<id>/product.yaml` (and the shared `workspace/identity.yaml`, `permissions.yaml` the first time). Validate with `dirpush product show --product <id>`.
+- **"Set up dirpush"** / **"set up this product"** / **"add a product"**: `dirpush init <product-id>`, run the Setup check above if `dirpush capabilities` says it hasn't been done, then help the user fill `workspace/products/<id>/product.yaml` (and the shared `workspace/identity.yaml`, `permissions.yaml` the first time; a product that isn't the shared identity's company, like a side project, gets its own `workspace/products/<id>/identity.yaml`). Validate with `dirpush product show --product <id>`.
 - **"Find N free directories I haven't submitted to and submit"**: `dirpush directories recommend --free --unsubmitted --limit N --product <id>`, show the list, `dirpush submissions enqueue <dir-id…> --product <id>`, then run the loop.
 - **"Continue my launch"**: the whole routine, no other instructions needed (nothing from a previous conversation is either):
   1. `dirpush actions` — note what's waiting on the human; if they're here, do the **hand-offs** below with them now (before step 3, so their jobs join the loop).
