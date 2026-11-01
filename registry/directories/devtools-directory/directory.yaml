@@ -24,7 +24,7 @@ submission:
       required: true
     - name: description
       required: true
-    - name: resource_type
+    - name: tool_type
       required: true
     - name: pricing
       required: true
@@ -33,7 +33,7 @@ submission:
     - name: categories
       required: true
   conditions:
-    - Submit a YAML entry through a GitHub pull request; contributions are curated/reviewed.
+    - "Open a GitHub pull request to devtoolsd/devtoolsd adding content/tools/<slug>.md (Markdown with YAML frontmatter); contributions are curated/reviewed."
 autofetch:
   supported: false
   expected: []
@@ -54,7 +54,7 @@ link:
   checked_at: 2026-10-19
 verification:
   status: verified
-  checked_at: 2026-10-05
+  checked_at: 2026-11-01
   by: codex
   sources:
     - https://devtools.directory/about/

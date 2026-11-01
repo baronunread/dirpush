@@ -47,7 +47,9 @@ submission:
       required: true
   conditions:
     - "Manual review for clarity, legitimacy, and usefulness; approval is not automatic."
-    - An optional field asks whether the maker is interested in paid featured placement after editorial review.
+    - "The form has an optional growth-challenge radio group and a paid featured-placement checkbox; leave the checkbox unticked."
+    - "A Funding Choices cookie-consent dialog covers the submit button; dismiss it first. Logo is a URL field, not an upload."
+    - "Submit is the final free submit; success shows ?submitted=1 and \"submitted for review\"."
 autofetch:
   supported: true
   expected:
@@ -68,7 +70,7 @@ link:
   checked_at: 2026-10-19
 verification:
   status: verified
-  checked_at: 2026-10-05
+  checked_at: 2026-11-01
   by: codex
   sources:
     - https://thetooldirectory.com/submit-a-tool/

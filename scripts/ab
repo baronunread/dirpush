@@ -41,6 +41,12 @@ if [ -z "$AB_PROFILE" ] && up; then
       mkdir -p "$H/data/ab-sessions" && printf '%s\n' "$ID" > "$M"
     fi
   fi
+  if [ "$1" = close ]; then
+    # Only ends this session's connection; agent-browser's own "Browser closed" reads like the shared Chrome went down.
+    agent-browser --session "$S" --cdp "$PORT" close >/dev/null 2>&1 || true
+    echo "✓ Disconnected session $S. The agents' Chrome and its tabs stay open."
+    exit 0
+  fi
   exec perl -e 'alarm shift; exec @ARGV or die "cannot run $ARGV[0]: $!\n"' "${AB_TIMEOUT:-90}" agent-browser --session "$S" --cdp "$PORT" $PIN "$@"
 fi
 for host in mail.google.com gmail.com www.gmail.com inbox.google.com \

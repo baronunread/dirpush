@@ -39,6 +39,7 @@ submission:
       required: false
   conditions:
     - Manual review before publication.
+    - "/submit is one form with the free standard plan; Submit for review is the final submit, with no later plan step."
     - Optional $4.99 one-time Featured upgrade; no subscription or automatic renewal.
 autofetch:
   supported: false
@@ -58,10 +59,10 @@ link:
   noindex: false
   claimed: null
   bot_check: none
-  checked_at: 2026-10-19
+  checked_at: 2026-11-01
 verification:
   status: verified
-  checked_at: 2026-10-05
+  checked_at: 2026-11-01
   by: codex
   sources:
     - https://directory.project-bs.com/submit

@@ -47,7 +47,7 @@ submission:
     - name: cons
       required: false
   conditions:
-    - "Sign in or create an account with name, email, and password; account creation did not require email verification."
+    - "Sign in or create an account with name, email, and password. The register form has a required newsletter-consent checkbox. Under browser automation, Create Account and Sign In on /register and /login send no network request and the page stays put (checked 2026-11-01), so sign-up and sign-in must be done by hand in the human’s own browser."
     - Standard listing is free and manually reviewed; stated review time is 24-48 hours.
     - The review step preselects an optional £10 boost for 3-day placement; deselect it to avoid payment.
 autofetch:
@@ -72,7 +72,7 @@ link:
   checked_at: 2026-10-19
 verification:
   status: verified
-  checked_at: 2026-10-05
+  checked_at: 2026-11-01
   by: codex
   sources:
     - https://startup-list.org/submit

@@ -22,6 +22,7 @@ submission:
   fields: []
   conditions:
     - manual review
+    - sign-up has an hCaptcha and email verification, so a new account needs the human
 autofetch:
   supported: false
   expected: []
@@ -38,11 +39,11 @@ link:
   samples: 2
   noindex: false
   claimed: null
-  bot_check: none
-  checked_at: 2026-10-19
+  bot_check: hcaptcha
+  checked_at: 2026-11-01
 verification:
   status: verified
-  checked_at: 2026-09-27
+  checked_at: 2026-11-01
   by: haiku-3
   sources:
     - https://alternativeto.net/about/terms

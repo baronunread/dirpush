@@ -1,10 +1,10 @@
 id: devhunt
 name: DevHunt
 website: https://devhunt.org
-submission_url: https://devhunt.org/submit
+submission_url: https://devhunt.org/account/tools/new
 cost:
   classification: FREEMIUM
-  notes: "Free submission open to devtools/OSS/APIs/frameworks; $49 'Skip the queue' (pick launch week); $397 newsletter ad placement. Free tier has no strings attached beyond the wait."
+  notes: "Free listing is nofollow; dofollow is a paid upgrade from $19, and a boosted launch is $49. The free launch slot queue is about 5 years out (a slot picked on 2026-11-01 was 2031-10-21). Newsletter ad placement is $397."
 audience:
   - developer-tools
   - open-source
@@ -21,7 +21,8 @@ submission:
   fields: []
   conditions:
     - github_or_google_oauth_required
-    - average_6_month_queue_for_free_launch
+    - free_launch_slot_queue_about_5_years
+    - free_listing_is_nofollow
 autofetch:
   supported: false
   expected: []
@@ -31,23 +32,23 @@ media:
     supported: true
 kind: launch_board
 human_only: null
-review_time: ~6 months average for the free queue
+review_time: Free launch slot queue is about 5 years (slot picked 2026-11-01 was 2031-10-21)
 listing_url_pattern: "https://devhunt.org/tool/{slug}"
 link:
-  rel: dofollow
-  method: sample_listing
-  evidence: https://devhunt.org/tools/open-source
-  samples: 4
+  rel: nofollow
+  method: own_listing
+  evidence: null
+  samples: 1
   noindex: false
   claimed: null
   bot_check: unknown
-  checked_at: 2026-10-19
+  checked_at: 2026-11-01
 verification:
   status: verified
-  checked_at: 2026-09-28
+  checked_at: 2026-11-01
   by: sonnet-r2
   sources:
     - https://devhunt.org
-    - https://devhunt.org/submit
+    - https://devhunt.org/account/tools/new
     - https://devhunt.org/about
     - https://devhunt.org/tool/daytona
