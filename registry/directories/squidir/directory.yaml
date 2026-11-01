@@ -30,6 +30,7 @@ submission:
     - name: confirm_password
       required: true
   conditions:
+    - "The register form (https://squidir.com/account/register) has an ALTCHA \"I am not a robot\" checkbox (the schema has no altcha value, so bot_check is unknown); a new account needs the human."
     - Product must be a European SaaS.
     - Product listing and claim fields appear to require account registration; those fields were not visible logged out.
 autofetch:
@@ -40,7 +41,7 @@ media:
   screenshots:
     supported: false
 kind: listing
-human_only: null
+human_only: "A new account needs the human: the register form has an ALTCHA I am not a robot checkbox."
 link:
   rel: dofollow
   method: sample_listing
@@ -48,11 +49,11 @@ link:
   samples: 2
   noindex: false
   claimed: null
-  bot_check: none
+  bot_check: unknown
   checked_at: 2026-10-19
 verification:
   status: verified
-  checked_at: 2026-10-05
+  checked_at: 2026-11-01
   by: codex
   sources:
     - https://squidir.com/

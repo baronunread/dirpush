@@ -24,6 +24,7 @@ submission:
     - name: startup_url
       required: true
   conditions:
+    - "After registering at https://portal.10words.io/auth/register, login silently returns to the login form until the email is verified."
     - description max 10 words
 autofetch:
   supported: false
@@ -46,7 +47,7 @@ link:
   checked_at: 2026-10-19
 verification:
   status: verified
-  checked_at: 2026-09-29
+  checked_at: 2026-11-01
   by: sonnet-bB
   sources:
     - https://portal.10words.io/auth/register

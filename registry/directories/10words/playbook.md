@@ -6,3 +6,4 @@
 - No logo or screenshot uploads.
 - Optional paid sponsorship at portal.10words.io/sponsor: $150 for a week-long exclusive placement (premium newsletter spot, extra Twitter shout-outs, homepage placement) - purely optional upsell, not required for the free listing.
 - Listed products link straight out to the vendor site from the homepage - no internal per-listing page, so no listing_url_pattern.
+- After registering, login silently returns to the login form until the email is verified; confirm the email first.

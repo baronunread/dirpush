@@ -14,7 +14,7 @@ mkdir -p "$H/data" && cd "$H"
 CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 # Always headed: submissions regularly need the human to click something in this window.
 # The worker's session: AB_SESSION, else its LAUNCH_WORKER name, else "default" (abSession in src/browser.ts).
-# Parallel workers share the one Chrome below, each in its own pinned tab. AB_PROFILE runs a throwaway profile
+# Parallel workers share the one Chrome below, each in its own window (its tab pinned). AB_PROFILE runs a throwaway profile
 # instead (no Google login there).
 S="${AB_SESSION:-${LAUNCH_WORKER:-default}}"
 AB="agent-browser --headed --session $S --profile ${AB_PROFILE:-$H/data/browser-profile} --executable-path"
@@ -31,13 +31,14 @@ fi
 if [ -z "$AB_PROFILE" ] && up; then
   PIN=""
   if [ "$S" != default ]; then
-    # A named session gets a tab of its own, once per Chrome launch (the marker holds that Chrome's id), and stays
-    # pinned to it: it never drifts onto another worker's tab. A closed tab fails with tab_gone: 'dirpush ab tab new'.
+    # A named session gets a window of its own, once per Chrome launch (the marker holds that Chrome's id), and stays
+    # pinned to its tab: it never drifts onto another worker's. A window, not a tab: Chrome stops animation frames in
+    # background tabs (0/s), which stalls many sites; every window's tab stays visible. Closed: 'dirpush ab window new'.
     PIN="--pin-tab"
-    ID=$(curl -s -m 1 "http://127.0.0.1:$PORT/json/version" | sed -n 's#.*devtools/browser/\([^"]*\)".*#\1#p')
+    ID="$(curl -s -m 1 "http://127.0.0.1:$PORT/json/version" | sed -n 's#.*devtools/browser/\([^"]*\)".*#\1#p') window"
     M="$H/data/ab-sessions/$S"
     if [ "$(cat "$M" 2>/dev/null)" != "$ID" ]; then
-      agent-browser --session "$S" --cdp "$PORT" tab new >/dev/null # unpinned: a pinned attach opens a second, blank tab
+      agent-browser --session "$S" --cdp "$PORT" window new >/dev/null # unpinned: a pinned attach opens a second, blank tab
       mkdir -p "$H/data/ab-sessions" && printf '%s\n' "$ID" > "$M"
     fi
   fi

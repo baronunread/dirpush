@@ -42,6 +42,7 @@ submission:
     - name: FAQs
       required: false
   conditions:
+    - "Sign-in needed. The Google button fails with Google error redirect_uri_mismatch (site bug) and the GitHub button does nothing under automation, so only the email magic link works; it needs the human or an email tool."
     - Manual editorial review; free decision within 48 hours.
 autofetch:
   supported: false
@@ -63,7 +64,7 @@ link:
   checked_at: 2026-10-19
 verification:
   status: verified
-  checked_at: 2026-10-05
+  checked_at: 2026-11-01
   by: codex
   sources:
     - https://listing.sh/submit

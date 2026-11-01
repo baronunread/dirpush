@@ -17,8 +17,12 @@ authentication:
     - email
 submission:
   url_first: false
-  fields: []
+  fields:
+    - name: keywords
+      required: false
   conditions:
+    - "Free listings publish in about 21 weeks and the link is nofollow."
+    - "The site search box does not filter, so check for an existing listing in the page text."
     - Manual review
     - Approval required
 autofetch:
@@ -30,6 +34,7 @@ media:
     supported: false
     max: 0
 kind: listing
+review_time: About 21 weeks for free listings
 human_only: null
 link:
   rel: nofollow
@@ -42,7 +47,7 @@ link:
   checked_at: 2026-10-19
 verification:
   status: verified
-  checked_at: 2026-09-29
+  checked_at: 2026-11-01
   by: sonnet-bA
   sources:
     - https://devresourc.es/

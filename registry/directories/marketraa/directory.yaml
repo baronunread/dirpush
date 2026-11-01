@@ -3,8 +3,8 @@ name: Marketraa
 website: https://www.marketraa.com/
 submission_url: https://www.marketraa.com/
 cost:
-  classification: VERIFIED_FREE
-  notes: "Free submission and no paid placements, as stated in the submission form and footer."
+  classification: PAID
+  notes: "The Get listed flow is Directory profile plus one listicle placement for $40 USD, and the pay step comes before the profile. Not free."
 audience:
   - marketing
   - saas
@@ -35,6 +35,7 @@ submission:
     - name: what makes it unique
       required: false
   conditions:
+    - "Payment ($40 USD) is required before the profile form; do not submit without approval."
     - Editorial review before publication
 autofetch:
   supported: false
@@ -57,7 +58,7 @@ link:
   checked_at: 2026-10-19
 verification:
   status: verified
-  checked_at: 2026-10-05
+  checked_at: 2026-11-01
   by: codex
   sources:
     - https://www.marketraa.com/

@@ -3,8 +3,8 @@ name: We Are Founders Tools Directory
 website: https://directory.wearefounders.uk/
 submission_url: https://tally.so/r/PdvzgQ
 cost:
-  classification: FREEMIUM
-  notes: Standard listing is free with a 4–6 week queue; $49 Fast-track provides review within 48 hours and 30 days featured. No backlink/badge required.
+  classification: CONDITIONAL_FREE
+  notes: "Standard listing is free with a 4–6 week queue, but the form requires the URL of a page on your site that links back to We Are Founders. $49 Fast-track provides review within 48 hours and 30 days featured."
 audience:
   - startups
   - saas
@@ -53,7 +53,10 @@ submission:
       required: true
     - name: social_profile
       required: true
+    - name: linked_page_url
+      required: true
   conditions:
+    - "Required field \"Where have you linked to We Are Founders?\" needs the URL of a page on your site that links back."
     - Manual editorial review
     - submission adds sender to Friday Brief newsletter
     - social profile is a required field
@@ -78,7 +81,7 @@ link:
   checked_at: 2026-10-19
 verification:
   status: verified
-  checked_at: 2026-10-05
+  checked_at: 2026-11-01
   by: codex
   sources:
     - https://directory.wearefounders.uk/submit/

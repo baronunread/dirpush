@@ -21,7 +21,7 @@ const TICK = ["captcha", "bot_protection"];
 const SKIP_HOURS = 12;
 const env = { ...process.env, LAUNCH_HOME: HOME };
 export const script = (name: string, ...args: string[]) => scriptAs(undefined, name, ...args);
-/** Runs a script in a worker's agent-browser session (its own tab), or the caller's when none is given. */
+/** Runs a script in a worker's agent-browser session (its own window), or the caller's when none is given. */
 const scriptAs = (session: string | undefined, name: string, ...args: string[]) =>
   Bun.spawnSync([join(PKG, "scripts", name), ...args], { env: session ? { ...env, AB_SESSION: session } : env, stdin: "ignore", stdout: "ignore", stderr: "ignore" }).exitCode;
 

@@ -7,3 +7,7 @@
 - Silver ($99/mo): Bronze + GitHub README + logo on listings
 - Gold ($179/mo): Silver + newsletter + top banner + ad cards
 - Can advertise across both Dev Resources and Public APIs with bundle discount
+
+- Free listings publish in about 21 weeks, with a nofollow link.
+- The form has an optional Keywords field.
+- The site search box does not filter; check for an existing listing in the page text.

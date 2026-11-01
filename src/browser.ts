@@ -17,10 +17,10 @@ const CHROME = process.env.LAUNCH_CHROME ?? "/Applications/Google Chrome.app/Con
 const BASE = `http://127.0.0.1:${BROWSER_PORT}`;
 /**
  * The agent-browser session a worker drives: AB_SESSION, else its LAUNCH_WORKER name, else "default" (scripts/ab uses
- * the same rule). Parallel workers share the one Chrome; each named session gets its own tab, pinned, on first use.
+ * the same rule). Parallel workers share the one Chrome; each named session gets its own window (its tab pinned) on first use.
  */
 export const abSession = () => process.env.AB_SESSION || process.env.LAUNCH_WORKER || "default";
-/** scripts/ab writes the Chrome instance id here once it has opened this session's own tab in that Chrome. */
+/** scripts/ab writes the Chrome instance id here once it has opened this session's own window in that Chrome. */
 const tabMarker = (session: string) => join(HOME, "data/ab-sessions", session);
 
 /** Same list as scripts/ab: the profile is signed into the human's Google account; only sign-in pages may load. */
@@ -52,7 +52,8 @@ export async function browserStatus() {
 }
 
 /** Flags every Chrome on the agents' profile gets (scripts/google-login repeats them). */
-export const AGENT_CHROME_FLAGS = ["--use-mock-keychain", "--password-store=basic", "--no-first-run", "--no-default-browser-check", "--disable-extensions", "--disable-sync"];
+// The three --disable-*ing flags keep pages in covered or background windows running at full speed (parallel workers).
+export const AGENT_CHROME_FLAGS = ["--disable-background-timer-throttling", "--disable-backgrounding-occluded-windows", "--disable-renderer-backgrounding", "--use-mock-keychain", "--password-store=basic", "--no-first-run", "--no-default-browser-check", "--disable-extensions", "--disable-sync"];
 
 export async function startBrowser() {
   const now = await browserStatus();
@@ -119,8 +120,8 @@ async function workerTab(site?: string) {
   if (session !== "default") {
     const marker = Bun.file(tabMarker(session));
     const chrome = (await json<{ webSocketDebuggerUrl: string }>("/json/version").catch(() => null))?.webSocketDebuggerUrl.split("/").pop();
-    if (!(await marker.exists()) || (await marker.text()).trim() !== chrome)
-      throw new Error(`session ${session} has no tab in this Chrome yet: open the page with 'dirpush ab open <url>' first`);
+    if (!(await marker.exists()) || (await marker.text()).trim() !== `${chrome} window`)
+      throw new Error(`session ${session} has no window in this Chrome yet: open the page with 'dirpush ab open <url>' first`);
   }
   const url = ab(["get", "url"]);
   if (site && (!/^https?:/.test(url) || !hostOf(url).endsWith(hostOf(site))))

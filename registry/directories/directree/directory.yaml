@@ -22,6 +22,7 @@ submission:
     - name: product_url
       required: true
   conditions:
+    - "Account creation sends a verification email that must be confirmed before sign-in."
     - Free review queue may take up to 35 days; paid Fast Lane/Plus can skip it.
     - A free account is required.
 autofetch:
@@ -47,7 +48,7 @@ link:
   checked_at: 2026-10-19
 verification:
   status: verified
-  checked_at: 2026-10-05
+  checked_at: 2026-11-01
   by: codex
   sources:
     - https://www.directree.io/submit

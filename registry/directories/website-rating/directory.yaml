@@ -4,7 +4,7 @@ website: https://www.websiterating.com
 submission_url: https://www.websiterating.com/submit/
 cost:
   classification: FREEMIUM
-  notes: "Free tier: no cost, no badge/backlink required on submitter's site, listing gets a rel=\"ugc\" link from Website Rating; reviewed 4-8 weeks, approval not guaranteed. $49 Fast Track = 1-2 day priority review + dofollow link. $99 +Featured adds homepage/category featured placement. $149 +Interview adds a published founder interview with a dofollow link."
+  notes: "Free tier: no cost, no badge/backlink required on submitter's site, the free queue link is nofollow; reviewed 6-10 weeks, approval not guaranteed. $49 Fast Track = 1-2 day priority review + dofollow link. $99 +Featured adds homepage/category featured placement. $149 +Interview adds a published founder interview with a dofollow link."
 audience:
   - startups
   - saas
@@ -32,7 +32,8 @@ submission:
   conditions:
     - English only
     - one submission per domain
-    - "4-8 week manual review for free tier, approval not guaranteed"
+    - "The URL field only accepts a homepage (\"Please enter your homepage ... not a link to a specific page\"); a URL with UTM query parameters is rejected, so submit the bare homepage."
+    - "6-10 week manual review for free tier, approval not guaranteed"
 autofetch:
   supported: true
   expected:
@@ -46,7 +47,7 @@ media:
     supported: false
 kind: listing
 human_only: null
-review_time: 4-8 weeks for free tier (1-2 business days for paid Fast Track)
+review_time: 6-10 weeks for free tier (1-2 business days for paid Fast Track)
 listing_url_pattern: "https://www.websiterating.com/startups/{slug}/"
 link:
   rel: dofollow
@@ -59,7 +60,7 @@ link:
   checked_at: 2026-10-19
 verification:
   status: verified
-  checked_at: 2026-09-29
+  checked_at: 2026-11-01
   by: sonnet-bB
   sources:
     - https://www.websiterating.com/submit/

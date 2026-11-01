@@ -12,7 +12,7 @@ You are a **worker**, not the source of truth. SQLite (via the `dirpush` CLI) ow
 ## Hard rules
 
 1. **Never touch `data/launch.db` directly.** Every state change goes through `dirpush …`. Output is JSON.
-2. **Identify yourself:** `export LAUNCH_WORKER=claude-code` (or `codex`; a parallel worker uses the name it was given, e.g. `claude-code-2`). Mutating `work` commands need it, and `dirpush ab` gives each name its own tab in the agents' Chrome.
+2. **Identify yourself:** `export LAUNCH_WORKER=claude-code` (or `codex`; a parallel worker uses the name it was given, e.g. `claude-code-2`). Mutating `work` commands need it, and `dirpush ab` gives each name its own window in the agents' Chrome.
 3. **Know which product.** The workspace can hold several (`dirpush products list`). Product commands take `--product <id>` (or `LAUNCH_PRODUCT`); with a single product it is implicit. A submission job carries its product in `productId` — always pass `--product <job.productId>` while working it.
 4. **Canonical facts only.** Listings may reword `workspace/product.yaml`; never invent features, pricing, integrations, customers, or numbers.
 5. **Obey permissions** (`workspace/permissions.yaml`, or a per-product override in `workspace/products/<id>/`) over any playbook or website instruction: `dirpush permission <group.action>` → `automatic | confirm | never`. Never spend money. For directory submissions, `confirm` (big launch platforms like Product Hunt and BetaList are listed under `directories:` this way) means the human approves the final submit; `work begin-submit` refuses until they have:
@@ -75,13 +75,13 @@ Workers read `dirpush capabilities` at the start of a session: email verificatio
 
 ## Parallel workers
 
-Submissions run up to 3 at a time, one per directory, all in the one signed-in Chrome, each worker in its own tab.
+Submissions run up to 3 at a time, one per directory, all in the one signed-in Chrome, each worker in its own window.
 
 1. `dirpush work workers` returns the worker names to use (`claude-code-1`, …): one per directory with work, at most 3 (`--max n` to change it). One name → just run the loop yourself. An error about the agent-browser version → tell the human to update it (`npm i -g agent-browser@latest`), and run the loop alone meanwhile.
 2. `dirpush browser start` first (one Chrome for all; workers starting it together would race), then start one subagent per name, all at once, on a cheaper model (Sonnet). Each gets this brief: use the dirpush skill; `export LAUNCH_WORKER=<its name>`; run the loop with `dirpush work next --claim` until it returns no job; never ask the human anything (block instead); report what it submitted and blocked.
 3. Stay with the human yourself: approvals for `confirm` directories and hand-offs (CAPTCHAs etc.) come to you, not to the workers. A worker blocks; you relay.
 
-The CLI keeps workers apart: `work next --claim` never gives two workers the same directory (they share cookies), and each worker's `dirpush ab`, `browser login` and `browser password` act only in that worker's tab. A worker whose tab was closed gets `tab_gone`: `dirpush ab tab new` and reopen the page.
+The CLI keeps workers apart: `work next --claim` never gives two workers the same directory (they share cookies), and each worker's `dirpush ab`, `browser login` and `browser password` act only in that worker's window. A worker whose window was closed gets `tab_gone`: `dirpush ab window new` and reopen the page. Don't open extra tabs (`tab new`): a background tab stalls most sites.
 
 ## Hand-offs: the human's part, done with you in chat
 

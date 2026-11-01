@@ -18,6 +18,7 @@ submission:
   url_first: false
   fields: []
   conditions:
+    - "Registration emails the password/confirmation, so it needs the inbox."
     - Free publisher account required; public signup asks for username and email and sends an email confirmation.
     - "Human review against the published usability, export, ads, and privacy quality bar."
     - Tools must be usable end-to-end in-browser without payment or user signup; actual submission form fields are behind publisher login.
@@ -40,7 +41,7 @@ link:
   checked_at: 2026-10-19
 verification:
   status: verified
-  checked_at: 2026-10-05
+  checked_at: 2026-11-01
   by: codex
   sources:
     - https://ultimatefreetools.com/

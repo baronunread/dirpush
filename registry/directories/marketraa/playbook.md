@@ -1,1 +1,5 @@
-Open the homepage and choose Submit your tool. The form accepts tool name, website, category, one-line/full descriptions, pricing and differentiator; email is required and company is optional. It offers manual entry or an AI-assisted details prompt. The form says submissions are reviewed and that listing is free with no paid placements.
+# Marketraa
+
+- The "Get listed" flow is "Directory profile + one listicle placement $40 USD". The pay step comes before the profile form, so there is no free route.
+- Earlier research saw a free submit form with tool name, website, email, category, descriptions, pricing and differentiator; that is no longer what the flow shows (2026-11-01).
+- Do not pay without explicit approval.

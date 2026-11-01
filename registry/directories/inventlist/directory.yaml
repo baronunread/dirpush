@@ -39,6 +39,7 @@ submission:
       required: false
       limit: 300
   conditions:
+    - "One free live site per account; more need engagement (\"Unlock more live submissions by helping other makers with comments, stories, or upvotes\")."
     - Free submission; submitted page remains private until approved.
     - "Optional InventList badge increases search, trending, and newsletter reach; it is not required for a free listing."
     - Homepage and newsletter sponsorships are paid and optional.
@@ -63,7 +64,7 @@ link:
   checked_at: 2026-10-19
 verification:
   status: verified
-  checked_at: 2026-10-05
+  checked_at: 2026-11-01
   by: codex
   sources:
     - https://inventlist.com/submit

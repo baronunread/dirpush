@@ -20,13 +20,14 @@ submission:
   url_first: false
   fields: []
   conditions:
+    - "The submit form (https://indiemakershub.com/dashboard/submit/) requires a 1280x720 thumbnail and a logo."
     - The Google Form requires Google sign-in; fields were not visible without signing in.
     - Manual review stated as 2-3 business days.
 autofetch:
   supported: false
   expected: []
 media:
-  logo: false
+  logo: true
   screenshots:
     supported: false
 kind: listing
@@ -43,7 +44,7 @@ link:
   checked_at: 2026-10-19
 verification:
   status: verified
-  checked_at: 2026-10-05
+  checked_at: 2026-11-01
   by: codex
   sources:
     - https://indiemakershub.com/submit/

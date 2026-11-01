@@ -38,6 +38,9 @@ submission:
     - name: features
       required: false
   conditions:
+    - "/register and /login show a Cap proof-of-work \"Verify you're human\" checkbox (the schema has no cap value, so bot_check is unknown)."
+    - "Google sign-in got through Google but the site never finished the login; /products/new and /dashboard returned \"Internal Server Error\" on 2026-11-01."
+    - "/signup redirects to /register and /signin to /login."
     - Free product listing available after account creation; pricing page shows listing fee as FREE
     - Featured promotion is optional at $3/day; no purchase required for the free listing
     - "Product form supports one logo and up to 3 screenshots, each up to 5 MB"
@@ -64,11 +67,11 @@ link:
   samples: 4
   noindex: false
   claimed: null
-  bot_check: none
+  bot_check: unknown
   checked_at: 2026-10-19
 verification:
   status: verified
-  checked_at: 2026-10-05
+  checked_at: 2026-11-01
   by: codex
   sources:
     - https://startuplist.ing/

@@ -6,3 +6,5 @@
 - Listings are free and human-reviewed, with no pay-to-rank. Editorial criteria require an end-to-end browser tool that works without payment or user signup and passes usability, export, ads, and privacy checks.
 
 - Submission fields and additional media requirements were not visible before login.
+
+- Registration emails the password/confirmation, so it needs the inbox.

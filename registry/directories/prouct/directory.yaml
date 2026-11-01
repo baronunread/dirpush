@@ -62,6 +62,11 @@ submission:
     - name: privacy policy consent
       required: true
   conditions:
+    - "Category and pricing are custom comboboxes: click the combobox, then the option (select sets nothing)."
+    - "A sticky header covers fields after scrolling."
+    - "A draft resumes at step 7 with earlier steps possibly empty; check them."
+    - "The images step has three file inputs: logo, cover, screenshots (multiple)."
+    - "After \"Your listing is live!\" the listing URL can 404 for a while and My submissions stays empty."
     - Registration requires agreement to the terms of service.
     - Publishing requires acceptance of the privacy policy.
     - "The site claims immediate publication; verify the generated listing route because this submission's success screen was followed by a 404 and an empty My submissions page."
@@ -87,7 +92,7 @@ link:
   checked_at: 2026-10-19
 verification:
   status: verified
-  checked_at: 2026-10-05
+  checked_at: 2026-11-01
   by: codex
   sources:
     - https://www.prouct.com/fr/soumettre
