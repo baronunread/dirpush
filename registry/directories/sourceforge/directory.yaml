@@ -48,6 +48,7 @@ submission:
       required: false
   conditions:
     - manual review
+    - "The only consent checkbox is required and bundles agreeing to receive communications from SourceForge with the terms"
 autofetch:
   supported: false
   expected: []
@@ -69,7 +70,7 @@ link:
   checked_at: 2026-10-19
 verification:
   status: verified
-  checked_at: 2026-09-29
+  checked_at: 2026-11-02
   by: sonnet-bB
   sources:
     - https://sourceforge.net/software/vendors/new

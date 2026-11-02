@@ -19,6 +19,7 @@ submission:
   fields: []
   conditions:
     - manual profile verification; accepted profiles go live within 21 business days
+    - "Under automation the Register button stays disabled after the form is filled (no visible captcha)"
 autofetch:
   supported: false
   expected: []
@@ -40,7 +41,7 @@ link:
   checked_at: 2026-10-19
 verification:
   status: verified
-  checked_at: 2026-10-05
+  checked_at: 2026-11-02
   by: codex
   sources:
     - https://www.ventureradar.com/submitcompany?stage=0

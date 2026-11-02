@@ -3,8 +3,8 @@ name: Joinly
 website: https://joinly.xyz/
 submission_url: https://joinly.xyz/submit-startup
 cost:
-  classification: VERIFIED_FREE
-  notes: "Public form shows no submission fee, paid tier, badge, or backlink requirement before submission."
+  classification: FREEMIUM
+  notes: "After Submit, the site redirects to a paid checkout (\"Featured for 7 days\", EUR 5.59). Whether the free listing is received is unclear."
 audience:
   - startups
   - software
@@ -40,6 +40,7 @@ submission:
     - Website URL must be a main domain or subdomain without paths or parameters
     - Thumbnail image max 200 KB; recommended 256 × 256 px
     - "Up to 3 gallery images, max 400 KB each; recommended 1024 × 768 px"
+    - "After Submit, the site redirects to a paid checkout ('Featured for 7 days', EUR 5.59)"
 autofetch:
   supported: false
   expected: []
@@ -61,7 +62,7 @@ link:
   checked_at: 2026-10-19
 verification:
   status: verified
-  checked_at: 2026-10-05
+  checked_at: 2026-11-02
   by: codex
   sources:
     - https://joinly.xyz/

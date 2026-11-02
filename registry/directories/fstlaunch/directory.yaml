@@ -28,6 +28,7 @@ submission:
       required: true
   conditions:
     - one free listing per startup
+    - "Sign-up shows a Cloudflare check that did not clear under automation"
 autofetch:
   supported: false
   expected: []
@@ -49,7 +50,7 @@ link:
   checked_at: 2026-10-19
 verification:
   status: verified
-  checked_at: 2026-10-05
+  checked_at: 2026-11-02
   by: codex
   sources:
     - https://fstlaunch.com/

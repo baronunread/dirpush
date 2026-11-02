@@ -18,6 +18,7 @@ submission:
   fields: []
   conditions:
     - "human review, usually within 24 hours"
+    - "Under automation the Create account button (and Enter) does nothing; no error is shown"
 autofetch:
   supported: true
   expected:
@@ -40,7 +41,7 @@ link:
   checked_at: 2026-10-19
 verification:
   status: verified
-  checked_at: 2026-10-06
+  checked_at: 2026-11-02
   by: codex
   sources:
     - https://startupbeats.com/free-startup-business-listing

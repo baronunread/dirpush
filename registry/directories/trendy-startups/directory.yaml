@@ -21,6 +21,7 @@ submission:
     - A decent-looking product landing page or website is required
     - Submission form details are behind login
     - Free editorial review queue takes a few months
+    - Sign-up has an image-text CAPTCHA
 autofetch:
   supported: false
   expected: []
@@ -42,7 +43,7 @@ link:
   checked_at: 2026-10-19
 verification:
   status: verified
-  checked_at: 2026-10-05
+  checked_at: 2026-11-02
   by: codex
   sources:
     - https://trendystartups.com/faq

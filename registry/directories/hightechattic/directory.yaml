@@ -21,6 +21,8 @@ submission:
   fields: []
   conditions:
     - Free account required; listing form fields are hidden until sign-in.
+    - "A cookie banner blocks the sign-in form until 'Essential only' is clicked"
+    - A new account needs email verification before sign-in works
 autofetch:
   supported: false
   expected: []
@@ -41,7 +43,7 @@ link:
   checked_at: 2026-10-19
 verification:
   status: verified
-  checked_at: 2026-10-05
+  checked_at: 2026-11-02
   by: codex
   sources:
     - https://hightechattic.com/free-saas-directory

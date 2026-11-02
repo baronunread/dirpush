@@ -38,6 +38,7 @@ submission:
     - "Categories: pick up to 2"
     - "Description: 2–3 sentences"
     - Maximum 2 categories selections/uploads
+    - "Clicking 'Submit for review' shows Chrome's 'The information you are about to submit is not secure' warning (form posts over http)"
 autofetch:
   supported: false
   expected: []
@@ -59,7 +60,7 @@ link:
   checked_at: 2026-10-19
 verification:
   status: verified
-  checked_at: 2026-10-05
+  checked_at: 2026-11-02
   by: codex
   sources:
     - https://saasplace.io/

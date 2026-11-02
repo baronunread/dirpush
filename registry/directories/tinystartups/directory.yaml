@@ -3,8 +3,8 @@ name: Tiny Startups
 website: https://www.tinystartups.com
 submission_url: https://www.tinystartups.com/submit
 cost:
-  classification: FREEMIUM
-  notes: Free startup submissions enter a human review queue; approval and timing are not guaranteed. The site advertises a DR 71+ do-follow backlink. Optional paid upgrades are offered at the end of the submission wizard; no badge is required.
+  classification: PAID
+  notes: "No free listing anymore. After the form, the only way to go live is a paid £69 'Instant listing'."
 audience:
   - startups
   - saas
@@ -29,8 +29,7 @@ submission:
     - name: about_you
       required: true
   conditions:
-    - hand-approved / manual review
-    - "optional paid 'Upgrades' step at end of wizard"
+    - "No free listing: after the form, the only way to go live is a paid £69 'Instant listing'"
 autofetch:
   supported: true
   expected:
@@ -54,7 +53,7 @@ link:
   checked_at: 2026-10-19
 verification:
   status: verified
-  checked_at: 2026-10-07
+  checked_at: 2026-11-02
   by: codex
   sources:
     - https://www.tinystartups.com/submit

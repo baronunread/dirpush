@@ -31,7 +31,7 @@ submission:
     - name: Thumbnail
       required: false
     - name: Screenshots
-      required: false
+      required: true
     - name: Pricing type
       required: false
     - name: Categories
@@ -39,6 +39,7 @@ submission:
     - name: Social links
       required: false
   conditions:
+    - At least 1 screenshot is required (the live form says "Add at least 1 screenshot")
     - Maximum 5 screenshots selections/uploads
     - Maximum 3 categories selections/uploads
 autofetch:
@@ -63,7 +64,7 @@ link:
   checked_at: 2026-10-19
 verification:
   status: verified
-  checked_at: 2026-10-06
+  checked_at: 2026-11-02
   by: codex
   sources:
     - https://ainave.com/submit

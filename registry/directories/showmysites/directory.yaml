@@ -23,6 +23,7 @@ submission:
       required: true
   conditions:
     - up to 25 listings per account on free tier
+    - Usernames must be unique site-wide; a taken username blocks sign-up
     - "reciprocal link or badge needed only for dofollow backlink status, not for the listing itself"
 autofetch:
   supported: false
@@ -45,7 +46,7 @@ link:
   checked_at: 2026-10-19
 verification:
   status: verified
-  checked_at: 2026-09-29
+  checked_at: 2026-11-02
   by: sonnet-bC
   sources:
     - https://www.showmysites.com/pricing

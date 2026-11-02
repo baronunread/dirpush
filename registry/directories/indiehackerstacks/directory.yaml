@@ -18,13 +18,15 @@ submission:
   fields: []
   conditions:
     - Free plan is limited to one product; fields and account methods are not visible in the public add flow.
+    - A gallery image is required
+    - "The URL field has a fixed https:// prefix; enter the URL without the scheme"
 autofetch:
   supported: false
   expected: []
 media:
   logo: false
   screenshots:
-    supported: false
+    supported: true
 kind: listing
 human_only: null
 link:
@@ -38,7 +40,7 @@ link:
   checked_at: 2026-10-19
 verification:
   status: verified
-  checked_at: 2026-10-05
+  checked_at: 2026-11-02
   by: codex
   sources:
     - https://indiehackerstacks.com/

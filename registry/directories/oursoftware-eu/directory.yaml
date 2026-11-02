@@ -47,7 +47,7 @@ autofetch:
   supported: false
   expected: []
 media:
-  logo: true
+  logo: false
   screenshots:
     supported: false
 kind: listing
@@ -62,7 +62,7 @@ link:
   checked_at: 2026-10-19
 verification:
   status: verified
-  checked_at: 2026-10-05
+  checked_at: 2026-11-02
   by: codex
   sources:
     - https://oursoftware.eu/
