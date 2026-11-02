@@ -4,3 +4,4 @@ username: janefounder
 email: jane@example.com
 company: Example
 role: Founder
+# phone: "+1 555 0100"   # optional: only if directories may have it; without it, forms that require one wait for you

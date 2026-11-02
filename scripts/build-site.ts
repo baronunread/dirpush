@@ -241,8 +241,9 @@ const receipts = mismatches.slice(0, 5).map((d) => {
 
 const steps = [
   ["Describe", "Run <code>dirpush init</code>, then tell your agent “set up dirpush”. It drafts every fact forms ask for: taglines at the right lengths, categories, pricing, what you replace. You confirm it once."],
-  ["Submit", "Your agent picks the directories that fit, signs up and fills each form in a real browser on your machine. Every step is recorded, so a crashed session never submits twice."],
-  ["Answer", "CAPTCHAs, email links and real decisions land in one list. Standing answers mean the same question is never asked twice."],
+  ["Prepare", "Before the first run, your agent asks for the three things only you can do: sign into Google once in its Chrome window, approve the screenshots it may upload, and answer what forms keep asking, like your company and what you replace. About five minutes, and the run doesn't stop at every form."],
+  ["Submit", "Your agent picks the directories that fit, signs up and fills each form in a real browser on your machine, several at once, each in its own window. Every step is recorded, so a crashed session never submits twice."],
+  ["Answer", "Some sites still need a person for one step: a CAPTCHA, an email link, a site that blocks automation. In our runs that was about 4 in 10. They land in one list, and your agent walks you through them one at a time."],
   ["Track", "Listings are re-checked until they go live, and your Domain Rating is charted so you can see what the launch did."],
 ];
 

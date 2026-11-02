@@ -24,6 +24,7 @@ The registry describes **expected** behaviour; the live site wins. Any mismatch 
 6. **ready** — form filled, nothing submitted yet. Take a screenshot as evidence: `mkdir -p data/evidence/<job> && dirpush ab screenshot data/evidence/<job>/ready.png`. A `confirm` directory needs the human's approval now (SKILL.md rule 5): ask in chat, or block with `--type permission` if they're away.
 7. `dirpush work begin-submit <job>` → click submit → observe the result →
    `dirpush work submitted <job> --outcome submitted|pending|live [--listing-url <url>]`.
+   `submitted` only once the site confirms it has the listing (a "received"/"thanks" message, a dashboard entry, a listing page). Landing on a checkout, upgrade or upsell page is not confirmation: look for the free path or a my-listings page; can't tell → `work block --type manual` saying what you saw. `--listing-url` is the product's page on the directory, never the directory's homepage.
    The click errors with "covered by …" → nothing was sent: dismiss what covers it (screenshot to see it) and click again; the job stays at `submitting`.
    A stray click submitted the form early (some sites submit on picking a category or pressing Enter) → don't hide it: `work begin-submit` then `work submitted` with what the page shows, and note the trap in the directory's playbook.
 

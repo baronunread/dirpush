@@ -86,6 +86,7 @@ export const Identity = z.object({
   email: z.email(),
   company: z.string().optional(),
   role: z.string().optional(),
+  phone: z.string().optional(), // only if you're happy for directories to have it; unset → forms that require one block
 });
 
 const Mode = z.enum(["automatic", "confirm", "never"]);

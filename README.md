@@ -21,7 +21,7 @@ dirpush init acme                # sets up ~/.dirpush and installs the agent ski
 
 | Say | What happens |
 | --- | --- |
-| **"set up dirpush"** | It fills in your product's facts with you and checks its tools (an email tool for verification links, the browser). |
+| **"set up dirpush"** | It fills in your product's facts with you, checks its tools (an email tool for verification links, the browser), then asks for the three things only you can do: sign into Google once in its Chrome window, approve the screenshots it may upload, and answer what forms keep asking (company, what you replace). About five minutes, and the run doesn't stop at every form. |
 | **"continue my launch"** | It finds directories that fit, submits, verifies emails, re-checks pending listings, and records everything. |
 | **"what do you need from me?"** | It walks you through the few things only you can do, one at a time: sign into Google once, tick a bot check in a window it opens, rarely submit a site by hand. You answer "done" and it carries on. |
 | **"how is my launch going?"** | Live, pending and rejected listings, and what's waiting. |
