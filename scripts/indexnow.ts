@@ -8,11 +8,17 @@ const OUT = join(PKG, "dist/site");
 const key = readdirSync(OUT).find((f) => /^[0-9a-f]{32}\.txt$/.test(f))?.slice(0, -4);
 if (!key) throw new Error("no IndexNow key file in dist/site: run bun run site:build first");
 const urlList = [...(await Bun.file(join(OUT, "sitemap.xml")).text()).matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]!);
-const res = await fetch("https://api.indexnow.org/indexnow", {
+const ping = () => fetch("https://api.indexnow.org/indexnow", {
   method: "POST",
   headers: { "content-type": "application/json; charset=utf-8" },
   body: JSON.stringify({ host: "dirpush.com", key, keyLocation: `https://dirpush.com/${key}.txt`, urlList }),
 });
+// Right after `wrangler deploy` the key file may not be served everywhere yet: IndexNow answers 403 until it is.
+let res = await ping();
+for (let i = 0; res.status === 403 && i < 4; i++) {
+  await Bun.sleep(15_000);
+  res = await ping();
+}
 // 200 and 202 both mean accepted; 202 = key not checked yet (normal on the first ping).
 console.log(`IndexNow: ${res.status} for ${urlList.length} URLs`);
 if (!res.ok) process.exit(1);
