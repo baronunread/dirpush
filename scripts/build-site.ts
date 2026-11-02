@@ -15,6 +15,7 @@ import { loadProduct, productIds } from "../src/workspace";
 const OUT = process.argv[2] ?? join(PKG, "dist/site");
 const SITE = "https://dirpush.com";
 const REPO = "https://github.com/baronunread/dirpush";
+const INDEXNOW_KEY = "47b662095a0540acb9b51d847033584e"; // public by design: IndexNow checks it at /<key>.txt
 
 // Anything naming a workspace product or its owner stays out of public pages.
 const words = (await Promise.all(productIds().map((id) => loadProduct(id).catch(() => null)))).flatMap((p) =>
@@ -135,7 +136,7 @@ ${body}
     </div>
     <div><h3>Directories</h3><a href="/directories/">All ${dirCount}</a><a href="/directories/free-dofollow/">Free and dofollow</a><a href="/directories/launch-sites/">Launch sites</a><a href="/directories/ai-tools/">AI tools</a><a href="/directories/no-account/">No account needed</a></div>
     <div><h3>Data</h3><a href="/registry.json">registry.json</a><a href="/sitemap.xml">Sitemap</a><a href="${REPO}/issues/new?labels=new-directory&amp;title=New%20directory%3A%20">Submit a directory</a></div>
-    <div><h3>Project</h3><a href="${REPO}">Source on GitHub</a><a href="/#how">How it works</a><a href="${REPO}/blob/main/LICENSE">License</a></div>
+    <div><h3>Project</h3><a href="${REPO}">Source on GitHub</a><a href="/#how">How it works</a><a href="/directory-submission/">Directory submission tool</a><a href="/claude-code-seo/">Claude Code for SEO</a><a href="${REPO}/blob/main/LICENSE">License</a></div>
   </div>
   <div class="shell foot-meta"><span>Registry updated ${registryDate}</span><span>Link types measured on real listing pages. DR by Ahrefs.</span></div>
   <div class="foot-word" aria-hidden="true">dirpush</div>
@@ -197,13 +198,13 @@ const aud = (d: Directory, a: string) => d.audience.some((x) => x.toLowerCase() 
 const HUBS: { slug: string; h1: string; name: string; title: string; intro: string; pick: (d: Directory) => boolean }[] = [
   { slug: "free-dofollow", h1: "free dofollow directories", name: "Free and dofollow", title: "Free dofollow directories for startups and SaaS", intro: "Free to list on, and the link to your site is a followed link: measured on real listing pages, not taken from the directory's own claims.", pick: (d) => isFree(d) && relOf(d) === "dofollow" },
   { slug: "dofollow", h1: "dofollow directories", name: "Dofollow", title: "Dofollow directories: where the backlink actually counts", intro: "Every directory whose listing pages link to your product without nofollow, ugc or sponsored. Some of them charge for it; the cost column says which.", pick: (d) => relOf(d) === "dofollow" },
-  { slug: "free", h1: "free directories", name: "Free", title: "Free startup and SaaS directories", intro: "Directories with a free way to get listed, including ones that also sell paid upgrades.", pick: isFree },
+  { slug: "free", h1: "free directory submission sites", name: "Free", title: "Free directory submission sites for startups and SaaS", intro: "Directories with a free way to get listed, including ones that also sell paid upgrades.", pick: isFree },
   { slug: "no-account", h1: "directories with no sign-up", name: "No account needed", title: "Directories you can submit to without an account", intro: "No sign-up, no email login: fill the form and submit.", pick: (d) => !d.authentication.required },
-  { slug: "launch-sites", h1: "product launch sites", name: "Launch sites", title: "Product launch sites: Product Hunt alternatives", intro: "Launch boards with a daily or weekly ranking, where a new product gets a day in front of early adopters.", pick: (d) => d.kind === "launch_board" },
-  { slug: "ai-tools", h1: "AI tool directories", name: "AI tools", title: "AI tool directories: where to list an AI product", intro: "Directories that list AI tools and AI-powered SaaS.", pick: (d) => aud(d, "ai-tools") },
+  { slug: "launch-sites", h1: "launch sites", name: "Launch sites", title: "Launch sites: Product Hunt alternatives for your launch", intro: "Launch boards with a daily or weekly ranking, where a new product gets a day in front of early adopters.", pick: (d) => d.kind === "launch_board" },
+  { slug: "ai-tools", h1: "AI tool directories", name: "AI tools", title: "AI tool directories: where to submit an AI tool", intro: "Directories where you can submit an AI tool or AI-powered SaaS, with the cost and link type of each.", pick: (d) => aud(d, "ai-tools") },
   { slug: "saas", h1: "SaaS directories", name: "SaaS", title: "SaaS directories: where to list your SaaS", intro: "Directories that accept SaaS products, from big review sites to small curated lists.", pick: (d) => aud(d, "saas") },
   { slug: "developer-tools", h1: "developer tool directories", name: "Developer tools", title: "Developer tool directories: where to list a dev tool", intro: "Directories for developer tools, APIs and open-source projects.", pick: (d) => aud(d, "developer-tools") },
-  { slug: "mcp-registries", h1: "MCP registries", name: "MCP registries", title: "MCP server registries and directories", intro: "Registries and directories where you can publish a Model Context Protocol server.", pick: (d) => d.kind === "mcp_registry" || aud(d, "mcp-servers") },
+  { slug: "mcp-registries", h1: "MCP registries and marketplaces", name: "MCP registries", title: "MCP registries and marketplaces: where to publish an MCP server", intro: "Every MCP registry, marketplace and directory where you can publish a Model Context Protocol server, from the official MCP registry to client marketplaces.", pick: (d) => d.kind === "mcp_registry" || aud(d, "mcp-servers") },
   { slug: "open-source", h1: "open-source directories", name: "Open source", title: "Directories for open-source projects", intro: "Directories that list open-source software and alternatives.", pick: (d) => aud(d, "open-source") },
 ];
 for (const h of HUBS) if (dirs.some((d) => d.id === h.slug)) throw new Error(`topic page ${h.slug} collides with a directory id`);
@@ -418,8 +419,8 @@ const opt = (group: string, value: string, label: string, n: number) =>
 const menu = (label: string, opts: string[]) =>
   `<details class="menu"><summary><span>${esc(label)}</span><b class="menu-n" hidden></b></summary><div class="menu-panel" role="group" aria-label="${esc(label)}">${opts.join("")}</div></details>`;
 await Bun.write(join(OUT, "directories/index.html"), page(
-  `${dirs.length} startup and SaaS directories, measured | dirpush`,
-  `Every directory where you can list a startup, SaaS or developer tool, with cost, sign-in, bot checks and whether the link is dofollow, measured on real listing pages.`,
+  `Directory submission sites: ${dirs.length} startup, SaaS and AI directories, measured | dirpush`,
+  `Every directory submission site for a startup, SaaS, AI or developer tool, with cost, sign-in, bot checks and whether the link is dofollow, measured on real listing pages.`,
   "/directories/",
   `<section class="list-head shell">
   <h1><span class="count-big">${dirs.length}</span> directories, measured.</h1>
@@ -636,6 +637,73 @@ for (const h of HUBS) {
   ));
 }
 
+// ---- guides -----------------------------------------------------------------
+// Hand-written pages for what people search around directory submission. Facts only: what the CLI does, and numbers
+// computed from the registry.
+type Guide = { slug: string; name: string; title: string; description: string; h1: string; lede: string; sections: [string, string][]; answers: [string, string][] };
+const dofollowAll = dirs.filter((d) => relOf(d) === "dofollow").length;
+const GUIDES: Guide[] = [
+  {
+    slug: "directory-submission",
+    name: "Directory submission tool",
+    title: "Directory submission tool: free, and run by your own AI agent | dirpush",
+    description: `Directory submission without a paid service. dirpush is a free, open-source tool your coding agent uses to submit your product to ${dirs.length} measured directories from your own browser.`,
+    h1: "Directory submission, done by your own agent.",
+    lede: `dirpush is a free, open-source directory submission tool. Your coding agent picks the directories that fit your product, fills each form in a browser on your computer, and records every step. You keep the accounts, the wording and the list.`,
+    sections: [
+      ["Three ways to do directory submission", `<p class="prose"><b>By hand</b>, you open each site, sign up, and fill the same facts into a slightly different form every time. It works, and it takes hours.</p>
+<p class="prose"><b>A paid submission service</b> does the forms for you and sends a report. You don't see each form, the wording is theirs, and the accounts are often theirs too.</p>
+<p class="prose"><b>With dirpush</b>, the agent you already use does the forms: Claude Code, Codex, or anything that runs shell commands. It works in its own Chrome profile on your computer, never your everyday browser. The accounts are yours, passwords stay in a local vault and never pass through the model, and a crashed session never submits twice.</p>`],
+      ["Which directories it picks", `<p class="prose">The registry lists ${dirs.length} directories, each walked to its submit button. For your product, dirpush recommends the ones that fit: your categories, your pricing model (some only take one-time purchases), your region (some only list one country) and your stage (some only take products in beta). It never pays, and it skips directories that want a badge or a link back from your site unless you agree to one.</p>`],
+      ["Which links are worth it", `<p class="prose">Directories often say their links are dofollow. dirpush reads real listing pages instead: ${dofollowAll} of ${dirs.length} serve a followed link, and ${mismatches.length} advertise one kind of link and serve another. Every directory page here shows what was measured and when. <a href="/directories/free-dofollow/">See the ${freeDofollow.length} that are free and dofollow</a>.</p>`],
+      ["What you still do", `<p class="prose">Before the first run, your agent asks for three things only you can do: sign into Google once in its Chrome window, approve the screenshots it may upload, and answer what forms keep asking, like your company and what your product replaces. After that, some sites still need a person for one step: a CAPTCHA, an email link, or a site that blocks automation. In our runs that was about 4 in 10. They land in one list, and your agent walks you through them one at a time.</p>`],
+    ],
+    answers: [
+      ["Is it free?", "Yes. dirpush is MIT licensed and runs on your computer. There is no account and no server. Directories that charge are skipped: the agent never pays."],
+      ["Which agents does it work with?", "It's tested with Claude Code and Codex. Any agent that can run shell commands can use it, including computer-use bots."],
+      ["Does it solve CAPTCHAs?", "No. The agent waits for a bot check to clear by itself, and when it doesn't, hands it to you in a window it opens."],
+      ["Can it submit to several directories at once?", "Yes. Up to three workers by default, each on its own directory in its own window of the same Chrome."],
+    ],
+  },
+  {
+    slug: "claude-code-seo",
+    name: "Claude Code for SEO",
+    title: "Claude Code for SEO: get your product listed on directories | dirpush",
+    description: `Use Claude Code for SEO's most tedious job: submitting your product to directories. dirpush gives it a verified list of ${dirs.length} directories, a job queue and a browser on your computer.`,
+    h1: "Claude Code for SEO: get listed.",
+    lede: `Directory listings are one of the few SEO jobs that are pure form-filling, which makes them a good fit for Claude Code. dirpush is the skill and command-line tool that lets it do them properly: which directories exist, what each form asks, which links are followed, and what was already submitted.`,
+    sections: [
+      ["Set it up", `<p class="prose">Install it, then open Claude Code in any folder and talk to it:</p>
+<ol class="conds steps"><li><code>npm i -g dirpush agent-browser</code>, then <code>dirpush init my-product</code>. It installs the dirpush skill for Claude Code.</li><li>Say <b>"set up dirpush"</b>. Claude drafts your product's facts with you (taglines at the right lengths, categories, pricing), checks its tools, and asks for the three things only you can do: a Google sign-in, approving screenshots, and the answers forms keep asking.</li><li>Say <b>"continue my launch"</b>. It picks directories that fit, submits, and records every outcome.</li><li>Say <b>"what do you need from me?"</b> whenever you're around. It walks you through CAPTCHAs and email links one at a time.</li></ol>`],
+      ["Run it in parallel", `<p class="prose">Claude Code can start subagents, and dirpush gives each its own directory and its own Chrome window, up to three at a time by default. The subagents can run on a smaller model: the main session stays with you and relays approvals. Each submission takes a few minutes of agent work and tens of thousands of tokens, so on a subscription plan a big run spans several usage windows.</p>`],
+      ["Track what it did", `<p class="prose">Ask <b>"how is my launch going?"</b>, or run <code>dirpush serve</code> for a local dashboard: what's live, what's in review, what's waiting on you. Pending listings are re-checked until they go live, and with an Ahrefs key your Domain Rating is charted over time. Nothing leaves your computer.</p>`],
+    ],
+    answers: [
+      ["Does Claude see my passwords?", "No. Passwords are generated and filled by the dirpush CLI from agent-browser's vault; the model only ever refers to them by name."],
+      ["Will it use my everyday browser?", "No. It drives a separate Chrome profile on your computer. Gmail, Drive and your Google account pages are blocked in it."],
+      ["Does it ask before submitting?", "For big launch sites like Product Hunt, yes: you approve the final submit in chat. You choose which directories need approval in permissions.yaml."],
+      ["Does it work without Claude Code?", "Yes. Codex and any agent that runs shell commands use the same skill and CLI."],
+    ],
+  },
+];
+for (const g of GUIDES) {
+  const path = `/${g.slug}/`;
+  await Bun.write(join(OUT, g.slug, "index.html"), page(g.title, g.description, path, `<article class="dir guide shell">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/">dirpush</a><span aria-current="page">${esc(g.name)}</span></nav>
+  <header class="dir-head"><div><h1>${esc(g.h1)}</h1><p class="hero-sub">${esc(g.lede)}</p></div></header>
+  ${g.sections.map(([h, body]) => `<section class="dir-sec"><h2>${esc(h)}</h2>${body}</section>`).join("\n  ")}
+  <section class="dir-sec"><h2>Quick answers</h2><div class="qa">${g.answers.map(([q, a]) => `<div><h3>${esc(q)}</h3><p>${esc(a)}</p></div>`).join("")}</div></section>
+  <section class="agent"><div><h2>Try it on your product</h2><p>Install dirpush, then tell your agent "set up dirpush".</p></div>${install()}</section>
+  ${topicLinks}
+</article>`, {
+    ogType: "article",
+    jsonld: [
+      crumbs([[g.name, path]]),
+      { "@type": "TechArticle", headline: g.h1, description: g.description, url: `${SITE}${path}`, author: { "@type": "Organization", name: "dirpush", url: SITE }, about: { "@type": "SoftwareApplication", name: "dirpush", applicationCategory: "DeveloperApplication", operatingSystem: "macOS", offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } } },
+    ],
+  }));
+}
+
 // ---- registry.json, scrubbed of anything product- or operator-specific -------
 const registry = await buildRegistryFile();
 for (const entry of registry.directories) {
@@ -659,7 +727,7 @@ await Bun.write(join(OUT, "404.html"), page(
 ));
 await Bun.write(join(OUT, "registry.json"), JSON.stringify(registry) + "\n");
 const newest = dirs.map(lastmod).sort().at(-1)!;
-const urls: [string, string][] = [["/", newest], ["/directories/", newest], ...HUBS.map((h) => [`/directories/${h.slug}/`, newest] as [string, string]), ...dirs.map((d) => [`/directories/${d.id}/`, lastmod(d)] as [string, string])];
+const urls: [string, string][] = [["/", newest], ["/directories/", newest], ...HUBS.map((h) => [`/directories/${h.slug}/`, newest] as [string, string]), ...GUIDES.map((g) => [`/${g.slug}/`, newest] as [string, string]), ...dirs.map((d) => [`/directories/${d.id}/`, lastmod(d)] as [string, string])];
 await Bun.write(join(OUT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(([p, m]) => `<url><loc>${SITE}${p}</loc><lastmod>${m}</lastmod></url>`).join("\n")}\n</urlset>\n`);
 // For AI search and agents: what the site is and where the machine-readable data lives.
 await Bun.write(join(OUT, "llms.txt"), `# dirpush
@@ -670,8 +738,13 @@ await Bun.write(join(OUT, "llms.txt"), `# dirpush
 - [registry.json](${SITE}/registry.json): the full registry, machine-readable, updated monthly
 - Install: \`npx dirpush init\`
 
+## Guides
+${GUIDES.map((g) => `- [${g.name}](${SITE}/${g.slug}/): ${g.description}`).join("\n")}
+
 ## Lists
 ${HUBS.map((h) => `- [${h.title}](${SITE}/directories/${h.slug}/): ${dirs.filter(h.pick).length} directories`).join("\n")}
 `);
+// IndexNow (Bing, Yandex, and search built on Bing): the key file that proves we own the site; scripts/indexnow.ts pings after a deploy.
+await Bun.write(join(OUT, `${INDEXNOW_KEY}.txt`), INDEXNOW_KEY);
 await Bun.write(join(OUT, "robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${SITE}/sitemap.xml\n`);
-console.log(`Built ${dirs.length + HUBS.length + 2} pages and registry.json (${dirs.length} directories) into ${OUT}`);
+console.log(`Built ${dirs.length + HUBS.length + GUIDES.length + 2} pages and registry.json (${dirs.length} directories) into ${OUT}`);

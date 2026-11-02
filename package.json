@@ -26,7 +26,7 @@
     "registry:build": "bun scripts/build-registry.ts",
     "site:build": "bun scripts/build-site.ts",
     "site:serve": "bun scripts/serve-site.ts",
-    "site:deploy": "bun scripts/build-site.ts && wrangler deploy",
+    "site:deploy": "bun scripts/build-site.ts && wrangler deploy && bun scripts/indexnow.ts",
     "repo:check": "bun scripts/check-repo.ts",
     "verify": "bun run repo:check && bun run typecheck && bun test src"
   },

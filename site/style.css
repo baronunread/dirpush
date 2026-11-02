@@ -576,3 +576,13 @@ select { appearance: none; -webkit-appearance: none; cursor: pointer; padding-ri
 /* Room inside each row's fade mask for the hover lift and glow, so they are not clipped. */
 .mq-row { padding: 80px 0 100px; margin: -80px 0 -100px; }
 @media (max-width: 680px) { .mq-row { padding: 64px 0 84px; margin: -64px 0 -84px; } }
+
+/* ---- guides (/directory-submission/, /claude-code-seo/) ---- */
+.guide .dir-head h1 { max-width: 16ch; }
+.guide .hero-sub { max-width: 62ch; }
+.guide .prose + .prose { margin-top: 14px; }
+.guide .prose a { color: var(--ink); }
+.steps { grid-template-columns: 1fr; counter-reset: st; margin-top: 18px; max-width: 880px; }
+.steps li { counter-increment: st; position: relative; padding-left: 52px; line-height: 1.55; }
+.steps li::before { content: counter(st); position: absolute; left: 20px; top: 16px; font-family: var(--mono); color: var(--ink-2); font-weight: 700; }
+.guide .quick { margin-top: 64px; }
