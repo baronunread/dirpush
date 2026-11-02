@@ -263,8 +263,7 @@ const commands: Record<string, (() => Promise<unknown> | unknown) | undefined> =
     const id = arg(0, "job");
     const job = db.select().from(jobs).where(eq(jobs.id, id)).get();
     if (!job) throw new Error(`no such job: ${id}`);
-    const perms = await loadPermissions(job.productId);
-    const mode = perms.directories?.[job.subject] ?? perms.submissions?.submit ?? "confirm";
+    const mode = await permission(`directories.${job.subject}`, job.productId);
     if (mode === "never") throw new Error(`permissions say never submit to ${job.subject}: work fail ${id} --reason "submission not permitted"`);
     if (mode === "confirm" && !J.approved(db, id))
       throw new Error(`${job.subject} needs the human's approval before submitting: ask them in chat, then work approve ${id} --said "<their reply>"; if they aren't around, work block ${id} --type permission --message "Ready to submit to ${job.subject}"`);

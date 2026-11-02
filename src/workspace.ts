@@ -106,6 +106,8 @@ export const loadPermissions = (id?: string) => load(shared("permissions.yaml", 
 export async function permission(action: string, productId?: string): Promise<Mode> {
   const [group, key] = action.split(".");
   const perms = await loadPermissions(productId);
+  // A directory without its own entry follows submissions.submit (as work begin-submit enforces).
+  if (group === "directories") return perms.directories?.[key!] ?? perms.submissions?.submit ?? "confirm";
   return perms[group!]?.[key!] ?? "confirm";
 }
 
