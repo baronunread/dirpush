@@ -57,6 +57,29 @@ export function pricingMismatch(p: Pick<Product, "pricing">, audience: string[])
   return model && need && model !== need ? `it only lists ${need.replace("_", "-")} products and this one is ${model.replace("_", "-")}` : null;
 }
 
+const EU = "Austria Belgium Bulgaria Croatia Cyprus Czechia Denmark Estonia Finland France Germany Greece Hungary Ireland Italy Latvia Lithuania Luxembourg Malta Netherlands Poland Portugal Romania Slovakia Slovenia Spain Sweden".split(" ");
+const AFRICA = "Algeria|Angola|Benin|Botswana|Burkina Faso|Burundi|Cabo Verde|Cameroon|Central African Republic|Chad|Comoros|Congo|Djibouti|Egypt|Equatorial Guinea|Eritrea|Eswatini|Ethiopia|Gabon|Gambia|Ghana|Guinea|Guinea-Bissau|Ivory Coast|Kenya|Lesotho|Liberia|Libya|Madagascar|Malawi|Mali|Mauritania|Mauritius|Morocco|Mozambique|Namibia|Niger|Nigeria|Rwanda|Senegal|Seychelles|Sierra Leone|Somalia|South Africa|South Sudan|Sudan|Tanzania|Togo|Tunisia|Uganda|Zambia|Zimbabwe".split("|");
+/** Audience tags that are an eligibility rule on where the product is from. */
+const REGION_AUDIENCES: Record<string, { name: string; countries: string[] }> = {
+  australia: { name: "Australian", countries: ["Australia"] },
+  eu: { name: "EU", countries: EU },
+  africa: { name: "African", countries: AFRICA },
+};
+
+/** Why this product can't be listed on a directory with these audience tags (pricing, region, stage), or null.
+ *  Facts the product doesn't state never exclude. */
+export function fitMismatch(p: Pick<Product, "pricing" | "country" | "status">, audience: string[]) {
+  const pricing = pricingMismatch(p, audience);
+  if (pricing) return pricing;
+  const country = p.country?.trim().toLowerCase();
+  for (const a of audience) {
+    const region = REGION_AUDIENCES[a];
+    if (region && country && !region.countries.some((c) => c.toLowerCase() === country)) return `it only lists ${region.name} products and this one is from ${p.country}`;
+  }
+  if (audience.includes("beta") && p.status && p.status !== "beta") return `it only lists products in beta and this one is ${p.status}`;
+  return null;
+}
+
 export const Identity = z.object({
   display_name: z.string(),
   username: z.string(),

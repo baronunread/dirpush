@@ -6,6 +6,7 @@ cost:
   classification: VERIFIED_FREE
   notes: "Free to submit. No paid tiers for featured placement; 'no direct way to pay' for a post. No badge/backlink required to go live."
 audience:
+  - beta
   - saas
   - developer-tools
   - mobile-apps
