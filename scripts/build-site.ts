@@ -89,6 +89,7 @@ function page(title: string, description: string, path: string, body: string, op
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
+${path === "/" ? `<meta name="google-site-verification" content="EzVvMLgHeR3QSmYXjLf5qXbahUxNJrKTGlVxYujmsdA">` : ""}
 ${opts.noindex ? `<meta name="robots" content="noindex">` : `<meta name="robots" content="index, follow, max-image-preview:large">\n<link rel="canonical" href="${SITE}${path}">`}
 <meta property="og:site_name" content="dirpush">
 <meta property="og:type" content="${opts.ogType ?? "website"}">
