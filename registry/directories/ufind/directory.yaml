@@ -1,0 +1,54 @@
+id: ufind
+name: ufind.best
+website: https://ufind.best
+submission_url: https://ufind.best/submit-a-product
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free requires ufind badge on your site (earns public page and voting); nofollow unless Top 3 of the week. Premium $19 one-time: no queue, no badge, permanent dofollow, 90 days placement. Growth add-on $6.99/mo (SEO report)."
+audience:
+  - startups
+  - saas
+  - developer-tools
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - github
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - badge on your own site (free)
+    - queue for next open weekly cohort
+    - "manual curation: not every submission accepted"
+    - badge removal unpublishes after 7 days
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: launch_board
+human_only: null
+review_time: queue for next open week
+listing_url_pattern: "https://ufind.best/products/{slug}"
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://ufind.best/products/its-on-the-calendar
+  samples: 3
+  noindex: false
+  claimed: nofollow
+  bot_check: turnstile
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://ufind.best/submit.md
+    - https://ufind.best/pricing

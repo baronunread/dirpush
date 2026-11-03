@@ -1,0 +1,76 @@
+id: firstlook
+name: First Look
+website: https://firstlook.tools
+submission_url: https://firstlook.tools/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free listing needs the First Look badge kept on your site (weekly check; removal returns listing to pending review with nofollow). Pro $15.99 lifetime, Dual Directory $25.90, Featured $29/mo skip the 7-day queue and need no badge."
+audience:
+  - ai-tools
+  - saas
+  - software
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - github
+    - email
+submission:
+  url_first: true
+  fields:
+    - name: tool_url
+      required: true
+    - name: tool_name
+      required: true
+    - name: tagline
+      required: true
+      limit: 160
+    - name: description
+      required: true
+      limit: 5000
+    - name: logo
+      required: true
+    - name: screenshots
+      required: false
+    - name: categories
+      required: true
+    - name: pricing_model
+      required: true
+    - name: platforms
+      required: true
+  conditions:
+    - "badge on your site to keep free listing live/dofollow, checked weekly"
+    - free listing waits 7 days in review queue
+    - description minimum 500 characters
+    - "logo max 500kb; up to 4 screenshots, 5MB each; up to 3 categories"
+autofetch:
+  supported: true
+  expected:
+    - name
+    - tagline
+    - description
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 4
+kind: listing
+human_only: null
+review_time: 7 days (free)
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://firstlook.tools/product/open-launch
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://firstlook.tools/pricing
+    - https://firstlook.tools/submit

@@ -1,0 +1,52 @@
+id: easydofollow
+name: EasyDoFollow
+website: https://www.easydofollow.dev
+submission_url: https://www.easydofollow.dev
+cost:
+  classification: FREEMIUM
+  notes: "Free listing with dofollow link advertised; paid 'Get featured' sponsor slots. Featured price not seen. No badge requirement seen."
+audience:
+  - startups
+  - saas
+  - ai-tools
+  - developer-tools
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+submission:
+  url_first: true
+  fields:
+    - name: website_url
+      required: true
+  conditions:
+    - account step not observed; sister site EasyLaunch signs in with Google only
+autofetch:
+  supported: true
+  expected:
+    - name
+    - description
+    - logo
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.easydofollow.dev/
+  samples: 2
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://www.easydofollow.dev/

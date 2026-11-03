@@ -1,0 +1,71 @@
+id: launchkiwi
+name: LaunchKiwi
+website: https://launchkiwi.com
+submission_url: https://launchkiwi.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free: submission stays pending until the LaunchKiwi badge is verified on your site (or admin approves); queue-based launch date (next slot Dec 21, 2026). Premium $19, Priority $29 skip badge/queue."
+audience:
+  - indie-makers
+  - saas
+  - developer-tools
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email
+submission:
+  url_first: true
+  fields:
+    - name: product_url
+      required: true
+    - name: name
+      required: true
+    - name: tagline
+      required: true
+    - name: description
+      required: true
+    - name: logo
+      required: true
+    - name: pricing_model
+      required: true
+    - name: tags
+      required: true
+  conditions:
+    - "free plan: badge must be added and verified before listing publishes"
+    - queue-based launch date
+    - "software products only (no agencies, physical goods, content sites)"
+autofetch:
+  supported: true
+  expected:
+    - name
+    - tagline
+    - description
+    - logo
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: launch_board
+human_only: null
+review_time: "queued; next free slot Dec 21, 2026"
+listing_url_pattern: "https://launchkiwi.com/p/{slug}"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://launchkiwi.com/p/firstusers-club
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://launchkiwi.com/pricing
+    - https://launchkiwi.com/faq
+    - https://launchkiwi.com/p/launchbeast

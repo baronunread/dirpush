@@ -1,0 +1,51 @@
+id: viberank
+name: Viberank
+website: https://viberank.dev
+submission_url: https://viberank.dev/
+cost:
+  classification: VERIFIED_FREE
+  notes: No pricing page; submitting an app is rewarded (+3 vibes). Sponsored placements exist (PaperCat SPONSOR tag). Free tier not visible past login; no badge/backlink mentioned.
+audience:
+  - startups
+  - saas
+  - developer-tools
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - submission form behind sign-in; fields not seen
+    - team reviews submissions; low-value ones may be excluded
+    - sponsored slots exist
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: launch_board
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://viberank.dev/apps/TokOps
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://viberank.dev/
+    - https://viberank.dev/rewards

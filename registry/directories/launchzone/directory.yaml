@@ -1,0 +1,53 @@
+id: launchzone
+name: LaunchZone
+website: https://launchzone.co
+submission_url: https://launchzone.co/dashboard/submit
+cost:
+  classification: FREEMIUM
+  notes: Free listing reviewed in order (7 a day) with homepage week listing; free link is nofollow until the LaunchZone badge is verified (badge gates only dofollow). Featured $9.95 and Pro $29.95 one-time.
+audience:
+  - startups
+  - saas
+  - indie-makers
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - "manual review queue, 7 products reviewed per day"
+    - badge needed only for dofollow on free plan
+    - form fields not seen without account
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 0
+kind: launch_board
+human_only: null
+review_time: "queued, 7 reviews a day"
+listing_url_pattern: "https://launchzone.co/tools/{slug}"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://launchzone.co/tools/paydocs
+  samples: 4
+  noindex: false
+  claimed: nofollow
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://launchzone.co/pricing
+    - https://launchzone.co/tools/captions-cut

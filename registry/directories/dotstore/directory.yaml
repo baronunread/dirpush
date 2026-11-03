@@ -1,0 +1,67 @@
+id: dotstore
+name: dotstore
+website: https://www.dotstore.io
+submission_url: https://www.dotstore.io/submit
+cost:
+  classification: FREEMIUM
+  notes: "Free listing/launch, editor reviewed, ranked by votes alone. Pro $25 once (badge, own address, dofollow link), Ultra $49 once (blog post, 4+ backlinks), sponsor spots $20-49/week. Pro/Ultra launches refunded if declined."
+audience:
+  - saas
+  - startups
+  - ai-tools
+  - developer-tools
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - github
+submission:
+  url_first: false
+  fields:
+    - name: name
+      required: true
+      limit: 40
+    - name: tagline
+      required: true
+      limit: 60
+    - name: website
+      required: true
+    - name: pricing
+      required: true
+    - name: category
+      required: true
+    - name: price_details
+      required: false
+  conditions:
+    - editor review before going live
+    - free launches go live on Monday of the launch week
+    - sign in needed to upload images and submit
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: listing
+human_only: null
+review_time: editor-reviewed; live on Monday
+link:
+  rel: sponsored
+  method: sample_listing
+  evidence: https://www.dotstore.io/apps/claude
+  samples: 4
+  noindex: true
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://www.dotstore.io/pricing
+    - https://www.dotstore.io/submit
+    - https://www.dotstore.io/faq

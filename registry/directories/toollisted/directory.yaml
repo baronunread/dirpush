@@ -1,0 +1,49 @@
+id: toollisted
+name: ToolListed
+website: https://toollisted.com
+submission_url: https://toollisted.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free: join queue; with no backlink to ToolListed the wait is 6+ months, backlink route needs manual approval. Pro $9.90 skips the queue, no backlink needed. Sponsor $19.90/week. Same site template as tooluck/launchsoar."
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - github
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - backlink to ToolListed for timely free review; without it 6+ month wait
+    - manual approval
+    - form fields not visible past login
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: 6+ months without backlink
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://toollisted.com/item/7items
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://toollisted.com/pricing
+    - https://toollisted.com/submit

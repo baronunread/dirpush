@@ -1,0 +1,47 @@
+id: bowora
+name: Bowora
+website: https://bowora.com
+submission_url: https://bowora.com/dashboard/startups?new=true
+cost:
+  classification: VERIFIED_FREE
+  notes: "No fee or badge seen; /pricing 404. Form is behind login, so free tier not visible past login."
+audience:
+  - startups
+  - saas
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - apple
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions: []
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://bowora.com/vocaler.ai
+  samples: 1
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://bowora.com/register
+    - https://bowora.com/decillionai.com

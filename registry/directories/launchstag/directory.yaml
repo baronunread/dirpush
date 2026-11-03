@@ -1,0 +1,53 @@
+id: launchstag
+name: Launchstag
+website: https://launchstag.com
+submission_url: https://launchstag.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free listing: dofollow link requires the Launchstag badge on your site first; queued launch date. Premium $19 (pick date, no badge), Growth $34 (review page, 2 dofollow links)."
+audience:
+  - indie-makers
+  - saas
+  - ai-tools
+  - developer-tools
+  - startups
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - "free plan: badge on your site required"
+    - queued launch date based on demand
+    - form not visible without sign-in; fields not seen
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 0
+kind: launch_board
+human_only: null
+review_time: queued; date assigned by demand
+listing_url_pattern: "https://launchstag.com/p/{slug}"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://launchstag.com/p/tree-host
+  samples: 3
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://launchstag.com/pricing
+    - https://launchstag.com/p/1000-ai

@@ -1,0 +1,54 @@
+id: devhub
+name: DevHub
+website: https://devhub.best
+submission_url: https://devhub.best/projects/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free launch requires badge on your site with verified backlink and DR >= 5; free queue up to 60 days. Premium $9.90/launch skips queue; Premium Plus $12.90; SEO Growth $49; DR Booster $50.
+audience:
+  - developer-tools
+  - startups
+  - saas
+  - ai-tools
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - github
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - add DevHub badge to your site and verify the backlink
+    - site DR must be at least 5 at submission
+    - free listing reviewed within up to 60 days
+    - launches happen at 8:00 AM UTC
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: launch_board
+human_only: null
+review_time: up to 60 days (free)
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://devhub.best/projects/apogee-watcher
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://devhub.best/pricing
+    - https://devhub.best/projects/submit

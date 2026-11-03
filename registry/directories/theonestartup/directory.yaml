@@ -1,0 +1,73 @@
+id: theonestartup
+name: The One Startup
+website: https://theonestartup.com
+submission_url: https://theonestartup.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free plan needs a backlink to The One Startup on the submitter's site; Pro $9.9 one-time (no backlink needed), Sponsor $19.9/week. Only 5 free listings per day."
+audience:
+  - startups
+  - saas
+  - software
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+    - github
+submission:
+  url_first: false
+  fields:
+    - name: link
+      required: true
+    - name: name
+      required: true
+    - name: categories
+      required: true
+    - name: tags
+      required: false
+    - name: description
+      required: true
+    - name: introduction
+      required: false
+    - name: icon
+      required: true
+    - name: image
+      required: false
+  conditions:
+    - backlink to the directory required on free plan
+    - manual review
+    - sign-in required before submitting (form preview is visible logged out)
+autofetch:
+  supported: true
+  expected:
+    - name
+    - description
+    - categories
+    - tags
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 1
+kind: listing
+human_only: null
+listing_url_pattern: "https://theonestartup.com/item/{slug}"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://theonestartup.com/item/ihateimgcv
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://theonestartup.com/pricing
+    - https://theonestartup.com/auth/login
+    - https://theonestartup.com/item/days-launch

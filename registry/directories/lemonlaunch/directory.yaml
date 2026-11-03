@@ -1,0 +1,68 @@
+id: lemonlaunch
+name: LemonLaunch
+website: https://lemonlaunch.dev
+submission_url: https://lemonlaunch.dev/
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Submit modal offers: Free badge backlink ($0, add LemonLaunch badge to your site for dofollow link), Dofollow no badge ($9 once), Featured homepage slot (30 days, price varies). Conservative: free path described as badge-based; unclear whether listing goes live without badge."
+audience:
+  - startups
+  - saas
+  - indie-makers
+  - developer-tools
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods:
+    - none
+submission:
+  url_first: true
+  fields:
+    - name: site_url
+      required: true
+    - name: name
+      required: true
+    - name: tagline
+      required: true
+      limit: 80
+    - name: description
+      required: true
+      limit: 160
+    - name: logo
+      required: false
+    - name: email
+      required: true
+    - name: category
+      required: true
+  conditions:
+    - "free plan: add LemonLaunch badge for dofollow link"
+    - "no account seen, email field in form"
+    - "form read from page JS only, not submitted"
+autofetch:
+  supported: true
+  expected:
+    - name
+    - tagline
+    - description
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://lemonlaunch.dev/marketing/dailypings
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://lemonlaunch.dev/

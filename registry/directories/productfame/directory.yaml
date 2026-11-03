@@ -1,0 +1,66 @@
+id: productfame
+name: ProductFame
+website: https://productfame.com
+submission_url: https://productfame.com/products/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free Launch needs badge verification (keep permanently) and Ahrefs DR >= 5; Basic $6.9 / Pro $19.9 one-time skip the badge and queue; add-ons guest post $49.9, sponsor $49.9, directory submissions $129."
+audience:
+  - startups
+  - saas
+  - indie-makers
+  - products
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: false
+  fields:
+    - name: name
+      required: true
+    - name: website
+      required: true
+    - name: description
+      required: true
+    - name: categories
+      required: true
+    - name: pricing_model
+      required: true
+    - name: logo
+      required: true
+    - name: product_image
+      required: false
+  conditions:
+    - badge verification and permanent badge on free plan
+    - Ahrefs DR >= 5 required for free launch
+    - "launches at 8:00 AM UTC on a chosen date, free queue up to 180 days"
+    - 3 free slots daily
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 1
+kind: launch_board
+human_only: null
+review_time: free queue up to 180 days scheduling window
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://productfame.com/products/the-voicer-choicer
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://productfame.com/pricing
+    - https://productfame.com/products/submit

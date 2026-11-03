@@ -1,0 +1,81 @@
+id: lift-off
+name: LiftOff
+website: https://lift-off.sh
+submission_url: https://lift-off.sh/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free plan: badge required on your site, dofollow backlink only if top 5 daily ranking, standard queue. Featured 9 EUR, Boost 29 EUR, All-In 49 EUR (no badge, permanent dofollow, instant approval)."
+audience:
+  - startups
+  - saas
+  - indie-makers
+  - ai-tools
+  - developer-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - unknown
+submission:
+  url_first: false
+  fields:
+    - name: url
+      required: true
+    - name: name
+      required: true
+      limit: 32
+    - name: tagline
+      required: true
+      limit: 128
+    - name: description
+      required: true
+      limit: 4096
+    - name: logo
+      required: true
+    - name: screenshots
+      required: true
+    - name: pricing_model
+      required: true
+    - name: category
+      required: true
+    - name: socials
+      required: false
+    - name: launch_plan
+      required: true
+    - name: release_date
+      required: true
+  conditions:
+    - "free plan: must display LiftOff badge on your site"
+    - free plan dofollow only if top 5 daily ranking
+    - standard review and approval queue
+    - "screenshots 16:9, images up to 5MB (PNG/JPG/WEBP/AVIF)"
+    - "4-step form: basics, positioning, final details with plan and release date"
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 0
+kind: launch_board
+human_only: null
+review_time: standard queue (unstated)
+listing_url_pattern: "https://lift-off.sh/p/{slug}"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://lift-off.sh/p/systune
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://lift-off.sh/submit
+    - https://lift-off.sh/pricing
+    - https://lift-off.sh/p/royally

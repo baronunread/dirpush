@@ -1,0 +1,57 @@
+id: alterbase
+name: AlterBase
+website: https://alterbase.co
+submission_url: https://alterbase.co/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free only with AlterBase badge kept on site (followed link while badge stays); without badge not reviewed unless Featured ($5 once).
+audience:
+  - software
+  - saas
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: false
+  fields:
+    - name: name
+      required: true
+    - name: website
+      required: true
+    - name: description
+      required: true
+    - name: alternative_to
+      required: true
+  conditions:
+    - "AlterBase badge on homepage or listed page, checked weekly"
+    - manual review within 7 days
+    - saved as draft until badge check passes
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: within 7 days
+listing_url_pattern: "https://alterbase.co/tool/{slug}"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://alterbase.co/tool/xpomelo
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://alterbase.co/submit
+    - https://alterbase.co/tool/xpomelo

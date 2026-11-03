@@ -1,0 +1,74 @@
+id: newtools
+name: NewTools
+website: https://newtools.site
+submission_url: https://newtools.site/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free plan needs a backlink to NewTools on the submitter's site; Pro $9.9 one-time (no backlink needed), Sponsor $19.9/week. Reviewed within 72 hours."
+audience:
+  - ai-tools
+  - saas
+  - software
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+    - github
+submission:
+  url_first: false
+  fields:
+    - name: link
+      required: true
+    - name: name
+      required: true
+    - name: categories
+      required: true
+    - name: tags
+      required: false
+    - name: description
+      required: true
+    - name: introduction
+      required: false
+    - name: icon
+      required: true
+    - name: image
+      required: false
+  conditions:
+    - backlink to the directory required on free plan
+    - manual review
+    - sign-in required before submitting (form preview is visible logged out)
+autofetch:
+  supported: true
+  expected:
+    - name
+    - description
+    - categories
+    - tags
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 1
+kind: listing
+human_only: null
+review_time: within 72 hours (free)
+listing_url_pattern: "https://newtools.site/item/{slug}"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://newtools.site/item/dessence
+  samples: 3
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://newtools.site/pricing
+    - https://newtools.site/auth/login
+    - https://newtools.site/item/saascity

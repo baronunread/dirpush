@@ -1,0 +1,49 @@
+id: aifinderplus
+name: AI Finder Plus
+website: https://aifinderplus.com
+submission_url: https://aifinderplus.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free plan needs a backlink to aifinderplus.com or the submission is not approved; manual review after verification. Pro $19.90 one-time, Unlimited $29.90/mo."
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+    - github
+submission:
+  url_first: true
+  fields: []
+  conditions:
+    - backlink to aifinderplus.com required for free plan
+    - one free submission per verified account
+    - manual review after backlink verification
+autofetch:
+  supported: true
+  expected:
+    - name
+    - description
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://aifinderplus.com/item/layergrab
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://aifinderplus.com/pricing

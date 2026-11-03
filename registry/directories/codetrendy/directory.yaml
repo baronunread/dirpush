@@ -1,0 +1,58 @@
+id: codetrendy
+name: CodeTrendy
+website: https://codetrendy.com
+submission_url: https://codetrendy.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free tier requires CodeTrendy badge on your homepage at least 7 days before it goes live; listing shown as Unverified. Paid: Starter $19, Premium $39, Exclusive $99 one-time (instant, no badge); Featured $30/mo."
+audience:
+  - startups
+  - saas
+  - ai-tools
+  - developer-tools
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - github
+    - x
+    - linkedin
+    - discord
+    - email
+submission:
+  url_first: true
+  fields: []
+  conditions:
+    - badge on your homepage at least 7 days before the free listing goes live
+    - free listings reviewed within about 7 days
+    - free listing publicly marked Unverified
+autofetch:
+  supported: true
+  expected:
+    - name
+    - description
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: about 7 days (free); instant (paid)
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://codetrendy.com/listing/nebulasoftware
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://codetrendy.com/pricing
+    - https://codetrendy.com/submit

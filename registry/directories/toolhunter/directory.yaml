@@ -1,0 +1,47 @@
+id: toolhunter
+name: Toolhunter
+website: https://toolhunter.ai
+submission_url: https://toolhunter.ai/submit-a-tool
+cost:
+  classification: VERIFIED_FREE
+  notes: "List free and manage from a dashboard; 'Verify our badge to earn followed links' (2 dofollow) per login page copy, so badge appears to gate dofollow only, not listing. Homepage says 'no pay-to-list'. Form not visible past login."
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - manual human review of every listing
+    - badge optional for dofollow links (not confirmed past login)
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+listing_url_pattern: "https://toolhunter.ai/ai-tool/{slug}"
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://toolhunter.ai/ai-tool/ugcad-ai
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://toolhunter.ai/submit-a-tool
+    - https://toolhunter.ai/ai-tool/nano-banana

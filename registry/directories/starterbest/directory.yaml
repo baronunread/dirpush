@@ -1,0 +1,73 @@
+id: starterbest
+name: Starter Best
+website: https://starterbest.com
+submission_url: https://starterbest.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free plan needs a backlink to Starter Best on the submitter's site; Pro $9.9 one-time (no backlink needed), Sponsor $19.9/week. Only 5 free listings per day."
+audience:
+  - startups
+  - saas
+  - software
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+    - github
+submission:
+  url_first: false
+  fields:
+    - name: link
+      required: true
+    - name: name
+      required: true
+    - name: categories
+      required: true
+    - name: tags
+      required: false
+    - name: description
+      required: true
+    - name: introduction
+      required: false
+    - name: icon
+      required: true
+    - name: image
+      required: false
+  conditions:
+    - backlink to the directory required on free plan
+    - manual review
+    - sign-in required before submitting (form preview is visible logged out)
+autofetch:
+  supported: true
+  expected:
+    - name
+    - description
+    - categories
+    - tags
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 1
+kind: listing
+human_only: null
+listing_url_pattern: "https://starterbest.com/item/{slug}"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://starterbest.com/item/peregrine-os
+  samples: 1
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://starterbest.com/pricing
+    - https://starterbest.com/auth/login
+    - https://starterbest.com/item/launchbegin

@@ -1,0 +1,92 @@
+id: gets-tools
+name: Gets.Tools
+website: https://gets.tools
+submission_url: https://gets.tools/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free listing requires a dofollow backlink to gets.tools in your website footer (badge snippet provided). Paid: Pro $9 lifetime (no badge), Monthly Promotion $5/mo, Featured $29/mo."
+audience:
+  - ai-tools
+  - saas
+  - software
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - github
+    - email
+submission:
+  url_first: false
+  fields:
+    - name: tool_url
+      required: true
+    - name: name
+      required: true
+    - name: tagline
+      required: true
+      limit: 160
+    - name: description
+      required: true
+      limit: 5000
+    - name: logo
+      required: true
+    - name: screenshots
+      required: false
+    - name: categories
+      required: true
+    - name: pricing_model
+      required: true
+    - name: platforms
+      required: true
+    - name: discount_code
+      required: false
+    - name: founded_year
+      required: false
+    - name: youtube_demo
+      required: false
+    - name: github_repo
+      required: false
+    - name: founder_twitter
+      required: false
+    - name: affiliate_program
+      required: false
+  conditions:
+    - "free plan: add dofollow backlink to gets.tools in website footer"
+    - "description minimum 500 chars, markdown allowed"
+    - logo max 500kb (PNG/JPG/WEBP/SVG)
+    - "screenshots max 4 files, 5MB each"
+    - "categories: select up to 3"
+    - step 2 of form picks submission type (free vs paid)
+autofetch:
+  supported: true
+  expected:
+    - name
+    - tagline
+    - description
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 4
+kind: listing
+human_only: null
+review_time: within 2 days
+listing_url_pattern: "https://gets.tools/product/{slug}"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://gets.tools/product/molyin
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://gets.tools/submit
+    - https://gets.tools/pricing
+    - https://gets.tools/product/submitium

@@ -1,0 +1,55 @@
+id: launchbuff
+name: LaunchBuff
+website: https://launchbuff.com
+submission_url: https://launchbuff.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free: permanent listing page and NOFOLLOW backlink, LaunchBuff badge required; free tournament entry paused with a ~1 year queue. Premium $19 (skip queue, dofollow, no badge), SEO Growth $39."
+audience:
+  - startups
+  - saas
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: false
+  fields:
+    - name: name
+      required: true
+    - name: tagline
+      required: true
+    - name: url
+      required: true
+  conditions:
+    - "free plan: LaunchBuff badge required"
+    - "free tournament slots paused, queue ~1 year"
+    - email magic link required before submit form
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: launch_board
+human_only: null
+review_time: free queue ~1 year (tournament slots paused)
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://launchbuff.com/products/tbf-scrapbook-sra8ma
+  samples: 4
+  noindex: false
+  claimed: nofollow
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://launchbuff.com/pricing
+    - https://launchbuff.com/submit

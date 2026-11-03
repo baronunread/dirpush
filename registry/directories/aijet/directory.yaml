@@ -1,0 +1,44 @@
+id: aijet
+name: AI Jet
+website: https://aijet.cc
+submission_url: https://aijet.cc/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free requires AI Jet badge on your site; reviewed within 30 days. Pro $9.9 skips badge and wait.
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - AI Jet badge verification required for free plan
+    - 3-step submit wizard
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: within 30 days
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://aijet.cc/item/spicyapi
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: math
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://aijet.cc/pricing

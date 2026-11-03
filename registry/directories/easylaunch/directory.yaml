@@ -1,0 +1,49 @@
+id: easylaunch
+name: EasyLaunch
+website: https://www.easylaunch.dev
+submission_url: https://www.easylaunch.dev
+cost:
+  classification: FREEMIUM
+  notes: "Free listing with dofollow backlink; optional paid sponsor spots (about $4-6 shown, 'Take this spot'). Submit form not seen past login."
+audience:
+  - startups
+  - saas
+  - ai-tools
+  - developer-tools
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+submission:
+  url_first: true
+  fields: []
+  conditions:
+    - form not visible without Google sign-in
+autofetch:
+  supported: true
+  expected:
+    - name
+    - description
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.easylaunch.dev/marketing/kre8-content
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://www.easylaunch.dev/

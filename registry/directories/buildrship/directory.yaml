@@ -1,0 +1,47 @@
+id: buildrship
+name: Buildrship
+website: https://buildrship.xyz
+submission_url: https://buildrship.xyz/submitv2
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free launch requires badge on your site or upvoting 5 other launches; free queue. Premium $11-19 one-time, Premium Plus $29-49."
+audience:
+  - startups
+  - saas
+  - indie-makers
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - add Buildrship badge or upvote 5 other launches to qualify
+    - free queue of days to a couple of weeks
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: launch_board
+human_only: null
+review_time: days to a couple of weeks (free queue)
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://buildrship.xyz/products/indieappcircle
+  samples: 5
+  noindex: true
+  claimed: null
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://buildrship.xyz/pricing

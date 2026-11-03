@@ -1,0 +1,47 @@
+id: buildlist
+name: Buildlist
+website: https://buildlist.io
+submission_url: https://buildlist.io/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free Builder listing requires Buildlist badge on your site (nofollow, not featured). Paid $29/$49 one-time no badge."
+audience:
+  - saas
+  - startups
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: true
+  fields: []
+  conditions:
+    - Buildlist badge on your site for free Builder tier
+autofetch:
+  supported: true
+  expected:
+    - name
+    - description
+    - category
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: sponsored
+  method: sample_listing
+  evidence: https://buildlist.io/reviews
+  samples: 2
+  noindex: false
+  claimed: nofollow
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://buildlist.io/pricing

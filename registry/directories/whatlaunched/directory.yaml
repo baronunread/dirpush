@@ -1,0 +1,49 @@
+id: whatlaunched
+name: What Launched Today
+website: https://whatlaunched.today
+submission_url: https://whatlaunched.today/dashboard/submit
+cost:
+  classification: FREEMIUM
+  notes: "Standard Launch free (lifetime dofollow backlink, standard queue); Premium Launch 27 EUR skips the queue; featured spots 45-91 EUR; submission packages 110-146 EUR."
+audience:
+  - startups
+  - saas
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - standard launch queue for free tier
+    - form fields not visible past login
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: launch_board
+human_only: null
+listing_url_pattern: "https://whatlaunched.today/launch/{slug}"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://whatlaunched.today/launch/voiceagent
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://whatlaunched.today/
+    - https://whatlaunched.today/auth/signup

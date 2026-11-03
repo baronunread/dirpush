@@ -1,0 +1,51 @@
+id: aiboom
+name: AIBoom.Tools
+website: https://aiboom.tools
+submission_url: https://aiboom.tools/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free requires badge/dofollow backlink on homepage or footer and domain older than 30 days. Paid $9.90 / $19.90 lifetime remove badge need.
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: tool_url
+      required: true
+  conditions:
+    - AIBoom badge/dofollow backlink on homepage or footer for free plan
+    - domain registered more than 30 days
+    - 4-step submit wizard
+autofetch:
+  supported: true
+  expected:
+    - name
+    - description
+    - logo
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: listing
+human_only: null
+review_time: within 3 business days after badge verification
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://aiboom.tools/product/cartomind
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://aiboom.tools/pricing
+    - https://aiboom.tools/submit

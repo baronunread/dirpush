@@ -1,0 +1,65 @@
+id: launchit-site
+name: Launchit (launchit.site)
+website: https://launchit.site
+submission_url: https://launchit.site/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free launch needs the Launchit badge on your site AND upvoting 3 other products; goes live after review within 7 days, 1 dofollow link after badge. Showcase $9, Spotlight $29 skip requirements. Not the same site as launchit.fast."
+audience:
+  - startups
+  - saas
+  - indie-makers
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email
+submission:
+  url_first: false
+  fields:
+    - name: name
+      required: true
+    - name: tagline
+      required: true
+    - name: description
+      required: true
+    - name: links
+      required: true
+    - name: media
+      required: false
+  conditions:
+    - "free plan: add Launchit badge to your website"
+    - "free plan: upvote 3 other products"
+    - manual review within 7 days
+    - email signup shows a Cloudflare Turnstile widget
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 0
+kind: launch_board
+human_only: null
+review_time: within 7 days (free)
+listing_url_pattern: "https://launchit.site/launches/{slug}"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.launchit.site/launches/saashunter
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://launchit.site/pricing
+    - https://launchit.site/faq
+    - https://launchit.site/launches/tapetide

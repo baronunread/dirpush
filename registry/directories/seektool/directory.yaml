@@ -1,0 +1,45 @@
+id: seektool
+name: SeekTool.ai
+website: https://seektool.ai
+submission_url: https://seektool.ai/pricing
+cost:
+  classification: PAID
+  notes: "Listing $19.90 one-time (48h review); Launch & promote $39.90 (8h review, 30 days ads). No free tier seen."
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - payment required
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: 48 hours (paid listing)
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://seektool.ai/ai/videocome-com
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://seektool.ai/pricing

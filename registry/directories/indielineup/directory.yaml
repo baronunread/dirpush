@@ -1,0 +1,73 @@
+id: indielineup
+name: IndieLineup
+website: https://indielineup.com
+submission_url: https://indielineup.com/submit/
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free listing needs the IndieLineup badge (dofollow) on your site; goes live immediately if badge already present, else reviewed within 7 days and unpublished if the badge is later removed. Paid $19 (no badge, 3 dofollow links) or $29 for IndieLineup + TheAIToolsDir."
+audience:
+  - indie-makers
+  - saas
+  - developer-tools
+  - software
+authentication:
+  required: false
+  signup_allowed: false
+  methods:
+    - none
+submission:
+  url_first: true
+  fields:
+    - name: product_url
+      required: true
+    - name: name
+      required: true
+    - name: tagline
+      required: true
+    - name: description
+      required: true
+    - name: screenshot
+      required: false
+    - name: categories
+      required: true
+    - name: tags
+      required: false
+    - name: email
+      required: true
+  conditions:
+    - "free plan: dofollow IndieLineup badge on your website, verified"
+    - badge removal unpublishes listing after 7 days
+    - "no account needed, only an email"
+    - "categories: select up to 3"
+autofetch:
+  supported: true
+  expected:
+    - name
+    - tagline
+    - description
+media:
+  logo: false
+  screenshots:
+    supported: true
+    max: 1
+kind: listing
+human_only: null
+review_time: "instant if badge verified, otherwise within 7 days"
+listing_url_pattern: "https://indielineup.com/product/{slug}/"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://indielineup.com/product/screenbuddy/
+  samples: 2
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://indielineup.com/submit/
+    - https://indielineup.com/pricing/
+    - https://indielineup.com/product/screenbuddy/

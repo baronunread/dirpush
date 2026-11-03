@@ -1,0 +1,51 @@
+id: saasgrow
+name: SaaSGrow
+website: https://saasgrow.app
+submission_url: https://saasgrow.app/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free listing requires the SaaSGrow badge on your site (verified before approval); Basic $9 one-time skips it and adds dofollow backlink; Pro $9/month.
+audience:
+  - saas
+  - startups
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - x
+    - github
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - SaaSGrow badge must be on your site for free approval
+    - form fields not visible without login
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+listing_url_pattern: "https://saasgrow.app/saas/{slug}/timeline"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://saasgrow.app/saas/supporthq/timeline
+  samples: 2
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://saasgrow.app/pricing
+    - https://saasgrow.app/saas/launchigniter/timeline

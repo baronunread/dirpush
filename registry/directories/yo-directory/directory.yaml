@@ -1,0 +1,49 @@
+id: yo-directory
+name: Yo.directory
+website: https://yo.directory
+submission_url: https://yo.directory/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free requires a crawlable backlink to yo.directory that must stay live; Basic $19 one-time removes backlink requirement and adds verified badge; Pro $19/mo pins to the top.
+audience:
+  - software
+  - no-code
+  - startups
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - backlink to yo.directory on your site (free tier)
+    - listing live only while the link stays live
+    - reviewed against listing rules before going live
+    - "free: 1 category"
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: sponsored
+  method: sample_listing
+  evidence: https://yo.directory/tool/no-code-tools-directory-nocodefindercom
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://yo.directory/pricing
+    - https://yo.directory/about

@@ -1,0 +1,85 @@
+id: verifiedtools
+name: Verified Tools
+website: https://verifiedtools.info
+submission_url: https://verifiedtools.info/submit
+cost:
+  classification: FREEMIUM
+  notes: "Free: basic listing with nofollow link after 7-9 week queue; embedding badge earns dofollow (optional). Starter $12 skips queue + permanent dofollow, no badge needed; Pro $129 and Premium $249 add featured/reviews."
+audience:
+  - ai-tools
+  - saas
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+    - github
+submission:
+  url_first: false
+  fields:
+    - name: name
+      required: true
+      limit: 60
+    - name: slug
+      required: true
+      limit: 64
+    - name: website_url
+      required: true
+    - name: tagline
+      required: true
+      limit: 100
+    - name: short_description
+      required: true
+      limit: 160
+    - name: description
+      required: true
+      limit: 1000
+    - name: category
+      required: true
+    - name: logo
+      required: true
+    - name: screenshots
+      required: true
+    - name: pricing
+      required: true
+    - name: email
+      required: true
+    - name: youtube_url
+      required: false
+    - name: social_links
+      required: false
+  conditions:
+    - "free queue 7-9 weeks (2,114 tools ahead)"
+    - "badge optional, only for dofollow"
+    - "1-3 screenshots required, 16:9, max 1600px wide, auto-compressed over 1MB"
+    - "logo max 512x512, SVG/PNG preferred"
+    - manual review
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 3
+kind: listing
+human_only: null
+review_time: 7-9 weeks (free); 24 hours (paid)
+listing_url_pattern: "https://verifiedtools.info/tools/{slug}"
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://www.verifiedtools.info/tools/screenbird
+  samples: 4
+  noindex: false
+  claimed: nofollow
+  bot_check: turnstile
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://verifiedtools.info/submit
+    - https://verifiedtools.info/pricing

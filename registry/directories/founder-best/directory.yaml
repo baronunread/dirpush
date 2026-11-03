@@ -1,0 +1,54 @@
+id: founder-best
+name: Founder.best
+website: https://www.founder.best
+submission_url: https://www.founder.best/submit
+cost:
+  classification: FREEMIUM
+  notes: "Free launch with admin approval and limited weekly slots, nofollow backlink, free blocked for first 3 weeks per pricing FAQ. Standard $9, Pro $19 one-time, Pro+ $9/mo skip review and give dofollow."
+audience:
+  - startups
+  - saas
+  - indie-makers
+  - ai-tools
+  - developer-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email
+    - magic-link
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - manual admin review for free launches
+    - limited free slots per week
+    - free launch available from week 4 onward per pricing FAQ (ambiguous)
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: launch_board
+human_only: null
+review_time: manual admin review (not instant)
+listing_url_pattern: "https://www.founder.best/products/{slug}"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.founder.best/products/commune
+  samples: 4
+  noindex: false
+  claimed: nofollow
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://founder.best/pricing
+    - https://founder.best/login?next=/submit

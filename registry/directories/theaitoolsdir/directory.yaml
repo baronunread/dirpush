@@ -1,0 +1,67 @@
+id: theaitoolsdir
+name: TheAIToolsDir
+website: https://theaitoolsdir.com
+submission_url: https://theaitoolsdir.com/submit/
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free tier requires adding the TheAIToolsDir dofollow badge to your site (badge verification). $19 one-time paid tier skips the badge and gets homepage/category feature; $29 covers this site plus sister TheSaaSDir.
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+submission:
+  url_first: true
+  fields:
+    - name: website_url
+      required: true
+    - name: name
+      required: true
+      limit: 200
+    - name: tagline
+      required: true
+      limit: 200
+    - name: description
+      required: true
+    - name: categories
+      required: true
+    - name: screenshot
+      required: false
+  conditions:
+    - add TheAIToolsDir dofollow badge to your site (free tier)
+    - badge checked regularly; removal unpublishes listing after 7 days
+    - "categories: select up to 3"
+    - no account; contact email given in the form
+autofetch:
+  supported: true
+  expected:
+    - name
+    - tagline
+    - description
+media:
+  logo: false
+  screenshots:
+    supported: true
+    max: 1
+kind: listing
+human_only: null
+review_time: "instant if badge already on site, else within 7 days"
+listing_url_pattern: "https://theaitoolsdir.com/product/{slug}/"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://theaitoolsdir.com/product/citeon/
+  samples: 2
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://theaitoolsdir.com/pricing/
+    - https://theaitoolsdir.com/submit/

@@ -1,0 +1,64 @@
+id: launchpadly
+name: Launchpadly
+website: https://launchpadly.co
+submission_url: https://launchpadly.co/submit
+cost:
+  classification: FREEMIUM
+  notes: "Free submission with review; badge only keeps the dofollow link (listing stays public, link becomes nofollow after a 72h grace if badge missing). Paid Featured/Premium/Social Boost add placement, faster review and editorial page ($9-$29 range per guide)."
+audience:
+  - startups
+  - saas
+  - indie-makers
+  - ai-tools
+  - developer-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - github
+    - email
+submission:
+  url_first: false
+  fields:
+    - name: name
+      required: true
+    - name: tagline
+      required: true
+      limit: 120
+    - name: url
+      required: true
+  conditions:
+    - manual review before going on weekly board
+    - badge needed only to keep the dofollow link
+    - exact form limits not seen past login
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 0
+kind: launch_board
+human_only: null
+review_time: a few days
+listing_url_pattern: "https://launchpadly.co/startup/{slug}"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://launchpadly.co/built-with/nestjs
+  samples: 2
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://launchpadly.co/submit
+    - https://launchpadly.co/about
+    - https://launchpadly.co/guides/badge
+    - https://launchpadly.co/guides/paid-tiers

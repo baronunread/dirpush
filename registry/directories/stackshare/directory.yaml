@@ -1,0 +1,48 @@
+id: stackshare
+name: StackShare
+website: https://stackshare.io
+submission_url: https://stackshare.io/tools/new
+cost:
+  classification: VERIFIED_FREE
+  notes: No pricing found and no paid tier visible; free tier/conditions not visible past login.
+audience:
+  - developer-tools
+  - ai-tools
+  - saas
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - github
+    - google
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - form not visible without login
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: Vercel Security Checkpoint blocks plain curl and headless; passes in a headed browser after ~15s
+listing_url_pattern: "https://stackshare.io/{slug}"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://stackshare.io/docker
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://stackshare.io/
+    - https://stackshare.io/github

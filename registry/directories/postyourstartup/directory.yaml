@@ -1,0 +1,51 @@
+id: postyourstartup
+name: Post Your Startup
+website: https://postyourstartup.co
+submission_url: https://postyourstartup.co/pricing
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free launch requires the PostYourStartup badge on your site; $19 one-time Instant Premium Listing skips the badge; $19/week featured sponsor.
+audience:
+  - startups
+  - saas
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - github
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - badge must be installed on your website (free plan)
+    - free launches share a launch week and are scheduled in advance
+    - form fields not visible without login
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: launch_board
+human_only: null
+listing_url_pattern: "https://postyourstartup.co/startup/{slug}"
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://postyourstartup.co/startup/shutap
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://postyourstartup.co/pricing
+    - https://postyourstartup.co/startup/launchdog

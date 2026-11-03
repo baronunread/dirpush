@@ -1,0 +1,48 @@
+id: artificin
+name: Artificin
+website: https://artificin.com
+submission_url: https://artificin.com/submit-ai-tool
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free requires Artificin badge on your site (nofollow link). Pro $79.99 one-time (sponsored link, no badge); ads $79/week, $399/month."
+audience:
+  - ai-tools
+authentication:
+  required: false
+  signup_allowed: false
+  methods: []
+submission:
+  url_first: true
+  fields:
+    - name: email
+      required: true
+    - name: tool_url
+      required: true
+  conditions:
+    - Artificin badge required on your site
+    - listing active only while badge remains
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: listing
+human_only: null
+review_time: up to 72 hours
+link:
+  rel: nofollow
+  method: sample_listing
+  evidence: https://artificin.com/tools/chatgpt
+  samples: 4
+  noindex: false
+  claimed: nofollow
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://artificin.com/submit-ai-tool

@@ -1,0 +1,49 @@
+id: tooluck
+name: Tooluck
+website: https://www.tooluck.org
+submission_url: https://www.tooluck.org/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free requires a backlink to Tooluck on the product site (and backlink maintenance); Pro $9.9 one-time has no backlink requirement; Sponsor $19.9/week.
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - backlink to tooluck.org required (free plan)
+    - backlink must be maintained
+    - fields not visible past login
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: within 72 hours
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://www.tooluck.org/item/notion
+  samples: 1
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://www.tooluck.org/pricing
+    - https://www.tooluck.org/submit

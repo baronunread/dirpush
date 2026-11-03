@@ -1,0 +1,47 @@
+id: launchsoar
+name: Launch (launchsoar.com)
+website: https://launchsoar.com
+submission_url: https://launchsoar.com/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free requires the 'Listed on Launch' badge on your site and badge verification before submitting for approval; Pro $9.9 one-time has no backlink requirement."
+audience:
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - add Launch badge to your website and verify it before submitting
+    - "manual review, may take time"
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://launchsoar.com/item/try-oc-maker
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://launchsoar.com/pricing
+    - https://launchsoar.com/submit

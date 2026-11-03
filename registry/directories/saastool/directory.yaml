@@ -1,0 +1,74 @@
+id: saastool
+name: SaaSTool
+website: https://saastool.site
+submission_url: https://saastool.site/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: "Free needs the SaaSTool badge on the product site (kept permanently), reviewed within 90 days; Pro $9.9 one-time has no backlink requirement; Sponsor $19.9/month."
+audience:
+  - saas
+  - software
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+    - github
+submission:
+  url_first: false
+  fields:
+    - name: link
+      required: true
+    - name: name
+      required: true
+    - name: categories
+      required: true
+    - name: tags
+      required: false
+    - name: description
+      required: true
+    - name: introduction
+      required: false
+    - name: icon
+      required: true
+    - name: image
+      required: false
+  conditions:
+    - badge/backlink to SaaSTool required on free plan and must be kept
+    - manual review within 90 days
+    - sign-in required before submitting
+autofetch:
+  supported: true
+  expected:
+    - name
+    - description
+    - categories
+    - tags
+media:
+  logo: true
+  screenshots:
+    supported: true
+    max: 1
+kind: listing
+human_only: null
+review_time: within 90 days (free)
+listing_url_pattern: "https://saastool.site/item/{slug}"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://saastool.site/item/andreas-christodoulou
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://saastool.site/pricing
+    - https://saastool.site/auth/login
+    - https://saastool.site/item/forming-web

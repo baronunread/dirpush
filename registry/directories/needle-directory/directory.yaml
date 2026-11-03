@@ -1,0 +1,51 @@
+id: needle-directory
+name: Needle Directory
+website: https://useneedle.net/directory
+submission_url: https://useneedle.net/directory/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free listing with backlink verification (backlink to Needle); paid one-time verification skip and featured placement (~30 days). Backlink gate not visible past login.
+audience:
+  - saas
+  - startups
+  - ai-tools
+  - marketing
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email
+submission:
+  url_first: false
+  fields:
+    - name: logo
+      required: true
+  conditions:
+    - backlink verification required (waived only by paid skip)
+    - manual review before publication
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: listing
+human_only: null
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://useneedle.net/directory/amma-satprep
+  samples: 2
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://useneedle.net/directory/submit
+    - https://useneedle.net/faq

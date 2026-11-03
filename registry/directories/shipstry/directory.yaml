@@ -1,0 +1,50 @@
+id: shipstry
+name: Shipstry
+website: https://shipstry.com
+submission_url: https://shipstry.com/submit
+cost:
+  classification: FREEMIUM
+  notes: "Harbor free: 1 submission/month, nofollow backlink, slow queue; badge optional and only unlocks dofollow. Voyage $9.9 per product (priority, 2 dofollow); Fleet $29.90/mo for 30 submissions."
+audience:
+  - startups
+  - saas
+  - indie-makers
+  - products
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - free tier limited to 1 submission per month
+    - "free tier ship week starts from week +3, review best-effort 4+ weeks"
+    - form fields not visible without login
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: false
+kind: launch_board
+human_only: null
+review_time: "best-effort, 4+ weeks (free); 48h (paid)"
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://shipstry.com/explore
+  samples: 1
+  noindex: false
+  claimed: nofollow
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://shipstry.com/pricing

@@ -1,0 +1,50 @@
+id: toolverified
+name: ToolVerified
+website: https://toolverified.com
+submission_url: https://toolverified.com/submit
+cost:
+  classification: PAID
+  notes: "Free listing (nofollow, standard queue) is currently PAUSED; only paid Premium $9 / Featured $18 one-time (payment only opens after approval). Re-check later: free may return."
+audience:
+  - saas
+  - software
+  - ai-tools
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - free listings paused as of 2026-11-03
+    - paid charged only after human approval
+    - manual review
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: listing
+human_only: null
+review_time: paid within 24 hours; free paused
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://www.toolverified.com/tool/gallerydock
+  samples: 4
+  noindex: false
+  claimed: nofollow
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://toolverified.com/pricing
+    - https://toolverified.com/submit

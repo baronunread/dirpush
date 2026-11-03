@@ -1,0 +1,52 @@
+id: tinyhunt
+name: TinyHunt
+website: https://tinyhunt.dev
+submission_url: https://tinyhunt.dev/projects/submit
+cost:
+  classification: CONDITIONAL_FREE
+  notes: Free launch requires TinyHunt badge on your site with verified backlink and site DR >= 5; reviewed and listed within up to 84 days. Paid Premium $9.9 skips the queue; form fields not visible past login.
+audience:
+  - startups
+  - saas
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - google
+    - github
+    - email
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - badge on your site with verified backlink
+    - site DR must be at least 5 when submitting
+    - free queue up to 84 days
+    - launch fields not visible past login
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: true
+  screenshots:
+    supported: true
+kind: launch_board
+human_only: null
+review_time: up to 84 days (free)
+link:
+  rel: mixed
+  method: sample_listing
+  evidence: https://tinyhunt.dev/projects/maxesimo-9229
+  samples: 4
+  noindex: false
+  claimed: dofollow
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://tinyhunt.dev/pricing
+    - https://tinyhunt.dev/sign-in?redirect=/projects/submit

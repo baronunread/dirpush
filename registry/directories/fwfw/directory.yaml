@@ -1,0 +1,51 @@
+id: fwfw
+name: FWFW
+website: https://fwfw.app
+submission_url: https://fwfw.app/submit
+cost:
+  classification: FREEMIUM
+  notes: $0 free with manual review (up to 72h); pay $1-$10 for instant publishing and higher priority placement.
+audience:
+  - products
+  - startups
+  - saas
+  - indie-makers
+authentication:
+  required: true
+  signup_allowed: true
+  methods:
+    - email
+    - google
+    - github
+submission:
+  url_first: false
+  fields: []
+  conditions:
+    - free submissions manually reviewed within 72 hours; lower-quality sites may not pass
+    - form not visible without login
+autofetch:
+  supported: false
+  expected: []
+media:
+  logo: false
+  screenshots:
+    supported: false
+kind: listing
+human_only: null
+review_time: within 72 hours (free); instant (paid)
+link:
+  rel: dofollow
+  method: sample_listing
+  evidence: https://fwfw.app/item/gcs-cheats
+  samples: 4
+  noindex: false
+  claimed: null
+  bot_check: none
+  checked_at: 2026-11-03
+verification:
+  status: verified
+  checked_at: 2026-11-03
+  by: sonnet-dotstore
+  sources:
+    - https://fwfw.app/pricing
+    - https://fwfw.app/submit
