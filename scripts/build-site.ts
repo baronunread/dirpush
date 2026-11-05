@@ -2,7 +2,7 @@
  * Builds the static dirpush.com site into dist/site: landing page, one page per directory, a filterable
  * index, and registry.json (what `dirpush registry updates` downloads). No server, no tracking, no web fonts.
  */
-import { cpSync, mkdirSync, rmSync } from "node:fs";
+import { cpSync, mkdirSync, readdirSync, readFileSync, rmSync } from "node:fs";
 import { join } from "node:path";
 import { openDb, PKG } from "../src/db";
 import { DIRECTORY_KINDS } from "../src/directory-kinds";
@@ -101,6 +101,7 @@ ${opts.noindex ? `<meta name="robots" content="noindex">` : `<meta name="robots"
 <meta property="og:image:alt" content="dirpush: ${dirCount} startup directories, with the link type measured">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="alternate" type="application/json" href="/registry.json" title="dirpush registry">
+<link rel="alternate" type="application/rss+xml" href="/blog/feed.xml" title="dirpush blog">
 ${(opts.jsonld ?? []).map(ld).join("\n")}
 <meta name="theme-color" content="#0c0d0b" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#f6f6f3" media="(prefers-color-scheme: light)">
@@ -115,7 +116,7 @@ ${(opts.jsonld ?? []).map(ld).join("\n")}
   <div class="nav-bar">
     <a class="logo" href="/" aria-label="dirpush home"><span class="logo-mark" aria-hidden="true"></span>dirpush</a>
     <a class="nav-live" href="/directories/?rel=dofollow" title="Directories with a measured dofollow link"><span class="pulse" aria-hidden="true"></span>${dofollowCount} dofollow of ${dirCount}</a>
-    <nav aria-label="Primary"><a href="/directories/">Directories</a><a href="/#how">How it works</a><a href="${REPO}">GitHub</a></nav>
+    <nav aria-label="Primary"><a href="/directories/">Directories</a><a href="/#how">How it works</a><a href="/blog/">Blog</a><a href="${REPO}">GitHub</a></nav>
     <button class="nav-cta" type="button" data-copy="npx dirpush init" aria-label="Copy install command: npx dirpush init"><code>npx dirpush init</code><span class="copy-label" aria-hidden="true"><span class="c1">Copy</span><span class="c2">Copied</span></span></button>
     <span class="nav-progress" aria-hidden="true"></span>
   </div>
@@ -136,7 +137,7 @@ ${body}
     </div>
     <div><h3>Directories</h3><a href="/directories/">All ${dirCount}</a><a href="/directories/free-dofollow/">Free and dofollow</a><a href="/directories/launch-sites/">Launch sites</a><a href="/directories/ai-tools/">AI tools</a><a href="/directories/no-account/">No account needed</a></div>
     <div><h3>Data</h3><a href="/registry.json">registry.json</a><a href="/sitemap.xml">Sitemap</a><a href="${REPO}/issues/new?labels=new-directory&amp;title=New%20directory%3A%20">Submit a directory</a></div>
-    <div><h3>Project</h3><a href="${REPO}">Source on GitHub</a><a href="/#how">How it works</a><a href="/directory-submission/">Directory submission tool</a><a href="/claude-code-seo/">Claude Code for SEO</a><a href="${REPO}/blob/main/LICENSE">License</a></div>
+    <div><h3>Project</h3><a href="/blog/">Blog</a><a href="${REPO}">Source on GitHub</a><a href="/#how">How it works</a><a href="/directory-submission/">Directory submission tool</a><a href="/claude-code-seo/">Claude Code for SEO</a><a href="${REPO}/blob/main/LICENSE">License</a></div>
   </div>
   <div class="shell foot-meta"><span>Registry updated ${registryDate}</span><span>Link types measured on real listing pages. DR by Ahrefs.</span></div>
   <div class="foot-word" aria-hidden="true">dirpush</div>
@@ -195,19 +196,50 @@ const noBot = dirs.filter((d) => d.link?.bot_check === "none" && !d.authenticati
 // Topic pages: prerendered, crawlable versions of the most useful filters (the index filters with JS).
 const isFree = (d: Directory) => ["VERIFIED_FREE", "FREEMIUM"].includes(d.cost.classification);
 const aud = (d: Directory, a: string) => d.audience.some((x) => x.toLowerCase() === a);
+// Titles lead with what people search (Serpstat, US, Nov 2026): "free directory submission sites" 90/mo, "Product Hunt
+// alternatives" 140, "SaaS directories" 110, "submit AI tool" 70. "free dofollow directories" has almost no volume, so
+// that page leads with the searched phrase and keeps "dofollow" as the qualifier.
 const HUBS: { slug: string; h1: string; name: string; title: string; intro: string; pick: (d: Directory) => boolean }[] = [
-  { slug: "free-dofollow", h1: "free dofollow directories", name: "Free and dofollow", title: "Free dofollow directories for startups and SaaS", intro: "Free to list on, and the link to your site is a followed link: measured on real listing pages, not taken from the directory's own claims.", pick: (d) => isFree(d) && relOf(d) === "dofollow" },
+  { slug: "free-dofollow", h1: "free directory submission sites with dofollow links", name: "Free and dofollow", title: "Free directory submission sites with dofollow links", intro: "Free to list on, and the link to your site is a followed link: measured on real listing pages, not taken from the directory's own claims.", pick: (d) => isFree(d) && relOf(d) === "dofollow" },
   { slug: "dofollow", h1: "dofollow directories", name: "Dofollow", title: "Dofollow directories: where the backlink actually counts", intro: "Every directory whose listing pages link to your product without nofollow, ugc or sponsored. Some of them charge for it; the cost column says which.", pick: (d) => relOf(d) === "dofollow" },
   { slug: "free", h1: "free directory submission sites", name: "Free", title: "Free directory submission sites for startups and SaaS", intro: "Directories with a free way to get listed, including ones that also sell paid upgrades.", pick: isFree },
   { slug: "no-account", h1: "directories with no sign-up", name: "No account needed", title: "Directories you can submit to without an account", intro: "No sign-up, no email login: fill the form and submit.", pick: (d) => !d.authentication.required },
-  { slug: "launch-sites", h1: "launch sites", name: "Launch sites", title: "Launch sites: Product Hunt alternatives for your launch", intro: "Launch boards with a daily or weekly ranking, where a new product gets a day in front of early adopters.", pick: (d) => d.kind === "launch_board" },
-  { slug: "ai-tools", h1: "AI tool directories", name: "AI tools", title: "AI tool directories: where to submit an AI tool", intro: "Directories where you can submit an AI tool or AI-powered SaaS, with the cost and link type of each.", pick: (d) => aud(d, "ai-tools") },
+  { slug: "launch-sites", h1: "Product Hunt alternatives", name: "Launch sites", title: "Product Hunt alternatives: launch sites, measured", intro: "Launch boards with a daily or weekly ranking, where a new product gets a day in front of early adopters. Product Hunt is on the list too, so you can compare.", pick: (d) => d.kind === "launch_board" },
+  { slug: "ai-tools", h1: "AI tool directories", name: "AI tools", title: "Submit your AI tool: AI tool directories, measured", intro: "Directories where you can submit an AI tool or AI-powered SaaS, with the cost and link type of each.", pick: (d) => aud(d, "ai-tools") },
   { slug: "saas", h1: "SaaS directories", name: "SaaS", title: "SaaS directories: where to list your SaaS", intro: "Directories that accept SaaS products, from big review sites to small curated lists.", pick: (d) => aud(d, "saas") },
   { slug: "developer-tools", h1: "developer tool directories", name: "Developer tools", title: "Developer tool directories: where to list a dev tool", intro: "Directories for developer tools, APIs and open-source projects.", pick: (d) => aud(d, "developer-tools") },
   { slug: "mcp-registries", h1: "MCP registries and marketplaces", name: "MCP registries", title: "MCP registries and marketplaces: where to publish an MCP server", intro: "Every MCP registry, marketplace and directory where you can publish a Model Context Protocol server, from the official MCP registry to client marketplaces.", pick: (d) => d.kind === "mcp_registry" || aud(d, "mcp-servers") },
   { slug: "open-source", h1: "open-source directories", name: "Open source", title: "Directories for open-source projects", intro: "Directories that list open-source software and alternatives.", pick: (d) => aud(d, "open-source") },
 ];
 for (const h of HUBS) if (dirs.some((d) => d.id === h.slug)) throw new Error(`topic page ${h.slug} collides with a directory id`);
+
+// ---- blog posts: content/blog/<slug>.md -------------------------------------
+// Frontmatter is `key: value` lines: title, description, date (YYYY-MM-DD) required; h1, updated, hubs (topic slugs
+// the post is listed under, comma-separated) and draft optional. Body is Markdown. Numbers in a post are a dated
+// snapshot, written by hand: a study says what was true when it was measured.
+type Post = { slug: string; title: string; h1: string; description: string; date: string; updated: string; hubs: string[]; html: string; minutes: number; draft: boolean };
+const BLOG_DIR = join(PKG, "content/blog");
+const posts: Post[] = readdirSync(BLOG_DIR).filter((f) => f.endsWith(".md")).map((f): Post => {
+  const slug = f.slice(0, -3);
+  const src = readFileSync(join(BLOG_DIR, f), "utf8");
+  const m = src.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+  if (!m) throw new Error(`${f}: missing frontmatter`);
+  const fm = Object.fromEntries(m[1]!.split("\n").filter((l) => l.trim()).map((l) => { const i = l.indexOf(":"); return [l.slice(0, i).trim(), l.slice(i + 1).trim()]; }));
+  for (const k of ["title", "description", "date"]) if (!fm[k]) throw new Error(`${f}: frontmatter needs ${k}`);
+  for (const k of ["date", "updated"]) if (fm[k] && !/^\d{4}-\d{2}-\d{2}$/.test(fm[k])) throw new Error(`${f}: ${k} must be YYYY-MM-DD`);
+  const hubs = (fm.hubs ?? "").split(",").map((s: string) => s.trim()).filter(Boolean);
+  for (const s of hubs) if (!HUBS.some((h) => h.slug === s)) throw new Error(`${f}: unknown hub ${s}`);
+  // Wide tables scroll inside their own box on small screens instead of widening the page.
+  const html = Bun.markdown.html(m[2]!).replaceAll("<table>", `<div class="post-table"><table>`).replaceAll("</table>", "</table></div>");
+  return { slug, title: fm.title!, h1: fm.h1 || fm.title!, description: fm.description!, date: fm.date!, updated: fm.updated || fm.date!, hubs, html, minutes: Math.max(1, Math.round(m[2]!.split(/\s+/).length / 230)), draft: fm.draft === "true" };
+}).filter((p) => !p.draft).sort((a, b) => b.date.localeCompare(a.date) || a.slug.localeCompare(b.slug));
+const postDate = (s: string) => new Date(`${s}T12:00:00Z`).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
+const postCards = (ps: Post[]) => `<div class="post-list">${ps.map((p) => `<a href="/blog/${p.slug}/"><time datetime="${p.date}">${postDate(p.date)}</time><b>${esc(p.title)}</b><span>${esc(p.description)}</span></a>`).join("")}</div>`;
+/** "Read more" under a topic page: the posts that list it in `hubs`. */
+const postLinks = (hub: string) => {
+  const ps = posts.filter((p) => p.hubs.includes(hub));
+  return ps.length ? `<section class="dir-sec"><h2>Read more</h2>${postCards(ps)}</section>` : "";
+};
 const hubOf = (d: Directory) => HUBS.find((h) => ["launch-sites", "mcp-registries"].includes(h.slug) && h.pick(d)) ?? HUBS.find((h) => ["ai-tools", "developer-tools", "saas"].includes(h.slug) && h.pick(d));
 const lastmod = (d: Directory) => [d.link?.checked_at, d.verification.checked_at].filter(Boolean).sort().at(-1)!;
 dirCount = dirs.length;
@@ -419,11 +451,11 @@ const opt = (group: string, value: string, label: string, n: number) =>
 const menu = (label: string, opts: string[]) =>
   `<details class="menu"><summary><span>${esc(label)}</span><b class="menu-n" hidden></b></summary><div class="menu-panel" role="group" aria-label="${esc(label)}">${opts.join("")}</div></details>`;
 await Bun.write(join(OUT, "directories/index.html"), page(
-  `Directory submission sites: ${dirs.length} startup, SaaS and AI directories, measured | dirpush`,
-  `Every directory submission site for a startup, SaaS, AI or developer tool, with cost, sign-in, bot checks and whether the link is dofollow, measured on real listing pages.`,
+  `Startup directories: ${dirs.length} directory submission sites, measured | dirpush`,
+  `Every startup directory and directory submission site for a SaaS, AI or developer tool, with cost, sign-in, bot checks and whether the link is dofollow, measured on real listing pages.`,
   "/directories/",
   `<section class="list-head shell">
-  <h1><span class="count-big">${dirs.length}</span> directories, measured.</h1>
+  <h1><span class="count-big">${dirs.length}</span> startup directories, measured.</h1>
   <p class="hero-sub">Cost and form details come from walking each submit flow. Link type comes from reading real listing pages. Filter down to the ones worth your time.</p>
   ${topicLinks}
 </section>
@@ -614,6 +646,18 @@ for (const h of HUBS) {
   const list = dirs.filter(h.pick).sort((a, b) => ORDER.indexOf(relOf(a)) - ORDER.indexOf(relOf(b)) || (dr(b)?.rating ?? -1) - (dr(a)?.rating ?? -1) || a.name.localeCompare(b.name));
   const path = `/directories/${h.slug}/`;
   const dof = list.filter((d) => relOf(d) === "dofollow").length, fr = list.filter(isFree).length;
+  // Answers computed from the list, so each topic page says something its table alone doesn't.
+  const names = (xs: Directory[], n = 5) => xs.slice(0, n).map((d) => `${d.name}${dr(d) ? ` (DR ${Math.round(dr(d)!.rating)})` : ""}`).join(", ");
+  const strongest = list.filter((d) => relOf(d) === "dofollow" && isFree(d) && d.link?.noindex !== true).sort((a, b) => (dr(b)?.rating ?? -1) - (dr(a)?.rating ?? -1));
+  const quick = list.filter((d) => !d.authentication.required && d.link?.bot_check === "none");
+  const badge = list.filter((d) => d.cost.classification === "CONDITIONAL_FREE" && /badge|backlink|link back|reciprocal/i.test(`${d.cost.notes ?? ""} ${d.submission.conditions.join(" ")}`));
+  const notFollowed = list.filter((d) => ["nofollow", "ugc", "sponsored"].includes(relOf(d))).length;
+  const hubAnswers: [string, string][] = [
+    ...(strongest.length && h.slug !== "dofollow" ? [[`Which are free, dofollow and strongest?`, `By Ahrefs Domain Rating: ${names(strongest)}.`] as [string, string]] : []),
+    ...(dof < list.length ? [[`How many give a followed link?`, `${dof} of ${list.length} serve a dofollow link on the listing pages we read. ${notFollowed ? `${notFollowed} add nofollow, ugc or sponsored${notFollowed + dof < list.length ? ", and the rest are mixed: usually followed only for paid or featured listings" : ""}.` : ""}`.trim()] as [string, string]] : []),
+    ...(quick.length ? [[`Which can I do in a minute?`, `${quick.length} need no account and show no bot check${quick.length > 5 ? `, for example ${names(quick.sort((a, b) => (dr(b)?.rating ?? -1) - (dr(a)?.rating ?? -1)), 4)}` : `: ${names(quick)}`}.`] as [string, string]] : []),
+    ...(badge.length ? [[`What does "free" cost here?`, `${badge.length} of these are free only if you put their badge or a link back on your site. Each directory page says which.`] as [string, string]] : []),
+  ];
   await Bun.write(join(OUT, "directories", h.slug, "index.html"), page(
     `${h.title} (${list.length}) | dirpush`,
     `${list.length} ${h.name.toLowerCase()} directories: ${dof} measured dofollow, ${fr} free to list on. Cost, sign-in, bot checks and Domain Rating for each.`,
@@ -627,6 +671,8 @@ for (const h of HUBS) {
 <section class="list shell">
   <div class="table-wrap"><table>${thead(false)}<tbody>${list.map(row).join("\n")}</tbody></table></div>
   <p class="note">Sorted by link type, then <a href="https://ahrefs.com/">Ahrefs</a> Domain Rating. <a href="/directories/">Filter all ${dirs.length} directories</a> by cost, sign-in and bot check.</p>
+  <section class="dir-sec"><h2>Quick answers</h2><div class="qa">${hubAnswers.map(([q, a]) => `<div><h3>${esc(q)}</h3><p>${esc(a)}</p></div>`).join("")}</div></section>
+  ${postLinks(h.slug)}
 </section>`,
     {
       jsonld: [
@@ -704,6 +750,48 @@ for (const g of GUIDES) {
   }));
 }
 
+// ---- blog -------------------------------------------------------------------
+const knownPaths = new Set(["/", "/directories/", "/blog/", ...HUBS.map((h) => `/directories/${h.slug}/`), ...GUIDES.map((g) => `/${g.slug}/`), ...dirs.map((d) => `/directories/${d.id}/`), ...posts.map((p) => `/blog/${p.slug}/`)]);
+for (const p of posts) {
+  // A renamed or removed directory must not leave a dead link in an old post: fail the build instead.
+  const dead = [...p.html.matchAll(/href="(\/[^"#?]*)/g)].map((x) => x[1]!).filter((u) => !knownPaths.has(u) && !/\.\w+$/.test(u));
+  if (dead.length) throw new Error(`blog/${p.slug}: links to pages that don't exist: ${[...new Set(dead)].join(", ")}`);
+  const path = `/blog/${p.slug}/`;
+  const others = posts.filter((o) => o.slug !== p.slug).slice(0, 3);
+  await Bun.write(join(OUT, "blog", p.slug, "index.html"), page(`${p.title} | dirpush`, p.description, path, `<article class="dir guide post shell">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/blog/">Blog</a><span aria-current="page">${esc(p.title)}</span></nav>
+  <header class="post-head"><h1>${esc(p.h1)}</h1><p class="hero-sub">${esc(p.description)}</p><p class="post-meta"><time datetime="${p.date}">${postDate(p.date)}</time>${p.updated !== p.date ? `<span>Updated <time datetime="${p.updated}">${postDate(p.updated)}</time></span>` : ""}<span>${p.minutes} min read</span></p></header>
+  <div class="post-body">${p.html}</div>
+  <section class="agent"><div><h2>Let your agent do the forms</h2><p>dirpush is free and open source. Install it, then tell your coding agent "set up dirpush".</p></div>${install()}</section>
+  ${others.length ? `<section class="dir-sec"><h2>More from the blog</h2>${postCards(others)}</section>` : ""}
+</article>`, {
+    ogType: "article",
+    jsonld: [
+      crumbs([["Blog", "/blog/"], [p.title, path]]),
+      { "@type": "BlogPosting", headline: p.h1, description: p.description, url: `${SITE}${path}`, mainEntityOfPage: `${SITE}${path}`, image: `${SITE}/assets/og.png`, datePublished: p.date, dateModified: p.updated, author: { "@type": "Organization", name: "dirpush", url: SITE }, publisher: { "@type": "Organization", name: "dirpush", url: SITE } },
+    ],
+  }));
+}
+await Bun.write(join(OUT, "blog", "index.html"), page(
+  "Blog: directory submission and launch SEO, with data | dirpush",
+  `What we learn measuring ${dirs.length} startup directories: which links count, which directories are worth a new product's time, and how to launch without a submission service.`,
+  "/blog/",
+  `<section class="list-head shell">
+  <h1>Notes from the registry.</h1>
+  <p class="hero-sub">What we learn measuring ${dirs.length} startup directories: which links count, which directories are worth a new product's time, and what changes month to month.</p>
+</section>
+<section class="shell blog-index">${postCards(posts)}<p class="note"><a href="/blog/feed.xml">RSS feed</a></p></section>`,
+  { jsonld: [crumbs([["Blog", "/blog/"]]), { "@type": "Blog", name: "dirpush blog", url: `${SITE}/blog/`, blogPost: posts.map((p) => ({ "@type": "BlogPosting", headline: p.h1, url: `${SITE}/blog/${p.slug}/`, datePublished: p.date })) }] },
+));
+const xml = (s: string) => s.replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" })[c]!);
+await Bun.write(join(OUT, "blog", "feed.xml"), `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel>
+<title>dirpush blog</title><link>${SITE}/blog/</link><description>Directory submission and launch SEO, with data.</description><language>en</language>
+<atom:link href="${SITE}/blog/feed.xml" rel="self" type="application/rss+xml"/>
+${posts.map((p) => `<item><title>${xml(p.title)}</title><link>${SITE}/blog/${p.slug}/</link><guid>${SITE}/blog/${p.slug}/</guid><pubDate>${new Date(`${p.date}T12:00:00Z`).toUTCString()}</pubDate><description>${xml(p.description)}</description></item>`).join("\n")}
+</channel></rss>
+`);
+
 // ---- registry.json, scrubbed of anything product- or operator-specific -------
 const registry = await buildRegistryFile();
 for (const entry of registry.directories) {
@@ -727,7 +815,7 @@ await Bun.write(join(OUT, "404.html"), page(
 ));
 await Bun.write(join(OUT, "registry.json"), JSON.stringify(registry) + "\n");
 const newest = dirs.map(lastmod).sort().at(-1)!;
-const urls: [string, string][] = [["/", newest], ["/directories/", newest], ...HUBS.map((h) => [`/directories/${h.slug}/`, newest] as [string, string]), ...GUIDES.map((g) => [`/${g.slug}/`, newest] as [string, string]), ...dirs.map((d) => [`/directories/${d.id}/`, lastmod(d)] as [string, string])];
+const urls: [string, string][] = [["/", newest], ["/directories/", newest], ...HUBS.map((h) => [`/directories/${h.slug}/`, newest] as [string, string]), ...GUIDES.map((g) => [`/${g.slug}/`, newest] as [string, string]), ...(posts.length ? [["/blog/", posts.map((p) => p.updated).sort().at(-1)!] as [string, string]] : []), ...posts.map((p) => [`/blog/${p.slug}/`, p.updated] as [string, string]), ...dirs.map((d) => [`/directories/${d.id}/`, lastmod(d)] as [string, string])];
 await Bun.write(join(OUT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(([p, m]) => `<url><loc>${SITE}${p}</loc><lastmod>${m}</lastmod></url>`).join("\n")}\n</urlset>\n`);
 // For AI search and agents: what the site is and where the machine-readable data lives.
 await Bun.write(join(OUT, "llms.txt"), `# dirpush
@@ -741,10 +829,13 @@ await Bun.write(join(OUT, "llms.txt"), `# dirpush
 ## Guides
 ${GUIDES.map((g) => `- [${g.name}](${SITE}/${g.slug}/): ${g.description}`).join("\n")}
 
+## Blog
+${posts.map((p) => `- [${p.title}](${SITE}/blog/${p.slug}/): ${p.description}`).join("\n")}
+
 ## Lists
 ${HUBS.map((h) => `- [${h.title}](${SITE}/directories/${h.slug}/): ${dirs.filter(h.pick).length} directories`).join("\n")}
 `);
 // IndexNow (Bing, Yandex, and search built on Bing): the key file that proves we own the site; scripts/indexnow.ts pings after a deploy.
 await Bun.write(join(OUT, `${INDEXNOW_KEY}.txt`), INDEXNOW_KEY);
 await Bun.write(join(OUT, "robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${SITE}/sitemap.xml\n`);
-console.log(`Built ${dirs.length + HUBS.length + GUIDES.length + 2} pages and registry.json (${dirs.length} directories) into ${OUT}`);
+console.log(`Built ${dirs.length + HUBS.length + GUIDES.length + posts.length + 3} pages and registry.json (${dirs.length} directories) into ${OUT}`);

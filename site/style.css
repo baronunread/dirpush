@@ -586,3 +586,53 @@ select { appearance: none; -webkit-appearance: none; cursor: pointer; padding-ri
 .steps li { counter-increment: st; position: relative; padding-left: 52px; line-height: 1.55; }
 .steps li::before { content: counter(st); position: absolute; left: 20px; top: 16px; font-family: var(--mono); color: var(--ink-2); font-weight: 700; }
 .guide .quick { margin-top: 64px; }
+
+/* ---- blog (/blog/, /blog/<slug>/) ---- */
+.post-head { margin: 22px 0 8px; max-width: 760px; }
+.post-head h1 { font-size: clamp(36px, 5vw, 60px); line-height: 1.02; letter-spacing: -0.05em; font-weight: 800; max-width: 18ch; }
+.post-meta { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 22px; font: 13px var(--mono); color: var(--dim); }
+.post-body { max-width: 70ch; color: var(--ink-2); font-size: 17px; line-height: 1.7; }
+.post-body > * + * { margin-top: 18px; }
+.post-body h2 { margin-top: 56px; font-size: 28px; line-height: 1.15; letter-spacing: -0.035em; font-weight: 750; color: var(--ink); }
+.post-body h3 { margin-top: 36px; font-size: 20px; letter-spacing: -0.02em; font-weight: 700; color: var(--ink); }
+.post-body h2 + *, .post-body h3 + * { margin-top: 12px; }
+.post-body strong { color: var(--ink); font-weight: 650; }
+.post-body a { color: var(--ink); text-decoration-color: var(--line-2); text-underline-offset: 3px; transition: text-decoration-color 0.15s; }
+.post-body a:hover { text-decoration-color: var(--accent); }
+.post-body ul, .post-body ol { padding-left: 22px; }
+.post-body li + li { margin-top: 8px; }
+.post-body li::marker { color: var(--dim); }
+.post-body code { padding: 2px 6px; border-radius: 6px; background: var(--panel); border: 1px solid var(--line); }
+.post-body blockquote { margin: 28px 0; padding: 4px 0 4px 20px; border-left: 3px solid var(--accent); color: var(--ink); font-size: 19px; line-height: 1.55; }
+.post-body hr { border: 0; border-top: 1px solid var(--line); margin: 48px 0; }
+.post-table { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--r-card); background: var(--panel); }
+.post-table table { font-size: 15px; font-variant-numeric: tabular-nums; }
+.post-table th { white-space: normal; }
+.post-table td { height: auto; padding: 11px 18px; line-height: 1.45; }
+.post-table tbody tr:hover { background: none; }
+.post-list { display: grid; gap: 12px; max-width: 880px; }
+.post-list a { display: grid; gap: 6px; padding: 22px 24px; border-radius: var(--r-card); border: 1px solid var(--line); background: var(--panel); text-decoration: none; transition: border-color 0.2s, transform 0.25s var(--ease); }
+.post-list a:hover { border-color: var(--accent); transform: translateY(-2px); }
+.post-list a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.post-list time { font: 12px var(--mono); color: var(--dim); }
+.post-list b { font: 700 21px/1.2 var(--display); letter-spacing: -0.025em; color: var(--ink); text-wrap: balance; }
+.post-list span { color: var(--ink-2); font-size: 15px; line-height: 1.5; }
+.blog-index { padding-bottom: 96px; }
+@media (max-width: 680px) {
+  .post-body { font-size: 16px; }
+  .post-body h2 { margin-top: 44px; font-size: 24px; }
+  .post-list a { padding: 18px; }
+}
+@media (prefers-reduced-motion: reduce) { .post-list a { transition: none; } .post-list a:hover { transform: none; } }
+.post-body { margin-top: 40px; }
+.post .crumbs { flex-wrap: nowrap; }
+.post .crumbs span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* The directory table collapses to cards on small screens; post tables stay tables and scroll sideways instead. */
+.post-table table { display: table; }
+.post-table thead { display: table-header-group; }
+.post-table tbody { display: table-row-group; }
+.post-table tr, .post-table tbody tr { display: table-row; padding: 0; }
+.post-table th, .post-table td, .post-table td:nth-child(4), .post-table td:nth-child(5) { display: table-cell; }
+.post-table td { padding: 11px 18px; border-bottom: 1px solid var(--line); }
+.post-table tbody tr:last-child td { border-bottom: 0; }
+@media (max-width: 680px) { .post-table th, .post-table td { padding: 10px 12px; } .post-table table { font-size: 14px; } }
