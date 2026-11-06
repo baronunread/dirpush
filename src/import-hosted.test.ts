@@ -4,7 +4,7 @@ import { openDb } from "./db";
 import { events, jobs } from "./db/schema";
 import { importHosted, jobPatch, type HostedTarget } from "./import-hosted";
 import * as J from "./jobs";
-import { ratingHistory, refreshRatings } from "./ratings";
+import { ratingHistory, recordRating, refreshRatings } from "./ratings";
 
 const target = (over: Partial<HostedTarget>): HostedTarget => ({
   product_id: "acme", directory_id: "dir-a", state: "pending", detail: null, listing_url: null, updated_at: 2000,
@@ -50,7 +50,7 @@ test("import applies newer hosted rows, keeps newer local ones, and is idempoten
 
   const again = importHosted(db, input, ["acme"]);
   expect(again).toMatchObject({ applied: 0, created: 0, events: 0 });
-  expect(ratingHistory(db, ["https://www.acme.com"]).get("acme.com")).toEqual([{ measuredAt: 100, rating: 15 }]);
+  expect(ratingHistory(db, ["https://www.acme.com"], "dr3").get("acme.com")).toEqual([{ measuredAt: 100, rating: 15 }]);
 });
 
 test("ratings refresh only stale domains and keep history", async () => {
@@ -69,4 +69,25 @@ test("ratings refresh only stale domains and keep history", async () => {
   expect(ratingHistory(db, ["acme.com"]).get("acme.com")!.map((r) => r.measuredAt)).toEqual([2 * week, week]);
   const denied = async () => new Response("no", { status: 401 });
   expect(refreshRatings(db, ["new.dev"], { apiKey: "bad", fetcher: denied })).rejects.toThrow(/rejected/);
+});
+
+test("ratings keep DR3 and DR4 apart: own history, own staleness, version sent to Ahrefs", async () => {
+  const db = openDb(":memory:");
+  const sent: unknown[] = [];
+  const fetcher = (rating: number) => async (_url: string, init: RequestInit) => {
+    const body = JSON.parse(String(init.body)) as { targets: string[]; version: string };
+    sent.push(body.version);
+    return Response.json({ domain_rating: { targets: body.targets.map((t) => ({ target: `${t}/`, domain_rating: rating })) } });
+  };
+  recordRating(db, "tools.us.org", 86, 1000, "dr3");
+  // A fresh DR3 reading doesn't make DR4 fresh.
+  const r = await refreshRatings(db, ["https://tools.us.org"], { apiKey: "k", now: 2000, fetcher: fetcher(49) });
+  expect(r).toMatchObject({ version: "dr4", checked: 1, measured: { "tools.us.org": 49 } });
+  expect(sent).toEqual(["dr4"]);
+  expect(ratingHistory(db, ["tools.us.org"]).get("tools.us.org")).toEqual([{ measuredAt: 2000, rating: 49 }]);
+  expect(ratingHistory(db, ["tools.us.org"], "dr3").get("tools.us.org")).toEqual([{ measuredAt: 1000, rating: 86 }]);
+  // Same timestamp, different version: both kept.
+  await refreshRatings(db, ["tools.us.org"], { apiKey: "k", now: 2000, fetcher: fetcher(86), version: "dr3", force: true });
+  expect(ratingHistory(db, ["tools.us.org"], "dr3").get("tools.us.org")!.map((x) => x.measuredAt)).toEqual([2000, 1000]);
+  expect(sent).toEqual(["dr4", "dr3"]);
 });

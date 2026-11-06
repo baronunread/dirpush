@@ -1,4 +1,4 @@
-import { desc, inArray } from "drizzle-orm";
+import { and, desc, eq, inArray } from "drizzle-orm";
 import type { Db } from "./db";
 import { domainRatings } from "./db/schema";
 
@@ -6,6 +6,12 @@ import { domainRatings } from "./db/schema";
 const ENDPOINT = "https://api.ahrefs.com/v3/public/domain-rating-free";
 const BATCH_SIZE = 80;
 export const RATING_TTL = 7 * 24 * 60 * 60 * 1000;
+
+/** Ahrefs model versions. DR4 replaced DR3 on December 1, 2026: subdomains get their own rating, and only ~132M domains count. */
+export const DR_VERSIONS = ["dr3", "dr4"] as const;
+export type DrVersion = (typeof DR_VERSIONS)[number];
+export const DR_VERSION: DrVersion = "dr4";
+export const isDrVersion = (v: unknown): v is DrVersion => DR_VERSIONS.includes(v as DrVersion);
 
 export function ratingDomain(website: string): string {
   try {
@@ -19,30 +25,30 @@ export function ratingDomain(website: string): string {
 const PLATFORM = /^(github\.com|gitlab\.com|[\w-]+\.notion\.site|notion\.so|medium\.com|[\w-]+\.substack\.com|reddit\.com|docs\.google\.com)$/;
 export const platformHosted = (website: string) => PLATFORM.test(ratingDomain(website));
 
-/** Every reading per domain, newest first. */
-export function ratingHistory(db: Db, websites: string[]) {
+/** Every reading per domain for one model version (the current one by default), newest first. */
+export function ratingHistory(db: Db, websites: string[], version: DrVersion = DR_VERSION) {
   const domains = [...new Set(websites.map(ratingDomain).filter(Boolean))];
   const rows = domains.length
-    ? db.select().from(domainRatings).where(inArray(domainRatings.domain, domains)).orderBy(desc(domainRatings.measuredAt)).all()
+    ? db.select().from(domainRatings).where(and(inArray(domainRatings.domain, domains), eq(domainRatings.version, version))).orderBy(desc(domainRatings.measuredAt)).all()
     : [];
   const byDomain = new Map(domains.map((d) => [d, [] as { measuredAt: number; rating: number }[]]));
   for (const r of rows) byDomain.get(r.domain)!.push({ measuredAt: r.measuredAt, rating: r.rating });
   return byDomain;
 }
 
-export function recordRating(db: Db, domain: string, rating: number, measuredAt: number) {
-  db.insert(domainRatings).values({ domain, rating, measuredAt }).onConflictDoNothing().run();
+export function recordRating(db: Db, domain: string, rating: number, measuredAt: number, version: DrVersion = DR_VERSION) {
+  db.insert(domainRatings).values({ domain, rating, measuredAt, version }).onConflictDoNothing().run();
 }
 
 type Fetch = (url: string, init: RequestInit) => Promise<Response>;
 
-/** Measures every domain not read in the last week (or all with `force`). One POST per batch of 80. */
+/** Measures every domain not read in the last week with this version (or all with `force`). One POST per batch of 80. */
 export async function refreshRatings(
   db: Db,
   websites: string[],
-  { apiKey, force = false, now = Date.now(), fetcher = fetch as Fetch }: { apiKey: string; force?: boolean; now?: number; fetcher?: Fetch },
+  { apiKey, force = false, now = Date.now(), fetcher = fetch as Fetch, version = DR_VERSION }: { apiKey: string; force?: boolean; now?: number; fetcher?: Fetch; version?: DrVersion },
 ) {
-  const history = ratingHistory(db, websites);
+  const history = ratingHistory(db, websites, version);
   const due = [...history].filter(([, h]) => force || !h[0] || now - h[0].measuredAt >= RATING_TTL).map(([d]) => d);
   const measured: Record<string, number> = {};
   for (let i = 0; i < due.length; i += BATCH_SIZE) {
@@ -50,7 +56,7 @@ export async function refreshRatings(
     const res = await fetcher(`${ENDPOINT}?output=json`, {
       method: "POST",
       headers: { Authorization: `Bearer ${apiKey}`, Accept: "application/json", "Content-Type": "application/json" },
-      body: JSON.stringify({ targets: chunk, version: "dr3" }),
+      body: JSON.stringify({ targets: chunk, version }),
       redirect: "manual",
       signal: AbortSignal.timeout(15000),
     });
@@ -63,9 +69,9 @@ export async function refreshRatings(
       const domain = typeof entry.target === "string" ? ratingDomain(entry.target) : "";
       const value = entry.domain_rating;
       if (!chunk.includes(domain) || typeof value !== "number" || !(value >= 0 && value <= 100)) continue;
-      recordRating(db, domain, value, now);
+      recordRating(db, domain, value, now, version);
       measured[domain] = value;
     }
   }
-  return { checked: due.length, skipped: history.size - due.length, measured };
+  return { version, checked: due.length, skipped: history.size - due.length, measured };
 }

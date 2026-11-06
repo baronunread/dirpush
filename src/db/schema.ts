@@ -145,8 +145,10 @@ export const domainRatings = sqliteTable(
     domain: text("domain").notNull(),
     measuredAt: integer("measured_at").notNull(),
     rating: real("rating").notNull(),
+    // Ahrefs' model: DR3 until December 1, 2026, then DR4. Readings of different versions are never compared.
+    version: text("version").notNull().default("dr3"),
   },
-  (t) => [primaryKey({ columns: [t.domain, t.measuredAt] })],
+  (t) => [primaryKey({ columns: [t.domain, t.version, t.measuredAt] })],
 );
 
 export type Job = typeof jobs.$inferSelect;

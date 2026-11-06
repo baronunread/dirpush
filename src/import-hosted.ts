@@ -133,7 +133,7 @@ export function importHosted(
   }
 
   for (const r of input.ratings) {
-    recordRating(db, r.domain, r.rating, r.measured_at);
+    recordRating(db, r.domain, r.rating, r.measured_at, "dr3"); // the hosted export predates DR4
     summary.ratings++;
   }
   return { ...summary, skippedProducts: [...summary.skippedProducts] };

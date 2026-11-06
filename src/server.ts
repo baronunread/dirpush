@@ -64,13 +64,14 @@ export function serve(port: number, hostname = "127.0.0.1") {
           return db.select().from(jobs).where(eq(jobs.kind, kind === "research" ? "research" : "submission")).orderBy(desc(jobs.updatedAt)).all();
         })(),
       "/api/meta": safe(() => ({ registrySource: registrySource(), ahrefs: Boolean(process.env.AHREFS_API_KEY?.trim()) })),
-      // Latest DR per directory domain plus full history per product (newest first).
+      // Latest DR4 per directory domain plus full DR4 history per product (newest first). lastDr3: the old model, shown apart.
       "/api/ratings": safe(async () => {
         const products = (await Promise.all(productIds().map((id) => loadProduct(id).then((p) => ({ id, url: p.url })).catch(() => null)))).filter((p) => p !== null);
         const directories = await loadDirectories();
         const all = ratingHistory(db, [...products.map((p) => p.url), ...directories.map((d) => d.website)]);
         return {
           products: Object.fromEntries(products.map((p) => [p.id, all.get(ratingDomain(p.url)) ?? []])),
+          lastDr3: Object.fromEntries(products.map((p) => [p.id, ratingHistory(db, [p.url], "dr3").get(ratingDomain(p.url))?.[0] ?? null])),
           directories: Object.fromEntries(directories.map((d) => [d.id, platformHosted(d.website) ? null : all.get(ratingDomain(d.website))?.[0]?.rating ?? null])),
         };
       }),

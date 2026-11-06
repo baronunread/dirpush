@@ -24,7 +24,8 @@ type Dir = {
   kind?: keyof typeof DIRECTORY_KINDS; human_only?: string | null; review_time?: string;
 };
 type Product = { id: string; name?: string; url?: string; tagline?: string; error?: string; [k: string]: any };
-type Ratings = { products: Record<string, { measuredAt: number; rating: number }[]>; directories: Record<string, number | null> };
+type Reading = { measuredAt: number; rating: number };
+type Ratings = { products: Record<string, Reading[]>; lastDr3?: Record<string, Reading | null>; directories: Record<string, number | null> };
 type Meta = { registrySource: string; ahrefs: boolean };
 type Updates = { source: string; checkedAt: number; applied: boolean; added: string[]; changed: string[]; localNewer: string[]; onlyLocal: string[]; generatedAt: string };
 
@@ -269,7 +270,7 @@ function Overview({ product, actions, open }: { product: Product; actions?: Acti
           </ul>
           <p className="quiet small">{n("failed", "rejected")} more didn't work: paid, badge walls or not a fit.</p>
         </section>
-        <DomainRating history={ratings?.products[product.id]} meta={meta} tall />
+        <DomainRating history={ratings?.products[product.id]} dr3={ratings?.lastDr3?.[product.id]} meta={meta} tall />
       </div>
 
       <section className="block">
@@ -314,7 +315,7 @@ function Stat({ href, n, label, tone }: { href: string; n: number; label: string
   );
 }
 
-function DomainRating({ history, meta, tall }: { history?: { measuredAt: number; rating: number }[]; meta?: Meta; tall?: boolean }) {
+function DomainRating({ history, dr3, meta, tall }: { history?: Reading[]; dr3?: Reading | null; meta?: Meta; tall?: boolean }) {
   const [busy, setBusy] = useState(false);
   const readings = [...(history ?? [])].reverse(); // oldest first
   const latest = readings.at(-1), first = readings[0];
@@ -332,8 +333,9 @@ function DomainRating({ history, meta, tall }: { history?: { measuredAt: number;
       <DrChart readings={readings} height={tall ? 236 : 110} />
       <p className="quiet small">
         {!latest ? (meta?.ahrefs ? "No readings yet. Press Measure now." : <>Optional: set <code>AHREFS_API_KEY</code> to measure weekly.</>)
-          : <>Ahrefs, {readings.length} reading{readings.length === 1 ? "" : "s"}. Dotted where there's no data. DR moves weeks after listings go live.</>}
+          : <>Ahrefs DR4, {readings.length} reading{readings.length === 1 ? "" : "s"}. Dotted where there's no data. DR moves weeks after listings go live.</>}
       </p>
+      {dr3 && <p className="quiet small">Ahrefs replaced DR3 with DR4 on December 1, 2026, so older readings aren't compared. Last DR3: {dr3.rating} on {day(dr3.measuredAt)}.</p>}
     </section>
   );
 }
@@ -808,7 +810,7 @@ function ProductView({ product }: { product: Product }) {
     <section className="page">
       <Head title={p.name ?? product.id}>{p.tagline}</Head>
       <p className="quiet small">Agents copy these facts into every form. Edit <code>workspace/products/{product.id}/product.yaml</code> to change them.</p>
-      <DomainRating history={ratings?.products[product.id]} meta={meta} />
+      <DomainRating history={ratings?.products[product.id]} dr3={ratings?.lastDr3?.[product.id]} meta={meta} />
       <div className="gap-top">
         <section className="card">
           <h2>Facts</h2>

@@ -36,6 +36,13 @@
       "when": 1792415985783,
       "tag": "0004_deep_master_chief",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1793980025543,
+      "tag": "0005_nappy_thor",
+      "breakpoints": true
     }
   ]
 }
