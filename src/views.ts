@@ -55,7 +55,7 @@ export function directoryRow(d: Obj) {
   return prune({
     id: d.id, name: d.name, kind: d.kind ?? "listing", cost: (d.cost as Obj).classification, link: link?.rel,
     signIn: auth?.required ? (auth.methods?.join(", ") || "account") : "none", botCheck: link?.bot_check !== "none" ? link?.bot_check : undefined,
-    noindex: link?.noindex || undefined, humanOnly: clip(d.human_only, 120), submitUrl: d.submission_url, fit: d.fit,
+    noindex: link?.noindex || undefined, humanOnly: clip(d.human_only, 120), submitUrl: d.submission_url, fit: d.fit, dr: d.dr == null ? undefined : Math.round(d.dr as number),
   });
 }
 

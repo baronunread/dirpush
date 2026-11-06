@@ -21,7 +21,7 @@ import { accountsFor, backfillAccounts, listAccounts } from "./accounts";
 import { detect, loadCapabilities, saveCapabilities } from "./capabilities";
 import { handoffDone, handoffMine, handoffNext, handoffQueue, handoffSkip } from "./handoff";
 import { walk } from "./walk";
-import { ratingDomain, ratingHistory, refreshRatings } from "./ratings";
+import { DR_VERSION, DR_VERSIONS, isDrVersion, platformHosted, ratingDomain, ratingHistory, refreshRatings } from "./ratings";
 import { fetchRegistryFile, registrySource, registryUpdates } from "./registry-updates";
 import { loadIdentity, loadPermissions, loadProduct, permission, fitMismatch, productIds, resolveProductId, PRODUCTS, utm, WORKSPACE } from "./workspace";
 
@@ -91,6 +91,7 @@ const { values: flags, positionals } = parseArgs({
     why: { type: "string" }, // registry set-link --rel unknown --why <reason>
     timeout: { type: "string" },
     force: { type: "boolean" },
+    version: { type: "string" }, // dr refresh: Ahrefs DR model (dr3|dr4)
     browser: { type: "boolean" }, // registry audit: real Chrome for pages a fetch can't read
     apply: { type: "boolean" },
     full: { type: "boolean" }, // raw rows instead of compact views
@@ -403,10 +404,16 @@ const commands: Record<string, (() => Promise<unknown> | unknown) | undefined> =
     // Niche directories with no overlap (e.g. AI-only for a non-AI product) are hidden unless --all.
     const fit = (d: Directory) =>
       d.audience.reduce((n, a) => n + (product.categories.includes(a) ? 2 : BROAD_AUDIENCES.has(a) ? 1 : 0), 0);
+    // Order: directories for the product's own category first (yes/no, so a site that lists every audience tag doesn't win),
+    // then a followed, indexed link, then the stronger site by Ahrefs DR4 (unmeasured last).
+    const exact = (d: Directory) => (d.audience.some((x) => product.categories.includes(x)) ? 1 : 0);
+    const drs = ratingHistory(db, dirs.map((d) => d.website));
+    const dr = (d: Directory) => (platformHosted(d.website) ? null : drs.get(ratingDomain(d.website))?.[0]?.rating ?? null);
+    const linkValue = (d: Directory) => (d.link?.noindex ? 0 : ({ dofollow: 3, mixed: 2, unknown: 1 } as Record<string, number>)[d.link?.rel ?? "unknown"] ?? 0);
     const picked = dirs
-      .map((d) => ({ ...d, fit: fit(d) }))
+      .map((d) => ({ ...d, fit: fit(d), dr: dr(d) }))
       .filter((d) => flags.all || d.fit > 0)
-      .sort((a, b) => b.fit - a.fit)
+      .sort((a, b) => exact(b) - exact(a) || linkValue(b) - linkValue(a) || (b.dr ?? -1) - (a.dr ?? -1))
       .slice(0, limit);
     if (!picked.length && !flags.all) note("no plain listings left that fit; launch sites, MCP registries and other kinds need --all (and a human decision for launch boards)");
     return picked;
@@ -630,15 +637,17 @@ const commands: Record<string, (() => Promise<unknown> | unknown) | undefined> =
   },
 
   // ---- domain rating (optional Ahrefs) ---------------------------------------
-  /** Weekly DR for your products (and with --all, every registry directory). Needs AHREFS_API_KEY in the environment. */
+  /** Weekly DR for your products (and with --all, every registry directory). Needs AHREFS_API_KEY in the environment. --version dr3|dr4 (default dr4). */
   async "dr refresh"() {
     const apiKey = process.env.AHREFS_API_KEY?.trim();
     if (!apiKey) throw new Error("set AHREFS_API_KEY in the environment (free key from ahrefs.com/api); DR tracking is optional");
+    const version = flags.version ?? DR_VERSION;
+    if (!isDrVersion(version)) throw new Error(`--version must be one of ${DR_VERSIONS.join(", ")}`);
     const sites = (await Promise.all(productIds().map((id) => loadProduct(id).then((p) => p.url).catch(() => null)))).filter((u): u is string => !!u);
     if (flags.all) sites.push(...(await loadDirectories()).map((d) => d.website));
-    return refreshRatings(db, sites, { apiKey, force: Boolean(flags.force) });
+    return refreshRatings(db, sites, { apiKey, force: Boolean(flags.force), version });
   },
-  /** DR history per product: first and latest reading, change, and the live-listing count beside it. */
+  /** DR4 history per product: first and latest reading, change, and the live-listing count beside it. The last DR3 reading is listed apart, never compared. */
   async "dr show"() {
     const ids = flags.product ? [resolveProductId(flags.product)] : productIds();
     return Promise.all(ids.map(async (id) => {
@@ -647,8 +656,9 @@ const commands: Record<string, (() => Promise<unknown> | unknown) | undefined> =
       const live = db.select({ n: sql<number>`count(*)` }).from(jobs)
         .where(and(eq(jobs.kind, "submission"), eq(jobs.productId, id), eq(jobs.outcome, "live"))).get()!.n;
       const first = history.at(-1), latest = history[0];
-      return { product: id, domain: ratingDomain(product.url), latest: latest ?? null, first: first ?? null,
-        change: latest && first ? latest.rating - first.rating : null, liveListings: live, history };
+      const dr3 = ratingHistory(db, [product.url], "dr3").get(ratingDomain(product.url))?.[0] ?? null;
+      return { product: id, domain: ratingDomain(product.url), version: DR_VERSION, latest: latest ?? null, first: first ?? null,
+        change: latest && first ? latest.rating - first.rating : null, liveListings: live, history, lastDr3: dr3 };
     }));
   },
 
@@ -776,7 +786,7 @@ const HELP: [string, [string, string][]][] = [
     ["browser password <vault-name> --url u --username e [--login-url u] <selector…>", "new password (sign-up or reset): generate, fill, verify and save it (never shown); --login-url when the page isn't the sign-in page (e.g. a reset link)"],
   ]],
   ["Other", [
-    ["dr show | dr refresh [--all]", "Domain Rating history (refresh needs AHREFS_API_KEY)"],
+    ["dr show | dr refresh [--all] [--version dr3|dr4]", "Ahrefs Domain Rating (DR4) history (refresh needs AHREFS_API_KEY)"],
     ["serve [--port n] [--host 0.0.0.0]", "the local dashboard (localhost only unless --host)"],
   ]],
 ];

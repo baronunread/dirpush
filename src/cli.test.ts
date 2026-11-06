@@ -236,3 +236,27 @@ test("work workers: one per directory with work, up to --max", async () => {
   expect(() => launchEnv(withAb("0.33.0"), "work", "workers", "--max", "3")).toThrow(/agent-browser 0.34.0 or newer \(found 0.33.0\)/);
   expect(launchEnv(withAb("0.33.0"), "work", "workers", "--max", "1").workers).toEqual(["test-1"]);
 });
+
+test("recommend ranks a followed, indexed link first, then the stronger site by DR4", async () => {
+  const own = mkdtempSync(join(tmpdir(), "launch-dr-"));
+  const ownEnv = { LAUNCH_DB: join(own, "t.db"), LAUNCH_REGISTRY: join(own, "reg"), LAUNCH_WORKSPACE: join(own, "ws") };
+  const dirs = [
+    { id: "weak-follow", link: { rel: "dofollow" }, dr: 10 },
+    { id: "strong-nofollow", link: { rel: "nofollow" }, dr: 90 },
+    { id: "strong-follow", link: { rel: "dofollow" }, dr: 60 },
+    { id: "noindexed", link: { rel: "dofollow", noindex: true }, dr: 95 },
+    { id: "unmeasured", link: { rel: "dofollow" }, dr: null },
+  ];
+  const { openDb } = await import("./db");
+  const { recordRating } = await import("./ratings");
+  const db = openDb(ownEnv.LAUNCH_DB);
+  for (const d of dirs) {
+    await Bun.write(join(own, `reg/${d.id}/directory.yaml`), Bun.YAML.stringify({ ...directoryFixture, id: d.id, website: `https://${d.id}.com`, link: { rel: d.link.rel, claimed: null, method: "sample_listing", evidence: "test", samples: 1, noindex: d.link.noindex ?? false, bot_check: "none", checked_at: "2026-11-06" } }));
+    if (d.dr !== null) recordRating(db, `${d.id}.com`, d.dr, 1000);
+  }
+  recordRating(db, "strong-nofollow.com", 5, 2000, "dr3"); // the old model never decides the order
+  launchEnv(ownEnv, "init", "solo");
+  const rows = launchEnv(ownEnv, "directories", "recommend", "--product", "solo") as { id: string; dr?: number }[];
+  expect(rows.map((r) => r.id)).toEqual(["strong-follow", "weak-follow", "unmeasured", "noindexed", "strong-nofollow"]);
+  expect(rows[0]!.dr).toBe(60);
+});

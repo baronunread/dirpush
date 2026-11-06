@@ -70,7 +70,7 @@ Without these, the run stops on them one job at a time (a sign-in wall here, a s
 ## Common starting requests
 
 - **"Set up dirpush"** / **"set up this product"** / **"add a product"**: `dirpush init <product-id>`, run the tools check above if `dirpush capabilities` says it hasn't been done, then help the user fill `workspace/products/<id>/product.yaml` (and the shared `workspace/identity.yaml`, `permissions.yaml` the first time; a product that isn't the shared identity's company, like a side project, gets its own `workspace/products/<id>/identity.yaml`). Validate with `dirpush product show --product <id>`. Then the three steps in **what only the human can do** above.
-- **"Find N free directories I haven't submitted to and submit"**: `dirpush directories recommend --free --unsubmitted --limit N --product <id>`, show the list, `dirpush submissions enqueue <dir-id…> --product <id>`, then run the loop.
+- **"Find N free directories I haven't submitted to and submit"**: `dirpush directories recommend --free --unsubmitted --limit N --product <id>`, show the list (it's already ranked: the product's own category first, then followed and indexed links, then Ahrefs DR4; show each row's `link` and `dr`), `dirpush submissions enqueue <dir-id…> --product <id>`, then run the loop.
 - **"Continue my launch"**: the whole routine, no other instructions needed (nothing from a previous conversation is either):
   1. `dirpush actions` — note what's waiting on the human; if they're here, do the **hand-offs** below with them now (before step 3, so their jobs join the loop).
   2. `dirpush submissions check` — marks pending listings live (skip if run in the last day).
@@ -127,4 +127,4 @@ A human who prefers the terminal can run plain `dirpush handoff` to walk the sam
 | `todo add --job <job> --message "…" [--url u]` / `todo list` | human to-dos that don't block a job |
 | `utm <directory-id>` | product URL with UTM params |
 | `registry updates --url <u> [--apply]` | compare the local registry with the published registry.json |
-| `dr show` / `dr refresh` | product Domain Rating history (refresh needs `AHREFS_API_KEY`; skip if unset) |
+| `dr show` / `dr refresh` | product Domain Rating history on Ahrefs DR4 (refresh needs `AHREFS_API_KEY`; skip if unset). DR3 readings from before December 2026 are kept apart and never compared with DR4: a drop between them is Ahrefs' model change, not the launch |
