@@ -2,6 +2,7 @@
 title: Do directory submissions still help SEO in 2026?
 description: Some do, most don't, and blasting 500 directories can hurt. What a listing can do for a new site, what Google says about directories, and how to pick the ones worth it.
 date: 2026-11-05
+updated: 2026-11-06
 hubs: free, saas
 ---
 
@@ -53,7 +54,7 @@ Launch boards, from Product Hunt to the smaller ones, can send real traffic for 
 
 1. **Is the listing page indexed?** Search `site:directory.com "some product name"`, or view the source of a listing and look for `noindex`.
 2. **Is the link followed?** In the source, find the link to the product and look at its `rel` attribute. No `nofollow`, `ugc` or `sponsored` means it's followed.
-3. **Is the site real?** It should get search traffic of its own. Domain Rating is a rough proxy: in our data the median is 43.
+3. **Is the site real?** It should get search traffic of its own. Domain Rating is a rough proxy: in our data the median directory is DR 24 on Ahrefs' DR4 model.
 4. **Is it about your kind of product?** A link from an AI tools directory means more for an AI product than a link from a general list.
 5. **What does it cost?** Money, a badge on your site, or a queue that can take months. One directory's free queue was about five years long when we checked.
 

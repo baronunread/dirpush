@@ -2,6 +2,7 @@
 title: Dofollow or not? We checked the links on 514 startup directories
 description: 125 directories say their links are dofollow. 75 of them are. What we found reading real listing pages on 514 startup, SaaS and AI directories.
 date: 2026-11-05
+updated: 2026-11-06
 hubs: dofollow, free-dofollow
 ---
 
@@ -18,7 +19,7 @@ For each directory we found real listing pages, products other people had submit
 - **7** are GitHub "awesome" lists. GitHub adds `nofollow` to every link in a README, so those are nofollow by rule.
 - **3** couldn't be measured: one shows no listing pages, one hides them behind a bot check, one doesn't link out with a normal link.
 
-We also checked whether listing pages carry a `noindex` tag, which keeps them out of search results and makes the link worthless for ranking either way. For 372 directories we have an Ahrefs Domain Rating (DR). The measurements ran from September 27 to November 3, 2026.
+We also checked whether listing pages carry a `noindex` tag, which keeps them out of search results and makes the link worthless for ranking either way. For 507 directories we have an Ahrefs Domain Rating (DR), on DR4, the model that replaces DR3 on December 1, 2026, measured November 6. The link measurements ran from September 27 to November 3, 2026.
 
 ## The numbers
 
@@ -49,13 +50,12 @@ Some of the 18 are not small sites:
 
 | Directory | DR | Says | We read |
 |---|---|---|---|
-| [StartupBase](/directories/startupbase/) | 75 | dofollow | nofollow |
-| [OpenHunts](/directories/openhunts/) | 72 | dofollow | nofollow |
-| [Tiny Startups](/directories/tinystartups/) | 72 | dofollow | nofollow |
-| [ShowMySites](/directories/showmysites/) | 71 | dofollow | nofollow |
-| [Huzzler](/directories/huzzler/) | 69 | dofollow | nofollow |
-| [Days Launch](/directories/dayslaunch/) | 63 | dofollow | nofollow |
-| [RankInPublic](/directories/rankinpublic/) | 52 | dofollow | nofollow |
+| [Tiny Startups](/directories/tinystartups/) | 74 | dofollow | nofollow |
+| [ShowMySites](/directories/showmysites/) | 64 | dofollow | nofollow |
+| [StartupBase](/directories/startupbase/) | 46 | dofollow | nofollow |
+| [OpenHunts](/directories/openhunts/) | 42 | dofollow | nofollow |
+| [Huzzler](/directories/huzzler/) | 29 | dofollow | nofollow |
+| [Days Launch](/directories/dayslaunch/) | 23 | dofollow | nofollow |
 
 This doesn't have to be dishonest. A directory may have changed its markup since writing its FAQ, or may mean that paid listings are dofollow. But if you're choosing where to spend an afternoon, the page is what counts, not the FAQ.
 
@@ -75,15 +75,15 @@ You might expect the biggest directories to give the best links. It's roughly th
 
 | Link type | Median DR |
 |---|---|
-| Dofollow | 42 |
-| Nofollow | 35 |
-| Mixed | 51 |
-| Sponsored | 62 |
-| UGC | 76 |
+| Dofollow | 23 |
+| Nofollow | 15 |
+| Mixed | 29 |
+| Sponsored | 37 |
+| UGC | 64 |
 
-The highest-rated sites protect themselves from spam submissions. Product Hunt (DR 91) marks product links `ugc`. Indie Hackers (82), SaaSHub (80) and SourceForge's software directory (93) use `nofollow`. These sites are still worth being on, for the visitors, for how often their pages rank for "<product> alternatives" searches, and because AI assistants read them. They just won't pass ranking signal through the link.
+The highest-rated sites protect themselves from spam submissions. Product Hunt (DR 91) marks product links `ugc`. Indie Hackers (81), SaaSHub (76) and SourceForge's software directory (92) use `nofollow`. These sites are still worth being on, for the visitors, for how often their pages rank for "<product> alternatives" searches, and because AI assistants read them. They just won't pass ranking signal through the link.
 
-The free, dofollow, high-DR directory exists, but there aren't many. Of 514, 52 are free with no conditions and serve a followed link. 9 of those have a DR of 50 or more: [OpenResources](/directories/openresources/) (87), [LibHunt](/directories/libhunt/) (66), [llms.txt Site](/directories/llms-txt-site/) (63) and [Betabound](/directories/betabound/) (56) are among them.
+The free, dofollow, high-DR directory exists, but there aren't many. Of 514, 52 are free with no conditions and serve a followed link. 8 of those have a DR of 50 or more: [Docker MCP Catalog](/directories/docker-mcp-catalog/) (91), [Cursor Marketplace](/directories/cursor-marketplace/) (88), [StackShare](/directories/stackshare/) (81), [LibHunt](/directories/libhunt/) (62) and [Betabound](/directories/betabound/) (55) are among them. Under the old DR3 model the top of that list was [OpenResources](/directories/openresources/) at 87; on DR4, which rates its subdomain on its own, it's 49.
 
 ## Accounts and bot checks
 

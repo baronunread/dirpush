@@ -2,12 +2,13 @@
 title: The first directories to submit a new SaaS to (and the ones to skip)
 description: A starting order for directory submission, from 514 measured directories: free dofollow sites you can do in an afternoon, category directories, launch boards, and the queues to avoid.
 date: 2026-11-05
+updated: 2026-11-06
 hubs: free-dofollow, launch-sites, no-account
 ---
 
 You've launched, and the domain has no links. Here's the order we'd submit in, using measurements from the 514 directories we track. The goal is the most value for the fewest forms: followed links first, then pages that rank for your name, then launch traffic.
 
-All numbers were measured between late September and early November 2026. DR is Ahrefs Domain Rating.
+Links were measured between late September and early November 2026. DR is Ahrefs Domain Rating on DR4, the model that replaces DR3 on December 1, 2026, measured November 6. Many directories lost a lot of DR in the switch; [here's what changed](/blog/ahrefs-dr4-directories/).
 
 ## 1. Free, dofollow, no account (one afternoon)
 
@@ -15,16 +16,16 @@ These need no sign-up and showed no bot check, the link on their listings is fol
 
 | Directory | DR | Cost | Good for |
 |---|---|---|---|
-| [OpenResources](/directories/openresources/) | 87 | Free | Any product |
-| [MCP Servers](/directories/mcpservers/) | 71 | Free + paid | MCP servers |
-| [FutureTools](/directories/futuretools/) | 69 | Free + paid | AI tools |
-| [LibHunt](/directories/libhunt/) | 66 | Free | Dev tools, open source |
-| [llms.txt Site](/directories/llms-txt-site/) | 63 | Free | Sites with an llms.txt |
-| [AITopTools](/directories/aitoptools/) | 56 | Free + paid | AI tools |
-| [Betabound](/directories/betabound/) | 56 | Free | Products in beta |
-| [AI Tools Directory](/directories/aitoolsdirectory/) | 50 | Free | AI tools |
-| [OpenSourceAlternative.to](/directories/opensourcealternative-to/) | 49 | Free + paid | Open source |
+| [FutureTools](/directories/futuretools/) | 65 | Free + paid | AI tools |
+| [LibHunt](/directories/libhunt/) | 62 | Free | Dev tools, open source |
+| [AITopTools](/directories/aitoptools/) | 55 | Free + paid | AI tools |
+| [Betabound](/directories/betabound/) | 55 | Free | Products in beta |
+| [TipSeason](/directories/tipseason/) | 55 | Free + paid | AI tools |
+| [llms.txt Site](/directories/llms-txt-site/) | 53 | Free | Sites with an llms.txt |
+| [OpenResources](/directories/openresources/) | 49 | Free | Any product |
+| [MCP Servers](/directories/mcpservers/) | 48 | Free + paid | MCP servers |
 | [TOOOLS.design](/directories/toools-design/) | 47 | Free + paid | Design tools |
+| [Startup Alternatives](/directories/startup-alternatives/) | 46 | Free | Any software product |
 
 Skip the ones that don't fit your product. A design-tools directory won't list a database client, and you don't want it to. More on the [no-account page](/directories/no-account/).
 
@@ -32,26 +33,26 @@ Skip the ones that don't fit your product. A design-tools directory won't list a
 
 Next, the directories where people look for your kind of product. These usually want an account, but the audience fits.
 
-- **AI tools:** [There's An AI For That](/directories/theresanaiforthat/) (DR 77), [Good AI Tools](/directories/goodaitools/) (75) and [PeerPush](/directories/peerpush/) (77) serve followed links on the listings we read. [All AI tool directories](/directories/ai-tools/).
-- **Developer tools:** [Product Watch](/directories/productwatch/) (72), [SaaSHammer](/directories/saashammer/) (52), [WeekHack](/directories/weekhack/) (43). [All developer tool directories](/directories/developer-tools/).
-- **MCP servers:** [Smithery](/directories/smithery/), [Docker MCP Catalog](/directories/docker-mcp-catalog/) and [Cursor Marketplace](/directories/cursor-marketplace/) are free and dofollow. The [Official MCP Registry](/directories/official-mcp-registry/) is worth it even though its links can't be measured: clients read from it. [All MCP registries](/directories/mcp-registries/).
+- **AI tools:** [There's An AI For That](/directories/theresanaiforthat/) (DR 73), [PeerPush](/directories/peerpush/) (60) and [Good AI Tools](/directories/goodaitools/) (54) serve followed links on the listings we read. [All AI tool directories](/directories/ai-tools/).
+- **Developer tools:** [StackShare](/directories/stackshare/) (81, free), [LibHunt](/directories/libhunt/) (62), [SaaSHammer](/directories/saashammer/) (45). [All developer tool directories](/directories/developer-tools/).
+- **MCP servers:** [Docker MCP Catalog](/directories/docker-mcp-catalog/) (DR 91), [Cursor Marketplace](/directories/cursor-marketplace/) (88) and [Smithery](/directories/smithery/) (73) are free and dofollow, and kept their DR under DR4. The [Official MCP Registry](/directories/official-mcp-registry/) is worth it even though its links can't be measured: clients read from it. [All MCP registries](/directories/mcp-registries/).
 - **Open source:** [OpenSourceAlternative.to](/directories/opensourcealternative-to/), [LibHunt](/directories/libhunt/). [All open-source directories](/directories/open-source/).
 
 ## 3. The big profiles, whatever the link
 
 Some sites are worth being on even though their links are nofollow. They rank for "<your product> alternatives" and "<your product> reviews", and AI assistants read them when they compare tools. Do these once you have a few users who can leave reviews:
 
-- [SaaSHub](/directories/saashub/) (DR 80, nofollow, no account needed)
+- [SaaSHub](/directories/saashub/) (DR 76, nofollow, no account needed)
 - [AlternativeTo](/directories/alternativeto/) (81, mixed)
-- [TrustRadius](/directories/trustradius/) (85, dofollow on the listings we read)
-- [SourceForge](/directories/sourceforge/) (93, nofollow)
+- [TrustRadius](/directories/trustradius/) (87, dofollow on the listings we read)
+- [SourceForge](/directories/sourceforge/) (92, nofollow)
 
 ## 4. A launch week
 
 Launch boards rank new products by day or week. Plan these together, so a launch announcement can point at all of them, and pick a date: most free slots are booked in advance.
 
 - [Product Hunt](/directories/product-hunt/) (DR 91) is still where the audience is. Links are `ugc`, so treat it as a traffic and feedback day, not a backlink.
-- Free launch boards with followed links on the listings we read: [TinyLaunch](/directories/tinylaunch/) (74), [Product Watch](/directories/productwatch/) (72), [KittyLaunch](/directories/kittylaunch/) (65), [Microlaunch](/directories/microlaunch/) (64), [Super Launch](/directories/superlaunch/) (63).
+- Free launch boards with followed links on the listings we read: [SaaS Mag - SaaS 1000](/directories/saasmag-saas1000/) (64), [Launchpadly](/directories/launchpadly/) (53), [TinyLaunch](/directories/tinylaunch/) (52), [Microlaunch](/directories/microlaunch/) (49), [SaaSHammer](/directories/saashammer/) (45). Launch boards lost more DR under DR4 than any other kind of directory, so treat them as launch-day traffic first.
 
 More in the [Product Hunt alternatives list](/directories/launch-sites/).
 

@@ -60,7 +60,7 @@ const signIn = (d: Directory) => {
   const NAMES: Record<string, string> = { github: "GitHub", "github-oidc": "GitHub OIDC", linkedin: "LinkedIn", x: "X", dns: "DNS record" };
   return methods.length ? methods.map((m) => NAMES[m.toLowerCase()] ?? m.replace(/^\w/, (c) => c.toUpperCase())).join(", ") : "Account required";
 };
-// Ahrefs Domain Rating per directory, latest reading (local DR history; see `dirpush dr`).
+// Ahrefs Domain Rating (DR4 model) per directory, latest reading (local DR history; see `dirpush dr`).
 let drs = new Map<string, { measuredAt: number; rating: number }[]>();
 const dr = (d: Directory) => (platformHosted(d.website) ? null : drs.get(ratingDomain(d.website))?.[0] ?? null);
 const drMonth = (ms: number) => new Date(ms).toLocaleDateString("en-US", { month: "short", year: "numeric" });
@@ -139,7 +139,7 @@ ${body}
     <div><h3>Data</h3><a href="/registry.json">registry.json</a><a href="/sitemap.xml">Sitemap</a><a href="${REPO}/issues/new?labels=new-directory&amp;title=New%20directory%3A%20">Submit a directory</a></div>
     <div><h3>Project</h3><a href="/blog/">Blog</a><a href="${REPO}">Source on GitHub</a><a href="/#how">How it works</a><a href="/directory-submission/">Directory submission tool</a><a href="/claude-code-seo/">Claude Code for SEO</a><a href="${REPO}/blob/main/LICENSE">License</a></div>
   </div>
-  <div class="shell foot-meta"><span>Registry updated ${registryDate}</span><span>Link types measured on real listing pages. DR by Ahrefs.</span></div>
+  <div class="shell foot-meta"><span>Registry updated ${registryDate}</span><span>Link types measured on real listing pages. DR is Ahrefs DR4.</span></div>
   <div class="foot-word" aria-hidden="true">dirpush</div>
 </footer>
 <script>
@@ -442,7 +442,7 @@ const row = (d: Directory) => {
 const rows = dirs.map(row).join("\n");
 const thead = (sortable: boolean) => {
   const th = (key: string, label: string, cls = "", title = "") => `<th${cls ? ` class="${cls}"` : ""}>${sortable ? `<button type="button" data-sort="${key}"${title ? ` title="${title}"` : ""}>${label}</button>` : label}</th>`;
-  return `<thead><tr>${th("name", "Directory")}${th("relorder", "Link")}<th>Cost</th><th>Sign-in</th><th>Bot check</th>${th("dr", "DR", "c-num", "Ahrefs Domain Rating, 0 to 100")}</tr></thead>`;
+  return `<thead><tr>${th("name", "Directory")}${th("relorder", "Link")}<th>Cost</th><th>Sign-in</th><th>Bot check</th>${th("dr", "DR", "c-num", "Ahrefs Domain Rating (DR4), 0 to 100")}</tr></thead>`;
 };
 const topicLinks = `<nav class="quick topics" aria-label="Directory lists">${HUBS.map((h) => `<a href="/directories/${h.slug}/">${esc(h.name)} <b>${dirs.filter(h.pick).length}</b></a>`).join("")}</nav>`;
 // Filter menus: one compact button each, options as checkboxes with counts. Keeps the toolbar on one row.
@@ -478,7 +478,7 @@ await Bun.write(join(OUT, "directories/index.html"), page(
   </table>
   <p id="empty" class="empty" hidden>Nothing matches. <button type="button" class="link-arrow" id="reset2">Clear the filters</button></p>
   </div>
-  <p class="note">DR is <a href="https://ahrefs.com/">Ahrefs</a> Domain Rating (0 to 100, higher is stronger)${drAsOf ? `, measured ${drAsOf}` : ""}. Link types are re-measured monthly.</p>
+  <p class="note">DR is <a href="https://ahrefs.com/">Ahrefs</a> Domain Rating on DR4, the model that replaces DR3 on December 1, 2026 (0 to 100, higher is stronger)${drAsOf ? `, measured ${drAsOf}` : ""}. <a href="/blog/ahrefs-dr4-directories/">What DR4 did to directories</a>. Link types are re-measured monthly.</p>
 </section>`,
   {
     jsonld: [
@@ -606,7 +606,7 @@ for (const d of dirs) {
       <div><dt>Bot check</dt><dd>${esc(BOT[d.link?.bot_check ?? "unknown"])}</dd></div>
       <div><dt>Indexed</dt><dd>${d.link?.noindex === true ? "No, listing pages are noindex" : d.link?.noindex === false ? "Yes" : "Not checked"}</dd></div>
       ${d.review_time ? `<div><dt>Review time</dt><dd>${esc(plain(d.review_time))}</dd></div>` : ""}
-      <div><dt>Domain Rating</dt><dd>${dr(d) ? `<b class="dr-big">${Math.round(dr(d)!.rating)}</b> <span class="dim">Ahrefs, ${esc(drMonth(dr(d)!.measuredAt))}</span>` : "Not measured"}</dd></div>
+      <div><dt>Domain Rating</dt><dd>${dr(d) ? `<b class="dr-big">${Math.round(dr(d)!.rating)}</b> <span class="dim">Ahrefs DR4, ${esc(drMonth(dr(d)!.measuredAt))}</span>` : "Not measured"}</dd></div>
       <div><dt>Verified</dt><dd>${esc(d.verification.checked_at)}</dd></div>
     </dl>
   </div>
@@ -653,7 +653,7 @@ for (const h of HUBS) {
   const badge = list.filter((d) => d.cost.classification === "CONDITIONAL_FREE" && /badge|backlink|link back|reciprocal/i.test(`${d.cost.notes ?? ""} ${d.submission.conditions.join(" ")}`));
   const notFollowed = list.filter((d) => ["nofollow", "ugc", "sponsored"].includes(relOf(d))).length;
   const hubAnswers: [string, string][] = [
-    ...(strongest.length && h.slug !== "dofollow" ? [[`Which are free, dofollow and strongest?`, `By Ahrefs Domain Rating: ${names(strongest)}.`] as [string, string]] : []),
+    ...(strongest.length && h.slug !== "dofollow" ? [[`Which are free, dofollow and strongest?`, `By Ahrefs Domain Rating (DR4): ${names(strongest)}.`] as [string, string]] : []),
     ...(dof < list.length ? [[`How many give a followed link?`, `${dof} of ${list.length} serve a dofollow link on the listing pages we read. ${notFollowed ? `${notFollowed} add nofollow, ugc or sponsored${notFollowed + dof < list.length ? ", and the rest are mixed: usually followed only for paid or featured listings" : ""}.` : ""}`.trim()] as [string, string]] : []),
     ...(quick.length ? [[`Which can I do in a minute?`, `${quick.length} need no account and show no bot check${quick.length > 5 ? `, for example ${names(quick.sort((a, b) => (dr(b)?.rating ?? -1) - (dr(a)?.rating ?? -1)), 4)}` : `: ${names(quick)}`}.`] as [string, string]] : []),
     ...(badge.length ? [[`What does "free" cost here?`, `${badge.length} of these are free only if you put their badge or a link back on your site. Each directory page says which.`] as [string, string]] : []),
@@ -670,7 +670,7 @@ for (const h of HUBS) {
 </section>
 <section class="list shell">
   <div class="table-wrap"><table>${thead(false)}<tbody>${list.map(row).join("\n")}</tbody></table></div>
-  <p class="note">Sorted by link type, then <a href="https://ahrefs.com/">Ahrefs</a> Domain Rating. <a href="/directories/">Filter all ${dirs.length} directories</a> by cost, sign-in and bot check.</p>
+  <p class="note">Sorted by link type, then <a href="https://ahrefs.com/">Ahrefs</a> Domain Rating (DR4). <a href="/directories/">Filter all ${dirs.length} directories</a> by cost, sign-in and bot check.</p>
   <section class="dir-sec"><h2>Quick answers</h2><div class="qa">${hubAnswers.map(([q, a]) => `<div><h3>${esc(q)}</h3><p>${esc(a)}</p></div>`).join("")}</div></section>
   ${postLinks(h.slug)}
 </section>`,
