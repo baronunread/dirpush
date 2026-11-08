@@ -13,3 +13,15 @@ test("password page scripts parse and embed selectors as data", () => {
   for (const js of [tagPasswordFields(sel), checkPasswordFields(2)]) expect(() => new Function(`return ${js}`)).not.toThrow();
   expect(tagPasswordFields(sel)).toContain(JSON.stringify(sel));
 });
+
+test("strongPassword: requested length, every character class, sane bounds", async () => {
+  const { strongPassword } = await import("./browser");
+  for (const n of [8, 20, 24, 64]) {
+    const pw = strongPassword(n);
+    expect(pw).toHaveLength(n);
+    for (const re of [/[A-Z]/, /[a-z]/, /[2-9]/, /[!@#%^*\-_=+?]/]) expect(pw).toMatch(re);
+  }
+  expect(strongPassword()).toHaveLength(24);
+  expect(() => strongPassword(7)).toThrow(/8 to 64/);
+  expect(() => strongPassword(65)).toThrow(/8 to 64/);
+});

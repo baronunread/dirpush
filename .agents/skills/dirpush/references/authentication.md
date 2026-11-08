@@ -20,7 +20,7 @@ dirpush browser password <directory-id>-<product-id> --url <this page's url> --u
   [--login-url <the site's sign-in page>] '<password selector>' ['<confirm selector>']
 ```
 
-It types only into a visible, editable password field (a hidden login modal's field is skipped), and saves nothing if the password lands anywhere else; then pick a more specific selector (`#NewPassword`). Passwords always have upper, lower, digit and symbol (24 chars). Pass `--login-url` whenever the page isn't the sign-in page (a sign-up form, a reset link): the vault opens that URL for every later `browser login`. Never generate passwords yourself (`openssl rand -base64` can lack a symbol, and sites reject it).
+It types only into a visible, editable password field (a hidden login modal's field is skipped), and saves nothing if the password lands anywhere else; then pick a more specific selector (`#NewPassword`). Passwords always have upper, lower, digit and symbol (24 chars, or the field's `maxlength` if it's shorter). A site that rejects long passwords without a `maxlength` (its error says "at most 20 characters"): rerun with `--length 20`. Pass `--login-url` whenever the page isn't the sign-in page (a sign-up form, a reset link): the vault opens that URL for every later `browser login`. Never generate passwords yourself (`openssl rand -base64` can lack a symbol, and sites reject it).
 
 ## Continue with Google (`accounts.oauth_google`)
 

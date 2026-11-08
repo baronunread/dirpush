@@ -37,9 +37,14 @@ if [ -z "$AB_PROFILE" ] && up; then
     PIN="--pin-tab"
     ID="$(curl -s -m 1 "http://127.0.0.1:$PORT/json/version" | sed -n 's#.*devtools/browser/\([^"]*\)".*#\1#p') window"
     M="$H/data/ab-sessions/$S"
-    if [ "$(cat "$M" 2>/dev/null)" != "$ID" ]; then
-      agent-browser --session "$S" --cdp "$PORT" window new >/dev/null # unpinned: a pinned attach opens a second, blank tab
+    # The window is opened by dirpush, not `agent-browser window new`: that one lands in an isolated browser context
+    # (no profile cookies: Google asks for an email, saved logins are gone, and new ones aren't kept).
+    if [ "$(cat "$M" 2>/dev/null)" != "$ID" ] || { [ "$1" = window ] && [ "$2" = new ]; }; then
+      TID="$(bun "$PKG/src/cli.ts" browser window 2>/dev/null | sed -n 's/.*"targetId":"\([^"]*\)".*/\1/p')"
+      [ -n "$TID" ] || { echo "couldn't open a window in the agents' Chrome" >&2; exit 1; }
+      agent-browser --session "$S" --cdp "$PORT" tab "$TID" >/dev/null # unpinned: a pinned attach opens a second, blank tab
       mkdir -p "$H/data/ab-sessions" && printf '%s\n' "$ID" > "$M"
+      if [ "$1" = window ] && [ "$2" = new ]; then echo "✓ New window for session $S"; exit 0; fi
     fi
   fi
   if [ "$1" = close ]; then

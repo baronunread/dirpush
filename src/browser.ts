@@ -75,6 +75,28 @@ export async function startBrowser() {
   throw new Error(`Chrome did not open port ${BROWSER_PORT}. Is this profile already open without remote debugging? Quit that window and retry.`);
 }
 
+/**
+ * A new window for a worker, in the profile's own browser context. `agent-browser window new` opens it in a fresh,
+ * isolated context instead (like incognito): no cookies from the profile, so no Google session and no saved logins,
+ * and nothing the worker signs into is kept. Returns the tab's CDP target id, which agent-browser accepts as a tab ref.
+ */
+export async function openWindow(url = "about:blank") {
+  const { webSocketDebuggerUrl } = await json<{ webSocketDebuggerUrl: string }>("/json/version");
+  const ws = new WebSocket(webSocketDebuggerUrl);
+  try {
+    await new Promise((ok, fail) => { ws.onopen = ok; ws.onerror = () => fail(new Error("can't reach the agents' Chrome")); });
+    const result = await new Promise<{ targetId?: string }>((ok, fail) => {
+      ws.onmessage = (e) => { const m = JSON.parse(String(e.data)); if (m.id === 1) (m.error ? fail(new Error(m.error.message)) : ok(m.result)); };
+      // No browserContextId: the default context, i.e. the profile with its cookies.
+      ws.send(JSON.stringify({ id: 1, method: "Target.createTarget", params: { url, newWindow: true } }));
+    });
+    if (!result.targetId) throw new Error("Chrome opened no window");
+    return { targetId: result.targetId };
+  } finally {
+    ws.close();
+  }
+}
+
 export async function stopBrowser() {
   const s = await browserStatus();
   if (!s.running) return { stopped: false, running: false };
@@ -138,14 +160,15 @@ export async function vaultLogin(name: string) {
   return { vault: name, page: ab(["get", "url"]).slice(0, 200), filled: true };
 }
 
-/** 24 random characters with every class sites ask for (upper, lower, digit, symbol), symbols that forms accept. */
-export function strongPassword() {
+/** Random characters (24 by default) with every class sites ask for (upper, lower, digit, symbol), symbols that forms accept. */
+export function strongPassword(length = 24) {
+  if (!Number.isInteger(length) || length < 8 || length > 64) throw new Error(`password length must be 8 to 64, got ${length}`);
   const sets = ["ABCDEFGHJKLMNPQRSTUVWXYZ", "abcdefghijkmnopqrstuvwxyz", "23456789", "!@#%^*-_=+?"];
   const all = sets.join("");
   const pick = (set: string, b: number) => set[b % set.length]!;
-  const bytes = randomBytes(32);
-  const chars = [...sets.map((set, i) => pick(set, bytes[i]!)), ...Array.from({ length: 20 }, (_, i) => pick(all, bytes[i + 4]!))];
-  for (let i = chars.length - 1; i > 0; i--) { const j = bytes[(i + 8) % 32]! % (i + 1); [chars[i], chars[j]] = [chars[j]!, chars[i]!]; }
+  const bytes = randomBytes(length * 2);
+  const chars = [...sets.map((set, i) => pick(set, bytes[i]!)), ...Array.from({ length: length - 4 }, (_, i) => pick(all, bytes[i + 4]!))];
+  for (let i = chars.length - 1; i > 0; i--) { const j = bytes[length + i]! % (i + 1); [chars[i], chars[j]] = [chars[j]!, chars[i]!]; }
   return chars.join("");
 }
 
@@ -154,13 +177,14 @@ export function strongPassword() {
  * then saved to the vault as `name`. Returns no secret.
  */
 /** Page-side, before the fill: tags the first visible, editable password input for each selector (a hidden login modal
- *  often has one too) and keeps every other field's value in the page, to spot a password that lands elsewhere. */
+ *  often has one too) and keeps every other field's value in the page, to spot a password that lands elsewhere.
+ *  Returns each field's maxlength (-1 = none), or null where no field matched. */
 export const tagPasswordFields = (selectors: string[]) => `(() => {
   const shown = (e) => e.type === "password" && !e.disabled && !e.readOnly && e.getClientRects().length > 0 && getComputedStyle(e).visibility !== "hidden";
   const found = ${JSON.stringify(selectors)}.map((s, i) => {
     const el = [...document.querySelectorAll(s)].find((e) => e instanceof HTMLInputElement && shown(e));
     if (el) el.setAttribute("data-dirpush-pw", String(i));
-    return !!el;
+    return el ? el.maxLength : null;
   });
   const fields = [...document.querySelectorAll("input, textarea")].filter((e) => !e.hasAttribute("data-dirpush-pw"));
   window.__dirpushBefore = fields.map((e) => [e, e.value]);
@@ -187,13 +211,15 @@ const evalJson = <T>(script: string): T => {
   return (typeof out === "string" ? JSON.parse(out) : out) as T;
 };
 
-export async function newPassword(name: string, url: string, username: string, selectors: string[], loginUrl = url) {
+export async function newPassword(name: string, url: string, username: string, selectors: string[], loginUrl = url, length?: number) {
   if (!selectors.length) throw new Error("pass the password field selector(s), e.g. 'input[type=password]'");
   const page = await workerTab(url);
-  const found = evalJson<boolean[]>(tagPasswordFields(selectors));
-  const missing = selectors.filter((_, i) => !found[i]);
+  const found = evalJson<(number | null)[]>(tagPasswordFields(selectors));
+  const missing = selectors.filter((_, i) => found[i] == null);
   if (missing.length) throw new Error(`no visible password field matches ${missing.join(", ")}; nothing typed`);
-  const pw = strongPassword();
+  // A field's maxlength would silently cut the password (and the vault copy would no longer match): stay under it.
+  const caps = found.filter((n): n is number => n != null && n > 0);
+  const pw = strongPassword(length ?? Math.min(24, ...caps));
   selectors.forEach((_, i) => ab(["fill", `[data-dirpush-pw="${i}"]`, pw]));
   // A fill can "succeed" on nothing, or spill into another field; never save a password the site didn't get exactly.
   const { lengths, leaked } = evalJson<{ lengths: number[]; leaked: number }>(checkPasswordFields(selectors.length));

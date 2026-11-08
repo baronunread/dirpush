@@ -16,7 +16,7 @@ import { importHosted, readHostedExport } from "./import-hosted";
 import { addManualSubmission } from "./manual";
 import { present } from "./views";
 import { auditDirectory, auditDirectoryBrowser } from "./audit";
-import { abSession, browserStatus, newPassword, startBrowser, stopBrowser, vaultLogin } from "./browser";
+import { abSession, browserStatus, newPassword, openWindow, startBrowser, stopBrowser, vaultLogin } from "./browser";
 import { accountsFor, backfillAccounts, listAccounts } from "./accounts";
 import { detect, loadCapabilities, saveCapabilities } from "./capabilities";
 import { handoffDone, handoffMine, handoffNext, handoffQueue, handoffSkip } from "./handoff";
@@ -92,6 +92,7 @@ const { values: flags, positionals } = parseArgs({
     timeout: { type: "string" },
     force: { type: "boolean" },
     version: { type: "string" }, // dr refresh: Ahrefs DR model (dr3|dr4)
+    length: { type: "string" }, // browser password: password length (8-64)
     browser: { type: "boolean" }, // registry audit: real Chrome for pages a fetch can't read
     apply: { type: "boolean" },
     full: { type: "boolean" }, // raw rows instead of compact views
@@ -702,10 +703,11 @@ const commands: Record<string, (() => Promise<unknown> | unknown) | undefined> =
   "browser start": () => startBrowser(),
   "browser status": () => browserStatus(),
   "browser stop": () => stopBrowser(),
+  "browser window": () => openWindow(), // used by scripts/ab: a worker window that shares the profile's cookies
   "browser login": () => vaultLogin(arg(0, "vault-name")),
   "browser password": () => {
-    if (!flags.url || !flags.username) throw new Error("browser password <vault-name> --url <page-url> --username <email> [--login-url <sign-in page>] <field-selector…>");
-    return newPassword(arg(0, "vault-name"), flags.url, flags.username, args.slice(1), flags["login-url"]);
+    if (!flags.url || !flags.username) throw new Error("browser password <vault-name> --url <page-url> --username <email> [--login-url <sign-in page>] [--length n] <field-selector…>");
+    return newPassword(arg(0, "vault-name"), flags.url, flags.username, args.slice(1), flags["login-url"], flags.length ? Number(flags.length) : undefined);
   },
   async "serve"() {
     const { serve } = await import("./server");
@@ -783,7 +785,7 @@ const HELP: [string, [string, string][]][] = [
     ["google-login", "the human signs into Google once in the agents' Chrome profile"],
     ["browser start | status | stop", "the dedicated Chrome (real profile, Google services blocked) agents drive"],
     ["browser login <vault-name>", "fill a saved login into the open tab on that site (password never shown)"],
-    ["browser password <vault-name> --url u --username e [--login-url u] <selector…>", "new password (sign-up or reset): generate, fill, verify and save it (never shown); --login-url when the page isn't the sign-in page (e.g. a reset link)"],
+    ["browser password <vault-name> --url u --username e [--login-url u] [--length n] <selector…>", "new password (sign-up or reset): generate, fill, verify and save it (never shown); --login-url when the page isn't the sign-in page (e.g. a reset link); --length for sites with a maximum (default 24, or the field's maxlength)"],
   ]],
   ["Other", [
     ["dr show | dr refresh [--all] [--version dr3|dr4]", "Ahrefs Domain Rating (DR4) history (refresh needs AHREFS_API_KEY)"],
